@@ -1,0 +1,236 @@
+---
+const currentYear = new Date().getFullYear();
+
+const categories = [
+  { name: 'Electronice & Gadgeturi', slug: 'electronice-gadgeturi' },
+  { name: 'IT & Laptopuri', slug: 'it-laptopuri' },
+  { name: 'Electrocasnice Mari', slug: 'electrocasnice-mari' },
+  { name: 'Electrocasnice Mici Premium', slug: 'electrocasnice-mici-premium' },
+  { name: 'Mobila & Home Living', slug: 'mobila-home-living' },
+  { name: 'Sport & Fitness', slug: 'sport-fitness' }
+];
+
+const legalPages = [
+  { name: 'Politica de Confidentialitate', slug: 'politica-de-confidentialitate' },
+  { name: 'Termeni si Conditii', slug: 'termeni-si-conditii' },
+  { name: 'Politica de Cookies', slug: 'politica-cookies' },
+  { name: 'Contact', slug: 'contact' }
+];
+---
+
+<footer class="footer">
+  <div class="container-main">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <div class="footer-logo-icon">
+            <span>B</span>
+          </div>
+          <span class="footer-logo-text">Balador<span class="gold">.ro</span></span>
+        </a>
+        <p class="footer-description">
+          Recenzii detaliate, comparatii si ghiduri de cumparaturi pentru produsele premium din Romania.
+        </p>
+      </div>
+
+      <!-- Categories -->
+      <div class="footer-section">
+        <h3 class="footer-title">Categorii</h3>
+        <ul class="footer-links">
+          {categories.slice(0, 3).map(cat => (
+            <li>
+              <a href={`/${cat.slug}/`}>{cat.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- More Categories -->
+      <div class="footer-section">
+        <h3 class="footer-title">Mai multe</h3>
+        <ul class="footer-links">
+          {categories.slice(3).map(cat => (
+            <li>
+              <a href={`/${cat.slug}/`}>{cat.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="footer-section">
+        <h3 class="footer-title">Informatii</h3>
+        <ul class="footer-links">
+          {legalPages.map(page => (
+            <li>
+              <a href={`/${page.slug}/`}>{page.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        &copy; {currentYear} Balador.ro. Toate drepturile rezervate.
+      </p>
+      <p class="footer-tagline">
+        Recenzii independente pentru alegeri informate
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(to bottom, var(--color-slate-900) 0%, var(--color-slate-950) 100%);
+    color: var(--color-slate-300);
+    margin-top: auto;
+  }
+
+  .footer .container-main {
+    padding-top: 48px;
+    padding-bottom: 32px;
+  }
+
+  .footer-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 48px;
+    }
+  }
+
+  /* Brand Section */
+  .footer-brand {
+    grid-column: span 1;
+  }
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .footer-brand {
+      grid-column: span 2;
+    }
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+
+  .footer-logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--color-accent-400) 0%, var(--color-accent-600) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-logo-icon span {
+    color: var(--color-primary-950);
+    font-weight: 800;
+    font-size: 20px;
+  }
+
+  .footer-logo-text {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .footer-logo-text .gold {
+    color: var(--color-accent-400);
+  }
+
+  .footer-description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-slate-400);
+    max-width: 280px;
+  }
+
+  /* Footer Sections */
+  .footer-section {
+    min-width: 0;
+  }
+
+  .footer-title {
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 16px;
+    letter-spacing: 0.025em;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+
+  .footer-links a {
+    color: var(--color-slate-400);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-accent-400);
+    transform: translateX(4px);
+  }
+
+  /* Bottom Bar */
+  .footer-bottom {
+    border-top: 1px solid var(--color-slate-800);
+    margin-top: 40px;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  @media (min-width: 640px) {
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+  }
+
+  .footer-copyright {
+    color: var(--color-slate-400);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .footer-tagline {
+    color: var(--color-slate-500);
+    font-size: 13px;
+    margin: 0;
+  }
+</style>

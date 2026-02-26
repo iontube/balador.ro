@@ -1,0 +1,54 @@
+---
+import ArticleCard from './ArticleCard.astro';
+
+interface Props {
+  categorySlug: string;
+  currentSlug: string;
+  limit?: number;
+}
+
+const { categorySlug, currentSlug, limit = 6 } = Astro.props;
+
+// Get all article pages
+const allPages = await Astro.glob('../pages/*.astro');
+
+// Filter only article pages from the same category (exclude current article)
+const systemPages = ['index', 'contact', 'politica-de-confidentialitate', 'termeni-si-conditii', 'politica-cookies', '[category]'];
+
+const similarArticles = allPages
+  .filter(page => {
+    const filename = page.file.split('/').pop()?.replace('.astro', '') || '';
+    return !systemPages.includes(filename) &&
+           page.frontmatter?.title &&
+           page.frontmatter?.categorySlug === categorySlug &&
+           filename !== currentSlug;
+  })
+  .map(page => ({
+    title: page.frontmatter.title,
+    slug: page.file.split('/').pop()?.replace('.astro', '') || '',
+    excerpt: page.frontmatter.excerpt || '',
+    image: page.frontmatter.image || '/images/default.webp',
+    category: page.frontmatter.category || 'General',
+    categorySlug: page.frontmatter.categorySlug || 'general',
+    date: page.frontmatter.date || new Date().toISOString()
+  }))
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, limit);
+---
+
+{similarArticles.length > 0 && (
+  <section class="similar-articles">
+    <h2 class="similar-articles-title">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      </svg>
+      Articole Similare
+    </h2>
+    <div class="similar-articles-grid">
+      {similarArticles.map(article => (
+        <ArticleCard {...article} showExcerpt={false} />
+      ))}
+    </div>
+  </section>
+)}

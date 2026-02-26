@@ -1,0 +1,263 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+export async function getStaticPaths({ paginate }: { paginate: Function }) {
+  const ARTICLES_PER_PAGE = 30;
+
+  const categories = [
+    { slug: 'electronice-gadgeturi', name: 'Electronice & Gadgeturi', description: 'Telefoane, tablete, smartwatch-uri si casti premium pentru tehnofili exigenti.' },
+    { slug: 'it-laptopuri', name: 'IT & Laptopuri', description: 'Laptopuri, monitoare si componente PC pentru profesionisti si gameri.' },
+    { slug: 'electrocasnice-mari', name: 'Electrocasnice Mari', description: 'Frigidere, masini de spalat si uscatoare de inalta calitate.' },
+    { slug: 'electrocasnice-mici-premium', name: 'Electrocasnice Mici Premium', description: 'Espressoare, friteuze cu aer cald si aparate premium de bucatarie.' },
+    { slug: 'mobila-home-living', name: 'Mobila & Home Living', description: 'Canapele, saltele ortopedice si mobilier premium pentru casa ta.' },
+    { slug: 'sport-fitness', name: 'Sport & Fitness', description: 'Echipamente fitness profesionale pentru antrenamente acasa.' }
+  ];
+
+  const allPages = await import.meta.glob('../*.astro', { eager: true });
+  const systemPages = ['index', 'contact', 'politica-de-confidentialitate', 'termeni-si-conditii', 'politica-cookies', '[category]'];
+
+  const allArticles = Object.entries(allPages)
+    .filter(([path, page]: [string, any]) => {
+      const filename = path.split('/').pop()?.replace('.astro', '') || '';
+      return !systemPages.includes(filename) && page.frontmatter?.title;
+    })
+    .map(([path, page]: [string, any]) => ({
+      title: page.frontmatter.title,
+      slug: path.split('/').pop()?.replace('.astro', '') || '',
+      excerpt: page.frontmatter.excerpt || '',
+      image: page.frontmatter.image || '/images/default.webp',
+      category: page.frontmatter.category || 'General',
+      categorySlug: page.frontmatter.categorySlug || 'general',
+      date: page.frontmatter.date || new Date().toISOString()
+    }))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  const paths = [];
+
+  for (const cat of categories) {
+    const categoryArticles = allArticles.filter(article => article.categorySlug === cat.slug);
+
+    const paginatedPaths = paginate(categoryArticles, {
+      params: { category: cat.slug },
+      props: { categoryName: cat.name, categoryDescription: cat.description },
+      pageSize: ARTICLES_PER_PAGE
+    });
+
+    paths.push(...paginatedPaths);
+  }
+
+  return paths;
+}
+
+const { category } = Astro.params;
+const { page, categoryName, categoryDescription } = Astro.props;
+
+// Pre-calculate pagination data in frontmatter
+const hasPagination = page.lastPage > 1;
+const pageNumbers = hasPagination ? Array.from({ length: page.lastPage }, (_, i) => i + 1) : [];
+const visiblePages = pageNumbers.filter(num => {
+  if (num === 1 || num === page.lastPage) return true;
+  if (Math.abs(num - page.currentPage) <= 1) return true;
+  return false;
+});
+---
+
+<Layout
+  title={page.currentPage > 1 ? `${categoryName} - Pagina ${page.currentPage}` : categoryName}
+  description={categoryDescription}
+>
+  <!-- Hero -->
+  <section class="category-hero">
+    <div class="container-main">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+          <li><a href="/">Acasa</a></li>
+          <li><span class="breadcrumb-separator">/</span></li>
+          <li class="breadcrumb-current">{categoryName}</li>
+        </ol>
+      </nav>
+      <h1 class="category-title">{categoryName}</h1>
+      <p class="category-description">{categoryDescription}</p>
+      {page.total > 0 && (
+        <p class="category-count">{page.total} articole disponibile</p>
+      )}
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section class="category-articles">
+    <div class="container-main">
+      {page.data.length > 0 ? (
+        <div>
+          <div class="grid-articles">
+            {page.data.map((article: any) => (
+              <ArticleCard {...article} />
+            ))}
+          </div>
+
+          {hasPagination && (
+            <nav class="pagination" aria-label="Paginare">
+              {page.url.prev ? (
+                <a href={page.url.prev} class="pagination-item pagination-arrow" aria-label="Pagina anterioara">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                  </svg>
+                </a>
+              ) : (
+                <span class="pagination-item pagination-arrow disabled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                  </svg>
+                </span>
+              )}
+
+              {visiblePages.map((pageNum) => (
+                <a
+                  href={pageNum === 1 ? `/${category}/` : `/${category}/${pageNum}/`}
+                  class:list={["pagination-item", { active: pageNum === page.currentPage }]}
+                  aria-label={`Pagina ${pageNum}`}
+                  aria-current={pageNum === page.currentPage ? "page" : undefined}
+                >
+                  {pageNum}
+                </a>
+              ))}
+
+              {page.url.next ? (
+                <a href={page.url.next} class="pagination-item pagination-arrow" aria-label="Pagina urmatoare">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
+                </a>
+              ) : (
+                <span class="pagination-item pagination-arrow disabled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
+                </span>
+              )}
+            </nav>
+          )}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <span class="empty-icon">📝</span>
+          <h2 class="empty-title">Articole in curand</h2>
+          <p class="empty-description">Lucram la recenzii detaliate pentru aceasta categorie.</p>
+          <a href="/" class="btn btn-primary">Inapoi la pagina principala</a>
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Category Hero */
+  .category-hero {
+    background: linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-950) 100%);
+    padding: 32px 0 40px 0;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .category-hero {
+      padding: 40px 0 56px 0;
+    }
+  }
+
+  .category-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Category Title */
+  .category-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 12px 0;
+    position: relative;
+  }
+
+  @media (min-width: 640px) {
+    .category-title {
+      font-size: 32px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .category-title {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+  }
+
+  .category-description {
+    font-size: 16px;
+    color: var(--color-primary-200);
+    margin: 0;
+    max-width: 600px;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .category-description {
+      font-size: 18px;
+    }
+  }
+
+  .category-count {
+    font-size: 14px;
+    color: var(--color-accent-400);
+    margin-top: 16px;
+    position: relative;
+  }
+
+  /* Category Articles */
+  .category-articles {
+    padding: 40px 0 64px 0;
+    background: var(--color-slate-50);
+    min-height: 400px;
+  }
+
+  @media (min-width: 768px) {
+    .category-articles {
+      padding: 56px 0 80px 0;
+    }
+  }
+
+  /* Empty State */
+  .empty-state {
+    text-align: center;
+    padding: 64px 20px;
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .empty-icon {
+    font-size: 56px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .empty-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-slate-900);
+    margin: 0 0 12px 0;
+  }
+
+  .empty-description {
+    font-size: 15px;
+    color: var(--color-slate-600);
+    margin: 0 0 24px 0;
+    line-height: 1.6;
+  }
+</style>

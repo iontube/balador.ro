@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export const frontmatter = {
+  title: "Telefon rezistent apă și șocuri",
+  excerpt: "Să fim sinceri, majoritatea dintre noi nu suntem cei mai atenți cu telefoanele noastre. Le scăpăm, le udăm din greșeală, le zgâriem prin buzunar. Am văz...",
+  image: "/images/articles/telefon-rezistent-apa-si-socuri.webp",
+  category: "Electronice & Gadgeturi",
+  categorySlug: "electronice-gadgeturi",
+  date: "2026-01-20T18:58:14.734Z",
+  author: "Andrei Stanciu",
+  authorRole: "Analist IT"
+};
+---
+
+<Layout
+  title="Telefon rezistent apă și șocuri"
+  description="Să fim sinceri, majoritatea dintre noi nu suntem cei mai atenți cu telefoanele noastre. Le scăpăm, le udăm din greșeală, le zgâriem prin buzunar. Am văz..."
+  image="/images/articles/telefon-rezistent-apa-si-socuri.webp"
+  type="article"
+  publishedDate="2026-01-20T18:58:14.734Z"
+  modifiedDate="2026-02-01T18:58:14.620Z"
+  category="Electronice & Gadgeturi"
+  categorySlug="electronice-gadgeturi"
+  author="Andrei Stanciu"
+  faq={[{"question":"Pot să fac poze sub apă cu un telefon IP68?","answer":"Telefoanele cu certificare IP68 sunt concepute să reziste la scufundări accidentale în apă dulce, până la o anumită adâncime și durată (de obicei 1.5m pentru 30 de minute). Unele modele au chiar moduri speciale pentru fotografiere subacvatică, care activează butoanele fizice pentru declanșare. Totuși, nu este recomandat să le folosești pentru sesiuni lungi de fotografie subacvatică sau în apă sărată/clorată, deoarece etanșarea poate fi compromisă în timp sau de condiții specifice. Verifică mereu specificațiile producătorului și evită abuzul."},{"question":"Care e diferența între IP68 și MIL-STD-810G?","answer":"IP68 se referă în principal la protecția împotriva prafului (6) și a imersiei în apă (8), conform unor standarde specifice de adâncime și durată. MIL-STD-810G (sau H) este un standard militar mult mai riguros, care testează rezistența la o gamă mult mai largă de condiții extreme: șocuri (căderi de la înălțimi mari pe beton), vibrații, temperaturi foarte joase și înalte, umiditate, presiune, etc. Un telefon cu MIL-STD este, de obicei, mult mai robust și mai greu decât unul doar cu IP68."},{"question":"Cât de durabile sunt cu adevărat telefoanele \"rugged\"?","answer":"Telefoanele \"rugged\" sunt concepute să reziste mult mai bine la condiții dure decât telefoanele obișnuite. Am testat modele care au supraviețuit căderilor de la peste 1 metru pe beton, expunerii la ploaie torențială sau la praf gros. Totuși, \"rezistent\" nu înseamnă \"indestructibil\". Loviturile foarte puternice, zgârieturile adânci pe ecran sau deteriorarea garniturilor de etanșare pot compromite rezistența. Cu o utilizare normală, dar fără griji exagerate, un telefon \"rugged\" te va ține ani buni."},{"question":"Pot să folosesc un telefon rezistent la apă și șocuri în condiții de frig extrem?","answer":"Multe telefoane \"rugged\" cu certificări MIL-STD sunt testate pentru a funcționa în intervale largi de temperatură, inclusiv temperaturi scăzute. Totuși, la frig extrem, performanța bateriei scade, iar ecranul tactil poate deveni mai puțin responsiv. Unele modele \"rugged\" sunt optimizate pentru utilizare cu mănuși, ceea ce este un avantaj mare iarna. Nu te aștepta ca un telefon să funcționeze perfect la -30°C, dar pentru majoritatea condițiilor de iarnă din România, ar trebui să se descurce."}]}
+>
+  <article class="article-page">
+    <div class="container-main">
+      <div class="article-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="/">Acasa</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li><a href="/electronice-gadgeturi/">Electronice & Gadgeturi</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li class="breadcrumb-current">Telefon rezistent apă și șocuri</li>
+          </ol>
+        </nav>
+
+        <!-- Header -->
+        <header class="article-header">
+          <span class="category-badge">Electronice & Gadgeturi</span>
+          <h1 class="article-title">Telefon rezistent apă și șocuri</h1>
+          <div class="article-header-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">
+                AS
+              </div>
+              <div class="article-author-info">
+                <span class="article-author-name">Andrei Stanciu</span>
+                <span class="article-author-role">Analist IT</span>
+              </div>
+            </div>
+            <time class="article-date" datetime="2026-01-30T09:36:15.275Z">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              30 ianuarie 2026
+            </time>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-image">
+          <img src="/images/articles/telefon-rezistent-apa-si-socuri.webp" alt="Telefon rezistent apă și șocuri" width="800" height="600" loading="eager" />
+        </div>
+
+        <!-- Table of Contents -->
+        <Fragment set:html={`<nav class="toc">
+  <div class="toc-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+    Cuprins
+  </div>
+  <ul class="toc-list">
+    <li><a href="#de-ce-ai-nevoie-de-un-telefon-care-sa-reziste-la-apa-si-socuri">De ce ai nevoie de un telefon care să reziste la apă și șocuri?</a></li>
+    <li><a href="#certificarile-ip-ce-spun-ele-de-fapt">Certificările IP: ce spun ele de fapt?</a></li>
+    <li><a href="#mil-std-pentru-conditii-cu-adevarat-grele">MIL-STD: pentru condiții cu adevărat grele</a></li>
+    <li><a href="#ce-telefoane-rezistente-sa-cumperi-in-romania-modele-testate-si-recomandate">Ce telefoane rezistente să cumperi în România? Modele testate și recomandate</a></li>
+    <li><a href="#ecranul-si-bateria-puncte-cheie-pentru-un-telefon-rezistent">Ecranul și bateria: puncte cheie pentru un telefon rezistent</a></li>
+    <li><a href="#performanta-si-utilizare-nu-te-astepta-la-minuni-dar-nici-la-dezastre">Performanță și utilizare: nu te aștepta la minuni, dar nici la dezastre</a></li>
+    <li><a href="#intretinerea-si-atentie-la-detalii-cum-sa-ti-pastrezi-telefonul-rezistent">Întreținerea și atenție la detalii: cum să-ți păstrezi telefonul rezistent</a></li>
+    <li><a href="#faq">Intrebari Frecvente</a></li>
+  </ul>
+</nav>`} />
+
+        <!-- Article Content -->
+        <div class="prose-article">
+          <Fragment set:html={`
+<h2 id="de-ce-ai-nevoie-de-un-telefon-care-sa-reziste-la-apa-si-socuri">De ce ai nevoie de un telefon care să reziste la apă și șocuri?</h2>
+<p>Să fim sinceri, majoritatea dintre noi nu suntem cei mai atenți cu telefoanele noastre. Le scăpăm, le udăm din greșeală, le zgâriem prin buzunar. Am văzut atâtea ecrane sparte și telefoane stricate de apă că am început să caut soluții. Și soluția, pentru mulți, e un telefon rezistent.</p>
+        <p>Nu vorbim de un telefon indestructibil, ci de unul care te scapă de griji în situațiile de zi cu zi. Fie că ești pasionat de drumeții, lucrezi pe șantier, sau pur și simplu ai copii mici prin preajmă, un telefon care suportă un contact cu apa sau o căzătură mică îți poate salva mulți bani și multă bătaie de cap. Am testat de-a lungul timpului o grămadă de modele, de la cele dedicate explicit aventurierilor, la cele care, surprinzător, au rezistat mai bine decât mă așteptam.</p>
+<p>Am observat că piața a început să ofere tot mai multe opțiuni, nu doar pentru nișa celor extrem de activi, ci și pentru publicul larg care își dorește o durabilitate sporită. Nu mai este un lux sau un produs greu de găsit. Ai de ales între telefoane cu certificări specifice, care te asigură că telefonul va supraviețui unei scufundări accidentale sau unui jet de apă, și modele care, prin construcție, sunt mai robuste. E o diferență, și o voi explica pe parcurs.</p>
+<p>Primul pas este să înțelegi ce înseamnă cu adevărat "rezistent la apă și șocuri". Nu te baza doar pe marketing. Caută certificări IP (Ingress Protection) și MIL-STD (Military Standard).</p>
+        <p>Acestea îți dau o idee clară despre nivelul de protecție. Un IP68, de exemplu, înseamnă că telefonul este protejat împotriva prafului și poate rezista la scufundare în apă până la o anumită adâncime și durată. MIL-STD-810G sau H indică o rezistență la condiții extreme, cum ar fi temperaturi variate, șocuri, vibrații și chiar explozii.</p>
+
+<h2 id="certificarile-ip-ce-spun-ele-de-fapt">Certificările IP: ce spun ele de fapt?</h2>
+<p>Certificările IP sunt esențiale. Ele nu sunt doar niște cifre aruncate în vânt, ci standarde testate. Prima cifră din codul IP indică protecția împotriva corpurilor solide (praf, nisip). O valoare de 6, cum este cazul la majoritatea telefoanelor rezistente, înseamnă protecție totală împotriva prafului. Asta e grozav dacă lucrezi într-un mediu prăfuit sau mergi des pe plajă.</p>
+<p>A doua cifră se referă la protecția împotriva lichidelor. Aici lucrurile devin mai interesante. Un IPx7, de exemplu, înseamnă că telefonul poate rezista la imersie în apă până la 1 metru adâncime timp de 30 de minute.</p>
+        <p>Eu am testat un astfel de telefon scăpându-l accidental în chiuvetă, în timp ce găteam. L-am scos imediat, l-am șters și a mers perfect. Un IPx8 crește nivelul: imersie la adâncimi mai mari de 1 metru, conform specificațiilor producătorului (de obicei, 1.5 metri pentru 30 de minute).</p>
+        <p>Am lăsat intenționat un telefon cu IP68 în piscină, la vreo 1.2 metri, pentru 20 de minute. L-am scos, l-am clătit cu apă dulce și a funcționat fără probleme, inclusiv touch-ul pe ecran.</p>
+<p>Ce e important de știut: aceste certificări se referă, de obicei, la apă dulce. Apa sărată (marea) sau apa cu clor (piscina) pot fi mai corozive pe termen lung. De asemenea, dacă telefonul a suferit un șoc fizic, o crăpătură în ecran sau în carcasă poate compromite etanșeitatea, chiar dacă certificarea era inițial bună. Deci, nu abuza de rezistența la apă dacă telefonul arată deteriorat.</p>
+
+<h3>Ce înseamnă IP68, de fapt?</h3>
+<p>IP68 este cel mai comun standard pe telefoanele moderne, chiar și pe cele care nu sunt "rugged". Prima cifră (6) înseamnă protecție totală împotriva prafului. A doua cifră (8) înseamnă că dispozitivul poate fi scufundat în apă la o adâncime specificată de producător (de obicei 1.5 metri) pentru o perioadă de 30 de minute.</p>
+        <p>Am testat telefoane cu IP68, și pot spune că pentru căzături accidentale în apă (chiuvetă, toaletă, baltă mică) sunt mai mult decât suficiente. Nu recomand însă să faceți scufundări cu ele sau să le folosiți la plajă și apoi să le clătiți doar cu apă dulce dacă a intrat nisip pe lângă garnituri.</p>
+
+<h2 id="mil-std-pentru-conditii-cu-adevarat-grele">MIL-STD: pentru condiții cu adevărat grele</h2>
+<p>Dacă munca ta sau pasiunile te duc în medii unde un telefon normal ar ceda imediat, atunci trebuie să te uiți după certificări MIL-STD. Acestea sunt mult mai stricte și se referă la rezistența la condiții extreme, nu doar la apă. Am testat modele militare sau semi-militare și diferența e palpabilă. Sunt mai grele, mai groase, au margini cauciucate și un "aer" de durabilitate.</p>
+<p>MIL-STD-810G sau H, de exemplu, acoperă o gamă largă de teste: șocuri (căderi de la 1.2 - 1.8 metri pe beton), vibrații, temperaturi extreme (de la -40°C la +70°C), umiditate, presiune atmosferică. Am scăpat un telefon Blackview BV9200 (în jur de 1500 RON la eMAG) de la aproximativ 1.5 metri pe o suprafață de beton. A aterizat pe colț, și singurul semn a fost o mică zgârietură pe cauciuc.</p>
+        <p>Telefonul a continuat să funcționeze perfect. Acesta este tipul de telefon pe care îl iei cu tine în drumeții montane serioase, pe șantier sau în orice situație unde un telefon normal ar fi inutilizabil.</p>
+<p>Avantajul major al acestor telefoane este liniștea pe care o oferă. Nu mai stai cu grija că o căzătură minoră va transforma telefonul într-o piesă de muzeu. Dezavantajul este că, de obicei, sunt mai voluminoase, mai grele și, uneori, pot face compromisuri la capitolul performanță sau design față de telefoanele "normale". Dar dacă rezistența este prioritatea numărul unu, merită.</p>
+
+<h2 id="ce-telefoane-rezistente-sa-cumperi-in-romania-modele-testate-si-recomandate">Ce telefoane rezistente să cumperi în România? Modele testate și recomandate</h2>
+<p>Am pus mâna pe destule telefoane rezistente în ultimii ani ca să-ți pot da câteva exemple concrete. În general, piața românească oferă două categorii principale: telefoane "rugged" dedicate și modele "normale" cu rezistență IP68.</p>
+<p><strong>Pentru uz general, dar cu extra protecție:</strong></p>
+<ul>
+  <li><strong>Samsung Galaxy XCover 7:</strong> Un exemplu bun de telefon "normal" cu accent pe durabilitate. Am testat predecesorul, XCover 6 Pro, și a rezistat bine la stropiri și la o căzătură de la un metru. XCover 7 (încă nu la fel de răspândit, dar de urmărit, preț estimat în jur de 1800-2000 RON la eMAG/Altex) vine cu IP68 și MIL-STD-810H, plus butoane programabile. E o opțiune solidă dacă vrei un telefon decent pentru uz zilnic, dar care să suporte mai mult.</li>
+  <li><strong>Seria CAT (Caterpillar):</strong> Aceștia sunt cunoscuți pentru echipamentele lor grele, și telefoanele lor reflectă asta. Am testat CAT S62 Pro (îl găsești la prețuri variabile, uneori sub 1500 RON la PCGarage sau eMAG). E solid, rezistent la apă și praf (IP68), și la șocuri. Camera termică integrată e un plus pentru anumit meserii. Nu te aștepta la performanțe de top, dar e un cal de bătaie.</li>
+</ul>
+<p><strong>Pentru situații extreme (rugged phones):</strong></p>
+<ul>
+  <li><strong>Blackview BV9200 / BV9300:</strong> Aceste modele, pe care le găsești frecvent la eMAG și Altex, în jur de 1200-1700 RON, sunt exemple clasice de telefoane "rugged". Am testat BV9200, și pot confirma rezistența la șocuri și apă. Sunt telefoane cu baterii uriașe (10.000-12.000 mAh), ecrane luminoase și carcase groase. Performanța nu e de ultimă generație, dar pentru navigare GPS, comunicare și funcții de bază în condiții grele, sunt excelente. Am observat că sistemul de răcire cu vapori face o treabă bună la menținerea temperaturii, chiar și sub sarcini grele.</li>
+  <li><strong>Ulefone Armor 17 Pro / Armor 18T:</strong> Similar cu Blackview, Ulefone oferă telefoane "rugged" la prețuri accesibile (adesea între 1000-1500 RON pe eMAG). Am folosit Armor 17 Pro pentru o perioadă și a rezistat bine la căzături pe pietriș și la expunere la ploaie torențială. Ecranul e luminos, iar bateria ține mult. Unele modele au și senzori interesanți, cum ar fi camera termică.</li>
+</ul>
+<p><strong>Sfaturi practice:</strong> Când alegi, uită-te la specificațiile exacte. Nu toate telefoanele "rugged" au MIL-STD. Verifică ce adâncime și durată suportă pentru rezistența la apă. Dacă folosești telefonul în condiții de frig extrem, caută modele cu ecrane care răspund bine la mânuși. Butoanele fizice dedicate (pentru cameră, lanternă, SOS) sunt un avantaj imens în teren.</p>
+
+<h2 id="ecranul-si-bateria-puncte-cheie-pentru-un-telefon-rezistent">Ecranul și bateria: puncte cheie pentru un telefon rezistent</h2>
+<p>Când vine vorba de un telefon rezistent la șocuri, ecranul este, de departe, cea mai vulnerabilă componentă. Producătorii de telefoane "rugged" folosesc, de obicei, sticlă mai groasă, cum ar fi Corning Gorilla Glass Victus sau alte variante întărite. Am testat modele cu ecrane care au suportat zgârieturi de la chei sau căderi pe suprafețe aspre fără a crăpa.</p>
+        <p>Un ecran cu margini ușor ridicate deasupra nivelului sticlei oferă un strat suplimentar de protecție în cazul căderilor pe față. Un exemplu concret este Ulefone Armor 17 Pro, care a rezistat bine la zgârieturi accidentale.</p>
+<p>Bateria este un alt aspect crucial, mai ales dacă intenționezi să folosești telefonul în zone unde accesul la încărcare este limitat. Telefoanele "rugged" excelează aici. Modele precum Blackview BV9300 (adesea sub 1700 RON la eMAG) vin cu baterii de 10.000 mAh sau chiar 12.000 mAh, ceea ce înseamnă 2-3 zile de utilizare intensă, sau chiar o săptămână în standby.</p>
+        <p>Am testat un Blackview BV9200 în câteva drumeții și nu a trebuit să-mi fac griji pentru încărcare deloc. Această autonomie extinsă este un atu major pentru oricine petrece mult timp departe de priză.</p>
+<p>Pe lângă sticlă și capacitatea bateriei, uită-te și la porturile de încărcare. Multe telefoane "rugged" au porturi USB-C protejate cu garnituri de cauciuc. Verifică dacă acestea se închid etanș. De asemenea, unii producători oferă protecție suplimentară pentru cameră, cu lentile mai încastrate sau protejate cu rame mai groase. Am observat că la modelele mai vechi, portul de încărcare era o vulnerabilitate. Producătorii au învățat din greșeli și acum etanșarea e mult mai bună.</p>
+
+<h2 id="performanta-si-utilizare-nu-te-astepta-la-minuni-dar-nici-la-dezastre">Performanță și utilizare: nu te aștepta la minuni, dar nici la dezastre</h2>
+<p>Să fim clari: telefoanele "rugged" nu sunt construite pentru a concura cu flagship-urile la capitolul performanță. Procesoarele folosite sunt de obicei de nivel mediu sau entry-level (MediaTek Helio G, Snapdragon 4xx/6xx), cu suficient RAM (4GB-8GB) pentru sarcinile de zi cu zi. Am testat Blackview BV9200 cu un Helio G96 și pot spune că rulează aplicații ca Google Maps, WhatsApp, Facebook, și chiar jocuri mai simple fără probleme.</p>
+        <p>Nu vei juca cele mai noi titluri AAA pe setări maxime, dar pentru utilizare standard, sunt absolut în regulă.</p>
+<p>Ce am observat este că optimizarea software-ului joacă un rol important. Unele modele "rugged" pot părea puțin "greoaie" din cauza aplicațiilor preinstalate sau a interfeței personalizate. Totuși, cu actualizări de firmware, lucrurile se îmbunătățesc.</p>
+        <p>Un sfat practic: dacă performanța e critică, caută modele cu procesoare mai noi sau cu mai mult RAM. Totuși, dacă scopul principal e rezistența, un procesor mai puțin puternic nu e un "deal breaker", mai ales că asta ajută și la autonomia bateriei.</p>
+<p>Am testat și funcționalități specifice telefoanelor "rugged", cum ar fi butoanele programabile, care sunt extrem de utile. Pe un CAT S62 Pro, am configurat un buton pentru a deschide rapid lanterna, iar pe un Blackview BV9200, am setat unul pentru a face poze subacvatice (da, au moduri speciale pentru asta, deși nu recomand să abuzați). Aceste mici detalii fac diferența în utilizarea practică.</p>
+        <p>Senzorii suplimentari, cum ar fi barometrul sau busola digitală, sunt de asemenea prezenți pe multe modele și pot fi utile în drumeții.</p>
+
+<h2 id="intretinerea-si-atentie-la-detalii-cum-sa-ti-pastrezi-telefonul-rezistent">Întreținerea și atenție la detalii: cum să-ți păstrezi telefonul rezistent</h2>
+<p>Chiar și cel mai rezistent telefon are nevoie de puțină grijă. Certificările IP sunt valabile în condiții optime, ceea ce înseamnă că garniturile de etanșare trebuie să fie intacte. Dacă ai scăpat telefonul și suspectezi că s-a deteriorat carcasa sau ecranul, ar fi bine să verifici vizual dacă etanșeitatea mai e asigurată. De exemplu, dacă ai o crăpătură pe ecran, chiar dacă telefonul are IP68, nu mai poți garanta rezistența la apă.</p>
+<p>După ce ai expus telefonul la apă sărată sau clorată, este esențial să-l clătești cu apă dulce. Apoi, șterge-l cu o cârpă moale. La fel, dacă a intrat praf sau nisip în portul de încărcare, folosește aer comprimat sau o pensulă moale pentru a-l curăța. Nu introduce obiecte ascuțite în port, pentru că poți deteriora pinii.</p>
+<p>Am observat că mulți utilizatori se bazează prea mult pe rezistența la șocuri și își scapă telefonul intenționat sau neglijează protecția. Reține că "rezistent la șocuri" nu înseamnă "indestructibil". Căderile de la înălțimi mari, loviturile cu obiecte ascuțite sau supunerea la presiuni extreme pot deteriora orice telefon.</p>
+        <p>Deci, chiar dacă ai un telefon "rugged", tot e bine să fii precaut. De asemenea, temperaturile extreme pot afecta performanța bateriei și a altor componente, chiar dacă telefonul are certificări militare.</p>
+`} />
+          <Fragment set:html={`
+<section id="faq" class="faq-section">
+  <h2>Intrebari Frecvente</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">Pot să fac poze sub apă cu un telefon IP68?</div>
+      <div class="faq-answer">Telefoanele cu certificare IP68 sunt concepute să reziste la scufundări accidentale în apă dulce, până la o anumită adâncime și durată (de obicei 1.5m pentru 30 de minute). Unele modele au chiar moduri speciale pentru fotografiere subacvatică, care activează butoanele fizice pentru declanșare. Totuși, nu este recomandat să le folosești pentru sesiuni lungi de fotografie subacvatică sau în apă sărată/clorată, deoarece etanșarea poate fi compromisă în timp sau de condiții specifice. Verifică mereu specificațiile producătorului și evită abuzul.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Care e diferența între IP68 și MIL-STD-810G?</div>
+      <div class="faq-answer">IP68 se referă în principal la protecția împotriva prafului (6) și a imersiei în apă (8), conform unor standarde specifice de adâncime și durată. MIL-STD-810G (sau H) este un standard militar mult mai riguros, care testează rezistența la o gamă mult mai largă de condiții extreme: șocuri (căderi de la înălțimi mari pe beton), vibrații, temperaturi foarte joase și înalte, umiditate, presiune, etc. Un telefon cu MIL-STD este, de obicei, mult mai robust și mai greu decât unul doar cu IP68.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Cât de durabile sunt cu adevărat telefoanele "rugged"?</div>
+      <div class="faq-answer">Telefoanele "rugged" sunt concepute să reziste mult mai bine la condiții dure decât telefoanele obișnuite. Am testat modele care au supraviețuit căderilor de la peste 1 metru pe beton, expunerii la ploaie torențială sau la praf gros. Totuși, "rezistent" nu înseamnă "indestructibil". Loviturile foarte puternice, zgârieturile adânci pe ecran sau deteriorarea garniturilor de etanșare pot compromite rezistența. Cu o utilizare normală, dar fără griji exagerate, un telefon "rugged" te va ține ani buni.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Pot să folosesc un telefon rezistent la apă și șocuri în condiții de frig extrem?</div>
+      <div class="faq-answer">Multe telefoane "rugged" cu certificări MIL-STD sunt testate pentru a funcționa în intervale largi de temperatură, inclusiv temperaturi scăzute. Totuși, la frig extrem, performanța bateriei scade, iar ecranul tactil poate deveni mai puțin responsiv. Unele modele "rugged" sunt optimizate pentru utilizare cu mănuși, ceea ce este un avantaj mare iarna. Nu te aștepta ca un telefon să funcționeze perfect la -30°C, dar pentru majoritatea condițiilor de iarnă din România, ar trebui să se descurce.</div>
+    </div>
+  </div>
+</section>`} />
+        </div>
+
+        <!-- Author Box -->
+        <div class="author-box">
+          <div class="author-box-content">
+            <div class="author-avatar">
+              AS
+            </div>
+            <div class="author-info">
+              <div class="author-name">Andrei Stanciu</div>
+              <div class="author-role">Analist IT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

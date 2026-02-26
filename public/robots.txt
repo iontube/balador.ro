@@ -1,0 +1,2 @@
+Sitemap: https://balador.ro/sitemap-index.xml
+Sitemap: https://balador.ro/sitemap-images.xml

@@ -1,0 +1,418 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedDate?: string;
+  modifiedDate?: string;
+  category?: string;
+  categorySlug?: string;
+  author?: string;
+  faq?: Array<{ question: string; answer: string }>;
+}
+
+const {
+  title,
+  description,
+  image,
+  type = 'website',
+  publishedDate,
+  modifiedDate,
+  category,
+  categorySlug,
+  author = 'Echipa Balador',
+  faq
+} = Astro.props;
+
+// Use provided image or a default article image for OG
+const defaultOgImage = '/images/articles/telefon-flagship-2026.webp';
+const finalImage = image || defaultOgImage;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(finalImage, Astro.site);
+
+// Get current article slug from URL for similar articles
+const currentSlug = Astro.url.pathname.replace(/^\/|\/$/g, '');
+
+// Format dates for schema (ensure valid ISO 8601 format)
+const formatSchemaDate = (dateStr?: string) => {
+  if (!dateStr) return undefined;
+  const date = new Date(dateStr);
+  return date.toISOString();
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Balador.ro",
+  "url": "https://balador.ro",
+  "description": "Recenzii, comparatii si ghiduri de cumparaturi pentru produse premium",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://balador.ro/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const articleSchema = type === 'article' && publishedDate ? {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalURL.href
+  },
+  "headline": title,
+  "description": description,
+  "image": {
+    "@type": "ImageObject",
+    "url": ogImage.href,
+    "width": 800,
+    "height": 600
+  },
+  "datePublished": formatSchemaDate(publishedDate),
+  "dateModified": formatSchemaDate(modifiedDate) || formatSchemaDate(publishedDate),
+  "author": {
+    "@type": "Person",
+    "name": author
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Balador.ro",
+    "url": "https://balador.ro",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://balador.ro/images/logo.svg",
+      "width": 200,
+      "height": 60
+    }
+  }
+} : null;
+
+const breadcrumbSchema = type === 'article' && category ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasa",
+      "item": "https://balador.ro/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": category,
+      "item": `https://balador.ro/${categorySlug}/`
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": title,
+      "item": canonicalURL.href
+    }
+  ]
+} : null;
+
+const faqSchema = faq && faq.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+} : null;
+---
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#102a43" />
+  <meta name="msapplication-TileColor" content="#102a43" />
+  <link rel="canonical" href={canonicalURL} />
+
+  <title>{title} | Balador.ro</title>
+  <meta name="description" content={description} />
+  <meta name="author" content={author} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={`${title} | Balador.ro`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="600" />
+  <meta property="og:site_name" content="Balador.ro" />
+  <meta property="og:locale" content="ro_RO" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={`${title} | Balador.ro`} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  {type === 'article' && publishedDate && (
+    <>
+      <meta property="article:published_time" content={formatSchemaDate(publishedDate)} />
+      <meta property="article:modified_time" content={formatSchemaDate(modifiedDate) || formatSchemaDate(publishedDate)} />
+      {category && <meta property="article:section" content={category} />}
+      <meta property="article:author" content={author} />
+    </>
+  )}
+
+  <!-- Preconnect & Preload for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
+  {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+</head>
+<body class="min-h-screen flex flex-col">
+  <Header />
+
+  <main class="flex-1">
+    <slot />
+
+    {type === 'article' && categorySlug && (
+      <div class="container-main">
+        <div class="max-w-4xl mx-auto pb-12">
+          <SimilarArticles categorySlug={categorySlug} currentSlug={currentSlug} limit={6} />
+        </div>
+      </div>
+    )}
+  </main>
+
+  <Footer />
+  <CookieBanner />
+
+  <!-- Article Enhancement Script -->
+  <script>
+    // Fix article formatting issues
+    document.addEventListener('DOMContentLoaded', () => {
+      const proseArticles = document.querySelectorAll('.prose-article');
+
+      // Helper: Convert markdown bold **text** to <strong>text</strong>
+      function convertBold(html: string): string {
+        return html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      }
+
+      // Helper: Remove list marker from start of text
+      function removeListMarker(html: string): string {
+        // Remove * or - followed by spaces at the start (accounting for possible whitespace)
+        return html.replace(/^\s*[\*\-]\s+/, '');
+      }
+
+      // Helper: Split long paragraph into multiple paragraphs (every ~3 sentences)
+      function splitLongParagraph(p: HTMLParagraphElement): void {
+        const text = p.innerHTML;
+        // Only split if paragraph is long enough (more than 500 characters)
+        if (text.length < 500) return;
+
+        // Split on sentence endings (. followed by space and capital letter, or . followed by space and <strong>)
+        // This regex splits while keeping the period with the previous sentence
+        const sentences = text.split(/(?<=\.)\s+(?=[A-ZĂÂÎȘȚ<])/);
+
+        if (sentences.length < 4) return; // Need at least 4 sentences to split
+
+        // Group sentences into paragraphs of ~3 sentences each
+        const paragraphs: string[] = [];
+        let current: string[] = [];
+
+        sentences.forEach((sentence, idx) => {
+          current.push(sentence);
+          // Create new paragraph every 3 sentences or at the end
+          if (current.length >= 3 || idx === sentences.length - 1) {
+            paragraphs.push(current.join(' '));
+            current = [];
+          }
+        });
+
+        // Only proceed if we created multiple paragraphs
+        if (paragraphs.length <= 1) return;
+
+        // Create new paragraph elements
+        const fragment = document.createDocumentFragment();
+        paragraphs.forEach((content, idx) => {
+          const newP = document.createElement('p');
+          newP.innerHTML = content;
+          fragment.appendChild(newP);
+        });
+
+        // Replace original paragraph with new paragraphs
+        p.parentNode?.replaceChild(fragment, p);
+      }
+
+      proseArticles.forEach(article => {
+        // FIRST: Fix paragraphs that are actually list items (start with * or - )
+        // Must run before bold conversion to preserve innerHTML structure
+        const allParagraphs = Array.from(article.querySelectorAll('p'));
+        let i = 0;
+        while (i < allParagraphs.length) {
+          const p = allParagraphs[i];
+          const text = p.textContent?.trim() || '';
+          // Check if paragraph starts with list marker (* or - followed by spaces)
+          if (text.match(/^[\*\-]\s+/)) {
+            // This is a list item - collect consecutive list items
+            const listItems: HTMLParagraphElement[] = [p];
+            let j = i + 1;
+            while (j < allParagraphs.length) {
+              const nextP = allParagraphs[j];
+              const nextText = nextP.textContent?.trim() || '';
+              if (nextText.match(/^[\*\-]\s+/)) {
+                listItems.push(nextP);
+                j++;
+              } else {
+                break;
+              }
+            }
+
+            // Create ul element and convert paragraphs to li
+            const ul = document.createElement('ul');
+            listItems.forEach(item => {
+              const li = document.createElement('li');
+              // Get innerHTML, remove list marker, convert bold
+              let content = item.innerHTML;
+              content = removeListMarker(content);
+              content = convertBold(content);
+              li.innerHTML = content;
+              ul.appendChild(li);
+            });
+
+            // Replace first paragraph with ul, remove the rest
+            p.parentNode?.replaceChild(ul, p);
+            listItems.slice(1).forEach(item => item.remove());
+
+            // Skip the items we just processed
+            i = j;
+          } else {
+            i++;
+          }
+        }
+
+        // SECOND: Split long paragraphs into smaller ones for better readability
+        // Must run before bold conversion to preserve sentence structure
+        const paragraphsToSplit = Array.from(article.querySelectorAll('p'));
+        paragraphsToSplit.forEach(p => splitLongParagraph(p as HTMLParagraphElement));
+
+        // THIRD: Convert remaining markdown bold **text** to <strong>text</strong>
+        const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, null);
+        const textNodes: Text[] = [];
+        let node;
+        while (node = walker.nextNode()) {
+          if (node.textContent && node.textContent.includes('**')) {
+            textNodes.push(node as Text);
+          }
+        }
+        textNodes.forEach(textNode => {
+          const text = textNode.textContent || '';
+          if (text.includes('**')) {
+            const span = document.createElement('span');
+            span.innerHTML = convertBold(text);
+            textNode.parentNode?.replaceChild(span, textNode);
+          }
+        });
+      });
+
+      // Note: Excerpt in article header is hidden via CSS (global.css) for instant hiding
+
+      // TOC Toggle functionality
+      // Transform existing TOC structure to collapsible
+      const tocElements = document.querySelectorAll('.toc');
+
+      tocElements.forEach(toc => {
+        // Check if already transformed
+        if (toc.querySelector('.toc-header')) return;
+
+        const tocTitle = toc.querySelector('.toc-title');
+        const tocList = toc.querySelector('.toc-list');
+
+        if (tocTitle && tocList) {
+          // Create new structure
+          const header = document.createElement('div');
+          header.className = 'toc-header';
+
+          const titleWrapper = document.createElement('div');
+          titleWrapper.className = 'toc-title';
+          titleWrapper.innerHTML = tocTitle.innerHTML;
+
+          const toggle = document.createElement('div');
+          toggle.className = 'toc-toggle';
+          toggle.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>`;
+
+          header.appendChild(titleWrapper);
+          header.appendChild(toggle);
+
+          const content = document.createElement('div');
+          content.className = 'toc-content';
+          content.appendChild(tocList.cloneNode(true));
+
+          // Clear and rebuild TOC
+          toc.innerHTML = '';
+          toc.appendChild(header);
+          toc.appendChild(content);
+
+          // Start open
+          toc.classList.add('open');
+
+          // Toggle handler
+          header.addEventListener('click', () => {
+            toc.classList.toggle('open');
+          });
+        }
+      });
+
+      // FAQ Accordion (optional - make FAQ items clickable)
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        if (question && answer) {
+          // Add toggle indicator
+          if (!question.querySelector('.faq-toggle')) {
+            const toggle = document.createElement('span');
+            toggle.className = 'faq-toggle';
+            toggle.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>`;
+            toggle.style.cssText = 'transition: transform 0.3s; flex-shrink: 0;';
+            question.appendChild(toggle);
+            question.style.cursor = 'pointer';
+          }
+
+          question.addEventListener('click', () => {
+            const isOpen = answer.style.display !== 'none';
+            answer.style.display = isOpen ? 'none' : 'block';
+            const toggleIcon = question.querySelector('.faq-toggle');
+            if (toggleIcon) {
+              toggleIcon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

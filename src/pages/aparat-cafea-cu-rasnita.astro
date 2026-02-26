@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export const frontmatter = {
+  title: "Aparat cafea cu râșniță",
+  excerpt: "Stai, vrei un aparat cafea cu râșniță, nu-i asa? Foarte bine. Sincer, daca ma intrebi pe mine, asta e calea de urmat daca vrei cafea...",
+  image: "/images/articles/aparat-cafea-cu-rasnita.webp",
+  category: "Electrocasnice Mici Premium",
+  categorySlug: "electrocasnice-mici-premium",
+  date: "2026-02-07T09:35:44.036Z",
+  author: "Mihai Popescu",
+  authorRole: "Expert Tehnologie"
+};
+---
+
+<Layout
+  title="Aparat cafea cu râșniță"
+  description="Stai, vrei un aparat cafea cu râșniță, nu-i asa? Foarte bine. Sincer, daca ma intrebi pe mine, asta e calea de urmat daca vrei cafea..."
+  image="/images/articles/aparat-cafea-cu-rasnita.webp"
+  type="article"
+  publishedDate="2026-02-07T09:35:44.036Z"
+  modifiedDate="2026-02-07T09:35:44.036Z"
+  category="Electrocasnice Mici Premium"
+  categorySlug="electrocasnice-mici-premium"
+  author="Mihai Popescu"
+  faq={[{"question":"cat costa un aparat cafea cu râșniță","answer":"Un aparat cafea cu râșniță integrată, de tip super-automat, incepe de la aproximativ 1500 de lei pentru modelele de baza si poate ajunge la peste 7000 de lei pentru cele premium. Modelele mai accesibile, in jur de 2000-3000 lei, ofera un raport calitate-pret excelent pentru acasa."},{"question":"care e diferenta intre un aparat cafea cu râșniță si unul fara","answer":"Diferenta principala e prospetimea cafelei. Un aparat cu râșniță macină boabele pe loc, pastrand aroma si gustul intact. Un aparat fara râșniță foloseste cafea deja macinată, care isi pierde din calitati rapid. Un aparat cu râșniță oferă o experienta mult mai autentica si aromata."},{"question":"merita sa cumperi un aparat cafea cu râșniță integrata","answer":"Da, merita din plin daca esti un iubitor de cafea proaspata si vrei comoditate. Inlocuieste rasnita, espressorul si ofera o cafea mult mai buna decat cea macinată din pungi. Este o investitie pe termen lung in placerea ta zilnica de a bea cafea."},{"question":"ce aparat cafea cu râșniță e cel mai bun","answer":"Cel mai bun aparat cafea cu râșniță depinde de buget si preferinte. Pentru calitate si durabilitate, branduri ca Jura, DeLonghi si Saeco sunt in top. Modelele precum DeLonghi Magnifica S Smart sau Saeco Lattissima One ofera un echilibru bun intre pret si performanta pentru uz casnic."},{"question":"de ce se scumpeste cafeaua la aparatele cu râșniță","answer":"Nu se scumpeste cafeaua in sine. Un aparat cu râșniță te face sa folosești boabe de cafea, care sunt, in general, mai scumpe decat cafeaua macinată. Insa, costul pe o cafea preparată acasă este mult mai mic decat la o cafenea, chiar si cu boabe premium."},{"question":"cum se curata un aparat cafea cu râșniță","answer":"Curatarea se face prin cicluri automate de clatire si detartrare, si prin curatare manuala a componentelor detasabile. Grupul de preparare si sistemul de lapte (daca exista) necesita atentie speciala. Majoritatea aparatelor vin cu instructiuni detaliate pentru intretinere."},{"question":"unde gasesc aparate cafea cu râșniță la oferta","answer":"Poti gasi oferte bune la aparate cafea cu râșniță in marile magazine de electronice si electrocasnice din Romania, atat online cat si fizic (eMAG, Altex, Flanco, Media Galaxy). De asemenea, verifica magazinele specializate pe electrocasnice sau direct site-urile producatorilor."},{"question":"ce probleme pot aparea la un aparat cafea cu râșniță","answer":"Cele mai frecvente probleme includ blocarea rasnitei (din cauza boabelor prea uleioase sau umede), defectarea pompei de apa, sau probleme cu sistemul de lapte. Intretinerea regulata si utilizarea boabelor potrivite pot preveni majoritatea acestor probleme."}]}
+>
+  <article class="article-page">
+    <div class="container-main">
+      <div class="article-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="/">Acasa</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li><a href="/electrocasnice-mici-premium/">Electrocasnice Mici Premium</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li class="breadcrumb-current">Aparat cafea cu râșniță</li>
+          </ol>
+        </nav>
+
+        <!-- Header -->
+        <header class="article-header">
+          <span class="category-badge">Electrocasnice Mici Premium</span>
+          <h1 class="article-title">Aparat cafea cu râșniță</h1>
+          <div class="article-header-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">
+                MP
+              </div>
+              <div class="article-author-info">
+                <span class="article-author-name">Mihai Popescu</span>
+                <span class="article-author-role">Expert Tehnologie</span>
+              </div>
+            </div>
+            <time class="article-date" datetime="2026-02-07T09:35:44.036Z">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              7 februarie 2026
+            </time>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-image">
+          <img src="/images/articles/aparat-cafea-cu-rasnita.webp" alt="Aparat cafea cu râșniță" width="800" height="600" loading="eager" />
+        </div>
+
+        <!-- Table of Contents -->
+        <Fragment set:html={`<nav class="toc">
+  <div class="toc-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+    Cuprins
+  </div>
+  <ul class="toc-list">
+    <li><a href="#apara-cafea-cu-rasnita-recomandarea-mea-de-prieten">Apara cafea cu râșniță: Recomandarea mea de prieten</a></li>
+    <li><a href="#top-4-aparate-cafea-cu-rasnita-alegerile-mele-pe-bune">Top 4 Aparate Cafea cu Râșniță: Alegerile Mele pe Bune</a></li>
+    <li><a href="#cum-alegi-aparatul-perfect-cu-rasnita-pentru-tine">Cum Alegi Aparatul Perfect cu Râșniță pentru Tine</a></li>
+    <li><a href="#espresso-vs-cappuccino-ce-aparat-e-mai-bun-pentru-tine">Espresso vs. Cappuccino: Ce Aparat E Mai Bun pentru Tine?</a></li>
+    <li><a href="#greseli-de-evitat-cand-cumperi-un-aparat-cafea-cu-rasnita">Greseli de Evitat Cand Cumperi un Aparat Cafea cu Râșniță</a></li>
+    <li><a href="#investitie-inteligenta-aparate-cafea-cu-rasnita-pe-bugete">Investitie Inteligenta: Aparate Cafea cu Râșniță pe Bugete</a></li>
+    <li><a href="#faq">Intrebari Frecvente</a></li>
+  </ul>
+</nav>`} />
+
+        <!-- Article Content -->
+        <div class="prose-article">
+          <Fragment set:html={`
+<h2 id="apara-cafea-cu-rasnita-recomandarea-mea-de-prieten">Apara cafea cu râșniță: Recomandarea mea de prieten</h2>
+<p><p>Stai, vrei un <strong>aparat cafea cu râșniță</strong>, nu-i asa? Foarte bine. Sincer, daca ma intrebi pe mine, asta e calea de urmat daca vrei cafea ca la carte, la tine acasa. Uite care-i treaba: un aparat din asta nu doar ca-ti macina boabele pe loc, ceea ce face o diferenta uriasa la gust si aroma, dar iti si simplifica viata enorm.</p>
+        <p>Nu mai stai sa cumperi cafea macinata care isi pierde repede mireasma, nu mai ai doua aparate (unul pentru cafea, unul pentru rasnit), ci doar unul singur, compact si eficient.</p><p>Am testat personal cateva modele de-a lungul timpului, am si prieteni care-si bat capul cu asta, si concluzia e una singura: pentru o experienta premium, fara batai de cap, un <strong>aparat cafea cu râșniță</strong> integrata, de tip super-automat, e best buy. Nu ma refer la alea micute, de filtru, care au si rasnita, alea sunt altceva. Vorbim de aparatele alea care fac espresso, cappuccino, latte si tot tacamul, direct din boabe.</p><p>Asa ca, daca bugetul iti permite, mergi pe mana asta. Nu o sa regreti. Acum, hai sa vedem ce si cum, ca sa nu iei teapa.</p></p>
+
+<h2 id="top-4-aparate-cafea-cu-rasnita-alegerile-mele-pe-bune">Top 4 Aparate Cafea cu Râșniță: Alegerile Mele pe Bune</h2>
+<p><p>Bun, hai sa fim directi. Nu am timp sa va plictisesc cu teorii. Am ales 4 modele care mi s-au parut cele mai ok in piata, tinand cont de raportul calitate-pret, usurinta in folosire si, bineinteles, gustul cafelei. Stiu ca preturile fluctueaza, dar va dau o idee:</p><ul><li><strong>DeLonghi Magnifica S Smart ECAM250.33.TB</strong>: Asta-i un clasic. Nu te astepta la chestii de ultimul racnet, dar face o treaba excelenta. Macina boabele fin, face un espresso bun, are si optiune de abur pentru spuma de lapte. E relativ compact si intuitiv. <strong>Pret estimat:</strong> 1800-2200 lei. <em>Minusuri:</em> Nu are display digital, programele sunt mai putine, iar rasnita poate fi un pic mai zgomotoasa decat la modelele de top.</li><li><strong>Saeco Lattissima One</strong>: Daca vrei sa faci repede un cappuccino sau un latte, asta-i bun. Are un sistem simplu pentru lapte, faci o singura bautura cu lapte pe comanda. E usor de curatat, ceea ce e un mare plus. <strong>Pret estimat:</strong> 2500-3000 lei. <em>Minusuri:</em> Sistemul de lapte e mai limitat ca la alte modele, nu poti face mai multe tipuri de bauturi cu lapte dintr-o comanda, si rasnita nu e cea mai performanta de pe piata.</li><li><strong>Jura E8</strong>: Asta e deja alt nivel. Daca vrei calitate germana, nu te uiti la bani. Face o cafea exceptionala, are o gramada de optiuni, display color, rasnita de top. E o investitie, dar e pe termen lung. <strong>Pret estimat:</strong> 5000-6500 lei. <em>Minusuri:</em> Pretul e piperat, masiv, si intretinerea poate fi un pic mai complexa din cauza numarului mare de functii.</li><li><strong>Melitta Caffeo CI</strong>: O optiune buna, echilibrata. Are rasnita buna, face cafea pe placul multora, are si optiuni de personalizare. E mai accesibila decat Jura, dar totusi premium. <strong>Pret estimat:</strong> 3500-4500 lei. <em>Minusuri:</em> Designul nu e wow pentru toata lumea, si uneori sistemul de curatare pentru lapte poate fi un pic carcotas.</li></ul><p>Na, astea-s alegerile mele. Fiecare are plusurile si minusurile lui, dar toate fac o treaba buna cu boabe proaspete. Nu uita, un <strong>aparat cafea cu râșniță</strong> e o investitie, asa ca alege cu cap.</p></p>
+
+<h2 id="cum-alegi-aparatul-perfect-cu-rasnita-pentru-tine">Cum Alegi Aparatul Perfect cu Râșniță pentru Tine</h2>
+<p><p>Ok, ai vazut ca-s multe modele pe piata. Cum alegi ce ti se potriveste? Uite ce m-as uita eu, daca as fi in locul tau:</p><h3>Tipul de cafea preferata</h3><p>E simplu: daca bei doar espresso, nu ai nevoie de un aparat cu 100 de programe de lapte. Daca vrei sa te dai mare cu cappuccino si latte macchiato, atunci cauta un model cu sistem de lapte bun. Unele au rezervor separat, altele trag direct din cutia de lapte, altele fac spuma pe loc. Fiecare cu avantajele si dezavantajele lui. Eu unul prefer sistemul cu rezervor detasabil, se curata mai usor.</p><h3>Calitatea rasnitei</h3><p>Asta e cheia. Cauta un <strong>aparat cafea cu râșniță</strong> care are rasnita ceramica, nu de otel. Ceramica nu se incinge asa tare cand macina, deci nu arde boabele si pastreaza mai bine aroma. Si sa aiba ajustari fine ale gradului de macinare. Daca poti seta fin, inseamna ca poti adapta macinatura la tipul de boabe pe care il folosesti.</p><h3>Usor de utilizat si de curatat</h3><p>Pe bune, nu vrei sa petreci jumatate de ora in fiecare dimineata ca sa faci o cafea. Cauta un aparat cu butoane intuitive, un display clar. Si la curatat, la fel. Daca are programe automate de curatare, e un mare plus. Sistemul de lapte trebuie sa se demonteze usor si sa fie usor de spalat. Am avut un aparat la care trebuia sa desfaci juma’ de bucatarie ca sa-l cureti. Nu recomand.</p><h3>Personalizare</h3><p>Poti sa-ti setezi singur tarie, cantitate, temperatura? Asta e important daca vrei cafeaua ta, exact cum iti place. Unele aparate iti permit sa salvezi profiluri pentru mai multi utilizatori, ceea ce e super daca mai sunt si alti consumatori de cafea in casa.</p><h3>Bugetul</h3><p>Hai sa fim sinceri, un <strong>aparat cafea cu râșniță</strong> bun nu e ieftin. Dar gandeste-te ca inlocuieste rasnita, espressorul, si te scapa de cafeaua macinata. Deci, pe termen lung, se poate amortiza. Stabileste-ti un buget si cauta cea mai buna varianta in acel interval. Nu te arunca la cel mai scump doar ca scrie „premium” pe el, dar nici la cel mai ieftin sa nu te astepti la minuni.</p></p>
+
+<h2 id="espresso-vs-cappuccino-ce-aparat-e-mai-bun-pentru-tine">Espresso vs. Cappuccino: Ce Aparat E Mai Bun pentru Tine?</h2>
+<p><p>Acum, hai sa facem o comparatie rapida intre doua tipuri de aparate care au <strong>aparat cafea cu râșniță</strong> integrata, dar sunt orientate diferit. Pe de o parte, avem aparatele axate pe espresso, pe de alta, cele care exceleaza la bauturile cu lapte.</p><p><strong>Aparatele axate pe Espresso (ex: DeLonghi Magnifica S Smart)</strong>. Acestea pun accent pe calitatea boabelor si pe macinarea perfecta. Rasnita e de obicei de top, ai multe optiuni de macinare si tarie.</p>
+        <p>Sunt ideale daca tu si familia ta sunteti fani inraiti de espresso, Americano sau Lungo. Spuma de lapte e de obicei facuta cu o bagheta de abur manuala, gen 'panarello'. Asta inseamna ca tu controlezi procesul.</p>
+        <p>E mai multa munca, dar si mai multa satisfactie daca-ti iese spuma perfecta. Dezavantajul e ca daca vrei cappuccino, trebuie sa te joci un pic cu aburul.</p><p><strong>Aparatele axate pe Bauturi cu Lapte (ex: Saeco Lattissima One)</strong>. Aici, magia e in sistemul automat de lapte. Apesi un buton, si el face totul: spumeaza laptele, il amesteca cu cafeaua.</p>
+        <p>Super simplu. Sunt perfecte daca esti genul care bea latte macchiato sau cappuccino zilnic si nu vrei sa pierzi timp. Unele au rezervoare de lapte detasabile, altele trag direct din cutie.</p>
+        <p>Asta e un mare plus pentru comoditate. Partea mai putin placuta e ca, uneori, calitatea spumei de lapte nu e la fel de fina ca atunci cand o faci manual, si curatarea sistemului de lapte e esentiala, altfel o sa ai surprize neplacute.</p><p><strong>Deci, ce alegi?</strong> Daca esti un purist al cafelei, un arhitect al spumei de lapte, si iti place sa ai control total, mergi pe varianta axata pe espresso. Daca vrei comoditate maxima si o cafea cu lapte gata in 30 de secunde, ia-ti un model cu sistem automat de lapte. Ambele variante au insa un <strong>aparat cafea cu râșniță</strong> integrata, deci baza e buna oricum.</p></p>
+
+<h2 id="greseli-de-evitat-cand-cumperi-un-aparat-cafea-cu-rasnita">Greseli de Evitat Cand Cumperi un Aparat Cafea cu Râșniță</h2>
+<p><p>Uite, am vazut destui oameni care au luat-o pe aratura cand si-au luat un <strong>aparat cafea cu râșniță</strong>. Hai sa va zic ce sa NU faceti, ca sa nu patiti si voi:</p><ul><li><strong>Sa crezi ca 'orice aparat cu rasnita e bun'</strong>. Nuuuu. Calitatea rasnitei conteaza enorm. Ceramica e sfanta, stiti deja. Daca apare 'rasnita de otel' pe lista de specificatii, fugiti!</li><li><strong>Sa ignori curatarea</strong>. Asta e cea mai mare greseala. Daca nu cureti aparatul regulat, si mai ales sistemul de lapte, o sa ajungi sa bei o cafea cu gust de mucegai sau lapte acru. Si o sa strici aparatul.</li><li><strong>Sa cumperi cel mai ieftin aparat</strong>. Na, asta e o capcana clasica. Aparatele super-automate cu rasnita integrata sunt complexe. Cele super-ieftine au de obicei componente slabe, rasnite proaste si o durata de viata scurta. Mai bine strangi niste bani in plus si iei ceva decent.</li><li><strong>Sa nu te gandesti la spatiul pe care il ai</strong>. Unele aparate sunt masive. Daca stai intr-un apartament mic, s-ar putea sa ai o surpriza cand ajunge acasa si nu-ti incape pe blat. Masoara inainte!</li><li><strong>Sa te astepti la cafea de cafenea din prima</strong>. Fiecare aparat, chiar si cel mai bun <strong>aparat cafea cu râșniță</strong>, are nevoie de putina setare. Trebuie sa gasesti boabele potrivite, gradul de macinare, tarie, temperatura. Nu te descuraja daca prima cafea nu e WOW. Ajusteaza si vei vedea diferenta.</li><li><strong>Sa cumperi fara sa citesti review-uri</strong>. Da, stiu, sunt multe review-uri si nu toate sunt de incredere. Dar cauta pareri de la utilizatori reali, pe forumuri, pe grupuri. Vezi ce probleme au intampinat.</li></ul><p>Pe scurt: informeaza-te, nu te pripi si ai grija de el dupa ce l-ai luat. Atunci o sa te tina si o sa bei cafea buna ani de zile.</p></p>
+
+<h2 id="investitie-inteligenta-aparate-cafea-cu-rasnita-pe-bugete">Investitie Inteligenta: Aparate Cafea cu Râșniță pe Bugete</h2>
+<p><p>Bun, am vorbit mult despre ce si cum. Acum, hai sa vedem ce gasesti in functie de cati bani vrei sa dai. Ca sa nu zici ca te las balta.</p><h3>Buget Mic (sub 1500 lei)</h3><p>Aici, sa fim sinceri, nu te astepta la minuni. Gasesti mai mult aparate de cafea cu filtru care au si o mica rasnita integrata. Sunt bune pentru cine vrea o cafea simpla, filtrata, dar nu te da pe spate cu espresso sau cappuccino.</p>
+        <p>Unele branduri mai mici sau modele mai vechi de la producatori cunoscuti pot intra aici. Calitatea macinarii nu va fi cea mai buna, iar optiunile de personalizare sunt limitate. Avantajul e ca sunt accesibile si usor de folosit.</p>
+        <p>Dezavantajul e ca nu prea te apropii de experienta unui <strong>aparat cafea cu râșniță</strong> super-automat.</p><h3>Buget Mediu (1500 - 3500 lei)</h3><p>Aici e 'sweet spot'-ul pentru majoritatea oamenilor. Găsești aparate super-automate decente, cum ar fi modelele entry-level sau mid-range de la DeLonghi, Philips, Melitta, Saeco. Acestea au rasnite ceramice, fac espresso bun, au programe presetate pentru cafele populare si, de obicei, un sistem de abur pentru spuma de lapte (fie manual, fie semi-automat).</p>
+        <p>Sunt usor de curatat si de folosit. Aici gasesti si aparate cu <strong>aparat cafea cu râșniță</strong> care fac o treaba excelenta pentru acasa.</p><h3>Buget Mare (peste 3500 lei)</h3><p>Daca ai bani de aruncat pe fereastra, sau vrei absolut cea mai buna cafea acasa, atunci te uiti la aparate premium de la Jura, Miele, sau modelele de top de la DeLonghi sau Saeco. Acestea au rasnite exceptionale, multe optiuni de personalizare, display-uri color, sisteme automate de lapte sofisticate, si o gramada de tehnologie. Fac cafea de nivel cafenea, si poti sa le setezi sa faca aproape orice bautura. Durata de viata e, de obicei, mai mare. Dar, na, pretul...</p><p>Deci, in functie de cati bani vrei sa investesti, poti gasi un <strong>aparat cafea cu râșniță</strong> care sa ti se potriveasca. Nu uita sa te gandesti si la ce tip de cafea bei cel mai des, ca sa nu platesti pentru functii de care nu ai nevoie.</p></p>
+`} />
+          <Fragment set:html={`
+<section id="faq" class="faq-section">
+  <h2>Intrebari Frecvente</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">cat costa un aparat cafea cu râșniță</div>
+      <div class="faq-answer">Un aparat cafea cu râșniță integrată, de tip super-automat, incepe de la aproximativ 1500 de lei pentru modelele de baza si poate ajunge la peste 7000 de lei pentru cele premium. Modelele mai accesibile, in jur de 2000-3000 lei, ofera un raport calitate-pret excelent pentru acasa.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">care e diferenta intre un aparat cafea cu râșniță si unul fara</div>
+      <div class="faq-answer">Diferenta principala e prospetimea cafelei. Un aparat cu râșniță macină boabele pe loc, pastrand aroma si gustul intact. Un aparat fara râșniță foloseste cafea deja macinată, care isi pierde din calitati rapid. Un aparat cu râșniță oferă o experienta mult mai autentica si aromata.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">merita sa cumperi un aparat cafea cu râșniță integrata</div>
+      <div class="faq-answer">Da, merita din plin daca esti un iubitor de cafea proaspata si vrei comoditate. Inlocuieste rasnita, espressorul si ofera o cafea mult mai buna decat cea macinată din pungi. Este o investitie pe termen lung in placerea ta zilnica de a bea cafea.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">ce aparat cafea cu râșniță e cel mai bun</div>
+      <div class="faq-answer">Cel mai bun aparat cafea cu râșniță depinde de buget si preferinte. Pentru calitate si durabilitate, branduri ca Jura, DeLonghi si Saeco sunt in top. Modelele precum DeLonghi Magnifica S Smart sau Saeco Lattissima One ofera un echilibru bun intre pret si performanta pentru uz casnic.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">de ce se scumpeste cafeaua la aparatele cu râșniță</div>
+      <div class="faq-answer">Nu se scumpeste cafeaua in sine. Un aparat cu râșniță te face sa folosești boabe de cafea, care sunt, in general, mai scumpe decat cafeaua macinată. Insa, costul pe o cafea preparată acasă este mult mai mic decat la o cafenea, chiar si cu boabe premium.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">cum se curata un aparat cafea cu râșniță</div>
+      <div class="faq-answer">Curatarea se face prin cicluri automate de clatire si detartrare, si prin curatare manuala a componentelor detasabile. Grupul de preparare si sistemul de lapte (daca exista) necesita atentie speciala. Majoritatea aparatelor vin cu instructiuni detaliate pentru intretinere.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">unde gasesc aparate cafea cu râșniță la oferta</div>
+      <div class="faq-answer">Poti gasi oferte bune la aparate cafea cu râșniță in marile magazine de electronice si electrocasnice din Romania, atat online cat si fizic (eMAG, Altex, Flanco, Media Galaxy). De asemenea, verifica magazinele specializate pe electrocasnice sau direct site-urile producatorilor.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">ce probleme pot aparea la un aparat cafea cu râșniță</div>
+      <div class="faq-answer">Cele mai frecvente probleme includ blocarea rasnitei (din cauza boabelor prea uleioase sau umede), defectarea pompei de apa, sau probleme cu sistemul de lapte. Intretinerea regulata si utilizarea boabelor potrivite pot preveni majoritatea acestor probleme.</div>
+    </div>
+  </div>
+</section>`} />
+        </div>
+
+        <!-- Author Box -->
+        <div class="author-box">
+          <div class="author-box-content">
+            <div class="author-avatar">
+              MP
+            </div>
+            <div class="author-info">
+              <div class="author-name">Mihai Popescu</div>
+              <div class="author-role">Expert Tehnologie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

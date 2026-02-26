@@ -1,0 +1,22 @@
+{
+  "name": "balador.ro",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "generate": "node scripts/auto-generate.js",
+    "generate-batch": "node scripts/generate-batch.js"
+  },
+  "dependencies": {
+    "astro": "^5.16.11",
+    "@astrojs/sitemap": "^3.3.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "tailwindcss": "^4.1.0",
+    "wrangler": "^3.0.0"
+  }
+}

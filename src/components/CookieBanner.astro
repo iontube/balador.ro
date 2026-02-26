@@ -1,0 +1,50 @@
+---
+---
+
+<div id="cookie-banner" class="cookie-banner fixed bottom-0 left-0 right-0 z-50 hidden">
+  <div class="container-main py-4">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-primary-200 text-center sm:text-left">
+        Acest site foloseste cookies pentru a imbunatati experienta utilizatorului. Prin continuarea navigarii, accepti
+        <a href="/politica-cookies/" class="text-accent-400 underline hover:text-accent-300">politica noastra de cookies</a>.
+      </p>
+      <div class="flex items-center gap-3">
+        <button
+          id="cookie-reject"
+          class="px-4 py-2 text-sm text-primary-300 hover:text-white transition-colors"
+        >
+          Refuz
+        </button>
+        <button
+          id="cookie-accept"
+          class="btn-accent text-sm py-2 px-5"
+        >
+          Accept
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const rejectBtn = document.getElementById('cookie-reject');
+
+  // Check if consent was already given
+  const consent = localStorage.getItem('cookie-consent');
+
+  if (!consent && banner) {
+    banner.classList.remove('hidden');
+  }
+
+  acceptBtn?.addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'accepted');
+    banner?.classList.add('hidden');
+  });
+
+  rejectBtn?.addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'rejected');
+    banner?.classList.add('hidden');
+  });
+</script>

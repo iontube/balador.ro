@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export const frontmatter = {
+  title: "Espressor cu presiune mare",
+  excerpt: "Hai sa fim directi: daca vrei sa bei acasa un espresso adevarat, nu apa chioara cu aroma de cafea, ai nevoie de un espressor cu presiune mare...",
+  image: "/images/articles/espressor-cu-presiune-mare.webp",
+  category: "Electrocasnice Mici Premium",
+  categorySlug: "electrocasnice-mici-premium",
+  date: "2026-02-09T09:35:49.653Z",
+  author: "Mihai Popescu",
+  authorRole: "Expert Tehnologie"
+};
+---
+
+<Layout
+  title="Espressor cu presiune mare"
+  description="Hai sa fim directi: daca vrei sa bei acasa un espresso adevarat, nu apa chioara cu aroma de cafea, ai nevoie de un espressor cu presiune mare..."
+  image="/images/articles/espressor-cu-presiune-mare.webp"
+  type="article"
+  publishedDate="2026-02-09T09:35:49.653Z"
+  modifiedDate="2026-02-09T09:35:49.653Z"
+  category="Electrocasnice Mici Premium"
+  categorySlug="electrocasnice-mici-premium"
+  author="Mihai Popescu"
+  faq={[{"question":"Cat costa un espressor cu presiune mare bun?","answer":"Un <strong>espressor cu presiune mare</strong> decent, care sa faca o cafea buna acasa, incepe de la aproximativ 1000-1200 lei. Modelele mai performante, cu rasnita incorporata sau control manual, pot ajunge si la 2000-3000 lei sau chiar mai mult pentru aparate profesionale."},{"question":"Ce presiune e necesara la un espressor?","answer":"Pentru un espresso autentic, presiunea minima necesara este de 9 bari. Totusi, pentru rezultate optime si o crema bogata, se recomanda un <strong>espressor cu presiune mare</strong> de cel putin 15 bari. Aparatele cu presiune sub 9 bari nu pot extrage corect aromele din cafea."},{"question":"Merita sa cumpar un espressor cu presiune peste 15 bari?","answer":"Pentru uz casnic, presiunea de 15 bari este de obicei suficienta. Numarul de bari peste 15 (ex: 19 sau 20) este adesea mai mult un factor de marketing, deoarece presiunea suplimentara nu aduce neaparat o imbunatatire semnificativa a gustului sau cremei cafelei, in comparatie cu un aparat bine construit la 15 bari."},{"question":"Care e diferenta intre un espressor manual si unul automat cu presiune mare?","answer":"Espressoarele manuale ofera control total asupra procesului de preparare (macinare, presare, extractie), permitand experimentare si rezultate de top daca ai indemanare. Cele automate fac aproape toata treaba la o apasare de buton, fiind mai comode, dar cu mai putin control asupra finisajelor."},{"question":"Ce tip de cafea e recomandat pentru un <strong>espressor cu presiune mare</strong>?","answer":"Cel mai bun rezultat il obtii cu cafea proaspat prajita, boabe, macinata fin si uniform chiar inainte de preparare. Foloseste cafea special creata pentru espresso. Evita cafeaua veche sau macinatura prea grosiera, care va compromite extractia chiar si la presiune mare."},{"question":"Cum intretin un <strong>espressor cu presiune mare</strong>?","answer":"Curata grupul de cafea si portafiltrul dupa fiecare utilizare. Decalcifiaza aparatul periodic (lunar sau la 2-3 luni, in functie de duritatea apei) cu solutii dedicate. De asemenea, curata sistemul de spumare a laptelui imediat dupa folosire."},{"question":"Unde gasesc un <strong>espressor cu presiune mare</strong> de calitate?","answer":"Magazinele mari de electronice (Altex, eMAG, Flanco) au o oferta variata. De asemenea, cauta pe site-uri specializate de electrocasnice sau direct pe paginile brandurilor de renume precum DeLonghi, Breville, Sage, Gaggia. Verifica si ofertele online, poti gasi preturi mai bune."},{"question":"Pot folosi cafea macinata pentru espressor cu presiune mare?","answer":"Da, poti folosi cafea deja macinata, dar ideal ar fi sa fie macinata special pentru espresso si sa o cumperi cat mai proaspata. Totusi, pentru cel mai bun rezultat, se recomanda macinarea boabelor chiar inainte de preparare, folosind o rasnita dedicata pentru espressor."}]}
+>
+  <article class="article-page">
+    <div class="container-main">
+      <div class="article-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="/">Acasa</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li><a href="/electrocasnice-mici-premium/">Electrocasnice Mici Premium</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li class="breadcrumb-current">Espressor cu presiune mare</li>
+          </ol>
+        </nav>
+
+        <!-- Header -->
+        <header class="article-header">
+          <span class="category-badge">Electrocasnice Mici Premium</span>
+          <h1 class="article-title">Espressor cu presiune mare</h1>
+          <div class="article-header-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">
+                MP
+              </div>
+              <div class="article-author-info">
+                <span class="article-author-name">Mihai Popescu</span>
+                <span class="article-author-role">Expert Tehnologie</span>
+              </div>
+            </div>
+            <time class="article-date" datetime="2026-02-09T09:35:49.653Z">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              9 februarie 2026
+            </time>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-image">
+          <img src="/images/articles/espressor-cu-presiune-mare.webp" alt="Espressor cu presiune mare" width="800" height="600" loading="eager" />
+        </div>
+
+        <!-- Table of Contents -->
+        <Fragment set:html={`<nav class="toc">
+  <div class="toc-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+    Cuprins
+  </div>
+  <ul class="toc-list">
+    <li><a href="#ce-inseamna-de-fapt-un-espressor-cu-presiune-mare-si-de-ce-ai-nevoie-de-el">Ce inseamna de fapt un espressor cu presiune mare si de ce ai nevoie de el</a></li>
+    <li><a href="#top-5-aparate-espresso-cu-presiune-serioasa-recomandari-si-pareri-sincere">Top 5 aparate espresso cu presiune serioasa: recomandari si pareri sincere</a></li>
+    <li><a href="#cum-alegi-espressor-cu-presiune-mare-potrivit-pentru-tine-ghid-pe-intelesul-tuturor">Cum alegi espressor cu presiune mare potrivit pentru tine: ghid pe intelesul tuturor</a></li>
+    <li><a href="#espressor-manual-vs-automat-cu-presiune-care-e-regele-cafelei">Espressor manual vs. automat cu presiune: care e regele cafelei?</a></li>
+    <li><a href="#greseli-de-evitat-la-achizitia-si-utilizarea-unui-espressor-cu-presiune-mare">Greșeli de evitat la achiziția și utilizarea unui espressor cu presiune mare</a></li>
+    <li><a href="#verdict-pe-buget-ce-espressor-cu-presiune-mare-iti-iei">Verdict pe buget: ce espressor cu presiune mare îți iei?</a></li>
+    <li><a href="#faq">Intrebari Frecvente</a></li>
+  </ul>
+</nav>`} />
+
+        <!-- Article Content -->
+        <div class="prose-article">
+          <Fragment set:html={`
+<h2 id="ce-inseamna-de-fapt-un-espressor-cu-presiune-mare-si-de-ce-ai-nevoie-de-el">Ce inseamna de fapt un espressor cu presiune mare si de ce ai nevoie de el</h2>
+<p><p>Hai sa fim directi: daca vrei sa bei acasa un espresso adevarat, nu apa chioara cu aroma de cafea, ai nevoie de un <strong>espressor cu presiune mare</strong>. Si prin mare, eu ma gandesc la cel putin 9 bari, dar ideal ar fi sa te duci spre 15 bari sau chiar mai mult. De ce? Simplu.</p>
+        <p>Presiunea aia e cea care stoarce din cafeaua macinata tot ce are ea mai bun: aromele alea complexe, crema aia bogata si gustul ala intens care te face sa te trezesti dimineata. E ca si cum ai presa un burete plin cu apa – cat de tare il strangi, atata apa iese. La fel si cu cafeaua, cat de tare o presezi, atatea substante se extrag. </p><p>Am testat personal destule aparate ca sa stiu ca sub 9 bari, rezultatul e departe de ce te astepti de la un espresso. Cafeaua iese apoasa, fara crema, si gustul e plat. E ca si cum ai bea o cafea facuta la ibric, dar fara suflet. Un <strong>espressor cu presiune mare</strong>, peste 15 bari, face diferenta. Cremeaza mult mai bine, aromele sunt mult mai vii. E o investitie, stiu, dar daca esti un pasionat de cafea, merita fiecare leu. </p><p>E important sa intelegi ca presiunea asta nu e singurul factor, dar e baza. Daca ai un aparat cu 20 de bari, dar folosesti cafea veche sau macinatura gresita, tot nu iesi bine. Dar cu presiunea potrivita si restul pe langa, ai sa vezi ce diferenta face. Un prieten si-a luat un espressor ieftin, cu 3 bari, si s-a mirat de ce cafeaua lui arata ca apa de ploaie. I-am zis ca n-are cum sa iasa bine, ca presiunea e prea mica. Pana la urma, asta e. Nu te astepta la minuni de la un aparat slab. </p></p>
+
+<h2 id="top-5-aparate-espresso-cu-presiune-serioasa-recomandari-si-pareri-sincere">Top 5 aparate espresso cu presiune serioasa: recomandari si pareri sincere</h2>
+<p>Bun, hai sa trecem la lucruri serioase. Daca vrei un <strong>espressor cu presiune mare</strong> si nu stii de unde sa incepi, uite cateva modele care mi-au facut cu ochiul si pe care le-am si incercat sau am auzit feedback bun de la oameni de incredere. Nu sunt alegeri perfecte, ca nimic nu e, dar sunt puncte de plecare solide. <br><br></p>
+        <ul><li><strong>DeLonghi Magnifica S Smart ECAM 250.33.TB</strong><br>Asta e un clasic, un model care s-a dovedit fiabil. Are 15 bari, deci intra la categoria <strong>espressor cu presiune mare</strong> fara probleme. Pretul e undeva pe la 1500-1800 lei, depinde de oferte. Nu face zgomot prea mare, e destul de intuitiv. Minusuri? Aparatul asta are un sistem de incalzire rapid, dar nu se compara cu cele cu boiler separat. Pentru un singur om sau un cuplu e super, dar daca ai musafiri des, poate dura putin intre cafele.</li><li><strong>Breville Barista Express BES870</strong><br>Asta e pentru cei care vor sa se apropie si mai mult de experienta cafenelei. Are 15 bari, presiune excelenta. Pretul e mai sus, pe la 2500-3000 lei. Vine cu rasnita incorporata, deci poti macina cafeaua pe loc, ceea ce e un mare plus. Partea mai putin placuta e ca e mai complex de folosit, necesita un pic de invatare. Si curatarea periodica e mai anevoioasa. Dar rezultatele… wow.</li><li><strong>Sage The Bambino Plus</strong><br>Un alt candidat serios, cu 15 bari. E mai compact decat Breville, si pretul e mai prietenos, undeva pe la 1800-2000 lei. Incalzirea e super rapida, face spuma de lapte singur, ceea ce e comod. Ce nu-mi place la el e ca nu ai atat de mult control asupra procesului ca la modelele mai avansate. E mai mult un aparat semi-automat.</li><li><strong>Gaggia Classic Pro</strong><br>Asta e pentru puristi. Are 15 bari, e un pic mai scump, pe la 2000-2300 lei. E robust, construit ca un tanc. Si cel mai important, iti da control. Poti sa te joci cu macinatura, cu presarea, cu timpul de extractie. Dezavantajul e ca e mai zgomotos, si trebuie sa-i acorzi atentie la curatare si intretinere. Nu e un aparat pe care il lasi de izbeliste.</li><li><strong>DeLonghi La Specialista Arte EC9155.MB</strong><br>Un alt model premium, cu 15 bari, pe la 2500-2800 lei. Are un design fain, destul de compact. Include rasnita si are tehnologii care ajuta la extractie, chiar si pentru incepatori. Minusul major e ca, desi are multe functii, nu ofera acelasi nivel de control manual ca Gaggia sau Breville. E un fel de compromis intre automat si manual.</li></ul>
+        <p><p>Asa ca, uite, astea sunt cateva optiuni. Fiecare cu plusurile si minusurile ei. Depinde mult ce vrei de la un <strong>espressor cu presiune mare</strong> si cat esti dispus sa investesti si sa depui efort pentru cafeaua ta.</p></p>
+
+<h2 id="cum-alegi-espressor-cu-presiune-mare-potrivit-pentru-tine-ghid-pe-intelesul-tuturor">Cum alegi espressor cu presiune mare potrivit pentru tine: ghid pe intelesul tuturor</h2>
+<p><p>Bun, ai decis ca vrei un <strong>espressor cu presiune mare</strong>. Super. Dar cum alegi? Nu te lasa intimidat de specificatii. Uite pe ce trebuie sa te uiti, explicat simplu: </p><ul><li><strong>Presiunea (bari)</strong>: Asta am tot zis-o. Minim 9 bari, ideal 15+. Mai mult de 15 bari la un espressor casnic e mai mult marketing. E ca si cum ai avea o masina de 500 de cai putere pe care n-o poti duce mai mult de 50 km/h in oras. Ce te faci cu ea? Important e sa fie stabilă presiunea aia.</li><li><strong>Tipul de boiler</strong>: Asta influenteaza temperatura si cat de repede poate face aparatul cafea.</li><ul><li><strong>Termobloc</strong>: Incalzeste apa pe loc, ca la un fierbator. Rapid, bun pentru un singur om. Dar daca vrei sa faci 3-4 cafele una dupa alta, poate sa scada temperatura.</li><li><strong>Boiler unic</strong>: Incalzeste toata apa din rezervor. Mai lent la prima cafea, dar mai stabil pe parcurs.</li><li><strong>Sistem dual boiler</strong>: Un boiler pentru espresso, unul pentru abur. Cel mai performant, cel mai scump. Ideal daca faci si cappuccino, si vrei spuma perfecta rapid.</li></ul><li><strong>Materiale si constructie</strong>: Nu te uita doar la cum arata. Un corp din otel inoxidabil e mai durabil decat unul din plastic. Un portafiltru solid, greu, se simte altfel in mana si transfera mai bine caldura.</li><li><strong>Rasnita incorporata sau nu</strong>: Daca vrei cea mai proaspata cafea, ia un aparat cu rasnita. Dar asigura-te ca e o rasnita buna, reglabila fin. Altfel, mai bine cumperi cafea macinata proaspat de la o prajitorie. Un aparat fara rasnita te obliga sa cumperi una separata, ceea ce mai adauga la cost.</li><li><strong>Control manual vs. automat</strong>: Vrei sa te joci cu macinatura, cu presarea, cu timpul de extractie? Ia unul manual (gen Gaggia Classic Pro). Vrei sa apesi un buton si sa iasa cafeaua? Ia unul automat sau semi-automat (gen DeLonghi). Sincer, pentru un <strong>espressor cu presiune mare</strong>, controlul manual iti permite sa obtii rezultate mult mai bune, dar necesita rabdare.</li><li><strong>Sistem de spumare a laptelui</strong>: Duza de abur (vario) e standard. Unele aparate au sisteme automate, care fac spuma singure. Comod, dar spuma nu e la fel de fina ca atunci cand o faci tu. Daca bei mult lapte, merita sa te gandesti la asta.</li><li><strong>Dimensiune si design</strong>: Nu uita sa masori spatiul din bucatarie. Unele aparate sunt adevarate bestii.</li></ul><p>Pana la urma, cel mai bun <strong>espressor cu presiune mare</strong> e ala care se potriveste stilului tau de a bea cafea si bugetului. Nu te arunca la cel mai scump daca stii ca n-ai timp de el.</p></p>
+
+<h2 id="espressor-manual-vs-automat-cu-presiune-care-e-regele-cafelei">Espressor manual vs. automat cu presiune: care e regele cafelei?</h2>
+<p><p>Asta e o dilema clasica pentru oricine cauta un <strong>espressor cu presiune mare</strong>. Fiecare are farmecul lui, dar si dezavantajele.</p><p><strong>Espressoarele manuale (sau semi-automate)</strong>, cum ar fi Gaggia Classic Pro sau Breville Barista Express, iti pun tie controlul in mana. Adica tu macini cafeaua, tu o presezi in portafiltru, tu decizi cand incepe si cand se termina extractia. Asta inseamna ca poti sa experimentezi, sa ajustezi fin fiecare pas si, daca esti bun, sa obtii un espresso absolut spectaculos, cu o crema groasa si arome complexe.</p>
+        <p>Presiunea de 15 bari e aici un atu major. Partea nasoala? Necesita timp, practica si o investitie in accesorii (cantar, tamper bun, etc.). Nu te astepta sa iasa perfect din prima.</p>
+        <p>Am ars cateva cafele pana sa prind "meseria".</p><p>Pe de alta parte, <strong>espresoarele automate</strong>, cum sunt multe modele DeLonghi Magnifica sau Philips, fac aproape toata treaba pentru tine. Pui boabele in recipient, apesi un buton si aparatul macina, preseaza, extrage espresso-ul si uneori chiar si spumeaza laptele. Sunt super comode, perfecte pentru diminetile aglomerate sau pentru cine nu vrea sa se complice. Presiunea mare e tot acolo, peste 15 bari, deci rezultatul e mult peste un espressor clasic de filtru. </p><p>Dar, cum spuneam, nu totul e roz. La automate, controlul tau e limitat. Nu poti sa ajustezi macinatura in profunzime sau presarea. Rezultatul e bun, constant, dar rar ajunge la nivelul de excelenta pe care il poti obtine manual. Si, sincer, uneori spuma de lapte facuta de aparat nu e la fel de fina si catifelata ca cea facuta manual. </p><p>Deci, daca ma intrebi pe mine, pentru un <strong>espressor cu presiune mare</strong>, daca ai timp si pasiune, mergi pe manual. Daca vrei comoditate si o cafea buna, fara batai de cap, automatul e solutia. Nu exista un "rege" universal, ci doar alegerea potrivita pentru tine.</p></p>
+
+<h2 id="greseli-de-evitat-la-achizitia-si-utilizarea-unui-espressor-cu-presiune-mare">Greșeli de evitat la achiziția și utilizarea unui espressor cu presiune mare</h2>
+<p><p>Am vazut atatea cazuri de oameni care dau o gramada de bani pe un <strong>espressor cu presiune mare</strong> si apoi sunt dezamagiti. De ce? De cele mai multe ori, din cauza unor greseli simple. </p><p>Prima mare greseala e sa te lasi orbit de numarul de bari. Da, 15 bari e important, dar daca aparatul are si alte chestii naspa, degeaba. De exemplu, un boiler prost care nu tine temperatura constanta. Sau materiale de proasta calitate care se strica repede. Am avut un prieten care si-a luat un espressor cu 19 bari, dar plasticul era asa de prost, ca i s-a spart portafiltrul dupa 2 luni. Na, asta e. </p><p>Alta greseala e sa crezi ca orice cafea merge. Nu, baieti. Pentru un <strong>espressor cu presiune mare</strong>, ai nevoie de cafea proaspata, macinata fin si uniform. Daca folosesti cafea veche sau macinatura prea groasa, chiar si cu 15 bari, iesi prost. E ca si cum ai avea o masina de curse, dar pui benzina de tuns iarba. Nu merge. </p><p>Multi fac greseala sa nu curete aparatul. Dupa fiecare folosire, curata portafiltrul si duza de abur. Lunar, fa o curatare mai profunda cu solutii speciale. Daca nu faci asta, o sa se depuna calcar si reziduuri de cafea, care afecteaza gustul si pot strica aparatul. Am patit-o si eu la inceput, am neglijat curatarea si parca cafeaua incepea sa aiba un gust ciudat. </p><p>Nu cumpara cel mai scump aparat daca nu ai nevoie de el. Daca bei o cafea pe zi si vrei doar ceva bun, nu ai nevoie de un dual boiler de 3000 de lei. Un DeLonghi mai simplu, cu 15 bari, o sa-ti fie arhisuficient. E ca si cum ai cumpara un avion ca sa mergi la piata. </p><p>Si inca ceva: nu te astepta la minuni din prima. Mai ales daca mergi pe varianta manuala. Ai nevoie de timp sa inveti. Nu te descuraja daca primele cafele nu ies perfect. Uita-te la tutoriale, citeste, experimenteaza. Pana la urma, satisfactia ca iti faci singur o cafea excelenta e mare. </p></p>
+
+<h2 id="verdict-pe-buget-ce-espressor-cu-presiune-mare-iti-iei">Verdict pe buget: ce espressor cu presiune mare îți iei?</h2>
+<p><p>Ok, hai sa punem un punct pe i, in functie de cati bani vrei sa dai. Ca pana la urma, asta e cel mai important criteriu pentru multi.</p><p><strong>Buget mic (pana in 800-1000 lei)</strong><br>Aici e greu sa gasesti un <strong>espressor cu presiune mare</strong> cu adevarat performant. Majoritatea aparatelor din zona asta au presiuni mici (sub 9 bari) sau sunt de o calitate indoielnica. Daca totusi vrei sa incerci si nu vrei sa dai multi bani, cauta modele de la Philips, DeLonghi sau Severin care promit 15 bari.</p>
+        <p>Dar fii pregatit pentru compromisuri majore la capitolul calitate a extractiei, durabilitate si usurinta in utilizare. Nu te astepta la minuni, dar poate fi un punct de plecare sa vezi daca iti place cafeaua facuta acasa. Sincer, eu as recomanda sa mai pui niste bani deoparte.</p><p><strong>Buget mediu (1000 - 2000 lei)</strong><br>Aici deja vorbim de altceva. Gasesti aparate DeLonghi Magnifica, primele modele de la Breville sau Sage, sau chiar Gaggia Gran Style. Acestea au presiunea necesara (15 bari) si, daca ai grija la cafea si la macinatura, pot sa scoata o cafea foarte buna.</p>
+        <p>Sunt aparate mai solide, mai fiabile. DeLonghi Magnifica S Smart e o alegere populara aici, un espressor cu presiune mare bun pentru uz casnic. Sau Gaggia Gran Style, daca vrei ceva mai simplu dar decent.</p><p><strong>Buget premium (peste 2000 lei)</strong><br>In zona asta intri in teritoriul aparatelor serioase. Aici gasesti Breville Barista Express, Sage Bambino Plus, Gaggia Classic Pro, DeLonghi La Specialista. Acestea nu doar ca au presiune mare (15 bari), dar ofera si un control mult mai bun asupra procesului, materiale de calitate superioara, sisteme de incalzire mai performante si, in unele cazuri, rasnite integrate.</p>
+        <p>Daca vrei sa te apropii de experienta unui barista profesionist, aici e locul unde trebuie sa cauti. Sunt investitii pe termen lung, dar satisfactia e pe masura.</p><p>Deci, uite care-i treaba. Inainte sa cumperi, gandeste-te bine cat vrei sa investesti si cat timp esti dispus sa dedici prepararii cafelei. Un <strong>espressor cu presiune mare</strong> e o unealta, si ca orice unealta, trebuie sa fie potrivita pentru treaba pe care vrei sa o faci.</p></p>
+`} />
+          <Fragment set:html={`
+<section id="faq" class="faq-section">
+  <h2>Intrebari Frecvente</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">Cat costa un espressor cu presiune mare bun?</div>
+      <div class="faq-answer">Un <strong>espressor cu presiune mare</strong> decent, care sa faca o cafea buna acasa, incepe de la aproximativ 1000-1200 lei. Modelele mai performante, cu rasnita incorporata sau control manual, pot ajunge si la 2000-3000 lei sau chiar mai mult pentru aparate profesionale.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Ce presiune e necesara la un espressor?</div>
+      <div class="faq-answer">Pentru un espresso autentic, presiunea minima necesara este de 9 bari. Totusi, pentru rezultate optime si o crema bogata, se recomanda un <strong>espressor cu presiune mare</strong> de cel putin 15 bari. Aparatele cu presiune sub 9 bari nu pot extrage corect aromele din cafea.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Merita sa cumpar un espressor cu presiune peste 15 bari?</div>
+      <div class="faq-answer">Pentru uz casnic, presiunea de 15 bari este de obicei suficienta. Numarul de bari peste 15 (ex: 19 sau 20) este adesea mai mult un factor de marketing, deoarece presiunea suplimentara nu aduce neaparat o imbunatatire semnificativa a gustului sau cremei cafelei, in comparatie cu un aparat bine construit la 15 bari.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Care e diferenta intre un espressor manual si unul automat cu presiune mare?</div>
+      <div class="faq-answer">Espressoarele manuale ofera control total asupra procesului de preparare (macinare, presare, extractie), permitand experimentare si rezultate de top daca ai indemanare. Cele automate fac aproape toata treaba la o apasare de buton, fiind mai comode, dar cu mai putin control asupra finisajelor.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Ce tip de cafea e recomandat pentru un <strong>espressor cu presiune mare</strong>?</div>
+      <div class="faq-answer">Cel mai bun rezultat il obtii cu cafea proaspat prajita, boabe, macinata fin si uniform chiar inainte de preparare. Foloseste cafea special creata pentru espresso. Evita cafeaua veche sau macinatura prea grosiera, care va compromite extractia chiar si la presiune mare.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Cum intretin un <strong>espressor cu presiune mare</strong>?</div>
+      <div class="faq-answer">Curata grupul de cafea si portafiltrul dupa fiecare utilizare. Decalcifiaza aparatul periodic (lunar sau la 2-3 luni, in functie de duritatea apei) cu solutii dedicate. De asemenea, curata sistemul de spumare a laptelui imediat dupa folosire.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Unde gasesc un <strong>espressor cu presiune mare</strong> de calitate?</div>
+      <div class="faq-answer">Magazinele mari de electronice (Altex, eMAG, Flanco) au o oferta variata. De asemenea, cauta pe site-uri specializate de electrocasnice sau direct pe paginile brandurilor de renume precum DeLonghi, Breville, Sage, Gaggia. Verifica si ofertele online, poti gasi preturi mai bune.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Pot folosi cafea macinata pentru espressor cu presiune mare?</div>
+      <div class="faq-answer">Da, poti folosi cafea deja macinata, dar ideal ar fi sa fie macinata special pentru espresso si sa o cumperi cat mai proaspata. Totusi, pentru cel mai bun rezultat, se recomanda macinarea boabelor chiar inainte de preparare, folosind o rasnita dedicata pentru espressor.</div>
+    </div>
+  </div>
+</section>`} />
+        </div>
+
+        <!-- Author Box -->
+        <div class="author-box">
+          <div class="author-box-content">
+            <div class="author-avatar">
+              MP
+            </div>
+            <div class="author-info">
+              <div class="author-name">Mihai Popescu</div>
+              <div class="author-role">Expert Tehnologie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

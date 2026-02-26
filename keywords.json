@@ -1,0 +1,600 @@
+{
+  "pending": [
+    {
+      "keyword": "robot de bucătărie inteligent",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "robot multifuncțional profesional",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "mixer profesional bucătărie",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "blender de mare putere",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "aparat de gătit multifuncțional",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "friteuză digitală aer cald",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "aparat sous vide profesional",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "aparat de vidat alimente",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "aparat de gătit lent premium",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "storcător fructe profesional",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "aparat smoothie profesional",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "cafetieră premium acasă",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "canapea colțar extensibil",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "canapea premium living",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "mobilier dormitor complet",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "mobilier living modern",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "bibliotecă living premium",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "masă dining extensibilă",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "scaune dining premium",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "dressing modular mare",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "dulap haine cu uși glisante",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "mobilier birou acasă",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "scaun ergonomic premium",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "mobilier premium apartament",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "bicicletă spinning profesională",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "aparat fitness multifuncțional acasă",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "aparat forță profesional",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "aparat cardio premium",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "echipamente fitness profesionale",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "sală fitness acasă completă",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "bancă de forță reglabilă",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "aparat vâslit profesional",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "stepper fitness profesional",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "aparat fitness pentru slăbit",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "echipamente antrenament acasă",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "fitness premium acasă",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "aparate sport profesionale",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "saltea pentru dureri de spate",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "bandă alergare profesională",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "sisteme PC office",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri"
+    },
+    {
+      "keyword": "bicicletă fitness magnetică",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    }
+  ],
+  "completed": [
+    {
+      "keyword": "telefon premium android",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2026-01-19T15:41:43.481Z",
+      "modifiedDate": "2026-02-01T15:41:43.544Z"
+    },
+    {
+      "keyword": "laptop business subțire",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2025-12-18T15:47:01.848Z",
+      "modifiedDate": "2026-01-23T15:47:01.354Z"
+    },
+    {
+      "keyword": "frigider side by side",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-14T14:22:26.582Z",
+      "modifiedDate": "2026-01-22T14:22:26.974Z"
+    },
+    {
+      "keyword": "smartphone performanță mare",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2026-01-10T07:17:31.443Z",
+      "modifiedDate": "2026-01-29T07:17:31.632Z"
+    },
+    {
+      "keyword": "laptop cu autonomie mare",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2025-12-19T18:04:32.101Z",
+      "modifiedDate": "2026-01-23T18:04:32.430Z"
+    },
+    {
+      "keyword": "frigider cu dozator apă",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-13T08:48:24.075Z",
+      "modifiedDate": "2026-01-21T08:48:24.822Z"
+    },
+    {
+      "keyword": "telefon cu cameră profesională",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2026-01-16T17:33:39.468Z",
+      "modifiedDate": "2026-01-31T17:33:39.240Z"
+    },
+    {
+      "keyword": "laptop pentru editare video",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2025-12-23T08:46:38.620Z",
+      "modifiedDate": "2026-01-24T08:46:38.886Z"
+    },
+    {
+      "keyword": "mașină de spălat silențioasă",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-29T15:45:15.392Z",
+      "modifiedDate": "2026-01-26T15:45:15.417Z"
+    },
+    {
+      "keyword": "telefon business securizat",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2026-01-14T11:59:37.962Z",
+      "modifiedDate": "2026-01-31T11:59:37.088Z"
+    },
+    {
+      "keyword": "laptop pentru design grafic",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2025-12-23T19:29:07.367Z",
+      "modifiedDate": "2026-01-24T19:29:07.810Z"
+    },
+    {
+      "keyword": "mașină de spălat cu uscător",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-26T06:54:42.632Z",
+      "modifiedDate": "2026-01-25T06:54:42.189Z"
+    },
+    {
+      "keyword": "telefon cu baterie mare",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2026-01-15T14:16:08.215Z",
+      "modifiedDate": "2026-01-31T14:16:08.164Z"
+    },
+    {
+      "keyword": "laptop cu procesor i7",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2025-12-20T07:21:03.354Z",
+      "modifiedDate": "2026-01-23T07:21:03.506Z"
+    },
+    {
+      "keyword": "mașină de spălat smart",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-30T18:02:46.645Z",
+      "modifiedDate": "2026-01-26T18:02:46.493Z"
+    },
+    {
+      "keyword": "smartwatch cu eSIM",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2026-01-11T10:34:02.696Z",
+      "modifiedDate": "2026-01-30T10:34:02.708Z"
+    },
+    {
+      "keyword": "laptop cu ryzen 7",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2025-12-20T10:38:34.607Z",
+      "modifiedDate": "2026-01-23T10:38:34.582Z"
+    },
+    {
+      "keyword": "combină frigorifică mare",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-04T17:41:43.291Z",
+      "modifiedDate": "2026-01-19T17:41:43.987Z"
+    },
+    {
+      "keyword": "ceas inteligent sport premium",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2025-12-04T14:24:12.037Z",
+      "modifiedDate": "2026-01-18T14:24:12.911Z"
+    },
+    {
+      "keyword": "laptop premium din aluminiu",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2025-12-26T17:37:11.379Z",
+      "modifiedDate": "2026-01-25T17:37:11.113Z"
+    },
+    {
+      "keyword": "congelator vertical mare",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-05T06:58:14.544Z",
+      "modifiedDate": "2026-01-19T06:58:14.063Z"
+    },
+    {
+      "keyword": "smartwatch pentru sănătate",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2026-01-11T13:51:33.949Z",
+      "modifiedDate": "2026-01-30T13:51:33.784Z"
+    },
+    {
+      "keyword": "laptop pentru studenți performanță",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2025-12-25T14:20:40.126Z",
+      "modifiedDate": "2026-01-25T14:20:40.037Z"
+    },
+    {
+      "keyword": "cuptor electric incorporabil",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-07T12:32:16.050Z",
+      "modifiedDate": "2026-01-19T12:32:16.215Z"
+    },
+    {
+      "keyword": "căști bluetooth profesionale",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2025-12-01T16:16:08.025Z",
+      "modifiedDate": "2026-01-17T16:16:08.607Z"
+    },
+    {
+      "keyword": "workstation portabil",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2026-01-24T19:23:49.000Z",
+      "modifiedDate": "2026-02-03T19:23:49.000Z"
+    },
+    {
+      "keyword": "plită cu inducție premium",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2026-01-05T17:35:25.924Z",
+      "modifiedDate": "2026-01-28T17:35:25.177Z"
+    },
+    {
+      "keyword": "căști wireless pentru birou",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2025-12-03T11:07:41.784Z",
+      "modifiedDate": "2026-01-18T11:07:41.835Z"
+    },
+    {
+      "keyword": "ultrabook profesional",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2026-01-21T10:32:16.240Z",
+      "modifiedDate": "2026-02-02T10:32:16.772Z"
+    },
+    {
+      "keyword": "hotă incorporabilă puternică",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-17T12:30:30.594Z",
+      "modifiedDate": "2026-01-22T12:30:30.278Z"
+    },
+    {
+      "keyword": "căști over ear premium",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2025-12-01T19:33:39.278Z",
+      "modifiedDate": "2026-01-18T19:33:39.683Z"
+    },
+    {
+      "keyword": "monitor curb gaming",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2026-01-02T16:10:50.658Z",
+      "modifiedDate": "2026-01-27T16:10:50.797Z"
+    },
+    {
+      "keyword": "aragaz electric modern",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-11-26T12:34:02.506Z",
+      "modifiedDate": "2026-01-16T12:34:02.151Z"
+    },
+    {
+      "keyword": "gadgeturi smart premium",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2025-12-16T06:56:28.088Z",
+      "modifiedDate": "2026-01-22T06:56:28.126Z"
+    },
+    {
+      "keyword": "monitor ultra wide profesional",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2026-01-03T08:44:52.164Z",
+      "modifiedDate": "2026-01-27T08:44:52.949Z"
+    },
+    {
+      "keyword": "electrocasnice smart bucătărie",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-11T13:57:51.316Z",
+      "modifiedDate": "2026-01-20T13:57:51.594Z"
+    },
+    {
+      "keyword": "telefon rezistent apă și șocuri",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2026-01-20T18:58:14.734Z",
+      "modifiedDate": "2026-02-01T18:58:14.620Z"
+    },
+    {
+      "keyword": "monitor pentru editare foto",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2026-01-02T19:27:21.911Z",
+      "modifiedDate": "2026-01-27T19:27:21.873Z"
+    },
+    {
+      "keyword": "electrocasnice premium bucătărie",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-10T10:40:20.063Z",
+      "modifiedDate": "2026-01-20T10:40:20.518Z"
+    },
+    {
+      "keyword": "smartphone pentru fotografie",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2026-01-09T18:00:00.189Z",
+      "modifiedDate": "2026-01-29T18:00:00.556Z"
+    },
+    {
+      "keyword": "PC desktop performant",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2026-01-05T14:18:54.670Z",
+      "modifiedDate": "2026-01-28T14:18:54.101Z"
+    },
+    {
+      "keyword": "mașină de spălat economică",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-27T09:11:13.886Z",
+      "modifiedDate": "2026-01-25T09:11:13.265Z"
+    },
+    {
+      "keyword": "telefon cu încărcare rapidă",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi",
+      "date": "2026-01-17T06:50:10.721Z",
+      "modifiedDate": "2026-02-01T06:50:10.316Z"
+    },
+    {
+      "keyword": "unitate PC gaming",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri",
+      "date": "2026-01-22T13:49:47.493Z",
+      "modifiedDate": "2026-02-02T13:49:47.848Z"
+    },
+    {
+      "keyword": "electrocasnice familie mare",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-09T07:23:49.810Z",
+      "modifiedDate": "2026-01-20T07:23:49.443Z"
+    },
+    {
+      "keyword": "cuptor cu funcție abur",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari",
+      "date": "2025-12-06T09:15:45.797Z",
+      "modifiedDate": "2026-01-19T09:15:45.139Z"
+    },
+    {
+      "keyword": "espressor automat premium",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium",
+      "date": "2025-12-12T19:31:53.822Z",
+      "modifiedDate": "2026-01-21T19:31:53.746Z"
+    },
+    {
+      "keyword": "ceas smart cu GPS",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi"
+    },
+    {
+      "keyword": "saltea memory foam premium",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "bandă alergare pliabilă",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "plită electrică vitroceramică",
+      "category": "Electrocasnice Mari",
+      "categorySlug": "electrocasnice-mari"
+    },
+    {
+      "keyword": "aparat cafea cu râșniță",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "gadgeturi high tech 2026",
+      "category": "Electronice & Gadgeturi",
+      "categorySlug": "electronice-gadgeturi"
+    },
+    {
+      "keyword": "espressor cu presiune mare",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "aparat cafea boabe profesional",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "pat tapițat modern",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "aparat cafea capsule premium",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "accesorii laptop premium",
+      "category": "IT & Laptopuri",
+      "categorySlug": "it-laptopuri"
+    },
+    {
+      "keyword": "pat cu ladă depozitare",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
+    }
+  ]
+}

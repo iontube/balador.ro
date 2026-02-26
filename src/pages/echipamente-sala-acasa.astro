@@ -1,0 +1,209 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export const frontmatter = {
+  title: "Echipamente sală acasă",
+  excerpt: "Descoperă cum să-ți amenajezi acasă sala de sport perfectă. Ghid complet despre echipamente sală acasă, sfaturi și recomandări.",
+  image: "/images/articles/echipamente-sala-acasa.webp",
+  category: "Sport & Fitness",
+  categorySlug: "sport-fitness",
+  date: "2025-12-07T15:49:47.303Z",
+  author: "Alexandru Popa",
+  authorRole: "Specialist Fitness"
+};
+---
+
+<Layout
+  title="Echipamente sală acasă"
+  description="Descoperă cum să-ți amenajezi acasă sala de sport perfectă. Ghid complet despre echipamente sală acasă, sfaturi și recomandări."
+  image="/images/articles/echipamente-sala-acasa.webp"
+  type="article"
+  publishedDate="2025-12-07T15:49:47.303Z"
+  modifiedDate="2026-01-19T15:49:47.291Z"
+  category="Sport & Fitness"
+  categorySlug="sport-fitness"
+  faq={[{"question":"Ce echipamente sală acasă sunt potrivite pentru un spațiu mic?","answer":"Pentru spații mici, concentrează-te pe echipamente compacte și multifuncționale. Gantere reglabile, benzi elastice, o bară de tracțiuni pentru uși, un covoraș de exerciții și, eventual, o bicicletă statică pliabilă sunt alegeri excelente. Acestea oferă o gamă largă de exerciții fără a ocupa mult spațiu. Poți chiar să folosești greutatea corporală pentru multe antrenamente eficiente."},{"question":"Cât ar trebui să cheltui pe echipamente sală acasă?","answer":"Costul depinde foarte mult de nevoile și obiectivele tale. Pentru un set de bază, poți începe cu 500-1500 RON. Dacă vrei echipamente cardio de calitate sau un set mai complex de greutăți, bugetul poate urca la 3000-5000 RON sau chiar mai mult. Este mai bine să investești în câteva piese de calitate, durabile, decât să cumperi multe echipamente ieftine, care se pot strica rapid."},{"question":"Cum aleg greutatea potrivită pentru gantere sau benzi elastice?","answer":"Pentru gantere, alege greutăți care îți permit să execuți exercițiul cu o formă corectă pentru 8-12 repetări. Ultimele 2-3 repetări ar trebui să fie dificile, dar nu imposibile. Pentru benzi elastice, alege nivelul de rezistență astfel încât să simți o tensiune constantă pe toată durata mișcării. Este bine să ai mai multe niveluri de rezistență pentru a varia intensitatea antrenamentelor. Progresia este importantă, așa că fii pregătit să crești greutatea sau rezistența pe măsură ce devii mai puternic."}]}
+>
+  <article class="py-12">
+    <div class="container-main">
+      <div class="max-w-3xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="text-sm mb-6">
+          <ol class="flex items-center gap-2 text-neutral-500">
+            <li><a href="/" class="hover:text-primary-600">Acasa</a></li>
+            <li><span class="mx-1">/</span></li>
+            <li><a href="/sport-fitness/" class="hover:text-primary-600">Sport & Fitness</a></li>
+            <li><span class="mx-1">/</span></li>
+            <li class="text-primary-700">Echipamente sală acasă</li>
+          </ol>
+        </nav>
+
+        <!-- Header -->
+        <header class="mb-8">
+          <span class="category-badge mb-4">Sport & Fitness</span>
+          <h1 class="text-3xl md:text-4xl font-bold text-primary-900 mt-4 mb-4">Echipamente sală acasă</h1>
+          <p class="text-lg text-neutral-600">Descoperă cum să-ți amenajezi acasă sala de sport perfectă. Ghid complet despre echipamente sală acasă, sfaturi și recomandări.</p>
+          <div class="flex items-center gap-4 mt-4 text-sm text-neutral-500">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold text-xs">
+                AP
+              </div>
+              <div>
+                <span class="font-medium text-primary-700">Alexandru Popa</span>
+                <span class="text-neutral-400 mx-1">·</span>
+                <span>Specialist Fitness</span>
+              </div>
+            </div>
+            <time datetime="2026-01-19T09:19:06.779Z">
+              19 ianuarie 2026
+            </time>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-image mb-8">
+          <img src="/images/articles/echipamente-sala-acasa.webp" alt="Echipamente sală acasă" width="800" height="600" loading="eager" />
+        </div>
+
+        <!-- Table of Contents -->
+        <Fragment set:html={`<nav class="toc mb-8">
+  <div class="toc-title">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+    Cuprins
+  </div>
+  <ul class="toc-list">
+    <li><a href="#echipamente-esentiale-pentru-o-sala-de-sport-acasa">Echipamente Esențiale pentru o Sală de Sport Acasă</a></li>
+    <li><a href="#alegerea-echipamentelor-cardio-pentru-acasa">Alegerea Echipamentelor Cardio pentru Acasă</a></li>
+    <li><a href="#echipamente-pentru-antrenamentul-de-forta-acasa">Echipamente pentru Antrenamentul de Forță Acasă</a></li>
+    <li><a href="#accesorii-esentiale-pentru-antrenamentul-acasa">Accesorii Esențiale pentru Antrenamentul Acasă</a></li>
+    <li><a href="#amenajarea-spatiului-pentru-sala-de-sport-acasa">Amenajarea Spațiului pentru Sala de Sport Acasă</a></li>
+    <li><a href="#buget-si-mentenanta-echipamente-sala-acasa">Buget și Mentenanță Echipamente Sală Acasă</a></li>
+    <li><a href="#faq">Intrebari Frecvente</a></li>
+  </ul>
+</nav>`} />
+
+        <!-- Article Content -->
+        <div class="prose-article">
+          <Fragment set:html={`
+<h2 id="echipamente-esentiale-pentru-o-sala-de-sport-acasa">Echipamente Esențiale pentru o Sală de Sport Acasă</h2>
+<div><p>Visul de a avea propria sală de sport acasă devine tot mai accesibil, iar alegerea corectă a echipamentelor este primul pas spre transformarea acestui vis în realitate. Indiferent dacă spațiul tău este generos sau mai restrâns, există soluții pentru fiecare buget și nivel de experiență. Un aspect crucial de luat în considerare este scopul principal al antrenamentelor tale.</p>
+        <p>Vrei să te concentrezi pe cardio, forță, flexibilitate sau o combinație a acestora? Răspunsul la această întrebare te va ghida în selectarea celor mai potrivite echipamente sală acasă. </p>
+
+<p>Pentru un începător, este recomandat să începi cu elemente de bază, care oferă versatilitate și pot fi integrate ușor în diverse rutine. Gantere reglabile sunt o investiție excelentă, permițându-ți să ajustezi greutatea pe măsură ce progresezi. Un set de benzi elastice (resistance bands) este, de asemenea, extrem de util.</p>
+        <p>Acestea ocupă puțin spațiu, sunt portabile și oferă o rezistență variată, fiind perfecte pentru exerciții de forță, mobilitate și recuperare. Un covoraș de exerciții de bună calitate este un must-have, oferind confort și aderență pentru exercițiile la sol, cum ar fi abdomenele, flotările sau exercițiile de yoga.</p>
+
+<p>Dacă spațiul permite și bugetul este mai flexibil, poți adăuga treptat echipamente mai complexe. O bancă de exerciții reglabilă este un element cheie pentru antrenamentele cu greutăți, permițând o gamă largă de mișcări, de la împins la piept la exerciții pentru spate și abdomen. Pentru cei pasionați de antrenamente cardio, o bicicletă statică, o bandă de alergare sau o bicicletă eliptică pot fi opțiuni fantastice.</p>
+        <p>Acestea te ajută să arzi calorii, să îmbunătățești rezistența cardiovasculară și să te menții în formă, totul din confortul propriei locuințe. Alegerea acestor echipamente sală acasă trebuie să se alinieze cu obiectivele tale pe termen lung și cu spațiul disponibil, asigurându-te că creezi un mediu propice pentru mișcare și progres.</p></div>
+
+<h2 id="alegerea-echipamentelor-cardio-pentru-acasa">Alegerea Echipamentelor Cardio pentru Acasă</h2>
+<div><p>Antrenamentele cardio sunt fundamentale pentru sănătatea inimii, rezistență și managementul greutății. Atunci când îți amenajezi o sală de sport acasă, alegerea echipamentelor cardio potrivite poate face diferența între a te bucura de mișcare și a o percepe ca pe o corvoadă. Piața oferă o varietate impresionantă de aparate, fiecare cu avantajele sale specifice. </p>
+
+<p>Banda de alergare este, probabil, cel mai popular aparat cardio. Permite simularea alergării sau mersului, oferind control asupra vitezei și înclinației. Modelele variază de la cele compacte, potrivite pentru apartamente, la cele robuste, profesionale.</p>
+        <p>Prețurile pot începe de la aproximativ 1500 RON pentru modele de bază și pot ajunge la peste 10.000 RON pentru aparate cu funcții avansate, ecrane interactive și motoare puternice. Un avantaj major este posibilitatea de a te antrena indiferent de condițiile meteo.</p>
+
+<p>Bicicleta statică este o altă opțiune excelentă, mai ales pentru persoanele cu probleme articulare, deoarece oferă un impact redus asupra genunchilor și gleznelor. Există mai multe tipuri: drepte (upright), culcate (recumbent) și spinning. Bicicletele de spinning sunt ideale pentru antrenamente intense, similare cu cele din clasele de cycling.</p>
+        <p>Prețurile pentru o bicicletă statică bună încep de la aproximativ 800 RON și pot depăși 5000 RON. Sunt relativ silențioase și ocupă mai puțin spațiu decât o bandă de alergare.</p>
+
+<p>Eliptica (bicicleta eliptică) combină mișcările de alergare, mers și urcat scări, oferind un antrenament complet al corpului, cu un impact minim. Este eficientă pentru arderea caloriilor și îmbunătățirea sistemului cardiovascular. Prețurile încep de la aproximativ 1200 RON și pot ajunge la peste 7000 RON. Modelele mai scumpe oferă o mișcare mai fluidă și o gamă mai largă de programe de antrenament.</p>
+
+<p>Alte opțiuni includ aparatul de vâslit (rower), care lucrează o gamă largă de grupe musculare, și stepper-ul, o soluție compactă pentru antrenamente rapide. Alegerea între aceste echipamente sală acasă depinde de preferințele personale, de obiectivele de fitness și de spațiul disponibil. Este esențial să testezi, dacă este posibil, diverse aparate pentru a vedea care se potrivește cel mai bine stilului tău de antrenament.</p></div>
+
+<h2 id="echipamente-pentru-antrenamentul-de-forta-acasa">Echipamente pentru Antrenamentul de Forță Acasă</h2>
+<div><p>Construirea masei musculare, creșterea forței și tonifierea corpului sunt obiective realizabile cu ajutorul antrenamentelor de forță. Echipamentele potrivite pentru acasă pot transforma un colț al camerei într-o zonă dedicată dezvoltării fizice. Investiția în echipamente de forță necesită o atenție sporită la calitate, siguranță și versatilitate.</p>
+
+<p>Gantere și haltere sunt elemente fundamentale în orice sală de sport, fie ea comercială sau acasă. Pentru a economisi spațiu și bani, ganterele reglabile sunt o alegere inteligentă. Un set poate acoperi o gamă largă de greutăți, de la 2 kg la 30 kg sau chiar mai mult, fiind perfecte pentru progresie.</p>
+        <p>Prețurile pentru un set de gantere reglabile pot varia între 500 RON și 3000 RON, în funcție de mecanismul de ajustare și de greutatea maximă. Halterele, cu discuri interschimbabile, oferă o flexibilitate similară, fiind ideale pentru exerciții precum genuflexiuni, îndreptări sau ramat.</p>
+
+<p>Banca de exerciții este un companion esențial pentru lucrul cu greutăți. O bancă reglabilă (inclinată, plană, declinată) permite executarea unei varietăți impresionante de exerciții pentru piept, umeri, spate și abdomen. Modelele simple, plate, pot costa de la 300 RON, în timp ce băncile multifuncționale, reglabile, pot ajunge la 1500-3000 RON. Acestea sunt, de fapt, piese centrale în multe configurații de echipamente sală acasă.</p>
+
+<p>Pentru cei care doresc să lucreze spatele și bicepsul în mod specific, o bară de tracțiuni pentru uși este o soluție accesibilă și eficientă. Se montează rapid, nu necesită găurire (în majoritatea cazurilor) și permite o varietate de prize. Prețurile sunt, în general, sub 200 RON.</p>
+
+<p>Stâlpii de tracțiuni (power towers) sunt o investiție mai mare, dar oferă o platformă multifuncțională pentru tracțiuni, flotări, exerciții pentru abdomen și chiar dip-uri. Ocupă mai mult spațiu, dar sunt extrem de eficienți pentru un antrenament complet al corpului. Prețurile pot începe de la 800 RON și pot depăși 3000 RON.</p>
+
+<p>Sistemele de greutăți reglabile (weight stacks) sau kettlebell-urile complete sunt, de asemenea, opțiuni de luat în considerare. Kettlebell-urile sunt extrem de versatile, permițând o gamă largă de mișcări balistice și de forță. Un set de bază de kettlebell-uri poate fi achiziționat cu prețuri începând de la 50 RON pe bucată, în funcție de greutate.</p>
+
+<p>Asigură-te că alegi echipamente sală acasă care se potrivesc nivelului tău de forță și obiectivelor. Nu uita de siguranță: investește în echipamente stabile și evită supraîncărcarea.</p></div>
+
+<h2 id="accesorii-esentiale-pentru-antrenamentul-acasa">Accesorii Esențiale pentru Antrenamentul Acasă</h2>
+<div><p>Dincolo de aparatele principale, o serie de accesorii pot îmbunătăți semnificativ calitatea și eficiența antrenamentelor tale acasă. Acestea nu doar că adaugă varietate, dar pot contribui și la prevenirea accidentărilor și la o recuperare mai rapidă.</p>
+
+<p>Covorașul de exerciții este, probabil, cel mai elementar accesoriu. Un covoraș de calitate oferă amortizare, aderență și confort pentru exercițiile la sol, yoga sau stretching. Caută unul cu o grosime potrivită (între 5-10 mm este ideal pentru majoritatea aplicațiilor) și un material durabil. Prețurile variază între 50 RON și 300 RON.</p>
+
+<p>Benzi elastice (resistance bands) sunt incredibil de versatile. Există seturi cu diferite niveluri de rezistență, de la cele ușoare, potrivite pentru reabilitare și încălzire, la cele foarte rezistente, pentru antrenamente de forță. Sunt portabile, ieftine (un set bun costă între 50-200 RON) și pot fi folosite pentru o multitudine de exerciții, de la exerciții pentru fesieri și coapse la antrenarea umerilor și a spatelui. Sunt un plus valoros pentru orice colecție de echipamente sală acasă.</p>
+
+<p>Roata pentru abdomen (ab wheel) este un instrument simplu, dar extrem de eficient pentru întărirea musculaturii core. Necesită forță și control, dar beneficiile pentru abdomen și spate sunt considerabile. Prețurile sunt, de obicei, între 50 RON și 150 RON.</p>
+
+<p>Frânghia de sărit (coarda de sărit) este un excelent instrument cardio, accesibil și portabil. O sesiune de 10-15 minute poate fi echivalentă cu un antrenament cardio mai lung. Există corzi simple, pentru începători, și corzi de viteză, cu rulmenți, pentru antrenamente mai intense. Prețurile sunt, în general, între 30 RON și 150 RON.</p>
+
+<p>Role de masaj (foam rollers) și mingi de masaj sunt esențiale pentru recuperarea musculară, eliberarea tensiunii și îmbunătățirea flexibilității. Un foam roller de calitate poate costa între 80 RON și 300 RON. Acestea sunt instrumente de bază pentru oricine dorește să-și optimizeze performanța și să prevină accidentările, completând perfect setul de echipamente sală acasă.</p>
+
+<p>În plus, mănușile de fitness pot oferi o aderență mai bună și protecție pentru mâini, iar curelele pentru ridicări (lifting straps) pot fi utile pentru exercițiile cu greutăți mari. Nu uita de o sticlă de apă de calitate și un prosop pentru a te menține hidratat și confortabil.</p></div>
+
+<h2 id="amenajarea-spatiului-pentru-sala-de-sport-acasa">Amenajarea Spațiului pentru Sala de Sport Acasă</h2>
+<div><p>Crearea unei săli de sport acasă nu înseamnă doar achiziționarea de echipamente, ci și amenajarea inteligentă a spațiului pentru a maximiza funcționalitatea, siguranța și plăcerea de a te antrena. Fie că dispui de o cameră dedicată, un colț în living sau chiar un garaj, planificarea atentă este cheia.</p>
+
+<p>Primul pas este evaluarea spațiului disponibil. Măsoară cu precizie zona pe care o vei dedica antrenamentelor. Ia în considerare nu doar suprafața pe care vor sta echipamentele, ci și spațiul necesar pentru mișcare liberă în jurul lor. De exemplu, pentru o bandă de alergare, vei avea nevoie de spațiu în fața și în spatele aparatului, pe lângă lățimea sa.</p>
+
+<p>Podeaua este un element crucial. Dacă vei folosi greutăți, este esențial să protejezi podeaua existentă. Plăcile de cauciuc special concepute pentru săli de sport sunt o investiție excelentă. Acestea absorb șocurile, reduc zgomotul și protejează împotriva deteriorării. O alternativă mai accesibilă, dar mai puțin durabilă, poate fi utilizarea unor covorașe groase de puzzle din spumă. Pentru echipamentele mai ușoare, un covoraș de exerciții rezistent poate fi suficient.</p>
+
+<p>Iluminatul joacă un rol important în crearea unei atmosfere motivante. Lumina naturală este ideală, dar dacă nu este suficientă, investește în corpuri de iluminat puternice și, eventual, reglabile. Poți adăuga și oglinzi mari pe pereți. Acestea nu doar că măresc vizual spațiul, dar te ajută și să-ți verifici forma în timpul exercițiilor, contribuind la siguranță și eficiență. Oglinzile sunt un element clasic în orice sală de sport, fie ea comercială sau acasă.</p>
+
+<p>Ventilația este, de asemenea, esențială, mai ales în timpul antrenamentelor intense. Asigură-te că spațiul este bine aerisit. Dacă nu ai o fereastră sau o ventilație naturală bună, un ventilator portabil sau un sistem de climatizare pot face o mare diferență. Un aer curat și proaspăt contribuie la o experiență de antrenament mult mai plăcută.</p>
+
+<p>Organizarea este un alt aspect cheie. Folosește rafturi, suporturi pentru gantere, cutii de depozitare sau chiar dulapuri pentru a păstra echipamentele, accesoriile și prosoapele ordonate. Un spațiu curat și organizat te va motiva să te antrenezi mai des și va face ca utilizarea echipamentelor sală acasă să fie mult mai eficientă. Poți integra și elemente de decor care să te inspire, cum ar fi postere motivaționale sau plante.</p>
+
+<p>Nu uita de sistemul audio. Muzica potrivită poate transforma complet o sesiune de antrenament. O boxă portabilă de bună calitate sau un sistem audio integrat pot fi adiții valoroase. Planificarea atentă a acestor detalii va transforma un spațiu oarecare într-o sală de sport personalizată, funcțională și motivantă, unde vei dori să petreci timp.</p></div>
+
+<h2 id="buget-si-mentenanta-echipamente-sala-acasa">Buget și Mentenanță Echipamente Sală Acasă</h2>
+<div><p>Achiziționarea de echipamente sală acasă este o investiție în sănătatea ta pe termen lung, dar este important să abordezi acest proces cu o strategie clară, atât în ceea ce privește bugetul, cât și mentenanța ulterioară. Determinarea unui buget realist te va ajuta să prioritizezi achizițiile și să eviți cheltuieli impulsive.</p>
+
+<p>Bugetul poate varia enorm, de la câteva sute de lei pentru accesorii de bază și greutăți mici, la mii sau chiar zeci de mii de lei pentru aparate cardio de ultimă generație sau seturi complete de forță. Pentru un începător, un buget de 1000-3000 RON poate fi suficient pentru a achiziționa gantere reglabile, benzi elastice, un covoraș de exerciții și, eventual, o bară de tracțiuni. Pe măsură ce progresezi și îți clarifici obiectivele, poți reinvesti treptat în echipamente mai specializate, cum ar fi o bancă de exerciții sau o bicicletă statică.</p>
+
+<p>Când vine vorba de prețuri, este important să faci cercetări. Compară ofertele de la diferiți retaileri, atât online, cât și offline. Uită-te după reduceri, oferte speciale sau pachete promoționale. Uneori, achiziționarea mai multor articole de la același furnizor poate aduce economii. Nu uita să iei în calcul și costurile de transport, mai ales pentru echipamentele voluminoase.</p>
+
+<p>Pe termen lung, mentenanța echipamentelor este crucială pentru a asigura funcționalitatea, siguranța și durabilitatea lor. Acest lucru este valabil pentru orice tip de echipamente sală acasă, de la cele mai simple la cele mai complexe.</p>
+
+<p>*   **Curățare:** Curăță regulat echipamentele după fiecare utilizare, mai ales în zonele unde transpiri. Folosește șervețele dezinfectante sau o soluție blândă de apă cu săpun și o cârpă moale. Evită substanțele chimice abrazive care pot deteriora suprafețele.</p>
+<p>*   **Verificarea șuruburilor și a conexiunilor:** Aparatele, în special cele cu piese mobile, necesită verificări periodice ale șuruburilor și a altor elemente de fixare. Strânge-le dacă este necesar pentru a preveni jocul sau instabilitatea.</p>
+<p>*   **Lubrifiere:** Echipamentele cu părți mobile, cum ar fi benzile de alergare sau bicicletele eliptice, pot necesita lubrifiere periodică a anumitor componente, conform instrucțiunilor producătorului. Acest lucru asigură o funcționare fluidă și previne uzura prematură.</p>
+<p>*   **Verificarea cablurilor și a curelelor:** La aparatele care folosesc cabluri sau curele (cum ar fi aparatele cu greutăți reglabile), inspectează-le periodic pentru semne de uzură, fisuri sau deteriorări. Înlocuiește-le la timp pentru a evita accidentele.</p>
+<p>*   **Actualizări software (pentru aparate smart):** Dacă ai echipamente cu ecrane interactive sau conectivitate, asigură-te că sistemul de operare este actualizat pentru a beneficia de cele mai noi funcționalități și de o performanță optimă.</p>
+
+<p>Respectarea acestor recomandări de mentenanță va prelungi durata de viață a echipamentelor tale sală acasă și te va ajuta să te bucuri de ele pentru mulți ani, fără probleme majore. Consultă întotdeauna manualul de utilizare al fiecărui echipament pentru instrucțiuni specifice de mentenanță.</p></div>
+`} />
+          <Fragment set:html={`
+<section id="faq" class="mt-12">
+  <h2>Intrebari Frecvente</h2>
+  <div class="space-y-4 mt-6">
+    <div class="faq-item">
+      <div class="faq-question">Ce echipamente sală acasă sunt potrivite pentru un spațiu mic?</div>
+      <div class="faq-answer">Pentru spații mici, concentrează-te pe echipamente compacte și multifuncționale. Gantere reglabile, benzi elastice, o bară de tracțiuni pentru uși, un covoraș de exerciții și, eventual, o bicicletă statică pliabilă sunt alegeri excelente. Acestea oferă o gamă largă de exerciții fără a ocupa mult spațiu. Poți chiar să folosești greutatea corporală pentru multe antrenamente eficiente.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Cât ar trebui să cheltui pe echipamente sală acasă?</div>
+      <div class="faq-answer">Costul depinde foarte mult de nevoile și obiectivele tale. Pentru un set de bază, poți începe cu 500-1500 RON. Dacă vrei echipamente cardio de calitate sau un set mai complex de greutăți, bugetul poate urca la 3000-5000 RON sau chiar mai mult. Este mai bine să investești în câteva piese de calitate, durabile, decât să cumperi multe echipamente ieftine, care se pot strica rapid.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Cum aleg greutatea potrivită pentru gantere sau benzi elastice?</div>
+      <div class="faq-answer">Pentru gantere, alege greutăți care îți permit să execuți exercițiul cu o formă corectă pentru 8-12 repetări. Ultimele 2-3 repetări ar trebui să fie dificile, dar nu imposibile. Pentru benzi elastice, alege nivelul de rezistență astfel încât să simți o tensiune constantă pe toată durata mișcării. Este bine să ai mai multe niveluri de rezistență pentru a varia intensitatea antrenamentelor. Progresia este importantă, așa că fii pregătit să crești greutatea sau rezistența pe măsură ce devii mai puternic.</div>
+    </div>
+  </div>
+</section>`} />
+        </div>
+
+        <!-- Author Box -->
+        <div class="mt-12 p-6 bg-primary-50 rounded-xl border border-primary-100">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+              AP
+            </div>
+            <div>
+              <div class="font-semibold text-primary-900">Alexandru Popa</div>
+              <div class="text-sm text-neutral-600">Specialist Fitness</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

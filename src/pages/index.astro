@@ -1,0 +1,363 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+// Get all article pages
+const allPages = await Astro.glob('./*.astro');
+
+// Filter only article pages (exclude system pages)
+const systemPages = ['index', 'contact', 'politica-de-confidentialitate', 'termeni-si-conditii', 'politica-cookies', '[category]'];
+const articles = allPages
+  .filter(page => {
+    const filename = page.file.split('/').pop()?.replace('.astro', '') || '';
+    return !systemPages.includes(filename) && page.frontmatter?.title;
+  })
+  .map(page => ({
+    title: page.frontmatter.title,
+    slug: page.file.split('/').pop()?.replace('.astro', '') || '',
+    excerpt: page.frontmatter.excerpt || '',
+    image: page.frontmatter.image || '/images/default.webp',
+    category: page.frontmatter.category || 'General',
+    categorySlug: page.frontmatter.categorySlug || 'general',
+    date: page.frontmatter.date || new Date().toISOString()
+  }))
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const categories = [
+  { name: 'Electronice & Gadgeturi', slug: 'electronice-gadgeturi', icon: '📱', description: 'Telefoane, tablete, smartwatch-uri si casti premium' },
+  { name: 'IT & Laptopuri', slug: 'it-laptopuri', icon: '💻', description: 'Laptopuri, monitoare si componente PC' },
+  { name: 'Electrocasnice Mari', slug: 'electrocasnice-mari', icon: '🏠', description: 'Frigidere, masini de spalat si uscatoare' },
+  { name: 'Electrocasnice Mici Premium', slug: 'electrocasnice-mici-premium', icon: '☕', description: 'Espressoare, friteuze si blendere' },
+  { name: 'Mobila & Home Living', slug: 'mobila-home-living', icon: '🛋️', description: 'Canapele, saltele si birouri ergonomice' },
+  { name: 'Sport & Fitness', slug: 'sport-fitness', icon: '🏋️', description: 'Echipamente fitness pentru acasa' }
+];
+
+const recentArticles = articles.slice(0, 12);
+---
+
+<Layout
+  title="Recenzii si Comparatii Produse Premium"
+  description="Balador.ro - Recenzii detaliate, comparatii si ghiduri de cumparaturi pentru cele mai bune produse premium din Romania. Alegeri informate pentru cumparaturi inteligente."
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container-main">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Recenzii <span class="gold">Premium</span> pentru Alegeri Informate
+        </h1>
+        <p class="hero-description">
+          Descopera cele mai bune produse din Romania cu recenzii detaliate, comparatii oneste si ghiduri complete de cumparaturi.
+        </p>
+        <div class="hero-buttons">
+          <a href="#categorii" class="btn btn-accent">
+            Exploreaza Categoriile
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <a href="#articole" class="btn btn-outline-light">
+            Articole Recente
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section id="categorii" class="section-categories">
+    <div class="container-main">
+      <div class="section-header">
+        <h2 class="section-title">Categorii de Produse</h2>
+        <p class="section-description">Alege categoria care te intereseaza si descopera recenzii detaliate pentru cele mai bune produse.</p>
+      </div>
+
+      <div class="grid-categories">
+        {categories.map(cat => (
+          <a href={`/${cat.slug}/`} class="category-card">
+            <span class="category-card-icon">{cat.icon}</span>
+            <h3 class="category-card-title">{cat.name}</h3>
+            <p class="category-card-desc">{cat.description}</p>
+            <span class="category-card-link">
+              Vezi produse
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Articles Section -->
+  {recentArticles.length > 0 && (
+    <section id="articole" class="section-articles">
+      <div class="container-main">
+        <div class="section-header">
+          <h2 class="section-title">Articole Recente</h2>
+          <p class="section-description">Cele mai noi recenzii si ghiduri de cumparaturi</p>
+        </div>
+
+        <div class="grid-articles">
+          {recentArticles.map(article => (
+            <ArticleCard {...article} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA Section -->
+  <section class="section-cta">
+    <div class="container-main">
+      <div class="cta-content">
+        <h2 class="cta-title">Gaseste Produsul Perfect</h2>
+        <p class="cta-description">
+          Comparam specificatii, preturi si pareri pentru a te ajuta sa faci alegerea corecta.
+        </p>
+        <a href="#categorii" class="btn btn-accent">
+          Incepe Explorarea
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-950) 50%, var(--color-slate-900) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 48px 0;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      padding: 64px 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      padding: 80px 0;
+    }
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(51, 102, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 720px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+  }
+
+  @media (min-width: 640px) {
+    .hero-title {
+      font-size: 36px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: 44px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-title {
+      font-size: 52px;
+    }
+  }
+
+  .hero-title .gold {
+    color: var(--color-accent-400);
+  }
+
+  .hero-description {
+    font-size: 16px;
+    color: var(--color-primary-200);
+    line-height: 1.7;
+    margin: 0 0 28px 0;
+  }
+
+  @media (min-width: 768px) {
+    .hero-description {
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (min-width: 640px) {
+    .hero-buttons {
+      gap: 16px;
+    }
+  }
+
+  .btn-outline-light {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 22px;
+  }
+
+  .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Categories Section */
+  .section-categories {
+    padding: 48px 0;
+    background: var(--color-slate-50);
+  }
+
+  @media (min-width: 768px) {
+    .section-categories {
+      padding: 64px 0;
+    }
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: 768px) {
+    .section-header {
+      margin-bottom: 48px;
+    }
+  }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-slate-900);
+    margin: 0 0 12px 0;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+  }
+
+  .section-description {
+    font-size: 15px;
+    color: var(--color-slate-600);
+    margin: 0;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 768px) {
+    .section-description {
+      font-size: 16px;
+    }
+  }
+
+  /* Category Card Link */
+  .category-card-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary-600);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all 0.25s;
+  }
+
+  .category-card:hover .category-card-link {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Articles Section */
+  .section-articles {
+    padding: 48px 0;
+    background: white;
+  }
+
+  @media (min-width: 768px) {
+    .section-articles {
+      padding: 64px 0;
+    }
+  }
+
+  /* Articles section header - centered like categories */
+  .section-articles .section-header {
+    text-align: center;
+  }
+
+  /* CTA Section */
+  .section-cta {
+    padding: 48px 0;
+    background: linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-950) 100%);
+  }
+
+  @media (min-width: 768px) {
+    .section-cta {
+      padding: 64px 0;
+    }
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 16px 0;
+  }
+
+  @media (min-width: 768px) {
+    .cta-title {
+      font-size: 32px;
+    }
+  }
+
+  .cta-description {
+    font-size: 15px;
+    color: var(--color-primary-200);
+    margin: 0 0 24px 0;
+    line-height: 1.7;
+  }
+
+  @media (min-width: 768px) {
+    .cta-description {
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+  }
+</style>
