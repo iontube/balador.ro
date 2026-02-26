@@ -221,6 +221,19 @@ async function generateImage(titleRO, slug, categorySlug) {
 
   console.log(`  Generating image for: ${titleRO}`);
 
+  const MAX_IMAGE_RETRIES = 3;
+
+  for (let attempt = 1; attempt <= MAX_IMAGE_RETRIES; attempt++) {
+
+    if (attempt > 1) {
+
+      console.log(`  Image retry attempt ${attempt}/${MAX_IMAGE_RETRIES}...`);
+
+      await new Promise(r => setTimeout(r, 3000 * attempt));
+
+    }
+
+
   try {
     const titleEn = await translateToEnglish(titleRO);
     console.log(`  Translated title: ${titleEn}`);
@@ -248,13 +261,13 @@ async function generateImage(titleRO, slug, categorySlug) {
     if (!response.ok) {
       const errorText = await response.text();
       console.error(`  Image API error: ${response.status} - ${errorText.slice(0, 200)}`);
-      return null;
+      continue;
     }
 
     const data = await response.json();
     if (!data.result?.image) {
       console.error('  No image in response');
-      return null;
+      continue;
     }
 
     const imageBuffer = Buffer.from(data.result.image, 'base64');
@@ -271,8 +284,15 @@ async function generateImage(titleRO, slug, categorySlug) {
     return `/images/articles/${slug}.webp`;
   } catch (error) {
     console.error(`  Image generation error: ${error.message}`);
-    return null;
+    continue;
   }
+
+
+  }
+
+  console.error('  Image generation failed after all retries');
+
+  return null;
 }
 
 async function generateArticleContent(keyword, category) {
