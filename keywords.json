@@ -1,11 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "robot de bucătărie inteligent",
-      "category": "Electrocasnice Mici Premium",
-      "categorySlug": "electrocasnice-mici-premium"
-    },
-    {
       "keyword": "robot multifuncțional profesional",
       "category": "Electrocasnice Mici Premium",
       "categorySlug": "electrocasnice-mici-premium"
@@ -595,6 +590,11 @@
       "keyword": "bicicletă spinning profesională",
       "category": "Sport & Fitness",
       "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "robot de bucătărie inteligent",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
     }
   ]
 }
