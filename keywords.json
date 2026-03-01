@@ -1,11 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "robot multifuncțional profesional",
-      "category": "Electrocasnice Mici Premium",
-      "categorySlug": "electrocasnice-mici-premium"
-    },
-    {
       "keyword": "mixer profesional bucătărie",
       "category": "Electrocasnice Mici Premium",
       "categorySlug": "electrocasnice-mici-premium"
@@ -595,6 +590,11 @@
       "keyword": "sisteme PC office",
       "category": "IT & Laptopuri",
       "categorySlug": "it-laptopuri"
+    },
+    {
+      "keyword": "robot multifuncțional profesional",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
     }
   ]
 }
