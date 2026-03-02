@@ -51,11 +51,6 @@
       "categorySlug": "electrocasnice-mici-premium"
     },
     {
-      "keyword": "canapea colțar extensibil",
-      "category": "Mobilă & Home Living",
-      "categorySlug": "mobila-home-living"
-    },
-    {
       "keyword": "canapea premium living",
       "category": "Mobilă & Home Living",
       "categorySlug": "mobila-home-living"
@@ -595,6 +590,11 @@
       "keyword": "robot multifuncțional profesional",
       "category": "Electrocasnice Mici Premium",
       "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "canapea colțar extensibil",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
     }
   ]
 }
