@@ -248,6 +248,43 @@ async function rephraseWithoutBrands(text) {
   return stripBrands(text);
 }
 
+async function generateSafePrompt(text, categorySlug) {
+  const categoryFallbacks = {
+    'electrocasnice-mici-premium': 'small kitchen appliances on a clean countertop, modern minimalist kitchen setting',
+    'mobila-home-living': 'modern furniture arrangement in a bright living room, clean contemporary interior design',
+    'sport-fitness': 'fitness equipment and accessories on a gym floor, bright modern workout space',
+    'it-laptopuri': 'laptop computer on a clean modern desk, professional workspace with soft lighting',
+    'electronice-gadgeturi': 'electronic devices and gadgets on a modern desk, minimalist tech setup',
+    'electrocasnice-mari': 'large kitchen appliances in a modern kitchen interior, clean contemporary home setting',
+  };
+
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const apiKey = getNextGeminiKey();
+    const url = `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash-lite:generateContent?key=${apiKey}`;
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: `Create a short, safe English image prompt for a stock photo related to this topic. The prompt must describe ONLY objects, scenery, and atmosphere. NEVER mention people, children, babies, faces, hands, or any human body parts. NEVER use brand names. Focus on products, objects, books, devices, furniture, or abstract scenes. Return ONLY the description.\n\nTopic: "${text}"` }] }],
+          generationConfig: { temperature: 0.4, maxOutputTokens: 100 }
+        })
+      });
+      const data = await response.json();
+      if (data.candidates?.[0]?.content?.parts?.[0]?.text) {
+        const result = data.candidates[0].content.parts[0].text.trim();
+        console.log(`  Safe prompt generated: ${result}`);
+        return result;
+      }
+    } catch (error) {
+      console.error(`  Safe prompt attempt ${attempt + 1} error: ${error.message}`);
+    }
+    if (attempt < 2) await new Promise(r => setTimeout(r, 2000));
+  }
+  // Fallback to hardcoded category description
+  return categoryFallbacks[categorySlug] || 'everyday objects on a clean surface, soft natural lighting, minimalist background';
+}
+
 async function generateImage(titleRO, slug, categorySlug) {
   const categoryPrompts = {
     'electrocasnice-mici-premium': 'on a clean kitchen countertop, modern kitchen interior, soft natural lighting',
@@ -260,7 +297,7 @@ async function generateImage(titleRO, slug, categorySlug) {
 
   console.log(`  Generating image for: ${titleRO}`);
 
-  const MAX_IMAGE_RETRIES = 3;
+  const MAX_IMAGE_RETRIES = 4;
   let promptFlagged = false;
 
   for (let attempt = 1; attempt <= MAX_IMAGE_RETRIES; attempt++) {
@@ -278,9 +315,15 @@ async function generateImage(titleRO, slug, categorySlug) {
     const titleEn = await translateToEnglish(titleRO);
     console.log(`  Translated title: ${titleEn}`);
 
-    const setting = categoryPrompts[categorySlug] || 'in a modern home setting, soft natural lighting, clean contemporary background';
-    const subject = promptFlagged ? await rephraseWithoutBrands(titleEn) : titleEn;
-    const prompt = `Realistic photograph of ${subject} ${setting}, no text, no brand name, no writing, no words, no letters, no numbers. Photorealistic, high quality, professional product photography.`;
+    let prompt;
+    if (attempt >= 3) {
+      const safeSubject = await generateSafePrompt(titleEn, categorySlug);
+      prompt = `Realistic photograph of ${safeSubject}, no text, no writing, no words, no letters, no numbers. Photorealistic, high quality, professional photography.`;
+    } else {
+      const setting = categoryPrompts[categorySlug] || 'in a modern home setting, soft natural lighting, clean contemporary background';
+      const subject = promptFlagged ? await rephraseWithoutBrands(titleEn) : titleEn;
+      prompt = `Realistic photograph of ${subject} ${setting}, no text, no brand name, no writing, no words, no letters, no numbers. Photorealistic, high quality, professional product photography.`;
+    }
 
     const formData = new FormData();
     formData.append('prompt', prompt);
