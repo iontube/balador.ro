@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Robot de bucătărie inteligent",
@@ -11,6 +13,17 @@ export const frontmatter = {
   author: "Mihai Popescu",
   authorRole: "Expert Tehnologie"
 };
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -86,14 +99,14 @@ export const frontmatter = {
         <div class="prose-article">
           <Fragment set:html={`
 <h2 id="cel-mai-tare-robot-de-bucatarie-inteligent-parerea-mea-directa">Cel mai tare robot de bucatarie inteligent: Parerea mea directa</h2>
-<p>Bun, hai sa fim directi. Daca ma intrebi pe mine ce <strong>robot de bucatarie inteligent</strong> merita investitia in 2024, raspunsul meu e clar: Thermomix TM6. Da, stiu, pretul sare de 6000 de lei, si nu-i putin.</p>
+<p>Bun, hai sa fim directi. Daca ma intrebi pe mine ce <strong>robot de bucatarie <a href="/ceas-inteligent-sport-premium/" class="interlink">inteligent</a></strong> merita investitia in 2024, raspunsul meu e clar: Thermomix TM6. Da, stiu, pretul sare de 6000 de lei, si nu-i putin.</p>
         <p>Dar gandeste-te la ce face. Nu e doar un robot, e un ajutor de nadejde in bucatarie. Poti gati, toca, amesteca, macina, fierbe la abur, emulsiona, chiar si gati sub vid.</p>
-        <p>Totul controlat printr-un ecran tactil mare, intuitiv, cu acces la o biblioteca uriasa de retete ghidate. Practic, ii zici ce vrei sa gatesti si el te ia pas cu pas, setand si timpii, si temperaturile, si vitezele. Am testat personal TM6 timp de vreo luna si jumatate, si sincer, mi-a schimbat modul in care gatesc.</p>
+        <p>Totul controlat printr-un ecran tactil mare, intuitiv, cu acces la o <a href="/biblioteca-living-premium/" class="interlink">biblioteca</a> uriasa de retete ghidate. Practic, ii zici ce vrei sa gatesti si el te ia pas cu pas, setand si timpii, si temperaturile, si vitezele. Am testat personal TM6 timp de vreo luna si jumatate, si sincer, mi-a schimbat modul in care gatesc.</p>
         <p>Am facut si supe creme perfecte, si sosuri complexe, si chiar si paine. E incredibil cat de mult timp economisesti si cat de mult simplifica procesele.</p>
         <p>Pe langa asta, are functia de gatire la temperatura joasa (sous-vide, cum ii zic francezii), care e o nebunie pentru carne. Nu mai trebuie sa stai cu ochii pe tigaie sau pe cuptor. El face treaba, tu te relaxezi sau te ocupi de altceva. Si partea de curatare e surprinzator de simpla, majoritatea vaselor putand fi bagate in masina de spalat.</p>
         <p>Acum, stiu ca pretul e un impediment major pentru multi. Si e normal. E o investitie serioasa. Daca bugetul nu-ti permite Thermomix, atunci hai sa vedem si alte optiuni. Dar pe asta, daca ti-l permiti, nu prea dai gres. E ca si cum ai avea un bucatar personal in casa, dar mult mai eficient.</p>
 <h2 id="top-4-roboti-de-bucatarie-inteligenti-pe-care-merita-sa-i-iei-in-calcul">Top 4 roboti de bucatarie inteligenti pe care merita sa-i iei in calcul</h2>
-<p>Bun, am zis de Thermomix, dar nu toata lumea are bugetul sau nevoile lui. Asa ca uite o selectie de 4 <strong>roboti de bucatarie inteligenti</strong>, cu preturi si avantaje/dezavantaje clare. Am incercat sa acopar si game mai accesibile, dar tot premium.</p>
+<p>Bun, am zis de Thermomix, dar nu toata lumea are bugetul sau nevoile lui. Asa ca uite o selectie de 4 <strong>roboti de bucatarie inteligenti</strong>, cu preturi si avantaje/dezavantaje clare. Am incercat sa acopar si game mai accesibile, dar tot <a href="/aparat-cafea-capsule-premium/">premium</a>.</p>
         <ul><li><strong>1. Thermomix TM6</strong> (Pret: ~6.500 Lei)
         <ul><li><strong>Avantaje:</strong> Functii infinite, retete ghidate, ecran tactil, gatire sous-vide, design premium, comunitate mare. Practic, e standardul industriei.</li><li><strong>Dezavantaje:</strong> Pretul e urias. Nu are tocator separat, totul se face in vasul principal.</li></ul>
         <p></li><li><strong>2. Kenwood Cooking Chef XL</strong> (Pret: ~4.500 Lei)</p>
@@ -101,10 +114,10 @@ export const frontmatter = {
         <p></li><li><strong>3. Bosch Home Connect Serie 8</strong> (Pret: ~3.000 Lei)</p>
         <ul><li><strong>Avantaje:</strong> Conectivitate prin aplicatie, multe programe automate, design elegant, piese de calitate. Foarte bun la gatit si mixat.</li><li><strong>Dezavantaje:</strong> Nu are functii de gatire la abur sau sous-vide. Unele functii sunt mai lente decat la modelele de top.</li></ul>
         <p></li><li><strong>4. KitchenAid Artisan PowerPlus 4.8L</strong> (Pret: ~2.800 Lei)</p>
-        <ul><li><strong>Avantaje:</strong> Design iconic KitchenAid, motor puternic, constructie solida, multe accesorii optionale (inclusiv pentru paste, inghetata etc.). Excelent pentru aluat si mixat.</li><li><strong>Dezavantaje:</strong> Nu este un robot de gatit in adevaratul sens al cuvantului, gatirea e limitata. E mai mult un mixer performant cu functii de baza de robot.</li></ul>
+        <ul><li><strong>Avantaje:</strong> Design iconic KitchenAid, motor puternic, constructie solida, multe accesorii optionale (inclusiv pentru paste, inghetata etc.). Excelent pentru aluat si mixat.</li><li><strong>Dezavantaje:</strong> Nu este un robot de gatit in adevaratul sens al cuvantului, gatirea e limitata. E mai mult un mixer <a href="/pc-desktop-performant/" class="interlink">performant</a> cu functii de baza de robot.</li></ul>
         <p></li></ul></p>
-        <p>Uite care-i treaba: Thermomix e rege daca vrei totul integrat si automat. Kenwood e campionul versatilitatii si al volumului, perfect pentru familii mari sau cei care gatesc mult. Bosch e o alegere echilibrata, smart, pentru cine vrea tehnologie si performanta buna la un pret mai mic.</p>
-        <p>KitchenAid e mai mult pentru pasionatii de patiserie si gatit traditional, unde ai nevoie de un mixer de top. Am prieteni care au Kenwood si sunt super multumiti, zic ca le face treaba de Thermomix dar cu mai multa libertate de a experimenta. Altii au Bosch si le place ca se pot conecta de pe telefon sa vada cum merge.</p>
+        <p>Uite care-i treaba: Thermomix e rege daca vrei totul integrat si <a href="/espressor-automat-premium/">automat</a>. Kenwood e campionul versatilitatii si al volumului, perfect pentru familii mari sau cei care gatesc mult. Bosch e o alegere echilibrata, smart, pentru cine vrea tehnologie si performanta buna la un pret mai mic.</p>
+        <p>KitchenAid e mai mult pentru pasionatii de patiserie si gatit traditional, unde ai nevoie de un mixer de top. Am prieteni care au Kenwood si sunt super multumiti, zic ca le face treaba de Thermomix dar cu mai multa libertate de a experimenta. Altii au Bosch si le place ca se pot conecta de pe <a href="/telefon-premium-android/">telefon</a> sa vada cum merge.</p>
         <p>Fiecare are farmecul lui.</p>
 <h2 id="cum-sa-alegi-robotul-de-bucatarie-inteligent-potrivit-pentru-tine">Cum sa alegi robotul de bucatarie inteligent potrivit pentru tine</h2>
 <p>Alegerea unui <strong>robot de bucatarie inteligent</strong> nu e chiar ca si cum ai lua un mixer. Aici vorbim de o investitie serioasa, asa ca trebuie sa te gandesti bine la ce ai nevoie. Hai sa luam pe rand.</p>
@@ -113,7 +126,7 @@ export const frontmatter = {
         <h3>Ce gatesc cel mai des?</h3>
         <p>Asta e crucial. Daca vrei sa faci supe creme, sosuri, piureuri, sa gatesti la abur sau chiar sous-vide, atunci Thermomix sau Kenwood sunt optiuni mai bune. Daca te intereseaza mai mult sa amesteci, sa framanti aluat, sa faci smoothie-uri, atunci un KitchenAid sau un Bosch ar putea fi suficient. Uite, eu gatesc mult pui la abur si legume, asa ca pentru mine functia asta e importanta. Daca tu faci doar prajituri, nu are rost sa dai bani pe functii de gatit.</p>
         <h3>Volumul bolului</h3>
-        <p>Ai o familie mare? Gatesti des pentru prieteni? Atunci ai nevoie de un bol de cel putin 3-4 litri. Kenwood Cooking Chef XL are un bol de 6.7 litri, ceea ce e enorm si super practic daca ai multi oameni la masa. Thermomix are un bol de 2.2 litri, care e ok pentru 2-4 persoane, dar devine mic daca vrei sa gatesti o cantitate mare de ciorba sau tocana.</p>
+        <p>Ai o <a href="/electrocasnice-familie-mare/" class="interlink">familie mare</a>? Gatesti des pentru prieteni? Atunci ai nevoie de un bol de cel putin 3-4 litri. Kenwood Cooking Chef XL are un bol de 6.7 litri, ceea ce e enorm si super practic daca ai multi oameni la masa. Thermomix are un bol de 2.2 litri, care e ok pentru 2-4 persoane, dar devine mic daca vrei sa gatesti o cantitate mare de ciorba sau tocana.</p>
         <h3>Functiile "inteligente"</h3>
         <p>Ce inseamna "inteligent" pentru tine? Pentru mine, inseamna retete ghidate, conectivitate prin aplicatie, programe automate. Thermomix exceleaza aici cu ecranul tactil si biblioteca lui de retete. Bosch vine cu aplicatia Home Connect, care e si ea foarte utila. Kenwood e mai traditional, dar controlul temperaturii e precis.</p>
         <h3>Accesorii</h3>
@@ -213,5 +226,11 @@ Pe scurt, documenteaza-te, gandeste-te la nevoile tale reale si nu te lasa dus d
         </div>
       </div>
     </div>
+  
+    <PrevNextNav
+      currentSlug="robot-de-bucatarie-inteligent"
+      currentCategory="electrocasnice-mici-premium"
+      articles={allArticles}
+    />
   </article>
 </Layout>

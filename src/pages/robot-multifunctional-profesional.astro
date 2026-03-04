@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Robot multifuncțional profesional",
@@ -11,6 +13,17 @@ export const frontmatter = {
   author: "Mihai Popescu",
   authorRole: "Expert Tehnologie"
 };
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -86,20 +99,20 @@ export const frontmatter = {
         <div class="prose-article">
           <Fragment set:html={`
 <h2 id="ce-inseamna-un-robot-multifunctional-profesional-si-de-ce-ai-nevoie-de-unul">Ce inseamna un robot multifuncțional profesional si de ce ai nevoie de unul</h2>
-<p>Hai sa fim seriosi, un <strong>robot multifuncțional profesional</strong> nu e pentru oricine. E pentru ala care gateste des, care vrea rezultate ca la carte si care nu se multumeste cu jumatati de masura. Gandeste-te la el ca la unelte de electrician bune: nu cumperi cea mai ieftina surubelnita, iei una care nu-ti scapa din mana si nu-ti strica surubul.</p>
-        <p>La fel e si cu un <strong>robot multifuncțional profesional</strong>. Te scapa de munca grea, de framantat ore in sir, de tocat ceapa pana-ti curg ochii. Face totul rapid si eficient.</p>
-        <p>Am avut un mixer vechi, bunica-mea l-a avut, mama l-a avut, si tot nu facea fata la o aluat mai dens. Am trecut la unul mai serios si diferenta e enorma. Practic, un <strong>robot multifuncțional profesional</strong> iti ia stresul din bucatarie.</p>
+<p>Hai sa fim seriosi, un <strong>robot <a href="/aparat-de-gatit-multifunctional/" class="interlink">multifuncțional</a> profesional</strong> nu e pentru oricine. E pentru ala care gateste des, care vrea rezultate ca la carte si care nu se multumeste cu jumatati de masura. Gandeste-te la el ca la unelte de electrician bune: nu cumperi cea mai ieftina surubelnita, iei una care nu-ti scapa din mana si nu-ti strica surubul.</p>
+        <p>La fel e si cu un <strong>robot <a href="/aparat-fitness-multifunctional-acasa/" class="interlink">multifuncțional</a> profesional</strong>. Te scapa de munca grea, de framantat ore in sir, de tocat ceapa pana-ti curg ochii. Face totul rapid si eficient.</p>
+        <p>Am avut un mixer vechi, bunica-mea l-a avut, mama l-a avut, si tot nu facea fata la o aluat mai dens. Am trecut la unul mai serios si diferenta e enorma. Practic, un <strong>robot multifuncțional <a href="/aparat-cafea-boabe-profesional/" class="interlink">profesional</a></strong> iti ia stresul din bucatarie.</p>
         <p>Ce face el mai exact? Pai, depinde de ce accesorii are, dar in general, leaga-le de mixer, tocat, feliat, ras, framantat, emulsificat, chiar si facut paste sau inghetata. E ca si cum ai avea un mic ajutor de bucatar, dar unul care nu oboseste si nu cere pauza. Si partea cea mai buna e ca te incurajeaza sa experimentezi.</p>
         <p>Cand stii ca ai un aparat capabil, iti vine sa incerci retete mai complicate. Am avut un prieten care si-a luat un robot de genul asta acum vreo doi ani si de atunci coace paine in casa de vreo 3 ori pe saptamana. Inainte abia facea o omleta.</p>
         <p>Deci, daca esti genul care iubeste gatitul, care vrea calitate si eficienta, si vrei sa-ti usurezi munca, atunci un <strong>robot multifuncțional profesional</strong> e o investitie pe care o vei aprecia zi de zi. Nu e un moft, e o unealta serioasa pentru pasiunea ta. Si, sincer, merita fiecare leu daca il folosesti la potentialul lui maxim.</p>
 <h2 id="top-5-recomandari-de-robot-multifunctional-profesional-si-ce-nu-ti-spun-reclamele">Top 5 recomandari de robot multifuncțional profesional (si ce nu-ti spun reclamele)</h2>
 <p>Bun, hai sa trecem la lucruri serioase. Dupa ce am testat si am vorbit cu multi useri, am selectat cateva modele care mi se par cele mai bune optiuni de <strong>robot multifuncțional profesional</strong> pe piata romaneasca. Nu am sa va insir doar specificatii, am sa va spun si ce am simtit eu cu mana pe ele.</p>
         <ul><li><strong>Kenwood Titanium Chef Patissier XL - pret in jur de 3500-4000 lei</strong><br>Asta e un monstru sacru. E scump, da, dar face totul. Am pus aluat de paine mai tare ca piatra in el si nici nu a clipit. Motorul e puternic, vine cu o gramada de accesorii (si poti cumpara altele separat). Are si functia de incalzire/racire, ceea ce e genial pentru creme sau ciocolata. Minusul? E mare, ocupa mult loc pe blat. Si nu te astepta sa fie silentios ca o soapta.</li><li><strong>KitchenAid Artisan Stand Mixer (cu accesorii) - pret in jur de 2500-3000 lei (cu accesorii de baza)</strong><br>Clasicul, frumosul, fiabilul. Arata super in bucatarie, asta e clar. Si e solid. Pentru prajituri, creme, aluaturi mai usoare e perfect. Daca vrei sa faci paine zilnic, poate nu e prima optiune, desi se descurca. Accesoriile se cumpara separat, ceea ce poate duce pretul sus. Si nu are functii de tocator sau feliator integrate, trebuie sa iei adaptoare.</li><li><strong>Bosch MUM Series (modele superioare, gen MUM5 sau MUM6) - pret in jur de 1500-2500 lei</strong><br>Bosch face treaba buna la preturi mai accesibile. Modelele astea sunt versatile, au multe functii de baza incluse (tocator, feliator, blender). Sunt mai compacte decat Kenwood. Un minus pe care l-am observat e ca la aluaturi foarte dense, uneori motorul se cam chinuie. Si plasticul din anumoi accesorii nu pare la fel de premium ca la Kenwood.</li><li><strong>Magimix Cook Expert - pret in jur de 5000-6000 lei</strong><br>Asta e varful de gamă, practic un robot bucatar cu totul. Gătește, toacă, amestecă, fierbe, face piureuri, supe, tot. E incredibil de capabil. Daca vrei un singur aparat care sa faca aproape totul, asta e. Dezavantajul major e prețul, e o investitie serioasa. Si e destul de greu de mutat prin bucatarie.</li></ul>
-        <p>Pe langa astea, am mai vazut si modele de la Philips sau Braun, dar parcă nu au același feeling de 'profesional' ca primele. Sunt mai mult pentru uz casnic intensiv. Asta e, la <strong>robot multifuncțional profesional</strong>, primești ce plătești, de cele mai multe ori.</p>
+        <p>Pe langa astea, am mai vazut si modele de la Philips sau Braun, dar parcă nu au același feeling de '<a href="/aparat-cafea-boabe-profesional/">profesional</a>' ca primele. Sunt mai mult pentru uz casnic intensiv. Asta e, la <strong>robot multifuncțional profesional</strong>, primești ce plătești, de cele mai multe ori.</p>
 <h2 id="pe-ce-sa-te-uiti-cand-alegi-un-robot-multifunctional-profesional-ghidul-meu">Pe ce sa te uiti cand alegi un robot multifuncțional profesional: ghidul meu</h2>
 <p>Sa alegi un <strong>robot multifuncțional profesional</strong> poate fi o provocare. Sunt multe modele, multe specificatii. Eu, daca as fi in locul tau, m-as uita la urmatoarele chestii:</p>
-        <ul><li><strong>Puterea motorului (in watti)</strong>: Nu te lasa pacalit doar de numar. Un motor de 1000W la Kenwood e diferit de unul de 1000W la un brand mai obscur. Conteaza calitatea constructiei si cum e distribuita puterea. Pentru aluaturi grele, cauta minim 800W, ideal peste 1000W.</li><li><strong>Capacitatea bolului</strong>: Cat de mult gatesti? Daca faci mancare pentru 2-3 persoane, un bol de 3-4 litri e suficient. Daca ai o familie mare sau gatesti pentru evenimente, mergi pe 5-6 litri sau chiar mai mult.</li><li><strong>Materialele</strong>: Asta e crucial pentru un <strong>robot multifuncțional profesional</strong>. Cauta otel inoxidabil (inox) la bol, la carlige, la lame. Plasticul de proasta calitate se crapa, se decoloreaza si nu rezista la uzura.</li><li><strong>Accesorii incluse si compatibile</strong>: Ce vine la pachet? Un robot bun vine cu carlig pentru aluat, tel pentru creme, paleta pentru amestecat. Vezi daca poti gasi si accesorii suplimentare: masina de tocat carne, storcator de citrice, aparat de paste. Asta iti extinde mult functionalitatea.</li><li><strong>Usor de curatat</strong>: Nimeni nu vrea sa petreaca ore curatand robotul. Verifica daca piesele se pot spala in masina de spalat vase.</li><li><strong>Stabilitatea</strong>: Cand robotul lucreaza la viteza mare, nu vrei sa danseze pe blat. Picioarele de cauciuc sunt esentiale.</li><li><strong>Garantia si service-ul</strong>: Un produs premium vine cu garantie buna. Verifica ce acopera si unde poti apela daca apare o problema.</li></ul>
-        <p>Am vazut oameni care isi iau cel mai ieftin robot, scrie 'profesional' pe el, si dupa 3 luni ii moare motorul. Na, asta e. Investitia intr-un <strong>robot multifuncțional profesional</strong> se vede in timp, prin fiabilitate si performanta. Nu te uita doar la pret. Uita-te la ce primesti pentru banii aia.</p>
+        <ul><li><strong>Puterea motorului (in watti)</strong>: Nu te lasa pacalit doar de numar. Un motor de 1000W la Kenwood e diferit de unul de 1000W la un brand mai obscur. Conteaza calitatea constructiei si cum e distribuita puterea. Pentru aluaturi grele, cauta minim 800W, ideal peste 1000W.</li><li><strong>Capacitatea bolului</strong>: Cat de mult gatesti? Daca faci mancare pentru 2-3 persoane, un bol de 3-4 litri e suficient. Daca ai o <a href="/electrocasnice-familie-mare/" class="interlink">familie mare</a> sau gatesti pentru evenimente, mergi pe 5-6 litri sau chiar mai mult.</li><li><strong>Materialele</strong>: Asta e crucial pentru un <strong>robot multifuncțional profesional</strong>. Cauta otel inoxidabil (inox) la bol, la carlige, la lame. Plasticul de proasta calitate se crapa, se decoloreaza si nu rezista la uzura.</li><li><strong>Accesorii incluse si compatibile</strong>: Ce vine la pachet? Un robot bun vine cu carlig pentru aluat, tel pentru creme, paleta pentru amestecat. Vezi daca poti gasi si accesorii suplimentare: masina de tocat carne, storcator de citrice, aparat de paste. Asta iti extinde mult functionalitatea.</li><li><strong>Usor de curatat</strong>: Nimeni nu vrea sa petreaca ore curatand robotul. Verifica daca piesele se pot spala in masina de spalat vase.</li><li><strong>Stabilitatea</strong>: Cand robotul lucreaza la viteza mare, nu vrei sa danseze pe blat. Picioarele de cauciuc sunt esentiale.</li><li><strong>Garantia si service-ul</strong>: Un produs premium vine cu garantie buna. Verifica ce acopera si unde poti apela daca apare o problema.</li></ul>
+        <p>Am vazut oameni care isi iau cel mai ieftin robot, scrie '<a href="/ultrabook-profesional/">profesional</a>' pe el, si dupa 3 luni ii moare motorul. Na, asta e. Investitia intr-un <strong>robot multifuncțional profesional</strong> se vede in timp, prin fiabilitate si performanta. Nu te uita doar la pret. Uita-te la ce primesti pentru banii aia.</p>
 <h2 id="kenwood-vs-kitchenaid-batalia-titanilor-pentru-robot-multifunctional-profesional">Kenwood vs. KitchenAid: Batalia titanilor pentru robot multifuncțional profesional</h2>
 <p>Asta e intrebarea care apare cel mai des: Kenwood sau KitchenAid? Ambele sunt nume mari, cu istorie. Hai sa le punem fata in fata, mai ales modelele lor de top, care intr-un fel definesc ce inseamna un <strong>robot multifuncțional profesional</strong>.</p>
         <p><strong>Kenwood Titanium Chef Patissier XL</strong><br><strong>Avantaje:</strong> Putere brută. Motorul ăsta e o bestie, face față la orice. Capacitate mare a bolului (4.6L + 3.5L, practic două boluri).</p>
@@ -125,7 +138,7 @@ export const frontmatter = {
         <p><strong>Buget mediu (1000 - 2500 lei):</strong><br>Aici începe să devină interesant. Poți găsi modele superioare de la Bosch (seria MUM5, MUM6), Kenwood (seria kMix sau modele mai vechi Titanium), sau chiar modele de bază de la KitchenAid. Aceștia sunt deja roboți capabili, care pot frământa aluaturi, toca legume, bate creme.</p>
         <p>Sunt potriviți pentru pasionații de gătit, pentru cei care fac cozonac de sărbători sau pâine o dată pe săptămână. Ai un echilibru bun între funcționalitate, durabilitate și preț. Am avut un Bosch MUM5 care m-a servit vreo 5 ani cu utilizare destul de intensă, până când am vrut mai mult.</p>
         <p><strong>Buget mare (peste 2500 lei):</strong><br>Aici intri în liga campionilor. Vorbim de Kenwood Titanium Chef Patissier XL, KitchenAid Artisan cu accesorii, sau chiar Magimix Cook Expert dacă vrei să mergi la extreme. Aceștia sunt roboți <strong>robot multifuncțional profesional</strong> veritabili.</p>
-        <p>Sunt construiți să reziste, să facă treabă rapid și eficient, și să te ajute cu orice rețetă îți trece prin cap. Dacă gătești des, pentru mulți oameni, sau pur și simplu vrei ce e mai bun și ești dispus să plătești pentru asta, atunci merită investiția. Un astfel de aparat îți poate simplifica viața în bucătărie pe mulți ani.</p>
+        <p>Sunt construiți să reziste, să facă treabă rapid și eficient, și să te ajute cu orice rețetă îți trece prin cap. Dacă gătești des, pentru mulți oameni, sau pur și simplu vrei ce e mai bun și ești dispus să plătești pentru asta, atunci merită investiția. Un astfel de aparat îți poate simplifica viața în <a href="/robot-de-bucatarie-inteligent/">bucătărie</a> pe mulți ani.</p>
         <p>Alegerea depinde mult de ce ai nevoie, cât de des gătești și cât de serioasă e pasiunea ta pentru bucătărie. Nu lua cel mai scump doar ca să fie, dar nici nu te zgârci dacă vrei un aparat care să te ajute cu adevărat.</p>`} />
           <Fragment set:html={`
 <section id="faq" class="faq-section">
@@ -181,5 +194,11 @@ export const frontmatter = {
         </div>
       </div>
     </div>
+  
+    <PrevNextNav
+      currentSlug="robot-multifunctional-profesional"
+      currentCategory="electrocasnice-mici-premium"
+      articles={allArticles}
+    />
   </article>
 </Layout>

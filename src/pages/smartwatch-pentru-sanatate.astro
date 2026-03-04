@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Smartwatch pentru sănătate",
@@ -11,6 +13,17 @@ export const frontmatter = {
   author: "Elena Ionescu",
   authorRole: "Specialist Electrocasnice"
 };
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -86,15 +99,15 @@ export const frontmatter = {
         <div class="prose-article">
           <Fragment set:html={`
 <h2 id="ce-masoara-un-smartwatch-pentru-sanatate-de-fapt">Ce măsoară un smartwatch pentru sănătate, de fapt?</h2>
-<p>Am testat zeci de smartwatch-uri în ultimii ani, iar când vine vorba de sănătate, lucrurile au evoluat enorm. Dincolo de pasul pe care îl numeri automat, aceste dispozitive îți pot oferi o imagine mult mai clară asupra stării tale fizice. Senzorii de puls sunt acum standard, dar am văzut modele care monitorizează saturația de oxigen din sânge (SpO2) – practic, cum respiri.</p><p>Unii chiar îți pot detecta nivelul de stres prin variabilitatea ritmului cardiac. E o unealtă utilă să vezi cum reacționează corpul tău la diferiți factori pe parcursul zilei, de la o ședință tensionată la o plimbare în parc. Nu uita, însă, că nu sunt dispozitive medicale, ci niște indicatoare bune.</p><p>Am observat că precizia variază. Un puls măsurat în timpul unui antrenament intens poate avea mici deviații față de o bandă toracică dedicată, dar pentru monitorizarea zilnică și somn, sunt mai mult decât decente. Am avut ocazia să folosesc un Samsung Galaxy Watch 6 Classic și un Apple Watch Series 9, ambele oferind date consistente.</p><p>Chiar și modele mai accesibile, cum ar fi un Huawei Watch GT 4, surprind bine tendințele generale. Important e să înțelegi ce îți arată datele și să le folosești ca pe niște repere.</p><p>Sfaturi practice: setează alerte pentru pulsul prea ridicat sau prea scăzut dacă ai probleme cardiace preexistente (dar consultă medicul înainte!). Folosește funcția de monitorizare a stresului pentru a identifica momentele critice și a încerca să le gestionezi. Verifică periodic istoricul datelor în aplicația dedicată pentru a observa eventuale schimbări.</p>
+<p>Am testat zeci de smartwatch-uri în ultimii ani, iar când vine vorba de sănătate, lucrurile au evoluat enorm. Dincolo de pasul pe care îl numeri automat, aceste dispozitive îți pot oferi o imagine mult mai clară asupra stării tale fizice. Senzorii de puls sunt acum standard, dar am văzut modele care monitorizează saturația de oxigen din sânge (SpO2) – practic, cum respiri.</p><p>Unii chiar îți pot detecta nivelul de stres prin variabilitatea ritmului cardiac. E o unealtă utilă să vezi cum reacționează corpul tău la diferiți factori pe parcursul zilei, de la o ședință tensionată la o plimbare în parc. Nu uita, însă, că nu sunt dispozitive medicale, ci niște indicatoare bune.</p><p>Am observat că precizia variază. Un puls măsurat în timpul unui <a href="/echipamente-antrenament-acasa/" class="interlink">antrenament</a> intens poate avea mici deviații față de o bandă toracică dedicată, dar pentru monitorizarea zilnică și somn, sunt mai mult decât decente. Am avut ocazia să folosesc un Samsung Galaxy Watch 6 Classic și un Apple Watch Series 9, ambele oferind date consistente.</p><p>Chiar și modele mai accesibile, cum ar fi un Huawei Watch GT 4, surprind bine tendințele generale. Important e să înțelegi ce îți arată datele și să le folosești ca pe niște repere.</p><p>Sfaturi practice: setează alerte pentru pulsul prea ridicat sau prea scăzut dacă ai probleme cardiace preexistente (dar consultă medicul înainte!). Folosește funcția de monitorizare a stresului pentru a identifica momentele critice și a încerca să le gestionezi. Verifică periodic istoricul datelor în aplicația dedicată pentru a observa eventuale schimbări.</p>
 
 <h3>Senzori cheie: ce să cauți?</h3>
-<p>Pe lângă senzorul de puls (PPG), caută smartwatch-uri cu:</p>
+<p>Pe lângă senzorul de puls (PPG), caută <a href="/smartwatch-cu-esim/" class="interlink">smartwatch</a>-uri cu:</p>
 <ul>
   <li><strong>Senzor SpO2:</strong> Măsoară nivelul de oxigen din sânge. Utila mai ales dacă ai probleme respiratorii sau vrei să vezi cum te afectează altitudinea.</li>
   <li><strong>ECG (Electrocardiogramă):</strong> Unele modele, cum ar fi cele de la Apple (Series 9, de exemplu) sau Samsung (Galaxy Watch 6), pot face o electrocardiogramă simplă, detectând potențiale aritmii precum fibrilația atrială.</li>
   <li><strong>Senzor de temperatură:</strong> Începe să apară și pe modele mai noi, util pentru urmărirea ciclului menstrual sau pentru a detecta schimbări subtile ale stării corpului.</li>
-  <li><strong>GPS integrat:</strong> Esențial dacă vrei să-ți urmărești traseele de alergare sau ciclism fără să ai telefonul la tine. Precizia poate varia, dar pentru majoritatea utilizatorilor e suficientă.</li>
+  <li><strong>GPS integrat:</strong> Esențial dacă vrei să-ți urmărești traseele de <a href="/banda-alergare-pliabila/" class="interlink">alergare</a> sau ciclism fără să ai telefonul la tine. Precizia poate varia, dar pentru majoritatea utilizatorilor e suficientă.</li>
 </ul>
 
 <h2 id="monitorizarea-somnului-mai-mult-decat-un-simplu-ceas-destept">Monitorizarea somnului: mai mult decât un simplu "ceas deștept"</h2>
@@ -111,7 +124,7 @@ export const frontmatter = {
 <p>Încearcă să ai o medie zilnică de somn profund și REM similară cu recomandările generale (aprox. 20-25% somn profund, 20-25% somn REM), dar nu te fixa pe cifre. Mai important e cum te simți tu dimineața.</p>
 
 <h2 id="activitatea-fizica-de-la-pasi-la-antrenamente-complexe">Activitatea fizică: de la pași la antrenamente complexe</h2>
-<p>Am început prin a mă uita la pași, ca toată lumea. Acum, un smartwatch bun îți poate recunoaște automat o multitudine de activități. Fie că alergi, mergi pe bicicletă, înoți sau faci yoga, majoritatea modelelor vor detecta mișcarea și vor începe să înregistreze. Am testat un Polar Ignite 3 și am apreciat modul în care îți propune antrenamente zilnice personalizate pe baza stării tale de recuperare. Nu e vorba doar de a alerga mai mult, ci de a alerga mai inteligent.</p><p>Pentru cei care fac sport de performanță, am observat că branduri ca Garmin sau Polar oferă date mult mai detaliate. La un Garmin Forerunner 955, de exemplu, ai acces la VO2 Max, timpul de recuperare, starea antrenamentului și chiar la sugestii de ritm pentru curse. Am folosit un astfel de ceas în pregătirea unui semimaraton și mi-a fost de un real ajutor să nu exagerez în zilele grele de antrenament.</p><p>Sfaturi practice: Setează-ți obiective realiste. Dacă abia începi, începe cu 10.000 de pași pe zi și crește treptat. Folosește funcția de "recunoaștere automată a activității" dar verifică dacă recunoaște corect ce faci. Pentru antrenamente mai specifice (alergare, ciclism), alege un ceas cu GPS integrat și profiluri dedicate pentru a obține date mai precise.</p>
+<p>Am început prin a mă uita la pași, ca toată lumea. Acum, un smartwatch bun îți poate recunoaște automat o multitudine de activități. Fie că alergi, mergi pe bicicletă, înoți sau faci yoga, majoritatea modelelor vor detecta mișcarea și vor începe să înregistreze. Am testat un Polar Ignite 3 și am apreciat modul în care îți propune antrenamente zilnice personalizate pe baza stării tale de recuperare. Nu e vorba doar de a alerga mai mult, ci de a alerga mai inteligent.</p><p>Pentru cei care fac sport de <a href="/smartphone-performanta-mare/">performanță</a>, am observat că branduri ca Garmin sau Polar oferă date mult mai detaliate. La un Garmin Forerunner 955, de exemplu, ai acces la VO2 Max, timpul de recuperare, starea antrenamentului și chiar la sugestii de ritm pentru curse. Am folosit un astfel de ceas în pregătirea unui semimaraton și mi-a fost de un real ajutor să nu exagerez în zilele grele de antrenament.</p><p>Sfaturi practice: Setează-ți obiective realiste. Dacă abia începi, începe cu 10.000 de pași pe zi și crește treptat. Folosește funcția de "recunoaștere automată a activității" dar verifică dacă recunoaște corect ce faci. Pentru antrenamente mai specifice (alergare, ciclism), alege un ceas cu GPS integrat și profiluri dedicate pentru a obține date mai precise.</p>
 
 <h3>Ce date contează pentru sportivi?</h3>
 <p>Pe lângă distanță, viteză și calorii arse, caută:</p>
@@ -119,7 +132,7 @@ export const frontmatter = {
   <li><strong>VO2 Max:</strong> Un indicator al capacității cardiovasculare.</li>
   <li><strong>Timp de recuperare:</strong> Cât timp ai nevoie să te refaci după un antrenament intens.</li>
   <li><strong>Starea antrenamentului:</strong> Cât de eficient a fost antrenamentul tău (întreținere, bază, vârf).</li>
-  <li><strong>Cadenta (alergare):</strong> Numărul de pași pe minut.</li>
+  <li><strong>Cadenta (<a href="/banda-alergare-profesionala/" class="interlink">alergare</a>):</strong> Numărul de pași pe minut.</li>
   <li><strong>Putere (ciclism/alergare):</strong> Dacă senzorul e disponibil.</li>
   <li><strong>Altimetru barometric:</strong> Pentru a măsura diferențele de nivel în timpul drumețiilor sau alergărilor montane.</li>
 </ul>
@@ -136,7 +149,7 @@ export const frontmatter = {
 </ul>
 
 <h2 id="aplicatii-si-ecosisteme-unde-se-aduna-datele-tale">Aplicații și ecosisteme: unde se adună datele tale</h2>
-<p>Am avut mereu grijă la aplicația care vine la pachet cu smartwatch-ul. Nu e suficient ca ceasul să fie bun, trebuie ca și aplicația să fie intuitivă și să ofere informații clare. Samsung Health, Apple Health, Garmin Connect, Fitbit – fiecare are punctele sale forte. Samsung Health, de exemplu, se integrează bine cu telefoanele Samsung și oferă o gamă largă de funcții de sănătate. Apple Health este un hub central, unde poți aduna date și de la alte aplicații.</p><p>Am testat un Galaxy Watch 6 Classic și am observat că Samsung Health oferă o vedere de ansamblu bună, de la pași și somn la compoziția corporală (dacă ai un cântar compatibil). Pe de altă parte, Garmin Connect, pe care l-am folosit cu un Forerunner 955, este mult mai detaliat pentru sportivi, cu grafice complexe și opțiuni avansate de personalizare. E important să alegi un ceas al cărui ecosistem se potrivește stilului tău de viață.</p><p>Sfaturi practice: Nu te bloca într-un singur ecosistem dacă nu ești mulțumit. Multe aplicații permit exportul datelor sau integrarea cu alte platforme (ex. Google Fit, Strava). Verifică compatibilitatea cu telefonul tău înainte de achiziție. O aplicație bine organizată te va motiva să urmărești mai des datele tale.</p>
+<p>Am avut mereu grijă la aplicația care vine la pachet cu smartwatch-ul. Nu e suficient ca ceasul să fie bun, trebuie ca și aplicația să fie intuitivă și să ofere informații clare. Samsung Health, Apple Health, Garmin Connect, Fitbit – fiecare are punctele sale forte. Samsung Health, de exemplu, se integrează bine cu telefoanele Samsung și oferă o gamă largă de funcții de sănătate. Apple Health este un hub central, unde poți aduna date și de la alte aplicații.</p><p>Am testat un Galaxy Watch 6 Classic și am observat că Samsung Health oferă o vedere de ansamblu bună, de la pași și somn la compoziția corporală (dacă ai un cântar compatibil). Pe de altă parte, Garmin Connect, pe care l-am folosit cu un Forerunner 955, este mult mai detaliat pentru sportivi, cu grafice complexe și opțiuni avansate de personalizare. E important să alegi un ceas al cărui ecosistem se potrivește stilului tău de viață.</p><p>Sfaturi practice: Nu te bloca într-un singur ecosistem dacă nu ești mulțumit. Multe aplicații permit exportul datelor sau integrarea cu alte platforme (ex. Google Fit, Strava). Verifică compatibilitatea cu <a href="/telefon-premium-android/">telefon</a>ul tău înainte de achiziție. O aplicație bine organizată te va motiva să urmărești mai des datele tale.</p>
 
 <h3>Integrarea cu alte servicii</h3>
 <p>Verifică dacă aplicația ceasului se integrează cu servicii populare precum:</p>
@@ -147,7 +160,7 @@ export const frontmatter = {
 </ul>
 
 <h2 id="ce-modele-si-preturi-sa-cauti-in-romania">Ce modele și prețuri să cauți în România?</h2>
-<p>Piața e plină, dar am selectat câteva opțiuni care mi s-au părut interesante pe baza experienței mele și a prețurilor actuale din România. La eMAG, Altex sau PC Garage, găsești o varietate mare. Pentru un echilibru bun între funcții de sănătate și preț, mă uit la modele precum <strong>Samsung Galaxy Watch 6</strong> (începând de la aproximativ 1.200-1.500 RON, depinde de model și promoții).</p><p>Un alt concurent puternic este <strong>Huawei Watch GT 4</strong> (prețuri în jur de 1.000-1.300 RON). Am testat versiuni anterioare și mi-a plăcut autonomia bateriei și precizia senzorilor. Dacă ești în ecosistemul Apple, <strong>Apple Watch SE (2023)</strong> este o opțiune mai accesibilă (aprox. 1.400-1.700 RON) care oferă funcțiile esențiale de sănătate și monitorizare a activității.</p><p>Pentru cei mai serioși în privința sportului și a monitorizării detaliate, <strong>Garmin Forerunner 265</strong> (începând de la aprox. 1.800-2.000 RON) sau chiar <strong>Garmin Venu 3</strong> (aprox. 2.000-2.300 RON) sunt investiții bune. Acestea oferă date avansate și o autonomie a bateriei mult mai bună decât Apple Watch sau Galaxy Watch. Am observat că prețurile fluctuează, mai ales în perioadele de reduceri (Black Friday, reduceri de vară).</p><p>Sfaturi practice: Nu te lăsa tentat doar de cel mai scump model. Analizează ce funcții îți trebuie *ție* cu adevărat. Citește recenzii specifice modelului care te interesează. Verifică politica de retur a magazinului în cazul în care produsul nu corespunde așteptărilor tale.</p>
+<p>Piața e plină, dar am selectat câteva opțiuni care mi s-au părut interesante pe baza experienței mele și a prețurilor actuale din România. La eMAG, Altex sau PC Garage, găsești o varietate mare. Pentru un echilibru bun între funcții de sănătate și preț, mă uit la modele precum <strong>Samsung Galaxy Watch 6</strong> (începând de la aproximativ 1.200-1.500 RON, depinde de model și promoții).</p><p>Un alt concurent puternic este <strong>Huawei Watch GT 4</strong> (prețuri în jur de 1.000-1.300 RON). Am testat versiuni anterioare și mi-a plăcut autonomia <a href="/telefon-cu-baterie-mare/">baterie</a>i și precizia senzorilor. Dacă ești în ecosistemul Apple, <strong>Apple Watch SE (2023)</strong> este o opțiune mai accesibilă (aprox. 1.400-1.700 RON) care oferă funcțiile esențiale de sănătate și monitorizare a activității.</p><p>Pentru cei mai serioși în privința sportului și a monitorizării detaliate, <strong>Garmin Forerunner 265</strong> (începând de la aprox. 1.800-2.000 RON) sau chiar <strong>Garmin Venu 3</strong> (aprox. 2.000-2.300 RON) sunt investiții bune. Acestea oferă date avansate și o autonomie a bateriei mult mai bună decât Apple Watch sau Galaxy Watch. Am observat că prețurile fluctuează, mai ales în perioadele de reduceri (Black Friday, reduceri de vară).</p><p>Sfaturi practice: Nu te lăsa tentat doar de cel mai scump model. Analizează ce funcții îți trebuie *ție* cu adevărat. Citește recenzii specifice modelului care te interesează. Verifică politica de retur a magazinului în cazul în care produsul nu corespunde așteptărilor tale.</p>
 
 <h3>Recomandări pe categorii de preț (orientativ, martie 2024):</h3>
 <ul>
@@ -194,5 +207,11 @@ export const frontmatter = {
         </div>
       </div>
     </div>
+  
+    <PrevNextNav
+      currentSlug="smartwatch-pentru-sanatate"
+      currentCategory="electronice-gadgeturi"
+      articles={allArticles}
+    />
   </article>
 </Layout>

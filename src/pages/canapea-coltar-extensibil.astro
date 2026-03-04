@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
 
 export const frontmatter = {
   title: "Canapea colțar extensibil",
@@ -11,6 +13,17 @@ export const frontmatter = {
   author: "Andrei Stanciu",
   authorRole: "Analist IT"
 };
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
 ---
 
 <Layout
@@ -87,16 +100,16 @@ export const frontmatter = {
           <Fragment set:html={`
 <h2 id="uite-ce-canapea-coltar-extensibil-ti-se-potriveste-cel-mai-bine">Uite ce canapea colțar extensibil ti se potriveste cel mai bine</h2>
 <p>Deci, vrei o <strong>canapea colțar extensibil</strong>, nu-i asa? Super alegere, mai ales daca locuiesti intr-un apartament mai mic sau daca primesti des prieteni in vizita. Pe bune, e una dintre cele mai practice piese de mobilier pe care le poti lua. Eu personal am vazut o gramada de modele si am si testat cateva prin casa la prieteni sau la showroom-uri.</p>
-        <p>Daca ma intrebi pe mine, cel mai important e sa fie comoda, sa se extinda usor si sa aiba si un spatiu de depozitare, ca ala de obicei nu strica niciodata. Am avut un model acum cativa ani care arata spectaculos, dar sistemul de extensie era un chin. Abia asteptam sa-l desfac, si la fel si la strans.</p>
+        <p>Daca ma intrebi pe mine, cel mai important e sa fie comoda, sa se extinda usor si sa aiba si un spatiu de <a href="/pat-cu-lada-depozitare/">depozitare</a>, ca ala de obicei nu strica niciodata. Am avut un model acum cativa ani care arata spectaculos, dar sistemul de extensie era un chin. Abia asteptam sa-l desfac, si la fel si la strans.</p>
         <p>Deci, fi atent la asta.</p>
-        <p>Acum, ca sa dam un raspuns direct la ce cauti, daca vrei o recomandare de top, cauta un model cu o structura solida din lemn masiv sau PAL de calitate superioara, cu un mecanism de extensie de tip 'carusel' sau 'sertar' – astea sunt cele mai fiabile si mai usor de folosit. Materialul textil trebuie sa fie rezistent la uzura, gen microfibra sau stofa cu tratament hidrofug. Si daca mai are si un lada de depozitare sub sezut, ai dat lovitura.</p>
+        <p>Acum, ca sa dam un raspuns direct la ce cauti, daca vrei o recomandare de top, cauta un model cu o structura solida din lemn masiv sau PAL de calitate superioara, cu un mecanism de extensie de tip 'carusel' sau 'sertar' – astea sunt cele mai fiabile si mai usor de folosit. Materialul textil trebuie sa fie rezistent la uzura, gen microfibra sau stofa cu tratament hidrofug. Si daca mai are si un lada de <a href="/pat-cu-lada-depozitare/" class="interlink">depozitare</a> sub sezut, ai dat lovitura.</p>
         <p>M-am lovit de multe ori de lipsa spatiului, asa ca asta e un mare plus.</p>
         <p>Nu te grabi sa iei primul model care iti iese in cale. Uita-te la dimensiuni, sa se potriveasca in camera ta. Masoara tot, usa de la intrare, holul, camera unde vrei sa o pui. Nu vrei sa ajungi acasa cu ea si sa nu poti sa o bagi pe usa, am patit-o cu un dulap imens, nu cu o canapea, dar na, principiul e acelasi. Si gandeste-te si la stilul camerei. Vrei ceva modern, minimalist, sau mai clasic? Exista optiuni pentru toate gusturile.</p>
         <p>Pe scurt, cea mai buna <strong>canapea colțar extensibil</strong> pentru tine e cea care arata bine, e confortabila, se extinde fara efort, are spatiu de depozitare si se potriveste bugetului tau. Nu te lasa pacalit doar de aspect. Functionalitatea e cheia.</p>
 <h2 id="top-5-canapea-coltar-extensibil-cu-bune-si-rele">Top 5 canapea colțar extensibil – cu bune și rele</h2>
 <p>Am selectat cateva modele care mi s-au parut ca merita atentia, bazat pe ce am vazut si pe feedback-ul altor oameni. Nu zic ca sunt perfecte, ca na, nimic nu e, dar sunt printre cele mai bune pe care le poti gasi pe piata din Romania acum. Fiecare are plusurile si minusurile ei, ca sa stii la ce sa te astepti.</p>
         <h3>Modelul A: Luxos si Functional</h3>
-        <p>Asta e genul de canapea care arata wow si face si treaba. De obicei, vine cu o tapiterie din piele ecologica de calitate sau stofa premium, un design modern, linii curate. Mecanismul de extensie e de obicei de tip ' Delfin' sau 'Carusel', super usor de utilizat. Plus, are si o lada generoasa pentru depozitare sub modulul de colț. Perfect pentru livinguri mai mari sau pentru cei care vor sa impresioneze.</p>
+        <p>Asta e genul de canapea care arata wow si face si treaba. De obicei, vine cu o tapiterie din piele ecologica de calitate sau stofa <a href="/saltea-memory-foam-premium/">premium</a>, un design modern, linii curate. Mecanismul de extensie e de obicei de tip ' Delfin' sau 'Carusel', super usor de utilizat. Plus, are si o lada generoasa pentru depozitare sub modulul de colț. Perfect pentru livinguri mai mari sau pentru cei care vor sa impresioneze.</p>
         <ul><li><strong>Avantaje:</strong> Aspect premium, confort sporit, sistem de extensie fiabil, spațiu mare de depozitare.</li><li><strong>Dezavantaje:</strong> Pretul e, evident, mai ridicat, poate fi mai greu de manevrat din cauza dimensiunilor.</li><li><strong>Pret estimat:</strong> 4500 - 7000 lei.</li></ul>
         <h3>Modelul B: Best-Value pentru Spatii Mici</h3>
         <p>Daca ai un apartament mai mic si nu vrei sa dai o avere, asta e o optiune buna. De obicei, gasesti modele mai compacte, cu un design simplu, dar eficient. Sistemul de extensie e adesea cel cu sertar, care e destul de robust. Materialele sunt mai simple, gen stofa rezistenta, dar totusi decente pentru uz zilnic. Lada de depozitare e prezenta, dar poate nu la fel de mare ca la modelele mai scumpe.</p>
@@ -129,8 +142,8 @@ export const frontmatter = {
         <h3>Avantajele Canapelei Clasice</h3>
         <p>O canapea clasica, fie ea de 2 sau 3 locuri, e de obicei mai compacta. Se potriveste mai bine in camere mai mici sau in spatii unde nu vrei sa domini amenajarea cu o piesa masiva. Daca nu primesti des oaspeti peste noapte, poate nu ai nevoie de functia de extensie. De asemenea, o canapea clasica, de calitate, poate fi uneori mai ieftina decat un coltar extensibil echivalent, deoarece mecanismul de extensie si spatiul de depozitare adauga costuri.</p>
         <h3>Comparație Directă</h3>
-        <p>Sa zicem ca ai un buget de 3000 de lei. Pentru asta, poti lua o canapea clasica de 3 locuri, solida, confortabila, poate chiar extensibila, dar fara spatiu de depozitare. Sau, pentru aceiasi bani, poti gasi o <strong>canapea colțar extensibil</strong> mai simpla, poate cu materiale mai putin premium, dar care iti ofera si functia de extensie si lada.</p>
-        <p>Daca vrei si un coltar extensibil de calitate, cu materiale bune si un mecanism fiabil, probabil vei depasi 4000 de lei. Am avut o canapea cu 3 locuri, extensibila, care era destul de comoda. Dar cand veneau prietenii, mereu ne inghesuiam.</p>
+        <p>Sa zicem ca ai un buget de 3000 de lei. Pentru asta, poti lua o canapea clasica de 3 locuri, solida, confortabila, poate chiar extensibila, dar fara spatiu de depozitare. Sau, pentru aceiasi bani, poti gasi o <strong>canapea colțar extensibil</strong> mai simpla, poate cu materiale mai putin <a href="/telefon-premium-android/">premium</a>, dar care iti ofera si functia de extensie si lada.</p>
+        <p>Daca vrei si un coltar extensibil de calitate, cu materiale bune si un mecanism fiabil, probabil vei depasi 4000 de lei. Am avut o canapea cu 3 locuri, <a href="/masa-dining-extensibila/" class="interlink">extensibila</a>, care era destul de comoda. Dar cand veneau prietenii, mereu ne inghesuiam.</p>
         <p>Am trecut la un coltar extensibil si am castigat enorm la spatiu de zi, plus ca am putut sa cazez si pe cine ramanea peste noapte fara probleme. Deci, daca spatiul e o problema si primesti oaspeti, coltarul e clar castigator.</p>
 <h2 id="greseli-de-evitat-cand-cumperi-canapea-coltar-extensibil">Greseli de evitat cand cumperi canapea colțar extensibil</h2>
 <p>Am vazut multe greseli facute de oameni cand vine vorba de canapele, mai ales de cele extensibile. Si nu vreau sa le faci si tu.</p>
@@ -159,8 +172,8 @@ export const frontmatter = {
 <strong>Recomandare:</strong> Acesta e segmentul cel mai echilibrat.</p>
         <p>Cauta modele de la producatori cunoscuti, verifica recenziile si mergi sa le testezi in magazin daca poti. Aici gasesti cele mai bune raporturi calitate-pret.</p>
         <h3>Buget Mare (peste 4500 lei)</h3>
-        <p>In acest segment, vorbim de piese de mobilier premium. Materiale de cea mai buna calitate, fie piele naturala, fie stofe de designer. Designuri spectaculoase, de la branduri de renume.</p>
-        <p>Mecanisme de extensie automate sau foarte usor de utilizat, cu o durabilitate garantata. Confort sporit, cu saltele de calitate superioara pentru partea de pat. Lada de depozitare poate fi integrata inteligent.</p>
+        <p>In acest segment, vorbim de piese de <a href="/mobilier-premium-apartament/" class="interlink">mobilier premium</a>. Materiale de cea mai buna calitate, fie piele naturala, fie stofe de designer. Designuri spectaculoase, de la branduri de renume.</p>
+        <p>Mecanisme de extensie automate sau foarte usor de utilizat, cu o durabilitate garantata. Confort sporit, cu saltele de calitate superioara pentru partea de pat. Lada de depozitare poate fi integrata <a href="/ceas-inteligent-sport-premium/" class="interlink">inteligent</a>.</p>
         <p>Unele modele pot avea si functii suplimentare, gen prize USB sau lumini integrate.
 <strong>Recomandare:</strong> Daca bugetul iti permite, merita sa investesti intr-o piesa de mobilier care va rezista ani buni si va arata impecabil. Uita-te la producatori specializati pe canapele de calitate si nu te sfii sa ceri sfatul consultantilor. Eu personal, daca ar fi sa cumpar acum, as merge pe un buget mediu spre mare.</p>
         <p>Am invatat ca pe termen lung, calitatea se vede si se simte. Mai bine o piesa mai scumpa, dar care ma tine 10 ani, decat una ieftina care trebuie schimbata dupa 2-3 ani.</p>`} />
@@ -218,5 +231,11 @@ export const frontmatter = {
         </div>
       </div>
     </div>
+  
+    <PrevNextNav
+      currentSlug="canapea-coltar-extensibil"
+      currentCategory="mobila-home-living"
+      articles={allArticles}
+    />
   </article>
 </Layout>
