@@ -1,11 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "mixer profesional bucătărie",
-      "category": "Electrocasnice Mici Premium",
-      "categorySlug": "electrocasnice-mici-premium"
-    },
-    {
       "keyword": "blender de mare putere",
       "category": "Electrocasnice Mici Premium",
       "categorySlug": "electrocasnice-mici-premium"
@@ -174,6 +169,11 @@
       "keyword": "bicicletă fitness magnetică",
       "category": "Sport & Fitness",
       "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "mixer profesional bucătărie",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
     }
   ],
   "completed": [
