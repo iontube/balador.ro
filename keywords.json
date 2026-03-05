@@ -46,11 +46,6 @@
       "categorySlug": "electrocasnice-mici-premium"
     },
     {
-      "keyword": "canapea premium living",
-      "category": "Mobilă & Home Living",
-      "categorySlug": "mobila-home-living"
-    },
-    {
       "keyword": "mobilier dormitor complet",
       "category": "Mobilă & Home Living",
       "categorySlug": "mobila-home-living"
@@ -174,6 +169,11 @@
       "keyword": "mixer profesional bucătărie",
       "category": "Electrocasnice Mici Premium",
       "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "canapea premium living",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
     }
   ],
   "completed": [
