@@ -96,11 +96,6 @@
       "categorySlug": "mobila-home-living"
     },
     {
-      "keyword": "aparat forță profesional",
-      "category": "Sport & Fitness",
-      "categorySlug": "sport-fitness"
-    },
-    {
       "keyword": "aparat cardio premium",
       "category": "Sport & Fitness",
       "categorySlug": "sport-fitness"
@@ -174,6 +169,11 @@
       "keyword": "canapea premium living",
       "category": "Mobilă & Home Living",
       "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "aparat forță profesional",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
     }
   ],
   "completed": [
