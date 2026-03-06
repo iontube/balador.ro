@@ -65,6 +65,7 @@ const AUTHORS = [
 
 let currentKeyIndex = 0;
 let currentAuthorIndex = 0;
+let keywordsData = { completed: [] };
 
 function getNextGeminiKey() {
   const key = GEMINI_KEYS[currentKeyIndex];
@@ -916,6 +917,11 @@ async function main() {
 
   const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
   const articles = config.articles || [];
+
+  // Load keywords.json for interlinks (completed articles list)
+  try {
+    keywordsData = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'keywords.json'), 'utf-8'));
+  } catch (e) {}
 
   console.log(`\nProcessing ${articles.length} articles...\n`);
 
