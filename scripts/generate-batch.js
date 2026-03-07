@@ -708,7 +708,7 @@ function createArticlePage(article, content, imagePath, author) {
 
   const categorySlug = article.categorySlug;
 
-  const pageContent = `---
+  let pageContent = `---
 import Layout from '../layouts/Layout.astro';
 import PrevNextNav from '../components/PrevNextNav.astro';
 import keywordsData from '../../keywords.json';
