@@ -1,11 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "blender de mare putere",
-      "category": "Electrocasnice Mici Premium",
-      "categorySlug": "electrocasnice-mici-premium"
-    },
-    {
       "keyword": "aparat de gătit multifuncțional",
       "category": "Electrocasnice Mici Premium",
       "categorySlug": "electrocasnice-mici-premium"
@@ -174,6 +169,11 @@
       "keyword": "aparat forță profesional",
       "category": "Sport & Fitness",
       "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "blender de mare putere",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
     }
   ],
   "completed": [
