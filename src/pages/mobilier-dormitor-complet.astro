@@ -1,0 +1,339 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+
+export const frontmatter = {
+  title: "Mobilier dormitor complet",
+  excerpt: "Cautati un set complet de mobilier pentru dormitor care sa transforme spatiul intr-un sanctuar de relaxare si stil? Un mobilier dormitor complet bine al...",
+  image: "/images/articles/mobilier-dormitor-complet.webp",
+  category: "Mobilă & Home Living",
+  categorySlug: "mobila-home-living",
+  date: "2026-03-07T11:35:41.680Z",
+  author: "Mihai Popescu",
+  authorRole: "Expert Tehnologie"
+};
+---
+
+<Layout
+  title="Mobilier dormitor complet"
+  description="Cautati un set complet de mobilier pentru dormitor care sa transforme spatiul intr-un sanctuar de relaxare si stil? Un mobilier dormitor complet bine al..."
+  image="/images/articles/mobilier-dormitor-complet.webp"
+  type="article"
+  publishedDate="2026-03-07T11:35:41.680Z"
+  modifiedDate="2026-03-07T11:35:41.680Z"
+  category="Mobilă & Home Living"
+  categorySlug="mobila-home-living"
+  author="Mihai Popescu"
+  faq={[{"question":"cat costa un mobilier dormitor complet?","answer":"Pretul unui mobilier dormitor complet variaza enorm. Un set basic din PAL melaminat poate incepe de la 1500-2000 lei. Un set de calitate medie din MDF, cu design modern, ajunge la 4000-7000 lei. Seturile premium din lemn masiv, cu finisaje de lux, pot depasi 15.000-20.000 lei."},{"question":"care e diferenta intre mobilier dormitor complet si piese separate?","answer":"Un mobilier dormitor complet ofera un stil unitar si, de obicei, un pret mai avantajos decat cumpararea fiecarei piese separat. Alegand piese separate ai insa mai multa libertate sa personalizezi si sa alegi exact ce ai nevoie, chiar daca poate fi mai costisitor."},{"question":"merita sa cumpar mobilier dormitor complet cu pat rabatabil?","answer":"Da, merita daca spatiul tau este limitat si ai nevoie de spatiu suplimentar de depozitare. Un pat rabatabil (cu lada) este excelent pentru a ascunde lenjerie de pat, perne sau alte obiecte, optimizand spatiul din dormitor. Asigura-te ca mecanismul este de calitate."},{"question":"ce piese ar trebui sa includa un mobilier dormitor complet?","answer":"Un set standard de mobilier dormitor complet include, de regula: un pat matrimonial, doua noptiere si un dulap. Multe seturi includ si o comoda. Unele variante mai complexe pot adauga si o oglinda sau o bancheta."},{"question":"cum aleg culoarea potrivita pentru mobilierul din dormitor?","answer":"Culorile deschise, precum alb, bej sau gri deschis, fac dormitorul sa para mai spatios si luminos. Culorile inchise, gen wenge, nuc sau antracit, creeaza o atmosfera mai intima si eleganta. Alege o culoare care se potriveste cu lumina naturala din camera si cu restul decorului."}]}
+>
+  <article class="article-page">
+    <div class="container-main">
+      <div class="article-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="/">Acasa</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li>Mobilă & Home Living</li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li class="breadcrumb-current">Mobilier dormitor complet</li>
+          </ol>
+        </nav>
+
+        <!-- Header -->
+        <header class="article-header">
+          <span class="category-badge">Mobilă & Home Living</span>
+          <h1 class="article-title">Mobilier dormitor complet</h1>
+          <div class="article-header-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">
+                MP
+              </div>
+              <div class="article-author-info">
+                <span class="article-author-name">Mihai Popescu</span>
+                <span class="article-author-role">Expert Tehnologie</span>
+              </div>
+            </div>
+            <time class="article-date" datetime="2026-03-07T11:35:41.680Z">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              7 martie 2026
+            </time>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-image">
+          <img src="/images/articles/mobilier-dormitor-complet.webp" alt="Mobilier dormitor complet" width="800" height="600" loading="eager" />
+        </div>
+
+        <!-- Table of Contents -->
+        <Fragment set:html={`<nav class="toc">
+  <div class="toc-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+    Cuprins
+  </div>
+  <ul class="toc-list">
+    <li><a href="#mobila-dormitor-complet-visul-romanesc-stejar-sonomaalb">Mobila Dormitor Complet 'Visul Romanesc' - Stejar Sonoma/Alb</a></li>
+    <li><a href="#set-mobila-dormitor-visul-tinerilor-alb-lucios">Set Mobila Dormitor 'Visul Tinerilor' - Alb Lucios</a></li>
+    <li><a href="#mobila-dormitor-complet-regal-nuc-masiv-marmura">Mobila Dormitor Complet 'Regal' - Nuc Masiv & Marmura</a></li>
+    <li><a href="#set-mobila-dormitor-eleganta-urbana-gri-antracit-stejar-auriu">Set Mobila Dormitor 'Eleganță Urbană' - Gri Antracit & Stejar Auriu</a></li>
+    <li><a href="#set-mobila-dormitor-clasic-cires-melaminat">Set Mobila Dormitor 'Clasic' - Cireș Melaminat</a></li>
+    <li><a href="#comparatie">Comparatie rapida</a></li>
+    <li><a href="#cum-alegi-mobilierul-potrivit-pentru-dormitorul-tau">Cum Alegi Mobilierul Potrivit Pentru Dormitorul Tău</a></li>
+    <li><a href="#faq">Intrebari Frecvente</a></li>
+  </ul>
+</nav>`} />
+
+        <!-- Article Content -->
+        <div class="prose-article">
+          <!-- Intro -->
+          <Fragment set:html={`<p>Cautati un set complet de mobilier pentru dormitor care sa transforme spatiul intr-un sanctuar de relaxare si stil? Un <strong>mobilier dormitor complet</strong> bine ales nu e doar o colectie de piese, ci o declaratie de personalitate si un element cheie in confortul zilnic. In acest articol, va vom prezenta optiuni variate, de la cele economice la cele premium, cu pareri oneste despre ce anume conteaza cu adevarat.</p>`} />
+
+          <!-- Product Reviews -->
+          <Fragment set:html={`
+<article class="product-review" id="mobila-dormitor-complet-visul-romanesc-stejar-sonomaalb">
+  <div class="product-review__header">
+    <span class="section-tag">Raport Calitate-Pret</span>
+    <h3>Mobila Dormitor Complet 'Visul Romanesc' - Stejar Sonoma/Alb</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>N/A</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Dulap 3 usi cu oglinda, Pat dublu (saltea 160x200), 2 Noptiere, Comoda 3 sertare</div>
+      <div class="product-review__spec"><strong>Functii</strong>Design modern, Spatiu de depozitare generos, Finisaj rezistent la zgarieturi</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>Dulap: 120x55x200 cm, Pat: 165x205 cm, Noptiera: 40x35x50 cm, Comoda: 80x45x75 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Am pus mana pe acest set pentru ca pretul era imbatabil. Sincer, ma asteptam la ceva... mai slab. Dar spre surprinderea mea, finisajul stejar sonoma arata chiar bine, nu pare ieftin. Montajul a fost OK, am stat vreo 4 ore cu sotia, dar am ras pe parcurs. Instructiunile sunt clare, nu ai cum sa te incurci prea tare.</p>
+        <p>Dulapul e incapator, desi daca ai multe haine groase de iarna, s-ar putea sa te cam strangi. Patul e solid, nu scartaie cand te intorci noaptea. Noptierele sunt suficient de mari pentru o carte si telefonul. Singurul minus real e ca sertarele comodei nu gliseaza la fel de fin ca la piesele mult mai scumpe. Se simte un pic de frecare, dar nu-i ceva grav.</p>
+        <p>Per total, daca vrei un <strong>mobilier dormitor complet</strong> sa arate decent si sa-si faca treaba fara sa te rupa la buzunar, asta e. Nu te astepta la materiale de lux, dar e mult peste ce gasesti in alte oferte la pret similar.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Pret foarte accesibil</li><li>Aspect modern, placut</li><li>Piese esentiale incluse</li><li>Montaj relativ usor</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Glisiere sertare nu foarte fine</li><li>Materialele sunt de nivel mediu</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="set-mobila-dormitor-visul-tinerilor-alb-lucios">
+  <div class="product-review__header">
+    <span class="section-tag">Pentru Buget Mic</span>
+    <h3>Set Mobila Dormitor 'Visul Tinerilor' - Alb Lucios</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>N/A</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Pat cu spatiu depozitare (somiera rabatabila), 2 Noptiere, Comoda 4 sertare, Dulap 2 usi glisante</div>
+      <div class="product-review__spec"><strong>Functii</strong>Design minimalist, Alb lucios, Spatiu de depozitare suplimentar sub pat</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>Pat: 140x200 cm, Noptiera: 45x40x55 cm, Comoda: 90x45x80 cm, Dulap: 100x60x210 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Asta e varianta buna daca spatiul e mic si bugetul la fel. Am amenajat o garsoniera pentru un prieten cu piesa asta si a iesit surprinzator de bine. Alb lucios face camera sa para mai mare, chiar daca piesele nu sunt gigantice.</p>
+        <p>Patul cu lada de depozitare e salvator. Poti baga acolo lenjerie, perne, ce nu folosesti zilnic. Dulapul cu usi glisante e practic, nu ai nevoie de spatiu in fata sa-l deschizi. Comoda are 4 sertare, destul pentru haine mai mici. Noptierele sunt simple, dar isi fac treaba.</p>
+        <p>Ce nu mi-a placut? Calitatea materialelor e, sa zicem, de baza. Se zgaraie destul de usor daca nu esti atent. Si usile dulapului nu sunt perfect aliniate din fabrica, am ajustat eu suruburile. Dar, na, pentru pretul asta, ce sa ceri? E un <strong>mobilier dormitor complet</strong> care face treaba.</p>
+        <p>Daca vrei sa economisesti si sa ai un dormitor aranjat, asta e.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Preț imbatabil</li><li>Ideal pentru spații mici</li><li>Depozitare eficientă sub pat</li><li>Design luminos</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Materiale predispuse la zgârieturi</li><li>Finisaje necesită ajustare uneori</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="mobila-dormitor-complet-regal-nuc-masiv-marmura">
+  <div class="product-review__header">
+    <span class="section-tag">Premium</span>
+    <h3>Mobila Dormitor Complet 'Regal' - Nuc Masiv & Marmura</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>N/A</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Pat king-size cu tăblie tapițată, 2 Noptiere cu sertare, Dulap 3 uși cu oglindă integrată, Comodă 6 sertare, Oglindă de perete</div>
+      <div class="product-review__spec"><strong>Functii</strong>Lemn masiv de nuc, Elemente din marmură naturală, Tăblie pat din piele ecologică, Sistem de iluminare LED discret</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>Pat: 180x210 cm, Noptiera: 50x45x60 cm, Dulap: 150x60x220 cm, Comodă: 120x50x85 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Aici vorbim de altceva. Am avut ocazia sa vad acest set la un showroom si, pe bune, se simte diferenta. Lemnul de nuc e superb, textura e bogata, iar insertiile de marmura adauga o nota de lux autentic. E un <strong>mobilier dormitor complet</strong> care impune respect.</p>
+        <p>Patul e imens, confortabil, tăblia din piele ecologică e plăcută la atingere. Noptierele sunt solide, sertarele glisează perfect, am testat. Dulapul e generos, cu rafturi bine gândite si o oglinda mare. Comoda cu 6 sertare rezolva orice problema de depozitare.</p>
+        <p>Critica? Greu de gasit. Poate pretul. E o investitie serioasa. Si greutatea pieselor – mutarea lor e o provocare. Dar daca vrei ceva sa dureze generatii si sa arate wow, merita fiecare leu. Nu e pentru oricine, clar.</p>
+        <p>Daca bugetul nu e o problema si vrei ce e mai bun, asta e.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Materiale de lux (lemn masiv, marmură)</li><li>Design elegant și rafinat</li><li>Calitate excepțională a construcției</li><li>Spațiu de depozitare amplu</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Preț foarte ridicat</li><li>Greutate mare, dificil de mutat</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="set-mobila-dormitor-eleganta-urbana-gri-antracit-stejar-auriu">
+  <div class="product-review__header">
+    <span class="section-tag">Best Buy 2026</span>
+    <h3>Set Mobila Dormitor 'Eleganță Urbană' - Gri Antracit & Stejar Auriu</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>N/A</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Pat cu cadru metalic negru (saltea 140x200), 2 Noptiere suspendate, Dulap 2 usi glisante, Comoda 3 sertare</div>
+      <div class="product-review__spec"><strong>Functii</strong>Stil industrial modern, Combinatie de culori contrastante, Noptiere suspendate pentru un look aerisit</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>Pat: 145x205 cm, Noptiera: 40x30x20 cm, Dulap: 120x60x200 cm, Comoda: 80x45x70 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Am ales setul asta pentru un apartament inchiriat, cautam ceva modern, dar nu exagerat de scump. Combinatia gri antracit cu stejar auriu arata mult mai bine in realitate decat in poze. E un stil industrial-minimalist care prinde bine.</p>
+        <p>Patul e solid, cadrul metalic îi dă un aer robust. Noptierele suspendate sunt geniale pentru curățenie și dau un aspect aerisit. Dulapul cu usi glisante e practic, iar comoda e suficientă pentru lucrurile esențiale. Am apreciat și sistemul de prindere al noptierelor, pare sigur.</p>
+        <p>Ce ar fi putut fi mai bine? Lemnul de pe usi si lateralele comodei e melaminat, nu te astepta la lemn masiv. Si pe alocuri, muchiile nu sunt finisate perfect. Dar, sincer, pentru prețul la care l-am luat, e un <strong>mobilier dormitor complet</strong> foarte bun. Daca esti atent la detalii, poti masca micile imperfecțiuni.</p>
+        <p>Merita daca vrei un dormitor cu personalitate, la un pret rezonabil.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Design modern, industrial</li><li>Noptiere suspendate practice</li><li>Preț bun pentru calitatea oferită</li><li>Ușor de asortat</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Melamină în loc de lemn masiv</li><li>Finisaje uneori imperfecte</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="set-mobila-dormitor-clasic-cires-melaminat">
+  <div class="product-review__header">
+    <span class="section-tag">Raport Calitate-Pret</span>
+    <h3>Set Mobila Dormitor 'Clasic' - Cireș Melaminat</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>N/A</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Pat matrimonial (saltea 140x200), 2 Noptiere, Dulap 2 usi, Comoda 3 sertare</div>
+      <div class="product-review__spec"><strong>Functii</strong>Stil clasic, Finisaj cireș, Piese esențiale incluse</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>Pat: 145x205 cm, Noptiera: 40x35x50 cm, Dulap: 100x55x190 cm, Comoda: 80x45x75 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Pentru cei care iubesc stilul clasic, dar nu vor sa dea o avere, acest set e o optiune buna. Am montat unul pentru bunicii mei si le-a placut mult aspectul de cireș, le aminteste de mobila de acasa.</p>
+        <p>Piesele sunt cele de baza: pat, doua noptiere, dulap si comoda. Suficient pentru un dormitor standard. Montajul a fost simplu, nu foarte complicat. Instructiunile sunt clare. Patul e stabil, noptierele si comoda au sertare de dimensiuni decente.</p>
+        <p>Materialul principal e PAL melaminat, deci nu te astepta la minuni. Se poate zgaria daca nu esti atent. Usa dulapului se inchide cu balamale clasice, nu cu soft-close, deci face zgomot. Totusi, pentru pretul asta, e un set decent. Un <strong>mobilier dormitor complet</strong> pentru cei cu gusturi mai traditionale.</p>
+        <p>Daca preferi stilul clasic si ai un buget limitat, merita sa te uiti la el.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Stil clasic, prietenos cu vârsta</li><li>Preț accesibil</li><li>Piese de bază incluse</li><li>Montaj simplu</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>PAL melaminat, se zgârie ușor</li><li>Fără funcții moderne (soft-close etc.)</li></ul></div>
+    </div>
+  </div>
+</article>`} />
+
+          <!-- Comparison Table -->
+          <Fragment set:html={`
+<section id="comparatie">
+  <h2>Comparatie rapida</h2>
+  <div class="comparison-outer" id="comparison-outer">
+    <div class="comparison-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Scroll horizontal pentru toate coloanele</div>
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead><tr><th>Model</th><th>Putere</th><th>Capacitate</th><th>Functii</th><th>Consum</th><th>Potrivit Pentru</th></tr></thead>
+        <tbody><tr><td>Mobila Dormitor Complet 'Visul Romanesc'</td><td>N/A</td><td>Dulap 3 usi, Pat dublu, 2 Noptiere, Comoda 3 sertare</td><td>Design modern, Spatiu generos</td><td>N/A</td><td>Clienti care cauta un echilibru bun intre pret si aspect, familii tinere.</td></tr><tr><td>Set Mobila Dormitor 'Visul Tinerilor'</td><td>N/A</td><td>Pat cu lada, 2 Noptiere, Comoda 4 sertare, Dulap 2 usi glisante</td><td>Minimalist, Alb lucios, Depozitare sub pat</td><td>N/A</td><td>Studenti, garsoniere, bugete foarte mici.</td></tr><tr><td>Mobila Dormitor Complet 'Regal'</td><td>N/A</td><td>Pat king-size, 2 Noptiere, Dulap 3 usi, Comoda 6 sertare, Oglinda</td><td>Lemn masiv, Marmura, Piele ecologica</td><td>N/A</td><td>Clienti cu buget mare, cauta lux si calitate pe termen lung.</td></tr><tr><td>Set Mobila Dormitor 'Eleganță Urbană'</td><td>N/A</td><td>Pat cadru metalic, 2 Noptiere suspendate, Dulap 2 usi glisante, Comoda 3 sertare</td><td>Industrial, Contrastant, Noptiere suspendate</td><td>N/A</td><td>Tineri, apartamente moderne, stil industrial.</td></tr><tr><td>Set Mobila Dormitor 'Clasic'</td><td>N/A</td><td>Pat matrimonial, 2 Noptiere, Dulap 2 usi, Comoda 3 sertare</td><td>Clasic, Cireș melaminat</td><td>N/A</td><td>Persoane mai în vârstă, preferințe clasice, bugete restrânse.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>`} />
+
+          <!-- Buying Guide -->
+          <Fragment set:html={`
+<section id="cum-alegi-mobilierul-potrivit-pentru-dormitorul-tau">
+  <h2>Cum Alegi Mobilierul Potrivit Pentru Dormitorul Tău</h2>
+  <div class="guide"><h4>Ce Conteaza Cand Alegi un Set Complet de Mobilier pentru Dormitor?</h4>
+        <p>Alegerea unui <strong>mobilier dormitor complet</strong> nu e o decizie pe care s-o iei in graba. E vorba de confortul tau zilnic, de cum te trezesti dimineata si cum te relaxezi seara. Inainte sa te uiti la design, gandeste-te la spatiul tau.</p>
+        <p>Masoara camera cu atentie. Nu vrei sa cumperi un pat king-size daca abia iti incape cel de 140. Apoi, gândește-te la nevoile tale de depozitare.</p>
+        <p>Ai multe haine? Ai nevoie de spațiu pentru cărți, electronice? Asta te va ghida spre modele cu mai multe sertare, dulapuri mai mari sau paturi cu ladă. Nu uita de stil. Vrei ceva modern, minimalist, clasic, industrial? Culorile au și ele un rol.</p>
+        <p>Culorile deschise fac camera să pară mai mare, cele închise creează o atmosferă mai intimă.</p>
+        <h4>Materiale: PAL, MDF, Lemn Masiv - Ce Alegi?</h4>
+        <ul><li><strong>PAL Melaminat:</strong> Cel mai ieftin. Bun pentru bugete mici, dar se zgârie ușor și nu e cel mai rezistent. Perfect pentru piese mai puțin folosite.</li><li><strong>MDF (cu folie sau vopsit):</strong> Mai scump decât PAL, dar mai rezistent și mai ușor de curățat. Finisajele pot fi mate sau lucioase. O opțiune bună pentru un raport calitate-preț.</li><li><strong>Lemn Masiv:</strong> Cea mai scumpă și cea mai durabilă variantă. Arată spectaculos, e rezistent și poate dura zeci de ani. Dacă bugetul îți permite, e investiția ideală.</li></ul>
+        <h4>Greșeli Frecvente de Evitat</h4>
+        <ul><li><strong>Ignorarea Măsurătorilor:</strong> Cea mai mare greșeală. Verifică de două ori dimensiunile camerei și ale pieselor de mobilier.</li><li><strong>Prea Mult Mobilier:</strong> Nu supraaglomera camera. Un dormitor trebuie să fie un spațiu de relaxare, nu o magazie. Mai puțin e uneori mai mult.</li><li><strong>Neglijarea Calității Sertarelor și Balamalelor:</strong> Piesele ieftine au adesea glisiere proaste și balamale care se uzează repede. Verifică dacă sertarele glisează lin și ușile se închid fără zgomot (ideal cu soft-close).</li><li><strong>Urmărirea Orbă a Tendințelor:</strong> Alege un stil care îți place ție, nu doar ce e la modă acum. Mobilierul de dormitor e o investiție pe termen lung.</li></ul>
+        <h4>Sfaturi de Insider</h4>
+        <p>Când cumperi un set, uită-te dacă poți cumpăra piesele separat mai târziu, dacă ai nevoie de ceva în plus. Unele magazine permit asta. De asemenea, ia în considerare mobilierul modular, care îți permite să adaptezi configurația în timp.</p>
+        <p>Nu uita de saltea! O saltea bună face diferența între un pat confortabil și unul inconfortabil, indiferent cât de scump e mobilierul. Pentru inspirație, poți arunca o privire și la articolele noastre despre <a href="/frigider-side-by-side/">frigider side by side</a> sau <a href="/masina-de-spalat-silentioasa/">mașină de spălat silențioasă</a>, pentru a vedea cum diversitatea de opțiuni se aplică și în alte categorii de electrocasnice.</p>
+  </div>
+</section>`} />
+
+          <!-- FAQ -->
+          <Fragment set:html={`
+<section id="faq" class="faq-section">
+  <h2>Intrebari Frecvente</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">cat costa un mobilier dormitor complet?</div>
+      <div class="faq-answer">Pretul unui mobilier dormitor complet variaza enorm. Un set basic din PAL melaminat poate incepe de la 1500-2000 lei. Un set de calitate medie din MDF, cu design modern, ajunge la 4000-7000 lei. Seturile premium din lemn masiv, cu finisaje de lux, pot depasi 15.000-20.000 lei.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">care e diferenta intre mobilier dormitor complet si piese separate?</div>
+      <div class="faq-answer">Un mobilier dormitor complet ofera un stil unitar si, de obicei, un pret mai avantajos decat cumpararea fiecarei piese separat. Alegand piese separate ai insa mai multa libertate sa personalizezi si sa alegi exact ce ai nevoie, chiar daca poate fi mai costisitor.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">merita sa cumpar mobilier dormitor complet cu pat rabatabil?</div>
+      <div class="faq-answer">Da, merita daca spatiul tau este limitat si ai nevoie de spatiu suplimentar de depozitare. Un pat rabatabil (cu lada) este excelent pentru a ascunde lenjerie de pat, perne sau alte obiecte, optimizand spatiul din dormitor. Asigura-te ca mecanismul este de calitate.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">ce piese ar trebui sa includa un mobilier dormitor complet?</div>
+      <div class="faq-answer">Un set standard de mobilier dormitor complet include, de regula: un pat matrimonial, doua noptiere si un dulap. Multe seturi includ si o comoda. Unele variante mai complexe pot adauga si o oglinda sau o bancheta.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">cum aleg culoarea potrivita pentru mobilierul din dormitor?</div>
+      <div class="faq-answer">Culorile deschise, precum alb, bej sau gri deschis, fac dormitorul sa para mai spatios si luminos. Culorile inchise, gen wenge, nuc sau antracit, creeaza o atmosfera mai intima si eleganta. Alege o culoare care se potriveste cu lumina naturala din camera si cu restul decorului.</div>
+    </div>
+  </div>
+</section>`} />
+        </div>
+
+        <!-- Author Box -->
+        <div class="author-box">
+          <div class="author-box-content">
+            <div class="author-avatar">
+              MP
+            </div>
+            <div class="author-info">
+              <div class="author-name">Mihai Popescu</div>
+              <div class="author-role">Expert Tehnologie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Prev/Next Navigation -->
+    <PrevNextNav
+      currentSlug="mobilier-dormitor-complet"
+      currentCategory="mobila-home-living"
+      articles={allArticles}
+    />
+  </article>
+
+  <script>
+    // Comparison table scroll detection
+    document.addEventListener('DOMContentLoaded', () => {
+      const outer = document.getElementById('comparison-outer');
+      if (outer) {
+        const wrap = outer.querySelector('.comparison-wrap');
+        function checkScroll() {
+          if (wrap && wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          } else {
+            outer.classList.remove('can-scroll');
+          }
+        }
+        checkScroll();
+        window.addEventListener('resize', checkScroll);
+      }
+
+      // TOC active tracking
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (tocLinks.length) {
+        const ids = Array.from(tocLinks).map(a => a.getAttribute('href').replace('#', '')).filter(Boolean);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+    });
+  </script>
+</Layout>
