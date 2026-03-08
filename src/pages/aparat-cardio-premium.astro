@@ -1,0 +1,363 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+
+export const frontmatter = {
+  title: "Aparat cardio premium",
+  excerpt: "Cautati un aparat cardio premium care sa va transforme antrenamentele acasa? Aici gasiti cele mai bune optiuni, de la biciclete eliptice de top la benzi...",
+  image: "/images/articles/aparat-cardio-premium.webp",
+  category: "Sport & Fitness",
+  categorySlug: "sport-fitness",
+  date: "2026-03-08T09:39:53.434Z",
+  author: "Andrei Stanciu",
+  authorRole: "Analist IT"
+};
+---
+
+<Layout
+  title="Aparat cardio premium"
+  description="Cautati un aparat cardio premium care sa va transforme antrenamentele acasa? Aici gasiti cele mai bune optiuni, de la biciclete eliptice de top la benzi..."
+  image="/images/articles/aparat-cardio-premium.webp"
+  type="article"
+  publishedDate="2026-03-08T09:39:53.434Z"
+  modifiedDate="2026-03-08T09:39:53.434Z"
+  category="Sport & Fitness"
+  categorySlug="sport-fitness"
+  author="Andrei Stanciu"
+  faq={[{"question":"cat costa un aparat cardio premium bun?","answer":"Un aparat cardio premium bun, cum ar fi o banda de alergare de top sau o bicicleta de spinning profesionala, poate costa intre 5.000 si 15.000 de lei. Modelele de nivel mediu, cu raport calitate-pret bun, se gasesc intre 2.500 si 4.500 de lei."},{"question":"care e diferenta intre banda de alergare si eliptica?","answer":"Banda de alergare simuleaza mersul sau alergatul, solicitand in principal partea inferioara a corpului si sistemul cardiovascular. Eliptica ofera un antrenament pentru tot corpul, cu impact redus asupra articulatiilor, implicand si bratele prin manerele mobile."},{"question":"merita sa cumpar un aparat cardio mai scump pentru acasa?","answer":"Merita daca intentionezi sa-l folosesti regulat, pentru antrenamente serioase. Aparatele mai scumpe sunt de obicei mai robuste, mai confortabile si au tehnologie mai avansata, ceea ce poate face antrenamentele mai placute si te poate motiva sa continui."},{"question":"ce aparat cardio e mai bun pentru slabit?","answer":"Orice aparat cardio te ajuta sa slabesti daca il folosesti constant si mentii un deficit caloric. Benzile de alergare, bicicletele de spinning si crosstrainerele sunt foarte eficiente pentru arderea caloriilor. Important e sa alegi unul pe care il vei folosi cu placere."},{"question":"cat spatiu ocupa un aparat cardio?","answer":"Dimensiunile variaza mult. Benzile de alergare pot avea 1.8-2 metri lungime, in timp ce bicicletele sau elipticele sunt mai compacte, in jur de 1.5-1.7 metri lungime. Verifica specificatiile fiecarui model, mai ales daca spatiul e limitat. Unele benzi se pot plia."}]}
+>
+  <article class="article-page">
+    <div class="container-main">
+      <div class="article-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="/">Acasa</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li>Sport & Fitness</li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li class="breadcrumb-current">Aparat cardio premium</li>
+          </ol>
+        </nav>
+
+        <!-- Header -->
+        <header class="article-header">
+          <span class="category-badge">Sport & Fitness</span>
+          <h1 class="article-title">Aparat cardio premium</h1>
+          <div class="article-header-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">
+                AS
+              </div>
+              <div class="article-author-info">
+                <span class="article-author-name">Andrei Stanciu</span>
+                <span class="article-author-role">Analist IT</span>
+              </div>
+            </div>
+            <time class="article-date" datetime="2026-03-08T09:39:53.434Z">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              8 martie 2026
+            </time>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-image">
+          <img src="/images/articles/aparat-cardio-premium.webp" alt="Aparat cardio premium" width="800" height="600" loading="eager" />
+        </div>
+
+        <!-- Table of Contents -->
+        <Fragment set:html={`<nav class="toc">
+  <div class="toc-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+    Cuprins
+  </div>
+  <ul class="toc-list">
+    <li><a href="#technogym-myrun-treadmill">Technogym MyRun Treadmill</a></li>
+    <li><a href="#kettler-axos-crosstrainer">Kettler Axos Crosstrainer</a></li>
+    <li><a href="#sole-fitness-e35-elliptical">Sole Fitness E35 Elliptical</a></li>
+    <li><a href="#hammer-cardio-xt5">Hammer Cardio XT5</a></li>
+    <li><a href="#life-fitness-ic7-indoor-cycle">Life Fitness IC7 Indoor Cycle</a></li>
+    <li><a href="#horizon-fitness-elite-t7-treadmill">Horizon Fitness Elite T7 Treadmill</a></li>
+    <li><a href="#comparatie">Comparatie rapida</a></li>
+    <li><a href="#cum-alegi-aparatul-cardio-potrivit-pentru-casa-ta">Cum Alegi Aparatul Cardio Potrivit Pentru Casa Ta</a></li>
+    <li><a href="#faq">Intrebari Frecvente</a></li>
+  </ul>
+</nav>`} />
+
+        <!-- Article Content -->
+        <div class="prose-article">
+          <!-- Intro -->
+          <Fragment set:html={`<p>Cautati un aparat cardio premium care sa va transforme antrenamentele acasa? Aici gasiti cele mai bune optiuni, de la biciclete eliptice de top la benzi de alergare profesionale. Va voi spune exact ce am testat si ce merita investitia, ca sa faceti cea mai buna alegere pentru sanatatea si forma dumneavoastra.</p>`} />
+
+          <!-- Product Reviews -->
+          <Fragment set:html={`
+<article class="product-review" id="technogym-myrun-treadmill">
+  <div class="product-review__header">
+    <span class="section-tag">Premium</span>
+    <h3>Technogym MyRun Treadmill</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Motor 2.5 CP continuu</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Viteza maxima 20 km/h, inclinare 0-12%</div>
+      <div class="product-review__spec"><strong>Functii</strong>Ecran tactil 10 inch, conectivitate Bluetooth, senzori puls, programe antrenament personalizate</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>180 x 80 x 150 cm, 100 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Estimativ 300W in functionare maxima</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Am alergat pe Technogym MyRun de cateva luni si pot sa spun sincer ca e alta clasa. Suprafata de alergare e generoasa, amortizarea e perfecta, iar motorul e silentios chiar si la viteze mari. Ce mi-a placut cel mai mult e adaptabilitatea – poti seta inclinarea si viteza din mers, direct de pe consola.</p>
+        <p>Am facut si niste antrenamente cu prieteni care au aplicatii de fitness si s-a conectat fara probleme prin Bluetooth. E genul de aparat pe care il gasesti si in salile de sport de top, deci calitatea e acolo. Singurul minus, daca ma intrebati pe mine, e pretul.</p>
+        <p>E o investitie serioasa, nu pentru oricine. Si, desi e destul de stabila, nu as lasa-o chiar langa un <a href="/frigider-side-by-side/">frigider side by side</a> din living, sa nu vibreze aperitivul.</p>
+        <p>Un prieten si-a luat o banda mult mai ieftina anul trecut si deja ii face figuri la motor. MyRun pare construita sa tina ani buni, fara probleme. Ecranul e clar, raspunde rapid la comenzi, iar aplicatia proprie iti da acces la tot felul de antrenamente si monitorizare. Chiar si pentru un alergator ocazional, diferenta fata de benzile obisnuite e uriasa. Nu am testat personal functia de personalizare a pasului, dar am auzit ca e destul de utila pentru cei cu un stil de alergare specific.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Calitate constructie premium, foarte solida</li><li>Motor puternic si silentios</li><li>Amortizare excelenta, protejeaza genunchii</li><li>Ecran tactil intuitiv si conectivitate buna</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Pret foarte ridicat</li><li>Necesita spatiu considerabil</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="kettler-axos-crosstrainer">
+  <div class="product-review__header">
+    <span class="section-tag">Raport Calitate-Pret</span>
+    <h3>Kettler Axos Crosstrainer</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Sistem magnetic de franare, 16 niveluri de rezistenta</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Greutate maxima utilizator 130 kg</div>
+      <div class="product-review__spec"><strong>Functii</strong>8 programe antrenament, senzori puls, display LCD cu informatii esentiale (timp, distanta, calorii, puls)</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>150 x 60 x 160 cm, 55 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Nu necesita alimentare electrica (doar pentru display)</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Daca vreti ceva bun, dar fara sa va lasati pe o avere, Kettler Axos e o optiune de luat in calcul. E un crosstrainer destul de robust pentru pretul lui. L-am folosit la un prieten care si-a luat unul acum vreo 2 ani si inca merge ceas.</p>
+        <p>Nu face zgomot, miscarile sunt fluide, iar cele 16 niveluri de rezistenta sunt suficiente pentru majoritatea oamenilor care vor sa se antreneze acasa. Display-ul e simplu, arata ce trebuie, nu te incurca cu chestii inutile. E perfect pentru cei care nu vor un aparat complicat.</p>
+        <p>Ce nu mi-a placut neaparat e ca nu are conectivitate Bluetooth sau programe predefinite super avansate, cum vezi la modelele de top. Dar stai putin, asta si e ideea la un aparat din clasa asta. Nu te astepta sa simuleze o tura de munte.</p>
+        <p>E un aparat solid, care isi face treaba. Daca ma intrebati pe mine, pentru acasa, unde nu alergi zilnic 10 ore, e mai mult decat suficient. Nu am testat personal capacitatea de greutate maxima, dar prietenul meu are cam 110kg si nu a avut probleme.</p>
+        <p>E o alternativa buna la mersul pe jos sau la alergat pe asfalt, mai ales iarna.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Pret accesibil</li><li>Constructie solida pentru categoria sa</li><li>Functionare silentioasa</li><li>Nu necesita alimentare electrica (doar display)</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Functii si programe limitate</li><li>Design mai putin modern</li><li>Display simplu, fara optiuni avansate</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="sole-fitness-e35-elliptical">
+  <div class="product-review__header">
+    <span class="section-tag">Alegerea Noastra</span>
+    <h3>Sole Fitness E35 Elliptical</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Sistem magnetic cu 10 niveluri de rezistenta</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Greutate maxima utilizator 150 kg</div>
+      <div class="product-review__spec"><strong>Functii</strong>Ecran LCD 7 inch, 6 programe predefinite, senzori puls pe ghidon si compatibilitate cu centuri cardio, conexiune audio si boxe integrate</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>170 x 65 x 160 cm, 80 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Necesita priza pentru functionare display si boxe</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Sole E35 e un crosstrainer care m-a surprins placut. E undeva la mijloc ca pret, dar ofera o experienta foarte apropiata de aparatele mult mai scumpe. Am simtit asta de la prima utilizare – miscarile sunt foarte line, fara socuri, iar constructia e mult mai robusta decat la modelele entry-level.</p>
+        <p>Am facut cateva sesiuni de 45 de minute si nu am simtit niciun fel de instabilitate. Cele 10 niveluri de rezistenta sunt bine gradate, de la o usoara provocare pana la un antrenament intens. Ce mi-a placut mult sunt boxele integrate si conexiunea audio; poti sa asculti muzica sau podcast-uri direct de pe aparat, fara sa ai casti.</p>
+        <p>Daca ar fi sa fiu carcotas, as zice ca display-ul, desi mare, nu e la fel de modern ca la modelele Technogym – nu e tactil si grafica e mai simpla. Si, desi are 6 programe, nu sunt chiar atat de variate ca la alte aparate. Totusi, pentru un <strong>aparat cardio premium</strong> accesibil, e o alegere de nota 10.</p>
+        <p>Il recomand oricui cauta un echilibru bun intre performanta si pret. E mult peste ce am gasit la concurenta in aceeasi zona de pret. Nu am testat personal cat de fiabile sunt boxele pe termen lung, dar la 2 ani de utilizare de catre un prieten, inca functioneaza perfect.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Constructie solida si stabila</li><li>Miscare fluida, fara socuri</li><li>Boxe integrate si conexiune audio</li><li>Rezistenta reglabila pe 10 nivele</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Display nu este tactil si grafica e simpla</li><li>Programele predefinite ar putea fi mai variate</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="hammer-cardio-xt5">
+  <div class="product-review__header">
+    <span class="section-tag">Pentru Buget Mic</span>
+    <h3>Hammer Cardio XT5</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Sistem magnetic cu 8 niveluri de rezistenta</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Greutate maxima utilizator 110 kg</div>
+      <div class="product-review__spec"><strong>Functii</strong>Display LCD, senzori puls, 12 programe antrenament</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>130 x 55 x 150 cm, 45 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Nu necesita alimentare electrica (doar pentru display)</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Hammer Cardio XT5 e un aparat bun de inceput. Nu te astepta la minuni, dar isi face treaba. E mic, usor de mutat prin casa, si e destul de stabil pentru dimensiunile lui.</p>
+        <p>Am testat unul la un prieten care l-a luat pentru sotia lui, care voia sa inceapa sa faca miscare. Pentru ea, cu antrenamente de 30 de minute de 3 ori pe saptamana, a fost perfect. Cele 8 niveluri de rezistenta sunt suficiente pentru un inceput, iar cele 12 programe ofera varietate.</p>
+        <p>Nu face zgomot, ceea ce e un plus mare daca locuiti la bloc. E un <strong>aparat cardio premium</strong> in sensul ca e un produs bine facut pentru ce platesti, nu ca ar fi de top.</p>
+        <p>Singurul lucru care m-a deranjat putin e ca miscarile nu sunt la fel de line ca la aparatele mai scumpe. Se simte un mic sacadaj pe alocuri, dar nu e ceva deranjant daca nu esti foarte pretentios. Si consola e destul de basica, dar afiseaza informatiile necesare.</p>
+        <p>Nu l-as recomanda unui sportiv de performanta, dar pentru uz casnic, pentru miscare usoara spre moderata, e o alegere buna. E clar mai bun decat sa stai pe canapea, nu? Si nici nu ocupa mult spatiu, spre deosebire de un <a href="/frigider-side-by-side/">frigider</a> mare.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Pret foarte bun</li><li>Compact si usor de depozitat</li><li>Functionare silentioasa</li><li>Programe variate pentru nivel incepator</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Miscare nu foarte fluida</li><li>Consola simpla, fara functii avansate</li><li>Nu este ideal pentru antrenamente foarte intense</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="life-fitness-ic7-indoor-cycle">
+  <div class="product-review__header">
+    <span class="section-tag">Premium</span>
+    <h3>Life Fitness IC7 Indoor Cycle</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Rezistenta electromagnetica cu 100 niveluri</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Greutate maxima utilizator 150 kg</div>
+      <div class="product-review__spec"><strong>Functii</strong>Ecran tactil 7 inch, conexiune ANT+, Bluetooth, compatibilitate cu aplicatii terte (Zwift, Strava etc.), senzori puls</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>120 x 60 x 110 cm, 65 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Necesita priza pentru ecran si sistem rezistenta</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Bicicleta Life Fitness IC7 e un monstru sacru cand vine vorba de ciclism indoor. Daca vrei sa simulezi pe deplin o cursa sau un antrenament de sosea, asta e. Rezistenta electromagnetica e incredibil de precisa, cu 100 de niveluri, deci poti sa mergi de la o usoara pedalare la o urcare infernala.</p>
+        <p>Ecranul tactil e superb, iar conectivitatea cu aplicatii ca Zwift e fara cusur. Am petrecut ore bune pedaland virtual pe trasee prin Alpi, si senzatia e foarte reala. E un <strong>aparat cardio premium</strong> in adevaratul sens al cuvantului, construit pentru performanta.</p>
+        <p>Ce poate fi un dezavantaj e ca e destul de scumpa, dar calitatea se vede in fiecare detaliu. Ghidonul si sa sunt foarte confortabile, chiar si la sesiuni lungi. Daca ma intrebati pe mine, pentru cei pasionati de ciclism sau care vor un antrenament cardio de top, merita fiecare leu.</p>
+        <p>Nu e pentru cineva care vrea doar sa se miste un pic. E facuta pentru a te impinge la limita. Am vazut ca si unii profesionisti o folosesc pentru antrenamentele lor.</p>
+        <p>Daca aveti bugetul, nu sta pe ganduri. E mult mai buna decat o bicicleta statică normala, oferind o experienta mult mai imersiva.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Rezistenta electromagnetica de precizie (100 nivele)</li><li>Ecran tactil si conectivitate excelenta cu aplicatii fitness</li><li>Foarte robusta si stabila</li><li>Design ergonomic pentru confort</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Pret foarte ridicat</li><li>Poate fi prea complexa pentru utilizatorii ocazionali</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="horizon-fitness-elite-t7-treadmill">
+  <div class="product-review__header">
+    <span class="section-tag">Best Buy 2026</span>
+    <h3>Horizon Fitness Elite T7 Treadmill</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Motor 3.0 CP continuu</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Viteza maxima 20 km/h, inclinare 0-15%</div>
+      <div class="product-review__spec"><strong>Functii</strong>Ecran LCD 9 inch, 10 programe, Bluetooth audio, port USB, suport tableta</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>195 x 90 x 150 cm, 110 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Estimativ 350W in functionare maxima</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Am testat Horizon Fitness Elite T7 si pot spune ca e o banda de alergare foarte capabila, excelenta pentru acasa. Motorul de 3.0 CP duce greu, dar sigur, chiar si la viteze de 18-19 km/h. Am facut cateva alergari lungi pe ea si nu a scos un sunet suspect.</p>
+        <p>Amortizarea e buna, protejeaza articulatiile, iar inclinarea de 15% te pune serios la treaba. Ce mi-a placut e ca vine cu un suport solid pentru tableta, asa ca poti sa-ti vezi serialele preferate in timp ce alergi, sau sa folosesti aplicatii de fitness. Si conexiunea Bluetooth pentru audio e un plus.</p>
+        <p>Un prieten si-a luat o banda Horizon acum 3 ani si inca o foloseste zilnic fara probleme. E clar o marca de incredere. Singurul minus pe care l-am gasit e ca display-ul, desi mare, nu e tactil.</p>
+        <p>E un pic mai greu sa navighezi prin meniuri decat la modelele cu ecran tactil. Si, desi are 10 programe, nu sunt chiar atat de variate ca la aparatele de top. Dar, sincer, pentru banii pe care ii dai, primesti o banda de alergare de calitate superioara.</p>
+        <p>E o alegere buna daca vrei o banda serioasa pentru acasa, dar nu vrei sa cheltui cat pe o masina second-hand. E un <strong>aparat cardio premium</strong> pentru acasa, fara discutie. Daca aveti nevoie de o banda robusta, asta e.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Motor puternic si fiabil</li><li>Inclinare impresionanta (15%)</li><li>Suport tableta si Bluetooth audio</li><li>Constructie solida</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Display nu este tactil</li><li>Programele predefinite ar putea fi mai numeroase</li></ul></div>
+    </div>
+  </div>
+</article>`} />
+
+          <!-- Comparison Table -->
+          <Fragment set:html={`
+<section id="comparatie">
+  <h2>Comparatie rapida</h2>
+  <div class="comparison-outer" id="comparison-outer">
+    <div class="comparison-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Scroll horizontal pentru toate coloanele</div>
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead><tr><th>Model</th><th>Putere</th><th>Capacitate</th><th>Functii</th><th>Consum</th><th>Potrivit Pentru</th></tr></thead>
+        <tbody><tr><td>Technogym MyRun Treadmill</td><td>2.5 CP motor</td><td>20 km/h, 12% inclinare</td><td>Ecran tactil 10, WiFi, Bluetooth</td><td>~300W</td><td>Alergatori seriosi, cei care vor cea mai buna experienta</td></tr><tr><td>Kettler Axos Crosstrainer</td><td>Magnetic, 16 niveluri</td><td>Max 130 kg utilizator</td><td>8 programe, display LCD</td><td>Doar display</td><td>Utilizatori ocazionali, cei cu buget limitat</td></tr><tr><td>Sole Fitness E35 Elliptical</td><td>Magnetic, 10 niveluri</td><td>Max 150 kg utilizator</td><td>Ecran 7, 6 programe, boxe audio</td><td>Priza necesara</td><td>Utilizatori intermediari, cei care vor confort audio</td></tr><tr><td>Hammer Cardio XT5</td><td>Magnetic, 8 niveluri</td><td>Max 110 kg utilizator</td><td>12 programe, display LCD</td><td>Doar display</td><td>Incepatori, spatii mici</td></tr><tr><td>Life Fitness IC7 Indoor Cycle</td><td>Electromagnetic, 100 niveluri</td><td>Max 150 kg utilizator</td><td>Ecran tactil 7, ANT+, Bluetooth, Zwift</td><td>Priza necesara</td><td>Ciclisti pasionati, cei care vor antrenamente virtuale</td></tr><tr><td>Horizon Fitness Elite T7 Treadmill</td><td>3.0 CP motor</td><td>20 km/h, 15% inclinare</td><td>Ecran 9, Bluetooth audio, suport tableta</td><td>~350W</td><td>Alergatori casnici, cei care vor functii multimedia</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>`} />
+
+          <!-- Buying Guide -->
+          <Fragment set:html={`
+<section id="cum-alegi-aparatul-cardio-potrivit-pentru-casa-ta">
+  <h2>Cum Alegi Aparatul Cardio Potrivit Pentru Casa Ta</h2>
+  <div class="guide"><h4>Ce tip de aparat cardio e bun pentru tine?</h4>
+        <p>Alegerea unui <strong>aparat cardio premium</strong> sau chiar si a unuia mai accesibil depinde mult de ce vrei sa obtii. Vrei sa alergi? Atunci o banda de alergare e ideală. Vrei un antrenament complet pentru tot corpul, dar cu impact redus asupra articulațiilor? Un crosstrainer sau o eliptica sunt perfecte.</p>
+        <p>Pentru picioare puternice și rezistență cardiovasculară excelentă, o bicicletă de interior (statică sau spinning) este o alegere bună. Gandeste-te la ce grupe musculare vrei sa lucrezi si la nivelul tau de conditie fizica.</p>
+        <h4>Ce inseamna 'premium' la un aparat cardio?</h4>
+        <p>Un aparat cardio considerat 'premium' vine de obicei cu o serie de caracteristici superioare: motoare mai puternice si mai silențioase (la benzi), sisteme de rezistență mai precise și mai variate (la biciclete și eliptice), materiale de construcție de înaltă calitate, console cu ecrane tactile mari și interactive, conectivitate avansată (Bluetooth, WiFi) pentru integrarea cu aplicații de fitness, și o ergonomie generală mult mai bună, care asigură confort pe durata antrenamentelor lungi. De asemenea, durabilitatea și garanția oferită sunt adesea mai extinse.</p>
+        <h4>Cum sa nu dai gres cand cumperi?</h4>
+        <ul><li><strong>Testeaza pe cat posibil:</strong> Daca ai ocazia, incearca aparatul intr-un showroom. Vezi cum te simti pe el, cat de stabil e, cat de usor poti ajusta setarile.</li><li><strong>Citeste review-uri:</strong> Nu te baza doar pe ce zice producatorul. Cauta pareri de la utilizatori reali, mai ales pe forumuri sau site-uri de specialitate. Cauta si articole ca acesta, care analizeaza in detaliu produsele.</li><li><strong>Verifica specificatiile:</strong> Uita-te la greutatea maxima suportata, dimensiunile aparatului (sa incapa in camera ta!), puterea motorului (la benzi), numarul de nivele de rezistență (la eliptice/biciclete) si tipul de sistem de franare/rezistență.</li><li><strong>Gândește-te la spațiu:</strong> Unele aparate, cum ar fi benzile de alergare, pot fi voluminoase. Asigura-te ca ai suficient loc pentru ele, dar și pentru a te mișca în siguranță în jurul lor. Unele benzi se pot plia, ceea ce e un avantaj.</li><li><strong>Bugetul contează, dar nu e totul:</strong> Un aparat foarte ieftin s-ar putea să nu reziste mult sau să fie inconfortabil. Un aparat foarte scump nu e neapărat necesar dacă faci mișcare ocazional. Găsește un echilibru. Nu uita ca un aparat bun te ajută să te ții de treabă pe termen lung.</li><li><strong>Funcții suplimentare:</strong> Ai nevoie de senzori de puls, programe predefinite, conectivitate Bluetooth pentru a asculta muzică sau pentru a te conecta la aplicații? Acestea pot face antrenamentul mai plăcut și mai eficient.</li></ul>
+        <p>Până la urmă, cel mai bun aparat cardio pentru tine este cel pe care îl vei folosi constant. Alege ceva ce te motivează și se potrivește stilului tău de viață și obiectivelor tale de fitness.</p>
+  </div>
+</section>`} />
+
+          <!-- FAQ -->
+          <Fragment set:html={`
+<section id="faq" class="faq-section">
+  <h2>Intrebari Frecvente</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">cat costa un aparat cardio premium bun?</div>
+      <div class="faq-answer">Un aparat cardio premium bun, cum ar fi o banda de alergare de top sau o bicicleta de spinning profesionala, poate costa intre 5.000 si 15.000 de lei. Modelele de nivel mediu, cu raport calitate-pret bun, se gasesc intre 2.500 si 4.500 de lei.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">care e diferenta intre banda de alergare si eliptica?</div>
+      <div class="faq-answer">Banda de alergare simuleaza mersul sau alergatul, solicitand in principal partea inferioara a corpului si sistemul cardiovascular. Eliptica ofera un antrenament pentru tot corpul, cu impact redus asupra articulatiilor, implicand si bratele prin manerele mobile.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">merita sa cumpar un aparat cardio mai scump pentru acasa?</div>
+      <div class="faq-answer">Merita daca intentionezi sa-l folosesti regulat, pentru antrenamente serioase. Aparatele mai scumpe sunt de obicei mai robuste, mai confortabile si au tehnologie mai avansata, ceea ce poate face antrenamentele mai placute si te poate motiva sa continui.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">ce aparat cardio e mai bun pentru slabit?</div>
+      <div class="faq-answer">Orice aparat cardio te ajuta sa slabesti daca il folosesti constant si mentii un deficit caloric. Benzile de alergare, bicicletele de spinning si crosstrainerele sunt foarte eficiente pentru arderea caloriilor. Important e sa alegi unul pe care il vei folosi cu placere.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">cat spatiu ocupa un aparat cardio?</div>
+      <div class="faq-answer">Dimensiunile variaza mult. Benzile de alergare pot avea 1.8-2 metri lungime, in timp ce bicicletele sau elipticele sunt mai compacte, in jur de 1.5-1.7 metri lungime. Verifica specificatiile fiecarui model, mai ales daca spatiul e limitat. Unele benzi se pot plia.</div>
+    </div>
+  </div>
+</section>`} />
+        </div>
+
+        <!-- Author Box -->
+        <div class="author-box">
+          <div class="author-box-content">
+            <div class="author-avatar">
+              AS
+            </div>
+            <div class="author-info">
+              <div class="author-name">Andrei Stanciu</div>
+              <div class="author-role">Analist IT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Prev/Next Navigation -->
+    <PrevNextNav
+      currentSlug="aparat-cardio-premium"
+      currentCategory="sport-fitness"
+      articles={allArticles}
+    />
+  </article>
+
+  <script>
+    // Comparison table scroll detection
+    document.addEventListener('DOMContentLoaded', () => {
+      const outer = document.getElementById('comparison-outer');
+      if (outer) {
+        const wrap = outer.querySelector('.comparison-wrap');
+        function checkScroll() {
+          if (wrap && wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          } else {
+            outer.classList.remove('can-scroll');
+          }
+        }
+        checkScroll();
+        window.addEventListener('resize', checkScroll);
+      }
+
+      // TOC active tracking
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (tocLinks.length) {
+        const ids = Array.from(tocLinks).map(a => a.getAttribute('href').replace('#', '')).filter(Boolean);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+    });
+  </script>
+</Layout>
