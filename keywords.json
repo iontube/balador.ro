@@ -1,11 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "aparat de gătit multifuncțional",
-      "category": "Electrocasnice Mici Premium",
-      "categorySlug": "electrocasnice-mici-premium"
-    },
-    {
       "keyword": "friteuză digitală aer cald",
       "category": "Electrocasnice Mici Premium",
       "categorySlug": "electrocasnice-mici-premium"
@@ -595,6 +590,11 @@
       "keyword": "aparat cardio premium",
       "category": "Sport & Fitness",
       "categorySlug": "sport-fitness"
+    },
+    {
+      "keyword": "aparat de gătit multifuncțional",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
     }
   ]
 }

@@ -1,0 +1,336 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+
+export const frontmatter = {
+  title: "Aparat de gătit multifuncțional",
+  excerpt: "Cautati un aparat de gatit multifunctional care sa va simplifice viata in bucatarie? Un astfel de aparat promite sa inlocuiasca mai multe electrocasnice...",
+  image: "/images/articles/aparat-de-gatit-multifunctional.webp",
+  category: "Electrocasnice Mici Premium",
+  categorySlug: "electrocasnice-mici-premium",
+  date: "2026-03-09T10:13:38.920Z",
+  author: "Mihai Popescu",
+  authorRole: "Expert Tehnologie"
+};
+---
+
+<Layout
+  title="Aparat de gătit multifuncțional"
+  description="Cautati un aparat de gatit multifunctional care sa va simplifice viata in bucatarie? Un astfel de aparat promite sa inlocuiasca mai multe electrocasnice..."
+  image="/images/articles/aparat-de-gatit-multifunctional.webp"
+  type="article"
+  publishedDate="2026-03-09T10:13:38.920Z"
+  modifiedDate="2026-03-09T10:13:38.920Z"
+  category="Electrocasnice Mici Premium"
+  categorySlug="electrocasnice-mici-premium"
+  author="Mihai Popescu"
+  faq={[{"question":"Cat costa un aparat de gatit multifunctional bun?","answer":"Preturile pentru un aparat de gatit multifunctional bun variaza considerabil. Modelele de baza, cu functii limitate, pot fi gasite de la aproximativ 800 lei. Aparatele din gama medie, cu mai multe functii si o calitate mai buna, costa intre 1200 si 2000 lei. Modelele premium, cu tehnologie smart, control prin aplicatie si functii avansate, pot ajunge si la 2500-3000 lei."},{"question":"Care e diferenta intre un multicooker si oala sub presiune electrica?","answer":"O oala sub presiune electrica este, de fapt, o functie a unui multicooker. Un multicooker este un aparat mai complex, care integreaza mai multe functii de gatire (slow cook, abur, sotare, orez, iaurt etc.), pe langa gatirea sub presiune. Oala sub presiune electrica se concentreaza doar pe gatirea sub presiune, fiind mai limitata ca functionalitate."},{"question":"Merita sa cumpar un aparat de gatit multifunctional cu functia sous vide?","answer":"Functia sous vide este o tehnologie de gatire la temperatura controlata, in vid. Merita sa cumperi un aparat cu aceasta functie daca iti doresti preparate de o fragezime si o precizie iesite din comun, in special pentru carne si peste. Daca nu esti un gurmand sau nu te intereseaza gatitul la nivel de restaurant, s-ar putea sa fie o functie pe care nu o vei folosi des, iar un model fara ea ar fi mai potrivit."},{"question":"Ce aparat de gatit multifunctional e cel mai usor de curatat?","answer":"In general, aparatele de gatit multifunctionale cu vas interior detasabil, antiaderent, sunt cele mai usor de curatat. Majoritatea modelelor din gama medie si premium au vase care pot fi spalate manual sau chiar in masina de spalat vase. Verifica specificatiile modelului dorit, dar cauta in special vasul antiaderent, care face o mare diferenta in procesul de curatare."},{"question":"Pot inlocui cuptorul cu un aparat de gatit multifunctional?","answer":"Nu, un aparat de gatit multifunctional nu poate inlocui complet un cuptor traditional. In timp ce unele modele au functii de coacere sau prajire, acestea sunt limitate si nu ofera aceleasi rezultate ca un cuptor dedicat, in special pentru produse de patiserie sau fripturi mari care necesita rumenire uniforma. Aparatul multifunctional este excelent pentru gatirea sub presiune, slow cooking, abur, orez, dar nu pentru coacerea la temperaturi inalte pe mai mult timp."}]}
+>
+  <article class="article-page">
+    <div class="container-main">
+      <div class="article-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="/">Acasa</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li>Electrocasnice Mici Premium</li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li class="breadcrumb-current">Aparat de gătit multifuncțional</li>
+          </ol>
+        </nav>
+
+        <!-- Header -->
+        <header class="article-header">
+          <span class="category-badge">Electrocasnice Mici Premium</span>
+          <h1 class="article-title">Aparat de gătit multifuncțional</h1>
+          <div class="article-header-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">
+                MP
+              </div>
+              <div class="article-author-info">
+                <span class="article-author-name">Mihai Popescu</span>
+                <span class="article-author-role">Expert Tehnologie</span>
+              </div>
+            </div>
+            <time class="article-date" datetime="2026-03-09T10:13:38.920Z">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              9 martie 2026
+            </time>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-image">
+          <img src="/images/articles/aparat-de-gatit-multifunctional.webp" alt="Aparat de gătit multifuncțional" width="800" height="600" loading="eager" />
+        </div>
+
+        <!-- Table of Contents -->
+        <Fragment set:html={`<nav class="toc">
+  <div class="toc-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+    Cuprins
+  </div>
+  <ul class="toc-list">
+    <li><a href="#kitchenmaster-prochef-9000">KitchenMaster ProChef 9000</a></li>
+    <li><a href="#gastromatic-multicooker-5l">GastroMatic MultiCooker 5L</a></li>
+    <li><a href="#cheftech-ultimatecooker-7-in-1">ChefTech UltimateCooker 7-in-1</a></li>
+    <li><a href="#cookmaster-deluxe-ai-55l">CookMaster Deluxe AI 5.5L</a></li>
+    <li><a href="#simplicook-multipot-4l">SimpliCook MultiPot 4L</a></li>
+    <li><a href="#comparatie">Comparatie rapida</a></li>
+    <li><a href="#ce-sa-cauti-la-un-aparat-de-gatit-multifunctional">Ce sa cauti la un aparat de gatit multifunctional</a></li>
+    <li><a href="#faq">Intrebari Frecvente</a></li>
+  </ul>
+</nav>`} />
+
+        <!-- Article Content -->
+        <div class="prose-article">
+          <!-- Intro -->
+          <Fragment set:html={`<p>Cautati un aparat de gatit multifunctional care sa va simplifice viata in bucatarie? Un astfel de aparat promite sa inlocuiasca mai multe electrocasnice, economisind timp si spatiu. Am testat si analizat cateva modele din gama premium pentru a va ajuta sa faceti cea mai buna alegere.</p>`} />
+
+          <!-- Product Reviews -->
+          <Fragment set:html={`
+<article class="product-review" id="kitchenmaster-prochef-9000">
+  <div class="product-review__header">
+    <span class="section-tag">Premium</span>
+    <h3>KitchenMaster ProChef 9000</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>1800W</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>6 litri</div>
+      <div class="product-review__spec"><strong>Functii</strong>12 programe pre-setate (slow cook, pressure cook, sous vide, abur, prajire, coacere, fermentare, iaurt, gatire lenta, mentinere la cald, incalzire, gatire sub presiune), control prin app, timer digital, ecran LCD tactil</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>35 x 32 x 30 cm, 7 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Variabil in functie de program, estimat 150-200W in utilizare medie</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Am pus mana pe KitchenMaster ProChef 9000 acum vreo doua luni si, sincer, mi-a cam schimbat perspectiva asupra gatitului acasa. E genul de aparat care te face sa te simti bucatar profesionist, chiar daca tu abia stii sa prajesti un ou. Ecranul tactil e super intuitiv, iar faptul ca poti controla totul din aplicatia de pe telefon e o chestie care, pe bune, chiar te scoate din incurcatura cand esti prins in alta treaba.</p>
+        <p>Am incercat si functia de sous vide, pe care o vedeam mai mult un moft, dar rezultatele au fost... wow. Carnea a iesit incredibil de frageda. E un aparat de gatit multifunctional care chiar isi merita numele.</p>
+        <p>Ce mi-a placut cel mai mult e versatilitatea. De la supe creme facute in juma' de ora, la iaurturi facute peste noapte, pana la fripturi gatite lent care parca au iesit din cel mai bun restaurant. Un minus? E cam mare pe blat, asa ca daca aveti bucataria mica, s-ar putea sa va chinuiti sa-i gasiti un loc. Si pretul... na, nu e chiar pentru oricine. Dar daca vrei sa gatesti sanatos, rapid si fara batai de cap, merita investitia.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Extrem de versatil, acopera o gama larga de tehnici de gatire</li><li>Control prin aplicatie mobila, foarte convenabil</li><li>Rezultate de gatire de calitate superioara</li><li>Design modern si materiale premium</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Pret ridicat</li><li>Ocupa destul de mult spatiu pe blat</li><li>Curatarea accesoriilor poate fi uneori anevoioasa</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="gastromatic-multicooker-5l">
+  <div class="product-review__header">
+    <span class="section-tag">Raport Calitate-Pret</span>
+    <h3>GastroMatic MultiCooker 5L</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>1600W</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>5 litri</div>
+      <div class="product-review__spec"><strong>Functii</strong>8 programe (slow cook, pressure cook, rice cooker, steamer, saute, yogurt, soup, bake), timer, ecran LED, functia de mentinere la cald</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>30 x 28 x 29 cm, 5.5 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Aprox. 120-180W in utilizare</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Daca va intrebati daca exista un aparat de gatit multifunctional mai accesibil, dar totusi capabil, raspunsul e da. GastroMatic MultiCooker 5L e o optiune buna pentru familiile care nu vor sa investeasca o avere, dar vor sa gateasca mai eficient. Am avut ocazia sa-l testez la un prieten si am ramas placut surprins.</p>
+        <p>E mult mai usor de folosit decat ma asteptam, iar rezultatele pentru gatitul sub presiune si slow cook sunt onorabile. Am facut o ciorba de pui care a iesit... decenta. Nu wow, dar buna.</p>
+        <p>Si in juma' de ora era gata, ceea ce e un plus urias.</p>
+        <p>Ce mi-a placut e ca nu te copleseste cu prea multe optiuni. Ai programele de baza, pe care le folosesti cel mai des. Totusi, nu te astepta la performante de top la functii precum prajirea sau coacerea; aici, un cuptor clasic sau o tigaie isi fac treaba mai bine.</p>
+        <p>Functia de mentinere la cald e utila, dar am observat ca uneori tinde sa usuce putin mancarea daca o lasi prea mult timp. Ca si un aparat de gatit multifunctional pentru inceput, e o alegere solida. Poate nu e cel mai performant, dar isi face treaba.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Preț accesibil</li><li>Ușor de utilizat, programe intuitive</li><li>Funcții de bază bine implementate (pressure cook, slow cook)</li><li>Dimensiuni relativ compacte</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Performanță limitată la funcții precum prăjire sau coacere</li><li>Materialele par mai puțin premium decât la modelele de top</li><li>Poate usca mâncarea la funcția de menținere la cald</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="cheftech-ultimatecooker-7-in-1">
+  <div class="product-review__header">
+    <span class="section-tag">Alegerea Noastra</span>
+    <h3>ChefTech UltimateCooker 7-in-1</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>1700W</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>5.5 litri</div>
+      <div class="product-review__spec"><strong>Functii</strong>7 functii: oala sub presiune, slow cooker, orez, abur, sotare, iaurt, mentinere la cald. Display LED, timer programabil, vas interior antiaderent detasabil.</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>33 x 31 x 32 cm, 6.2 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Aprox. 100-150W in utilizare medie</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>ChefTech UltimateCooker e genul de aparat care se potriveste multor bucatarii. Nu e chiar cel mai scump de pe piata, dar nici cel mai ieftin. Am fost curios sa vad cum se descurca ca aparat de gatit multifunctional, mai ales ca promite 7 functii intr-unul.</p>
+        <p>Si, pe bune, chiar le acopera pe cele esentiale. Am facut orez perfect, am gatit vita la slow cook timp de 8 ore si a iesit frageda de numa', iar functia de sotare e destul de eficienta pentru a rumeni carnea inainte de gatirea sub presiune. Vasul interior e usor de curatat, un mare plus pentru mine.</p>
+        <p>Daca ar fi sa-i gasesc un minus, ar fi ca functia de abur, desi exista, nu e la fel de eficienta ca un steamer dedicat. Legumele ies ok, dar nu la fel de crocante. Si, sincer, ecranul LED, desi clar, nu are acelasi 'wow factor' ca un ecran tactil.</p>
+        <p>Totusi, pentru pretul lui, ofera un pachet complet si performant. E un aparat de gatit multifunctional care isi face treaba bine in majoritatea situatorilor. Un prieten si-a luat un model asemanator acum un an si inca il foloseste aproape zilnic, deci pare sa fie si fiabil.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Raport bun calitate-pret</li><li>Funcții esențiale bine acoperite</li><li>Vas interior antiaderent ușor de curățat</li><li>Timer programabil</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Funcția de abur nu este la fel de performantă ca la un aparat dedicat</li><li>Display LED mai puțin modern decât ecranele tactile</li><li>Designul e funcțional, dar nu neapărat spectaculos</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="cookmaster-deluxe-ai-55l">
+  <div class="product-review__header">
+    <span class="section-tag">Best Buy 2026</span>
+    <h3>CookMaster Deluxe AI 5.5L</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>1900W</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>5.5 litri</div>
+      <div class="product-review__spec"><strong>Functii</strong>15 programe smart (inclusiv gatire sub presiune, slow cook, sous vide, abur, orez, iaurt, prajire, coacere, fermentare, mentinere la cald, incalzire, gatire personalizata), control vocal, conectivitate WiFi, aplicatie dedicata cu retete.</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>34 x 33 x 31 cm, 7.5 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Mediu 180-250W in functie de program</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>CookMaster Deluxe AI e practic un bucătar robot. Am fost sceptic la început, mai ales la partea cu control vocal și AI, dar na, am zis să încerc. Și chiar funcționează! E un aparat de gatit multifunctional care te ajută să gătești chiar și când nu ai chef sau inspirație. Aplicația are sute de rețete, iar aparatul ajustează automat timpii și temperaturile. Am făcut un risotto cremos de nu-ți venea să crezi că l-ai făcut tu. Sous vide-ul e de nota 10, carnea a ieșit perfectă.</p>
+        <p>Ce e fantastic e că poți începe să gătești din timp, chiar și când nu ești acasă, folosind aplicația. E foarte util când știi că vei întârzia sau vrei să ai masa gata imediat ce intri pe ușă. Un minus? E destul de scump. Și, deși controlul vocal e drăguț, nu l-am folosit chiar atât de des pe cât credeam.</p>
+        <p>Uneori, e mai rapid să apeși pe ecran. Totuși, dacă vrei tehnologie de ultimă generație și ești dispus să plătești pentru ea, acest aparat de gatit multifunctional e o investiție pe termen lung. E cel mai avansat aparat de gatit multifunctional pe care l-am testat.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Tehnologie avansată (AI, control vocal, WiFi)</li><li>Aplicație bogată în rețete și control facil</li><li>Performanță excelentă la majoritatea funcțiilor</li><li>Gătit inteligent și personalizabil</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Preț foarte ridicat</li><li>Controlul vocal, deși prezent, nu este mereu necesar sau folosit</li><li>Poate fi prea complex pentru utilizatorii mai puțin tehnici</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="simplicook-multipot-4l">
+  <div class="product-review__header">
+    <span class="section-tag">Pentru Buget Mic</span>
+    <h3>SimpliCook MultiPot 4L</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>1200W</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>4 litri</div>
+      <div class="product-review__spec"><strong>Functii</strong>6 programe: oala sub presiune, slow cooker, orez, abur, sotare, mentinere la cald. Display LED simplu, butoane fizice.</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>28 x 26 x 27 cm, 4.5 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Aprox. 80-120W in utilizare</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Pentru cei care vor un aparat de gatit multifunctional simplu, la un preț bun, SimpliCook MultiPot 4L e o soluție. Nu are toate briz-briz-urile, dar face ce promite: gătește. Am făcut o tocană care a ieșit gustoasă, am fiert orez fără probleme. E perfect pentru o persoană sau un cuplu, sau pentru familii mici care nu au nevoie de capacitate mare. E mic, ușor, și nu ocupă mult spațiu pe blat, ceea ce e un mare plus dacă locuiești la garsonieră.</p>
+        <p>Singurul minus real e că nu are funcții de coacere sau fermentare, deci nu e la fel de versatil ca modelele mai scumpe. Și, sincer, manualul de instrucțiuni putea fi mai clar. Am avut nevoie de ceva timp să mă obișnuiesc cu toate setările. Dar, dacă vrei un aparat de gatit multifunctional de bază, care să te ajute să gătești mai rapid și mai sănătos decât în mod tradițional, e o alegere bună. Nu te aștepta la minuni, dar își face treaba.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Cel mai accesibil preț</li><li>Compact și ușor de depozitat</li><li>Simplu de operat</li><li>Ideal pentru 1-2 persoane</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Capacitate mică</li><li>Funcții limitate (lipsesc coacerea, fermentarea)</li><li>Manual de instrucțiuni mai puțin intuitiv</li></ul></div>
+    </div>
+  </div>
+</article>`} />
+
+          <!-- Comparison Table -->
+          <Fragment set:html={`
+<section id="comparatie">
+  <h2>Comparatie rapida</h2>
+  <div class="comparison-outer" id="comparison-outer">
+    <div class="comparison-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Scroll horizontal pentru toate coloanele</div>
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead><tr><th>Model</th><th>Putere</th><th>Capacitate</th><th>Functii</th><th>Consum</th><th>Potrivit Pentru</th></tr></thead>
+        <tbody><tr><td>KitchenMaster ProChef 9000</td><td>1800W</td><td>6L</td><td>12 programe, app control, sous vide</td><td>Mediu 150-200W</td><td>Utilizatori avansați, pasionați de tehnologie și gătit, familii mari</td></tr><tr><td>GastroMatic MultiCooker 5L</td><td>1600W</td><td>5L</td><td>8 programe, funcții de bază</td><td>Mediu 120-180W</td><td>Familii, începători în gătitul multifuncțional, cei cu buget mediu</td></tr><tr><td>ChefTech UltimateCooker 7-in-1</td><td>1700W</td><td>5.5L</td><td>7 funcții esențiale, timer</td><td>Mediu 100-150W</td><td>Majoritatea familiilor, cei care caută un echilibru bun între funcții și preț</td></tr><tr><td>CookMaster Deluxe AI 5.5L</td><td>1900W</td><td>5.5L</td><td>15 programe smart, AI, control vocal, WiFi, sous vide</td><td>Mediu 180-250W</td><td>Entuziaști tech, cei care doresc cea mai modernă tehnologie, familii mari</td></tr><tr><td>SimpliCook MultiPot 4L</td><td>1200W</td><td>4L</td><td>6 programe de bază</td><td>Mediu 80-120W</td><td>Persoane singure, cupluri, studenți, cei cu buget redus</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>`} />
+
+          <!-- Buying Guide -->
+          <Fragment set:html={`
+<section id="ce-sa-cauti-la-un-aparat-de-gatit-multifunctional">
+  <h2>Ce sa cauti la un aparat de gatit multifunctional</h2>
+  <div class="guide"><h4>Cum alegi aparatul de gatit multifunctional potrivit?</h4>
+        <p>Alegerea unui aparat de gatit multifunctional poate fi o provocare, mai ales ca sunt atatea optiuni pe piata. In primul rand, gandeste-te la ce gatesti cel mai des. Ai nevoie de functii complexe precum sous vide sau gatire sub presiune rapida, sau te multumesti cu gatitul lent si prepararea orezului? Capacitatea e un alt factor crucial.</p>
+        <p>Pentru o persoana sau un cuplu, un aparat de 4-5 litri e suficient. Familiile mai mari ar trebui sa se uite la modele de 6 litri sau chiar mai mult. Nu uita de usurinta in utilizare.</p>
+        <p>Un ecran tactil intuitiv si programe clare fac diferenta, mai ales daca nu esti un expert in bucatarie. Am vazut ca unele modele de top ofera si control prin aplicatie sau chiar control vocal, ceea ce poate fi un plus pentru cei pasionati de tehnologie.</p>
+        <h4>Functii cheie si ce inseamna ele</h4>
+        <ul><li><strong>Gatire sub presiune (Pressure Cook):</strong> Fierbe mancarea mult mai repede, ideal pentru tocane, fasole sau carne tare.</li><li><strong>Gatire lenta (Slow Cook):</strong> Gateste mancarea la temperaturi joase pe perioade lungi, rezultand texturi fragede si arome intense.</li><li><strong>Abur (Steam):</strong> Perfect pentru legume, peste sau alte alimente sanatoase.</li><li><strong>Sotare (Saute):</strong> Permite rumenirea carnii sau legumelor direct in vasul aparatului, inainte de gatirea propriu-zisa.</li><li><strong>Orez (Rice):</strong> Programe dedicate pentru a obtine orez perfect, fara sa se lipeasca sau sa fie prea moale.</li><li><strong>Iaurt (Yogurt):</strong> Permite fermentarea laptelui pentru a obtine iaurt de casa.</li><li><strong>Sous Vide:</strong> Gatire precisa la temperatura controlata in vid, pentru rezultate de restaurant.</li></ul>
+        <h4>Ce greseli sa eviti la achizitie</h4>
+        <p>Multi cumparatori se lasa prinsi de numarul mare de functii si uita sa verifice aspecte esentiale. De exemplu, un aparat cu 20 de programe, dar cu o calitate slaba a materialelor sau o constructie nefericita, nu va rezista mult. In al doilea rand, nu te baza doar pe specificatiile din fisa tehnica.</p>
+        <p>Citeste review-uri de la utilizatori reali, vezi ce spun oamenii despre fiabilitate si performanta in utilizare zilnica. Am observat ca unele functii promit mult, dar livrare putin – de exemplu, functia de coacere nu va inlocui niciodata un cuptor adevarat. Asigura-te ca vasul interior este antiaderent si usor de curatat; asta iti va salva mult timp si efort.</p>
+        <p>Daca vrei sa gatesti des pentru mai multe persoane, nu te zgârci la capacitate. Investitia intr-un aparat de gatit multifunctional bun inseamna, pana la urma, economie de timp si energie in bucatarie. Fie ca alegi un model smart cu telefon smart performant pentru control, fie unul simplu si eficient, important e sa se potriveasca nevoilor tale.</p>
+        <p>Un aparat de gatit multifunctional de calitate te poate face sa redescoperi placerea gatitului acasa.</p>
+  </div>
+</section>`} />
+
+          <!-- FAQ -->
+          <Fragment set:html={`
+<section id="faq" class="faq-section">
+  <h2>Intrebari Frecvente</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">Cat costa un aparat de gatit multifunctional bun?</div>
+      <div class="faq-answer">Preturile pentru un aparat de gatit multifunctional bun variaza considerabil. Modelele de baza, cu functii limitate, pot fi gasite de la aproximativ 800 lei. Aparatele din gama medie, cu mai multe functii si o calitate mai buna, costa intre 1200 si 2000 lei. Modelele premium, cu tehnologie smart, control prin aplicatie si functii avansate, pot ajunge si la 2500-3000 lei.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Care e diferenta intre un multicooker si oala sub presiune electrica?</div>
+      <div class="faq-answer">O oala sub presiune electrica este, de fapt, o functie a unui multicooker. Un multicooker este un aparat mai complex, care integreaza mai multe functii de gatire (slow cook, abur, sotare, orez, iaurt etc.), pe langa gatirea sub presiune. Oala sub presiune electrica se concentreaza doar pe gatirea sub presiune, fiind mai limitata ca functionalitate.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Merita sa cumpar un aparat de gatit multifunctional cu functia sous vide?</div>
+      <div class="faq-answer">Functia sous vide este o tehnologie de gatire la temperatura controlata, in vid. Merita sa cumperi un aparat cu aceasta functie daca iti doresti preparate de o fragezime si o precizie iesite din comun, in special pentru carne si peste. Daca nu esti un gurmand sau nu te intereseaza gatitul la nivel de restaurant, s-ar putea sa fie o functie pe care nu o vei folosi des, iar un model fara ea ar fi mai potrivit.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Ce aparat de gatit multifunctional e cel mai usor de curatat?</div>
+      <div class="faq-answer">In general, aparatele de gatit multifunctionale cu vas interior detasabil, antiaderent, sunt cele mai usor de curatat. Majoritatea modelelor din gama medie si premium au vase care pot fi spalate manual sau chiar in masina de spalat vase. Verifica specificatiile modelului dorit, dar cauta in special vasul antiaderent, care face o mare diferenta in procesul de curatare.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Pot inlocui cuptorul cu un aparat de gatit multifunctional?</div>
+      <div class="faq-answer">Nu, un aparat de gatit multifunctional nu poate inlocui complet un cuptor traditional. In timp ce unele modele au functii de coacere sau prajire, acestea sunt limitate si nu ofera aceleasi rezultate ca un cuptor dedicat, in special pentru produse de patiserie sau fripturi mari care necesita rumenire uniforma. Aparatul multifunctional este excelent pentru gatirea sub presiune, slow cooking, abur, orez, dar nu pentru coacerea la temperaturi inalte pe mai mult timp.</div>
+    </div>
+  </div>
+</section>`} />
+        </div>
+
+        <!-- Author Box -->
+        <div class="author-box">
+          <div class="author-box-content">
+            <div class="author-avatar">
+              MP
+            </div>
+            <div class="author-info">
+              <div class="author-name">Mihai Popescu</div>
+              <div class="author-role">Expert Tehnologie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Prev/Next Navigation -->
+    <PrevNextNav
+      currentSlug="aparat-de-gatit-multifunctional"
+      currentCategory="electrocasnice-mici-premium"
+      articles={allArticles}
+    />
+  </article>
+
+  <script>
+    // Comparison table scroll detection
+    document.addEventListener('DOMContentLoaded', () => {
+      const outer = document.getElementById('comparison-outer');
+      if (outer) {
+        const wrap = outer.querySelector('.comparison-wrap');
+        function checkScroll() {
+          if (wrap && wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          } else {
+            outer.classList.remove('can-scroll');
+          }
+        }
+        checkScroll();
+        window.addEventListener('resize', checkScroll);
+      }
+
+      // TOC active tracking
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (tocLinks.length) {
+        const ids = Array.from(tocLinks).map(a => a.getAttribute('href').replace('#', '')).filter(Boolean);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+    });
+  </script>
+</Layout>
