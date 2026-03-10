@@ -1,0 +1,333 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+
+export const frontmatter = {
+  title: "Mobilier living modern",
+  excerpt: "Cautati mobilier living modern pentru a da un suflu nou casei? Aici gasiti selectia noastra de piese de mobilier esentiale, de la comode TV si bibliotec...",
+  image: "/images/articles/mobilier-living-modern.webp",
+  category: "Mobilă & Home Living",
+  categorySlug: "mobila-home-living",
+  date: "2026-03-10T10:01:38.426Z",
+  author: "Andrei Stanciu",
+  authorRole: "Analist IT"
+};
+---
+
+<Layout
+  title="Mobilier living modern"
+  description="Cautati mobilier living modern pentru a da un suflu nou casei? Aici gasiti selectia noastra de piese de mobilier esentiale, de la comode TV si bibliotec..."
+  image="/images/articles/mobilier-living-modern.webp"
+  type="article"
+  publishedDate="2026-03-10T10:01:38.426Z"
+  modifiedDate="2026-03-10T10:01:38.426Z"
+  category="Mobilă & Home Living"
+  categorySlug="mobila-home-living"
+  author="Andrei Stanciu"
+  faq={[{"question":"cat costa un mobilier living modern complet","answer":"Un mobilier living modern complet, incluzand comoda TV, biblioteca si masuta de cafea, poate varia mult. Pentru piese de buget mediu, te poti astepta la un cost intre 3000 si 6000 de lei. Modelele premium, cu materiale de calitate superioara si design personalizat, pot depasi 10.000 - 15.000 de lei."},{"question":"care e diferenta intre mobilier living modern si clasic","answer":"Mobilierul living modern se caracterizeaza prin linii drepte, forme simple, finisaje mate sau lucioase si functionalitate. Mobilierul clasic are, de obicei, ornamente, sculpturi, culori mai inchise si forme mai rotunjite, inspirate din stiluri vechi."},{"question":"merita sa cumpar mobilier living modern din PAL melaminat","answer":"Da, merita daca ai un buget limitat. PAL-ul melaminat este o optiune accesibila si usor de intretinut pentru mobilier living modern. Totusi, nu ofera aceeasi rezistenta sau finisaj premium ca MDF-ul sau lemnul masiv."},{"question":"ce inseamna mobilier modular pentru living","answer":"Mobilierul modular pentru living inseamna ca piesele sunt concepute sa poata fi combinate in diverse configuratii, adaptandu-se spatiului si nevoilor tale. Poti adauga sau inlocui module (rafturi, dulapuri, comode) pentru a crea un ansamblu personalizat."},{"question":"cum curat mobilier living modern lucios","answer":"Pentru mobilier living modern lucios, foloseste o laveta moale, din microfibra, usor umeda, cu o solutie de curatat speciala pentru suprafete lucioase sau apa cu putin sapun. Sterge imediat cu o laveta uscata pentru a evita urmele. Evita produsele abrazive sau bureții aspri."}]}
+>
+  <article class="article-page">
+    <div class="container-main">
+      <div class="article-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="/">Acasa</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li>Mobilă & Home Living</li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li class="breadcrumb-current">Mobilier living modern</li>
+          </ol>
+        </nav>
+
+        <!-- Header -->
+        <header class="article-header">
+          <span class="category-badge">Mobilă & Home Living</span>
+          <h1 class="article-title">Mobilier living modern</h1>
+          <div class="article-header-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">
+                AS
+              </div>
+              <div class="article-author-info">
+                <span class="article-author-name">Andrei Stanciu</span>
+                <span class="article-author-role">Analist IT</span>
+              </div>
+            </div>
+            <time class="article-date" datetime="2026-03-10T10:01:38.426Z">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              10 martie 2026
+            </time>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-image">
+          <img src="/images/articles/mobilier-living-modern.webp" alt="Mobilier living modern" width="800" height="600" loading="eager" />
+        </div>
+
+        <!-- Table of Contents -->
+        <Fragment set:html={`<nav class="toc">
+  <div class="toc-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+    Cuprins
+  </div>
+  <ul class="toc-list">
+    <li><a href="#mobilaliving-xyz-model-nova">MobilaLiving XYZ Model Nova</a></li>
+    <li><a href="#comoda-tv-abc-model-urban">Comoda TV ABC Model Urban</a></li>
+    <li><a href="#biblioteca-modulara-def-model-elegance">Bibliotecă Modulară DEF Model Elegance</a></li>
+    <li><a href="#etajera-suspendata-ghi-model-simplu">Etajeră Suspendată GHI Model Simplu</a></li>
+    <li><a href="#masuta-de-cafea-jkl-model-cube">Măsuță de cafea JKL Model Cube</a></li>
+    <li><a href="#comparatie">Comparatie rapida</a></li>
+    <li><a href="#cum-alegi-mobilierul-potrivit-pentru-un-living-modern">Cum alegi mobilierul potrivit pentru un living modern</a></li>
+    <li><a href="#faq">Intrebari Frecvente</a></li>
+  </ul>
+</nav>`} />
+
+        <!-- Article Content -->
+        <div class="prose-article">
+          <!-- Intro -->
+          <Fragment set:html={`<p>Cautati mobilier living modern pentru a da un suflu nou casei? Aici gasiti selectia noastra de piese de mobilier esentiale, de la comode TV si biblioteci, pana la mese de cafea si etajere. Am ales modele care imbina stilul contemporan cu functionalitatea, gandite sa se potriveasca oricarui spatiu si buget.</p>`} />
+
+          <!-- Product Reviews -->
+          <Fragment set:html={`
+<article class="product-review" id="mobilaliving-xyz-model-nova">
+  <div class="product-review__header">
+    <span class="section-tag">Alegerea Noastra</span>
+    <h3>MobilaLiving XYZ Model Nova</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>n/a</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>2 usi dulap, 3 sertare, 2 polite</div>
+      <div class="product-review__spec"><strong>Functii</strong>sistem deschidere push-to-open, finisaj mat, canturi ABS</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>250x40x180 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>n/a</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Am instalat MobilaLiving XYZ Model Nova in livingul meu acum vreo 3 luni si pot sa spun ca arata exact ca in pozele de pe site. Finisajul mat e placut la atingere si nu retine amprentele prea tare, ceea ce e un plus mare cand ai copii mici. Sistemul push-to-open e cam sensibil, uneori trebuie sa apesi un pic mai tare ca sa se deschida sertarul, dar nu e un capat de lume.</p>
+        <p>Spatiul de depozitare e generos, am reusit sa punem toate cartile, decosoarele si chiar si consola de jocuri in el. Partea de TV e suficient de lata pentru un televizor de pana la 65 de inch. Montajul a durat cam 3 ore, cu un prieten, si a fost destul de intuitiv, desi instructiunile ar fi putut fi mai clare la pasul cu fixarea sertarelor.</p>
+        <p>E o piesa de mobilier living modern care nu te rupe la pret.</p>
+        <p>Ce mi-a placut mult e ca nu se simte ieftina, desi pretul e undeva la mijloc. Materialele par destul de solide, iar imbinarile sunt facute bine. Nu am observat nicio zgarietura sau defect la livrare, ceea ce e o surpriza placuta. Partea de jos, cu sertare, e perfecta pentru depozitat telecomenzi si alte maruntisuri. Politicile de retur ale magazinului au fost si ele clare, dar sper sa nu fie nevoie sa le folosesc prea curand.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Design modern, finisaj mat</li><li>Sistem push-to-open</li><li>Volum mare de depozitare</li><li>Raport calitate-pret bun</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Sistemul push-to-open uneori greoi</li><li>Instructiuni de montaj putea fi mai clare</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="comoda-tv-abc-model-urban">
+  <div class="product-review__header">
+    <span class="section-tag">Raport Calitate-Pret</span>
+    <h3>Comoda TV ABC Model Urban</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>n/a</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>2 usi, 1 sertar, 1 polita deschisa</div>
+      <div class="product-review__spec"><strong>Functii</strong>manere metalice, picioare metalice, spatiu cabluri</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>180x35x50 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>n/a</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Daca ai nevoie de o comoda TV care sa arate bine si sa nu te coste o avere, asta e o varianta buna. Modelul ABC Urban e destul de compact, potrivit pentru apartamente sau camere mai mici. Am ales varianta pe alb lucios, si arata chiar elegant, desi amprentele se vad mai usor decat la finisajele mate.</p>
+        <p>Manerele metalice adauga un plus de stil, iar picioarele ridica comoda de pe jos, ceea ce faciliteaza curatenia. Nu e foarte incapatoare, are doar un sertar si doua usi, dar pentru un decodor, o consola si cateva DVD-uri e suficient. Am pus si un <a href="/telefon-premium-android/">telefon premium android</a> pe ea si arata bine in context.</p>
+        <p>Montajul a fost destul de rapid, cam o ora si jumatate. Punctele slabe sunt, sincer, spatiul de depozitare limitat si faptul ca, fiind lucioasa, se zgarie mai usor daca nu esti atent. Am observat deja o mica zgarietura pe colt, de la aspirator. Totusi, pentru pretul ei, e greu sa ceri mai mult. E o piesa de mobilier living modern care isi face treaba.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Design modern, lucios</li><li>Pret accesibil</li><li>Picioare metalice, usor de curatat</li><li>Spatiu dedicat pentru cabluri</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Spatiu de depozitare limitat</li><li>Se zgarie mai usor, fiind lucioasa</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="biblioteca-modulara-def-model-elegance">
+  <div class="product-review__header">
+    <span class="section-tag">Premium</span>
+    <h3>Bibliotecă Modulară DEF Model Elegance</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>n/a</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>2 module (unul cu usi, unul deschis), polite reglabile</div>
+      <div class="product-review__spec"><strong>Functii</strong>sistem de iluminare LED integrat, MDF vopsit, sistem soft-close</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>300x45x200 cm (configuratie standard)</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>n/a</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Asta e alta mancare de peste. Daca vrei sa investesti intr-o piesa de mobilier living modern care sa impresioneze si sa reziste ani buni, DEF Elegance e o alegere buna. Am ales configuratia asta, dar se poate personaliza destul de mult.</p>
+        <p>MDF-ul vopsit e de calitate superioara, se simte la atingere si arata impecabil. Sistemul soft-close la usi si sertare e fin si precis, un detaliu care face diferenta. Iluminarea LED integrata creeaza o atmosfera super misto seara, mai ales cu cateva carti sau obiecte decorative pe polite.</p>
+        <p>Partea mai putin placuta? Pretul. E o investitie considerabila. Si montajul e complex, l-am lasat pe seama echipei de la magazin, si bine am facut, a durat vreo 4 ore. Nu am gasit minusuri reale la calitate, dar recunosc ca nu se potriveste oricui, nici ca stil, nici ca buget. Daca ai un <a href="/laptop-business-subtire/">laptop business subțire</a> si vrei un spatiu de expunere pe masura, merita.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Calitate premium, materiale de top</li><li>Design elegant, modular</li><li>Iluminare LED integrata</li><li>Sistem soft-close</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Pret ridicat</li><li>Montaj complex, recomandat profesional</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="etajera-suspendata-ghi-model-simplu">
+  <div class="product-review__header">
+    <span class="section-tag">Pentru Buget Mic</span>
+    <h3>Etajeră Suspendată GHI Model Simplu</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>n/a</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>lungime 120 cm, adancime 20 cm</div>
+      <div class="product-review__spec"><strong>Functii</strong>placa PAL melaminat, sistem prindere ascuns</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>120x20x5 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>n/a</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Pentru un plus de spatiu de depozitare sau expunere, fara sa aglomerezi camera, etajera GHI e solutia. Am pus-o deasupra canapelei, pentru cateva tablouri si carti. Montajul e cel mai simplu pe care l-am facut vreodata, practic o prinzi in 2-3 dibluri in perete. Sistemul de prindere ascuns arata foarte curat, nu se vad suruburile. E PAL melaminat, deci nu te astepta sa tina greutati enorme, dar pentru decoratiuni, carti subtiri sau rame foto, e perfecta.</p>
+        <p>Ce nu-mi place? E destul de ingusta, deci nu poti pune obiecte foarte voluminoase. Si daca peretele nu e perfect drept, s-ar putea sa nu stea perfect lipita. In rest, pentru pretul ei, e o etajera de mobilier living modern decenta. Am vazut-o si in varianta mai lunga, de 160 cm, poate pentru un perete mai mare.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Pret foarte mic</li><li>Montaj extrem de simplu</li><li>Sistem de prindere ascuns</li><li>Design minimalist</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Capacitate mica de greutate</li><li>Destul de ingusta</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="masuta-de-cafea-jkl-model-cube">
+  <div class="product-review__header">
+    <span class="section-tag">Best Buy 2026</span>
+    <h3>Măsuță de cafea JKL Model Cube</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>n/a</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>blat principal, 1 sertar</div>
+      <div class="product-review__spec"><strong>Functii</strong>MDF lucios, picioare cromate, sertar cu glisiere metalice</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>100x60x45 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>n/a</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Masa JKL Cube e genul de piesa care aduce un plus de stil livingului fara sa fie prea ostentativa. Blatul lucios arata bine si e usor de curatat, iar picioarele cromate ii dau un aer modern. Sertarul e un plus binevenit, am reusit sa tinem telecomenzile si cateva reviste acolo, sa nu stea pe masa. Glisierele metalice sunt decente, nu scartaie si se deschid usor. Dimensiunea e potrivita pentru majoritatea canapelelor.</p>
+        <p>Am avut o mica problema la montaj, una dintre gaurile pentru picioare nu era perfect aliniata, dar am rezolvat-o cu un bormasina. Daca vrei sa pui chestii grele pe ea, gen un frigider mic, probabil nu e cea mai buna idee, dar pentru uz normal, e ok. E o piesa de mobilier living modern care isi merita banii, mai ales ca am prins-o la reducere.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Design modern, lucios</li><li>Sertar pentru depozitare</li><li>Picioare cromate, aspect elegant</li><li>Preț bun pentru calitate</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Calitatea montajului poate varia (găuri nealiniate)</li><li>Nu este recomandată pentru greutăți mari</li></ul></div>
+    </div>
+  </div>
+</article>`} />
+
+          <!-- Comparison Table -->
+          <Fragment set:html={`
+<section id="comparatie">
+  <h2>Comparatie rapida</h2>
+  <div class="comparison-outer" id="comparison-outer">
+    <div class="comparison-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Scroll horizontal pentru toate coloanele</div>
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead><tr><th>Model</th><th>Putere</th><th>Capacitate</th><th>Functii</th><th>Consum</th><th>Potrivit Pentru</th></tr></thead>
+        <tbody><tr><td>MobilaLiving XYZ Model Nova</td><td>n/a</td><td>2 usi, 3 sertare, 2 polite</td><td>push-to-open, finisaj mat</td><td>n/a</td><td>Livinguri cu nevoie mare de depozitare, cauta stil modern mat.</td></tr><tr><td>Comoda TV ABC Model Urban</td><td>n/a</td><td>2 usi, 1 sertar, 1 polita</td><td>manere metalice, picioare metalice</td><td>n/a</td><td>Apartamente mici, bugete restranse, prefera aspect lucios.</td></tr><tr><td>Bibliotecă Modulară DEF Model Elegance</td><td>n/a</td><td>2 module, polite reglabile</td><td>LED integrat, soft-close, MDF vopsit</td><td>n/a</td><td>Livinguri premium, cei care vor piese de impact si calitate superioara.</td></tr><tr><td>Etajeră Suspendată GHI Model Simplu</td><td>n/a</td><td>120x20 cm</td><td>prindere ascunsă, PAL melaminat</td><td>n/a</td><td>Spatii mici, expunere decorativa, buget minim.</td></tr><tr><td>Măsuță de cafea JKL Model Cube</td><td>n/a</td><td>blat, 1 sertar</td><td>MDF lucios, picioare cromate</td><td>n/a</td><td>Livinguri moderne, cauta o masuta functionala cu sertar.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>`} />
+
+          <!-- Buying Guide -->
+          <Fragment set:html={`
+<section id="cum-alegi-mobilierul-potrivit-pentru-un-living-modern">
+  <h2>Cum alegi mobilierul potrivit pentru un living modern</h2>
+  <div class="guide"><h4>Alege stilul potrivit</h4>
+        <p>Cand vorbim de mobilier living modern, ne gandim la linii curate, forme geometrice simple si functionalitate. Evita ornamentele excesive. Culorile neutre (alb, negru, gri, bej) sunt o baza excelenta, pe care o poti completa cu accente de culoare prin perne, tablouri sau alte decoratiuni. Finisajele mate sunt in trend, dar cele lucioase aduc lumina in spatii mai mici.</p>
+        <h4>Prioritizeaza functionalitatea</h4>
+        <p>Un living modern nu inseamna doar sa arate bine, ci si sa fie practic. Gandeste-te la spatiul de depozitare de care ai nevoie. Ai multe carti? Atunci o biblioteca incapatoare e esentiala. Ai nevoie sa ascunzi cablurile de la electronice? Cauta comode TV cu spatii special amenajate sau sertare. Sistemele de deschidere push-to-open sau soft-close adauga un plus de confort.</p>
+        <h4>Dimensiunea conteaza</h4>
+        <p>Inainte sa cumperi, masoara spatiul. O piesa de mobilier living modern prea mare poate aglomera camera, iar una prea mica poate parea pierduta. Ia in calcul si proportiile. O comoda TV prea lata pentru un perete scurt va arata ciudat. O etajera suspendata e o solutie buna cand vrei sa folosesti spatiul vertical fara sa ocupi loc pe podea.</p>
+        <h4>Materiale si finisaje</h4>
+        <p>PAL-ul melaminat este cel mai des intalnit, fiind accesibil si usor de intretinut. MDF-ul vopsit sau furniruit ofera un aspect mai premium si o rezistenta mai mare. Pentru un aspect cu adevarat modern, cauta finisaje mate sau texturi discrete. Picioarele metalice, fie cromate sau negre, adauga un plus de stil si faciliteaza curatenia sub mobilier.</p>
+        <h4>Greseli de evitat</h4>
+        <ul><li>Sa cumperi tot mobilierul din acelasi set: amestecul de piese poate crea un look mai personal si mai interesant.</li><li>Sa ignori spatiul de depozitare: un living ordonat arata mult mai bine.</li><li>Sa alegi culori sau finisaje care nu se potrivesc cu restul casei.</li><li>Sa nu masori spatiul: asta duce la piese nepotrivite ca dimensiune.</li></ul>
+        <p>Daca ai nevoie de inspiratie pentru accesorii, un <a href="/telefon-cu-camera-profesionala/">telefon cu cameră profesională</a> te poate ajuta sa surprinzi momentele frumoase din noul tau living.</p>
+  </div>
+</section>`} />
+
+          <!-- FAQ -->
+          <Fragment set:html={`
+<section id="faq" class="faq-section">
+  <h2>Intrebari Frecvente</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">cat costa un mobilier living modern complet</div>
+      <div class="faq-answer">Un mobilier living modern complet, incluzand comoda TV, biblioteca si masuta de cafea, poate varia mult. Pentru piese de buget mediu, te poti astepta la un cost intre 3000 si 6000 de lei. Modelele premium, cu materiale de calitate superioara si design personalizat, pot depasi 10.000 - 15.000 de lei.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">care e diferenta intre mobilier living modern si clasic</div>
+      <div class="faq-answer">Mobilierul living modern se caracterizeaza prin linii drepte, forme simple, finisaje mate sau lucioase si functionalitate. Mobilierul clasic are, de obicei, ornamente, sculpturi, culori mai inchise si forme mai rotunjite, inspirate din stiluri vechi.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">merita sa cumpar mobilier living modern din PAL melaminat</div>
+      <div class="faq-answer">Da, merita daca ai un buget limitat. PAL-ul melaminat este o optiune accesibila si usor de intretinut pentru mobilier living modern. Totusi, nu ofera aceeasi rezistenta sau finisaj premium ca MDF-ul sau lemnul masiv.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">ce inseamna mobilier modular pentru living</div>
+      <div class="faq-answer">Mobilierul modular pentru living inseamna ca piesele sunt concepute sa poata fi combinate in diverse configuratii, adaptandu-se spatiului si nevoilor tale. Poti adauga sau inlocui module (rafturi, dulapuri, comode) pentru a crea un ansamblu personalizat.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">cum curat mobilier living modern lucios</div>
+      <div class="faq-answer">Pentru mobilier living modern lucios, foloseste o laveta moale, din microfibra, usor umeda, cu o solutie de curatat speciala pentru suprafete lucioase sau apa cu putin sapun. Sterge imediat cu o laveta uscata pentru a evita urmele. Evita produsele abrazive sau bureții aspri.</div>
+    </div>
+  </div>
+</section>`} />
+        </div>
+
+        <!-- Author Box -->
+        <div class="author-box">
+          <div class="author-box-content">
+            <div class="author-avatar">
+              AS
+            </div>
+            <div class="author-info">
+              <div class="author-name">Andrei Stanciu</div>
+              <div class="author-role">Analist IT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Prev/Next Navigation -->
+    <PrevNextNav
+      currentSlug="mobilier-living-modern"
+      currentCategory="mobila-home-living"
+      articles={allArticles}
+    />
+  </article>
+
+  <script>
+    // Comparison table scroll detection
+    document.addEventListener('DOMContentLoaded', () => {
+      const outer = document.getElementById('comparison-outer');
+      if (outer) {
+        const wrap = outer.querySelector('.comparison-wrap');
+        function checkScroll() {
+          if (wrap && wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          } else {
+            outer.classList.remove('can-scroll');
+          }
+        }
+        checkScroll();
+        window.addEventListener('resize', checkScroll);
+      }
+
+      // TOC active tracking
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (tocLinks.length) {
+        const ids = Array.from(tocLinks).map(a => a.getAttribute('href').replace('#', '')).filter(Boolean);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+    });
+  </script>
+</Layout>
