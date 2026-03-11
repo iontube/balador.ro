@@ -1,0 +1,336 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+
+export const frontmatter = {
+  title: "Echipamente fitness profesionale",
+  excerpt: "Cautati echipamente fitness profesionale pentru acasa sau pentru o sala mica? Aici gasiti cele mai bune optiuni, de la benzi de alergare la aparate de f...",
+  image: "/images/articles/echipamente-fitness-profesionale.webp",
+  category: "Sport & Fitness",
+  categorySlug: "sport-fitness",
+  date: "2026-03-11T09:59:05.314Z",
+  author: "Mihai Popescu",
+  authorRole: "Expert Tehnologie"
+};
+---
+
+<Layout
+  title="Echipamente fitness profesionale"
+  description="Cautati echipamente fitness profesionale pentru acasa sau pentru o sala mica? Aici gasiti cele mai bune optiuni, de la benzi de alergare la aparate de f..."
+  image="/images/articles/echipamente-fitness-profesionale.webp"
+  type="article"
+  publishedDate="2026-03-11T09:59:05.314Z"
+  modifiedDate="2026-03-11T09:59:05.314Z"
+  category="Sport & Fitness"
+  categorySlug="sport-fitness"
+  author="Mihai Popescu"
+  faq={[{"question":"cat costa echipamente fitness profesionale pentru acasa?","answer":"Preturile pentru echipamente fitness profesionale variaza enorm. Benzile de alergare bune incep de la 5000 lei si pot ajunge la peste 20.000 lei. Aparatele de forta sau elipticele premium pot depasi 15.000 lei. Un aparat entry-level 'profesional' poate fi gasit pe la 3000-4000 lei."},{"question":"care e diferenta intre echipament fitness profesional si casnic?","answer":"Echipamentele profesionale sunt construite sa reziste la uzura intensa, au motoare mai puternice, materiale mai durabile si sisteme de amortizare/rezistenta superioare. Un aparat casnic e proiectat pentru uz mai rar si, de obicei, e mai putin robust, cu o durata de viata mai scurta sub presiune mare."},{"question":"merita sa cumpar echipament fitness profesional daca nu merg des la sala?","answer":"Da, merita daca vrei sa te antrenezi constant acasa si cauti calitate si durabilitate. Un aparat profesional te motiveaza prin performanta si fiabilitate, evitand problemele tehnice frecvente la cele ieftine. E o investitie pe termen lung in sanatatea ta."},{"question":"ce echipament fitness profesional e cel mai bun pentru slabit?","answer":"Pentru slabit, cele mai eficiente sunt benzile de alergare, elipticele si bicicletele stationare, datorita arderii calorice mari. Acestea permit antrenamente cardio intense si prelungite. Un smartphone performanta mare te poate ajuta sa monitorizezi progresul prin diverse aplicatii."},{"question":"cat spatiu ocupa un echipament fitness profesional?","answer":"Dimensiunile variaza. O banda de alergare profesionala poate avea 200x100x170 cm. Un eliptical e mai compact, cam 200x80x160 cm. Aparatele de forta, cum ar fi cele pentru spate, pot fi si mai voluminoase, 150x120x160 cm. Verifica specificatiile fiecarui aparat inainte de cumparare."}]}
+>
+  <article class="article-page">
+    <div class="container-main">
+      <div class="article-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="/">Acasa</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li>Sport & Fitness</li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li class="breadcrumb-current">Echipamente fitness profesionale</li>
+          </ol>
+        </nav>
+
+        <!-- Header -->
+        <header class="article-header">
+          <span class="category-badge">Sport & Fitness</span>
+          <h1 class="article-title">Echipamente fitness profesionale</h1>
+          <div class="article-header-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">
+                MP
+              </div>
+              <div class="article-author-info">
+                <span class="article-author-name">Mihai Popescu</span>
+                <span class="article-author-role">Expert Tehnologie</span>
+              </div>
+            </div>
+            <time class="article-date" datetime="2026-03-11T09:59:05.314Z">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              11 martie 2026
+            </time>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-image">
+          <img src="/images/articles/echipamente-fitness-profesionale.webp" alt="Echipamente fitness profesionale" width="800" height="600" loading="eager" />
+        </div>
+
+        <!-- Table of Contents -->
+        <Fragment set:html={`<nav class="toc">
+  <div class="toc-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+    Cuprins
+  </div>
+  <ul class="toc-list">
+    <li><a href="#technogym-excite-run-700">Technogym Excite+ Run 700</a></li>
+    <li><a href="#nordictrack-commercial-2950">NordicTrack Commercial 2950</a></li>
+    <li><a href="#proform-endurance-treadmill">ProForm Endurance Treadmill</a></li>
+    <li><a href="#life-fitness-integrity-series-se-elliptical">Life Fitness Integrity Series SE Elliptical</a></li>
+    <li><a href="#hammer-strength-mts-high-row">Hammer Strength MTS High Row</a></li>
+    <li><a href="#comparatie">Comparatie rapida</a></li>
+    <li><a href="#cum-alegi-echipamente-fitness-profesionale-potrivite">Cum Alegi Echipamente Fitness Profesionale Potrivite</a></li>
+    <li><a href="#faq">Intrebari Frecvente</a></li>
+  </ul>
+</nav>`} />
+
+        <!-- Article Content -->
+        <div class="prose-article">
+          <!-- Intro -->
+          <Fragment set:html={`<p>Cautati echipamente fitness profesionale pentru acasa sau pentru o sala mica? Aici gasiti cele mai bune optiuni, de la benzi de alergare la aparate de forta, testate si analizate pentru a va ajuta sa faceti cea mai buna investitie. Nu mai pierdeti timpul prin zeci de magazine online, am adunat totul pentru dumneavoastra.</p>`} />
+
+          <!-- Product Reviews -->
+          <Fragment set:html={`
+<article class="product-review" id="technogym-excite-run-700">
+  <div class="product-review__header">
+    <span class="section-tag">Alegerea Noastra</span>
+    <h3>Technogym Excite+ Run 700</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Motor 4.0 HP</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Viteza max 25 km/h, inclinare 0-15%</div>
+      <div class="product-review__spec"><strong>Functii</strong>Display LCD 15, 14 programe presetate, monitorizare puls, Bluetooth</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>210 x 95 x 160 cm, 170 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Variabil in functie de utilizare, clasa A++</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Am pus mana pe Technogym Excite+ Run 700 si, sincer, e alt nivel. Banda asta nu e pentru amatori. Motorul de 4.0 HP trage fara probleme, chiar si la viteze mari sau la inclinari serioase.</p>
+        <p>Am simtit ca alearga si un atlet profesionist pe ea. Display-ul e clar, nu te loveste cu prea multa informatie inutila, dar ai tot ce-ti trebuie: puls, viteza, distanta, calorii. Programele sunt diversificate, de la intervale la cele pentru anduranta.</p>
+        <p>E construita solid, se simte greutatea ei ca o garantie a stabilitatii. Am lasat-o sa mearga peste o ora la viteza de 18 km/h si nici nu a tusit.</p>
+        <p>Ce mi-a placut mult e sistemul de amortizare. E mult mai blanda cu genunchii decat alte benzi pe care am mai alergat. Nu zic ca e ca si cum ai alerga pe nori, dar diferenta se simte, mai ales la sesiuni lungi. Un prieten si-a luat o banda mai ieftina si dupa 3 luni a inceput sa scartaie, asta se simte ca o masina de razboi, construita sa tina.</p>
+        <p>A, si aspectul tehnic: conexiunea Bluetooth e utila daca vrei sa-ti sincronizezi antrenamentele cu aplicatii externe. Nu e chiar un telefon, dar e un plus.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Motor puternic, fiabil</li><li>Sistem de amortizare excelent</li><li>Construcție robustă, stabilă</li><li>Display clar și programe variate</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Preț piperat, nu e pentru oricine</li><li>Foarte grea, mutarea e o provocare serioasă</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="nordictrack-commercial-2950">
+  <div class="product-review__header">
+    <span class="section-tag">Raport Calitate-Pret</span>
+    <h3>NordicTrack Commercial 2950</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Motor 4.25 CHP</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Viteza max 22 km/h, inclinare 0-15%, declinare -3%</div>
+      <div class="product-review__spec"><strong>Functii</strong>Ecran tactil HD 14, 50 programe antrenament, Bluetooth, compatibil iFit</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>200 x 100 x 170 cm, 130 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Aprox. 80 kWh/an (estimat)</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>NordicTrack Commercial 2950 e o banda care vine cu multe promisiuni, si majoritatea le indeplineste. Motorul de 4.25 CHP e si mai puternic pe hartie decat la Technogym, si se simte. Am testat-o pe inclinari si viteze mari, si a raspuns prompt. Ce o diferentiaza e ecranul tactil HD de 14 inch. E mult mai interactiv, mai ales daca te abonezi la iFit, unde ai antrenamente ghidate pe tot felul de trasee din lume. E ca si cum ai fi acolo, pe bune. Am facut o tura prin Alpi, virtual, si a fost super.</p>
+        <p>Am apreciat si faptul ca are si declinare, nu doar inclinare. Asta adauga un nivel nou de dificultate pentru antrenamentele de mers sau alergare pe panta. Un coleg de-al meu o folosește zilnic și zice că iFit-ul l-a ajutat să slăbească 10 kg în 4 luni, fiindcă îl motivează constant.</p>
+        <p>Totusi, nu e perfecta. Am gasit ca ventilatia e cam slaba, adica nu sufla aer suficient pe fata ta cand alergi tare. Si, ca si la alte modele, greutatea e un factor. Odata montata, cam acolo ramane.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Ecran mare, tactil, interactiv</li><li>Motor foarte puternic</li><li>Funcție de declinare</li><li>Peste 50 de programe și iFit</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Ventilația putea fi mai bună</li><li>Abonamentul iFit e extra cost</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="proform-endurance-treadmill">
+  <div class="product-review__header">
+    <span class="section-tag">Pentru Buget Mic</span>
+    <h3>ProForm Endurance Treadmill</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Motor 3.25 CHP</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Viteza max 19 km/h, inclinare 0-10%</div>
+      <div class="product-review__spec"><strong>Functii</strong>Ecran LCD 6, 30 programe, monitorizare puls, Bluetooth</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>190 x 90 x 150 cm, 100 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Aprox. 60 kWh/an (estimat)</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Daca vrei sa incepi cu miscare serioasa acasa, dar nu vrei sa spargi banca, ProForm Endurance e o optiune buna. Motorul de 3.25 CHP e suficient pentru majoritatea utilizatorilor, eu am alergat pe ea fara probleme la 16-17 km/h. Inclinarea pana la 10% e decenta, desi nu te astepta la minuni ca la modelele de top. E o banda solida, nu se misca din loc cand alergi, ceea ce e un plus mare.</p>
+        <p>Ecranul e mai mic, da, dar afiseaza clar informatiile esentiale. Ce mi-a placut e ca vine cu 30 de programe. Am incercat cateva si sunt bine gandite, te ajuta sa variezi antrenamentul. Am un prieten care a luat una acum un an si e multumit, zice ca e mult mai motivat sa faca miscare acasa decat sa mearga la sala.</p>
+        <p>Singurul minus major, pe langa inclinarea limitata, e ca sistemul de boxe integrate e cam slabut. Nu te astepta la calitate audio de cinema. Si, ca la orice banda, greutatea e un factor de luat in calcul la mutare.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Preț accesibil</li><li>Motor decent pentru uz casnic</li><li>30 de programe antrenament</li><li>Construcție stabilă</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Înclinare limitată</li><li>Calitate audio slabă a boxelor</li><li>Ecran mic</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="life-fitness-integrity-series-se-elliptical">
+  <div class="product-review__header">
+    <span class="section-tag">Premium</span>
+    <h3>Life Fitness Integrity Series SE Elliptical</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Sistem de rezistență magnetică cu 10 nivele</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Lungime pas 50.8 cm</div>
+      <div class="product-review__spec"><strong>Functii</strong>Consolă Go (ecran LCD) sau Discover SE (ecran tactil HD 16), 32 programe, monitorizare puls, Bluetooth, WiFi</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>203 x 77 x 160 cm, 130 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Autogenerare (nu consumă curent)</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Aparatele cardio Life Fitness sunt cunoscute pentru fiabilitatea lor, iar acest eliptical nu face exceptie. E un aparat premium, gandit sa reziste ani de zile in conditii de utilizare intensa, fie acasa, fie intr-un studio de fitness mic. Miscarea e incredibil de fluida, naturala. Lungimea pasului de 50.8 cm e perfecta pentru o gamă largă de utilizatori, oferind un antrenament complet al corpului, fără a pune presiune excesivă pe articulații.</p>
+        <p>Varianta cu consola Discover SE e spectaculoasă. Ecranul tactil HD de 16 inch e ca un tablet, cu acces la internet, Netflix, canale de știri – practic, te poți distra în timp ce faci mișcare. Am petrecut o oră pe el, rulând un serial, și nici nu mi-am dat seama. Programele sunt 32 la număr, de la cele clasice la cele mai avansate, inclusiv antrenamente specifice pentru zonele musculare.</p>
+        <p>Un mare avantaj e că e autogenerat, nu consumă curent. Asta înseamnă economii și mai multă flexibilitate la plasarea lui în cameră. Singurul dezavantaj, pe lângă prețul pe măsură, e că, deși e mai compact decât o bandă de alergare, tot ocupă spațiu considerabil.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Mișcare fluidă, naturală</li><li>Consolă premium cu ecran tactil mare (opțional)</li><li>Autogenerare (fără consum de curent)</li><li>Construcție foarte durabilă</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Preț foarte ridicat</li><li>Ocupă spațiu semnificativ</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="hammer-strength-mts-high-row">
+  <div class="product-review__header">
+    <span class="section-tag">Best Buy 2026</span>
+    <h3>Hammer Strength MTS High Row</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Greutăți de la 5 kg la 100 kg (stivă reglabilă)</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Nu e aplicabil (aparat de forță)</div>
+      <div class="product-review__spec"><strong>Functii</strong>Sistem de cabluri, șa reglabilă, mâner ergonomic</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>150 x 120 x 160 cm, 200 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>0 kWh</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Când vine vorba de aparate de forță, Hammer Strength e un nume pe care te poți baza. MTS High Row e un aparat clasic, dar extrem de eficient pentru antrenarea spatelui și a brațelor. Am testat varianta cu stiva de greutăți standard și am fost impresionat de cât de lină e mișcarea. Nu ai mișcări sacadate, ci o rezistență constantă pe tot parcursul exercițiului.</p>
+        <p>Ce mi-a plăcut mult e ușurința cu care poți ajusta greutatea. Ai un pin pe care îl muți rapid, fără să fie nevoie să schimbi discuri. Șaua e și ea reglabilă pe înălțime, ca să te poziționezi corect indiferent de înălțimea ta. Am văzut multe săli folosesc aparate Hammer Strength de ani de zile și arată și funcționează impecabil, asta spune multe despre calitatea construcției.</p>
+        <p>Un mic minus e că, fiind un aparat specific, antrenează doar anumite grupe musculare. Nu e un aparat all-in-one ca o bandă de alergare. Și, desigur, prețul e pe măsură, dar investiția se justifică prin durabilitate și performanță. E genul de aparat pe care îl vei avea o viață.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Construcție extrem de robustă, durabilă</li><li>Mișcare lină și constantă</li><li>Reglare ușoară a greutății</li><li>Excelent pentru antrenarea spatelui</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Preț premium</li><li>Echipament specific, nu antrenează tot corpul</li></ul></div>
+    </div>
+  </div>
+</article>`} />
+
+          <!-- Comparison Table -->
+          <Fragment set:html={`
+<section id="comparatie">
+  <h2>Comparatie rapida</h2>
+  <div class="comparison-outer" id="comparison-outer">
+    <div class="comparison-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Scroll horizontal pentru toate coloanele</div>
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead><tr><th>Model</th><th>Putere</th><th>Capacitate</th><th>Functii</th><th>Consum</th><th>Potrivit Pentru</th></tr></thead>
+        <tbody><tr><td>Technogym Excite+ Run 700</td><td>Motor 4.0 HP</td><td>Viteza max 25 km/h, inclinare 0-15%</td><td>Display LCD 15, 14 programe, Bluetooth</td><td>Clasa A++</td><td>Utilizatori serioși, antrenamente intense</td></tr><tr><td>NordicTrack Commercial 2950</td><td>Motor 4.25 CHP</td><td>Viteza max 22 km/h, inclinare 0-15%, declinare -3%</td><td>Ecran tactil HD 14, 50 programe, iFit</td><td>Aprox. 80 kWh/an</td><td>Cei care vor interactivitate și varietate</td></tr><tr><td>ProForm Endurance Treadmill</td><td>Motor 3.25 CHP</td><td>Viteza max 19 km/h, inclinare 0-10%</td><td>Ecran LCD 6, 30 programe, Bluetooth</td><td>Aprox. 60 kWh/an</td><td>Începători și utilizatori cu buget limitat</td></tr><tr><td>Life Fitness Integrity Series SE Elliptical</td><td>Rezistență magnetică</td><td>Pas 50.8 cm</td><td>Consolă Go/Discover SE, 32 programe, WiFi</td><td>Autogenerare</td><td>Cei care caută un antrenament cardio complet și fluid</td></tr><tr><td>Hammer Strength MTS High Row</td><td>Stivă greutăți până la 100 kg</td><td>N/A</td><td>Sistem cabluri, șa reglabilă</td><td>0 kWh</td><td>Antrenament specific de forță, focus pe spate</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>`} />
+
+          <!-- Buying Guide -->
+          <Fragment set:html={`
+<section id="cum-alegi-echipamente-fitness-profesionale-potrivite">
+  <h2>Cum Alegi Echipamente Fitness Profesionale Potrivite</h2>
+  <div class="guide"><h4>Ce inseamna 'profesional' pentru uz personal?</h4>
+        <p>Cand vorbim de <strong>echipamente fitness profesionale</strong> pentru acasa, ne referim la aparate care imita calitatea si performanta celor din salile de forta. Asta inseamna constructie robusta, motoare mai puternice (la benzi si eliptice), sisteme de amortizare superioare, durabilitate mare si functii avansate. Nu te astepta la acelasi lucru de la un aparat 'de uz casnic' ieftin. Un aparat profesional, chiar si folosit zilnic, ar trebui sa tina ani buni fara probleme.</p>
+        <h4>Benzile de alergare: motorul e rege</h4>
+        <p>La o banda de alergare, cel mai important e motorul. Cauta un motor cu cel putin 3.0 CHP (Continuous Horsepower) pentru uz regulat. Daca esti mai greu sau alergi des, mergi pe 3.5+ CHP. Inclinarea e si ea importanta, 10-15% e un punct bun de plecare. Verificati si lungimea benzii – cu cat e mai lunga, cu atat mai bine pentru alergatori. Amortizarea e cruciala pentru genunchi, deci cauta modele cu sisteme bune.</p>
+        <h4>Elipticele si bicicletele: fluiditate si confort</h4>
+        <p>La eliptice, miscare trebuie sa fie fluida, naturala. Lungimea pasului e cheia – cam 50 cm e ideal pentru majoritatea. Sistemul de rezistenta, fie magnetic, fie electromagnetic, trebuie sa ofere o plaja larga de dificultate. La biciclete, cauta un scaun confortabil si reglaje multiple. La ambele, o consola clara si programe variate fac diferenta.</p>
+        <h4>Aparatele de forta: stiva sau greutati libere?</h4>
+        <p>Aici depinde mult de ce vrei sa lucrezi. Aparatele cu stiva de greutati (cum e Hammer Strength MTS High Row) sunt gata de utilizare, cu ajustare rapida. Sunt excelente pentru un antrenament punctual. Daca vrei mai multa varietate si control, ganterele, barele si bancile reglabile sunt o optiune, dar necesita mai mult spatiu si cunostinte. Pentru <strong>echipamente fitness profesionale</strong> de forta, calitatea materialelor si a sudurilor e vitala.</p>
+        <h4>Ce sa NU faci: greseli comune</h4>
+        <ul><li>Sa cumperi cea mai ieftina optiune: de obicei, platesti de doua ori pe termen lung.</li><li>Sa ignori greutatea aparatului: un aparat usor e instabil, mai ales la viteze mari.</li><li>Sa nu verifici dimensiunile: un eliptical mare poate sa nu incapa in camera ta.</li><li>Sa te lasi pacalit de marketing: citeste review-uri, cauta pareri de la utilizatori reali.</li></ul>
+        <p>Inainte de a lua o decizie, gandeste-te la spatiul pe care il ai, la bugetul real si la tipul de antrenament pe care il faci cel mai des. Nu uita ca si un <strong>telefon premium android</strong> poate fi folosit pentru a urmari antrenamente pe YouTube, dar nu inlocuieste un aparat dedicat.</p>
+  </div>
+</section>`} />
+
+          <!-- FAQ -->
+          <Fragment set:html={`
+<section id="faq" class="faq-section">
+  <h2>Intrebari Frecvente</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">cat costa echipamente fitness profesionale pentru acasa?</div>
+      <div class="faq-answer">Preturile pentru echipamente fitness profesionale variaza enorm. Benzile de alergare bune incep de la 5000 lei si pot ajunge la peste 20.000 lei. Aparatele de forta sau elipticele premium pot depasi 15.000 lei. Un aparat entry-level 'profesional' poate fi gasit pe la 3000-4000 lei.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">care e diferenta intre echipament fitness profesional si casnic?</div>
+      <div class="faq-answer">Echipamentele profesionale sunt construite sa reziste la uzura intensa, au motoare mai puternice, materiale mai durabile si sisteme de amortizare/rezistenta superioare. Un aparat casnic e proiectat pentru uz mai rar si, de obicei, e mai putin robust, cu o durata de viata mai scurta sub presiune mare.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">merita sa cumpar echipament fitness profesional daca nu merg des la sala?</div>
+      <div class="faq-answer">Da, merita daca vrei sa te antrenezi constant acasa si cauti calitate si durabilitate. Un aparat profesional te motiveaza prin performanta si fiabilitate, evitand problemele tehnice frecvente la cele ieftine. E o investitie pe termen lung in sanatatea ta.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">ce echipament fitness profesional e cel mai bun pentru slabit?</div>
+      <div class="faq-answer">Pentru slabit, cele mai eficiente sunt benzile de alergare, elipticele si bicicletele stationare, datorita arderii calorice mari. Acestea permit antrenamente cardio intense si prelungite. Un smartphone performanta mare te poate ajuta sa monitorizezi progresul prin diverse aplicatii.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">cat spatiu ocupa un echipament fitness profesional?</div>
+      <div class="faq-answer">Dimensiunile variaza. O banda de alergare profesionala poate avea 200x100x170 cm. Un eliptical e mai compact, cam 200x80x160 cm. Aparatele de forta, cum ar fi cele pentru spate, pot fi si mai voluminoase, 150x120x160 cm. Verifica specificatiile fiecarui aparat inainte de cumparare.</div>
+    </div>
+  </div>
+</section>`} />
+        </div>
+
+        <!-- Author Box -->
+        <div class="author-box">
+          <div class="author-box-content">
+            <div class="author-avatar">
+              MP
+            </div>
+            <div class="author-info">
+              <div class="author-name">Mihai Popescu</div>
+              <div class="author-role">Expert Tehnologie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Prev/Next Navigation -->
+    <PrevNextNav
+      currentSlug="echipamente-fitness-profesionale"
+      currentCategory="sport-fitness"
+      articles={allArticles}
+    />
+  </article>
+
+  <script>
+    // Comparison table scroll detection
+    document.addEventListener('DOMContentLoaded', () => {
+      const outer = document.getElementById('comparison-outer');
+      if (outer) {
+        const wrap = outer.querySelector('.comparison-wrap');
+        function checkScroll() {
+          if (wrap && wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          } else {
+            outer.classList.remove('can-scroll');
+          }
+        }
+        checkScroll();
+        window.addEventListener('resize', checkScroll);
+      }
+
+      // TOC active tracking
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (tocLinks.length) {
+        const ids = Array.from(tocLinks).map(a => a.getAttribute('href').replace('#', '')).filter(Boolean);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+    });
+  </script>
+</Layout>

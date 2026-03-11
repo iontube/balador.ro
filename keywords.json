@@ -76,11 +76,6 @@
       "categorySlug": "mobila-home-living"
     },
     {
-      "keyword": "echipamente fitness profesionale",
-      "category": "Sport & Fitness",
-      "categorySlug": "sport-fitness"
-    },
-    {
       "keyword": "sală fitness acasă completă",
       "category": "Sport & Fitness",
       "categorySlug": "sport-fitness"
@@ -595,6 +590,11 @@
       "keyword": "mobilier living modern",
       "category": "Mobilă & Home Living",
       "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "echipamente fitness profesionale",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
     }
   ]
 }
