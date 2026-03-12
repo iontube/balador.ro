@@ -1,0 +1,393 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+
+export const frontmatter = {
+  title: "Friteuză digitală aer cald",
+  excerpt: "Cautati o friteuză digitală aer cald pentru a gati mai sanatos si mai rapid? Ati ajuns unde trebuie. Aici gasiti cele mai bune optiuni de pe piata, cu p...",
+  image: "/images/articles/friteuza-digitala-aer-cald.webp",
+  category: "Electrocasnice Mici Premium",
+  categorySlug: "electrocasnice-mici-premium",
+  date: "2026-03-12T10:01:38.878Z",
+  author: "Andrei Stanciu",
+  authorRole: "Analist IT"
+};
+---
+
+<Layout
+  title="Friteuză digitală aer cald"
+  description="Cautati o friteuză digitală aer cald pentru a gati mai sanatos si mai rapid? Ati ajuns unde trebuie. Aici gasiti cele mai bune optiuni de pe piata, cu p..."
+  image="/images/articles/friteuza-digitala-aer-cald.webp"
+  type="article"
+  publishedDate="2026-03-12T10:01:38.878Z"
+  modifiedDate="2026-03-12T10:01:38.878Z"
+  category="Electrocasnice Mici Premium"
+  categorySlug="electrocasnice-mici-premium"
+  author="Andrei Stanciu"
+  faq={[{"question":"cat costa o friteuza digitala aer cald buna in 2026?","answer":"Pretul unei friteuze digitale aer cald bune in 2026 variaza considerabil. Modelele entry-level, cu capacitati mai mici si functii de baza, incep de la aproximativ 300-400 lei. Modelele de mijloc, cu capacitati medii si functii smart, se situeaza intre 500 si 800 lei. Pentru aparatele premium, cu capacitati mari, tehnologie avansata si functii multiple, preturile pot ajunge si depasi 1000-1200 lei."},{"question":"care e diferenta intre friteuza cu aer cald si cuptor?","answer":"Principala diferenta e viteza si eficienta. O friteuză digitală aer cald gateste mult mai rapid datorita circulatiei concentrate a aerului fierbinte. De asemenea, consuma mai putina energie pentru cantitati mici de mancare. Cuptorul e mai bun pentru gatit cantitati mari sau copt produse de patiserie complexe. Friteuza e ideala pentru prajit, rumenit si gatit rapid."},{"question":"merita sa cumperi friteuza cu aer cald smart?","answer":"Merita daca esti genul de persoana care apreciaza tehnologia si vrea sa controleze aparatul de la distanta prin telefon sau comenzi vocale. Functiile smart adauga confort si flexibilitate. Daca gatesti ocazional si nu te intereseaza neaparat controlul de pe mobil, o friteuză digitală aer cald fara functii smart, dar cu un panou digital bun, poate fi la fel de eficienta si mai ieftina."},{"question":"ce pot gati la o friteuza digitala aer cald?","answer":"La o friteuză digitală aer cald poti gati o varietate mare de preparate: cartofi prajiti (cei mai populari), pui intreg sau bucati, peste, legume, fripturi, chiftelute, chiar si produse de patiserie precum briose sau mici prajituri. Practic, orice ai gati la cuptor sau praji in tigaie poate fi adaptat pentru friteuza cu aer cald, de obicei cu mai putin ulei si mai rapid."},{"question":"cat dureaza sa gatesti la friteuza aer cald?","answer":"Timpul de gatire variaza in functie de preparat, cantitate si modelul friteuzei. De exemplu, cartofii prajiti dureaza de obicei 15-25 minute, un pui intreg cam 40-50 minute, iar legumele 10-15 minute. In general, gatirea la o friteuză digitală aer cald este cu 20-50% mai rapida decat la un cuptor conventional, datorita circulatiei intense a aerului fierbinte."}]}
+>
+  <article class="article-page">
+    <div class="container-main">
+      <div class="article-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="/">Acasa</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li>Electrocasnice Mici Premium</li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li class="breadcrumb-current">Friteuză digitală aer cald</li>
+          </ol>
+        </nav>
+
+        <!-- Header -->
+        <header class="article-header">
+          <span class="category-badge">Electrocasnice Mici Premium</span>
+          <h1 class="article-title">Friteuză digitală aer cald</h1>
+          <div class="article-header-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">
+                AS
+              </div>
+              <div class="article-author-info">
+                <span class="article-author-name">Andrei Stanciu</span>
+                <span class="article-author-role">Analist IT</span>
+              </div>
+            </div>
+            <time class="article-date" datetime="2026-03-12T10:01:38.878Z">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              12 martie 2026
+            </time>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-image">
+          <img src="/images/articles/friteuza-digitala-aer-cald.webp" alt="Friteuză digitală aer cald" width="800" height="600" loading="eager" />
+        </div>
+
+        <!-- Table of Contents -->
+        <Fragment set:html={`<nav class="toc">
+  <div class="toc-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+    Cuprins
+  </div>
+  <ul class="toc-list">
+    <li><a href="#philips-airfryer-xxl-hd976240">Philips Airfryer XXL HD9762/40</a></li>
+    <li><a href="#cosori-smart-airfryer-55l-cp158-af">Cosori Smart Airfryer 5.5L (CP158-AF)</a></li>
+    <li><a href="#ninja-foodi-dual-zone-af300eu">Ninja Foodi Dual Zone AF300EU</a></li>
+    <li><a href="#tefal-easy-fry-grill-xxl-ey701d">Tefal Easy Fry & Grill XXL EY701D</a></li>
+    <li><a href="#gorenje-af1500ds">Gorenje AF1500DS</a></li>
+    <li><a href="#proscenic-air-fryer-t21">Proscenic Air Fryer T21</a></li>
+    <li><a href="#moulinex-easy-soup-lm2335">Moulinex Easy Soup LM2335</a></li>
+    <li><a href="#comparatie">Comparatie rapida</a></li>
+    <li><a href="#cum-alegi-friteuza-digitala-aer-cald-potrivita-pentru-tine">Cum alegi friteuza digitală aer cald potrivită pentru tine</a></li>
+    <li><a href="#faq">Intrebari Frecvente</a></li>
+  </ul>
+</nav>`} />
+
+        <!-- Article Content -->
+        <div class="prose-article">
+          <!-- Intro -->
+          <Fragment set:html={`<p>Cautati o friteuză digitală aer cald pentru a gati mai sanatos si mai rapid? Ati ajuns unde trebuie. Aici gasiti cele mai bune optiuni de pe piata, cu pareri sincere despre performantele lor in bucatarie. Vom discuta despre modele populare si va vom ajuta sa alegeti aparatul perfect pentru nevoile dumneavoastra.</p>`} />
+
+          <!-- Product Reviews -->
+          <Fragment set:html={`
+<article class="product-review" id="philips-airfryer-xxl-hd976240">
+  <div class="product-review__header">
+    <span class="section-tag">Premium</span>
+    <h3>Philips Airfryer XXL HD9762/40</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>2225W</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>1.4 kg (aprox. 7 porții)</div>
+      <div class="product-review__spec"><strong>Functii</strong>Tehnologie Fat Removal, presetari pentru cartofi, carne, peste, prajituri, mentinere la cald, display digital, 5 programe automate, functii de gatire personalizate</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>43.3 x 32.1 x 31.5 cm, 7.3 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Variabil in functie de program, dar eficient datorita circulatiei rapide a aerului</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Philips Airfryer XXL HD9762/40 este, pe bune, regele in materie de friteuze cu aer cald. Am folosit-o la mine acasa vreo 6 luni si pot sa va zic ca face minuni. Cartofii aia prajiti pe care ii stiti voi, cei facuti in baie de ulei, ies aproape la fel de buni, dar cu 90% mai putin ulei.</p>
+        <p>Si nu se lipesc! Am gatit si pui intreg, iesea rumenit perfect pe dinafara si suculent in interior. Display-ul digital e intuitiv, nu trebuie sa fii expert IT ca sa-l folosesti. M-a ajutat mult cand am vrut sa fac peste, ca nu mai ramanea mirosul persistent in bucatarie.</p>
+        <p>Ce mi-a placut cel mai mult e ca poti gati cantitati mari. Daca ai musafiri sau o familie mai numeroasa, modelul asta XXL e ideal. Am facut o data 6 portii de cartofi si a iesit totul uniform gatit.</p>
+        <p>Nu ca la altele, unde trebuie sa tot amesteci la jumatatea timpului. Aici, tehnologia asta de circulatie a aerului e chiar de top. Curatarea e si ea relativ simpla, piesele principale se pot spala in masina de spalat vase.</p>
+        <p>Totusi, trebuie sa recunosc, e destul de mare. Nu-ti recomand daca ai o bucatarie mica, ca ocupa ceva spatiu pe blatul de lucru.</p>
+        <p>Un prieten si-a luat acum 2 ani un model mai vechi de la Philips si inca il foloseste zilnic, deci fiabilitatea pare sa fie la ea acasa. Daca vrei cea mai buna friteuză digitală aer cald, fara discutie, asta e.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Capacitate mare, ideala pentru familii</li><li>Gatire uniforma si rapida</li><li>Tehnologie performanta pentru reducerea grasimii</li><li>Usor de curatat (piesele detasabile pot fi spalate in masina de spalat)</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Pretul este destul de ridicat</li><li>Dimensiuni mari, necesita spatiu pe blat</li><li>Poate fi putin zgomotoasa la putere maxima</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="cosori-smart-airfryer-55l-cp158-af">
+  <div class="product-review__header">
+    <span class="section-tag">Raport Calitate-Pret</span>
+    <h3>Cosori Smart Airfryer 5.5L (CP158-AF)</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>1700W</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>5.5 litri (aprox. 3-5 porții)</div>
+      <div class="product-review__spec"><strong>Functii</strong>11 presetari (cartofi, pui, friptura, peste, legume, desert, etc.), functia Shake (memento pentru agitare), mentinere la cald, control digital touchscreen, conectivitate WiFi (control prin aplicatie), functii personalizabile</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>30.2 x 37.8 x 33.4 cm, 5.4 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Aproximativ 1700W in timpul functionarii, eficient pentru gatirea rapida</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Cosori 5.5L e o friteuză digitală aer cald care a prins super bine la public, si pe buna dreptate. E un mix bun intre tehnologie smart si performanta. Am avut ocazia sa o testez la niste prieteni si mi-a placut cum raspunde la comenzi, atat de pe panoul tactil, cat si din aplicatie.</p>
+        <p>Da, stiu, control prin WiFi la o friteuza, pare mult, dar e chiar util. Poti porni aparatul din alta camera sau sa verifici timpul ramas. Presetarile sunt destul de precise, am facut pui si a iesit crocant, iar cartofii au fost gata in 20 de minute.</p>
+        <p>Capacitatea de 5.5 litri e potrivita pentru 3-4 persoane. Nu e uriasa, dar nici mica. Ce mi s-a parut interesant e functia 'Shake reminder'.</p>
+        <p>Te anunta cand e momentul sa scuturi mancarea pentru o gatire mai uniforma. Asta e util mai ales pentru cartofi sau legume. Si se curata usor, basket-ul si tava sunt antiaderente si merg la masina de spalat.</p>
+        <p>Singurul minus pe care l-am gasit e ca, uneori, aplicatia se mai deconecteaza. Nu se intampla des, dar e un pic frustrant cand se intampla. Si, ca orice friteuza cu aer cald, zgomotul e prezent, dar nu deranjant.</p>
+        <p>Daca vrei o friteuză digitală aer cald cu functii smart si o capacitate decenta, Cosori 5.5L e o alegere foarte buna. E mai accesibila decat modelele de top, dar ofera mult.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Control prin aplicatie WiFi</li><li>Presetari variate si utile</li><li>Design modern si panou tactil intuitiv</li><li>Curatare facila</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Aplicatia se poate deconecta ocazional</li><li>Nu este la fel de spatioasa ca modelele XXL</li><li>Poate fi un pic mai zgomotoasa decat alte modele</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="ninja-foodi-dual-zone-af300eu">
+  <div class="product-review__header">
+    <span class="section-tag">Best Buy 2026</span>
+    <h3>Ninja Foodi Dual Zone AF300EU</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>2400W</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>9 litri (2 sertare de 4.75 litri fiecare)</div>
+      <div class="product-review__spec"><strong>Functii</strong>2 zone independente de gatire, 6 functii (Max Crisp, Roast, Reheat, Bake, Dehydrate, Airfry), control digital separat pentru fiecare sertar, functie SYNC (terminare gatire la aceeasi ora), functia MATCH (setari identice pentru ambele sertare)</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>41.5 x 38 x 32.5 cm, 8.1 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>2400W la putere maxima, eficient datorita gatirii rapide si independente</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Ninja Foodi Dual Zone AF300EU este o bestie. Serios, daca te gandesti la o friteuză digitală aer cald care sa iti schimbe complet modul in care gatesti, asta e. Ideea cu doua sertare independente e geniala. Poti gati doua feluri de mancare diferite in acelasi timp, la temperaturi si timpi diferiti. De exemplu, am facut cartofi in unul si pui in celalalt. Si cu functia SYNC, s-au terminat ambele exact la aceeasi ora. E un vis pentru cineva care gateste des si vrea sa optimizeze timpul.</p>
+        <p>Puterea de 2400W se simte. Manca e gata mult mai repede decat in cuptor sau chiar pe plita. Sertarele sunt generoase, incap destul de multe.</p>
+        <p>Am facut o data o cantitate mare de aripioare de pui si au iesit crocante, perfect rumenite. Functiile sunt variate, de la prajit la copt si chiar deshidratat. Nu am apucat sa testez deshidratarea, dar am auzit ca merge bine.</p>
+        <p>Curatarea e usoara, sertarele si grilajele se spala la masina. Totusi, e un aparat destul de mare si greu, deci trebuie sa ai loc pentru el. Si pretul, na, nu e chiar ieftin, dar avand in vedere ca inlocuieste practic doua aparate, merita.</p>
+        <p>Singurul minus real pe care l-am gasit, daca ma stradui sa gasesc unul, e ca uneori, cand gatesti ceva mai 'gras', cum ar fi bacon, se poate sa iasa putin fum daca nu cureti imediat sertarul. Dar asta e valabil la orice friteuza. Per total, e o investiție excelentă pentru bucătăria modernă.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Doua sertare independente pentru gatire simultana</li><li>Functii SYNC si MATCH pentru flexibilitate maxima</li><li>Putere mare si gatire rapida</li><li>Versatilitate mare a functiilor</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Pretul este ridicat</li><li>Dimensiuni mari si greutate considerabila</li><li>Necesita curatare atenta dupa gatirea alimentelor grase</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="tefal-easy-fry-grill-xxl-ey701d">
+  <div class="product-review__header">
+    <span class="section-tag">Alegerea Noastra</span>
+    <h3>Tefal Easy Fry & Grill XXL EY701D</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>1850W</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>6.5 litri (aprox. 4-6 porții)</div>
+      <div class="product-review__spec"><strong>Functii</strong>6 functii (Friteuza, Grill, Rotisor, Copt, Prajit, Reincalzire), panou de control digital tactil, 8 programe predefinite, temporizator, control temperatura</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>40.2 x 37.7 x 32.4 cm, 7.1 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>1850W in functionare, eficienta buna pentru gatirea rapida</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Tefal Easy Fry & Grill XXL EY701D mi-a facut o impresie buna. E o friteuză digitală aer cald destul de versatila, pentru ca pe langa functia de airfry, vine si cu un grill integrat. Am gatit niste fripturi pe grill si a iesit surprinzator de bine, cu urme frumoase de gratar.</p>
+        <p>Ca airfryer, se descurca excelent. Cartofii au iesit crocanti, puiul a fost gatit uniform. Capacitatea de 6.5 litri e generoasa, poti gati pentru toata familia.</p>
+        <p>Mi-a placut mult display-ul tactil, e responsive si usor de folosit. Programele predefinite sunt un plus, te ajuta sa pornesti rapid.</p>
+        <p>Am facut si un tortulet in ea, si a iesit bun, deci si functia de copt e ok. Nu te astepta la performantele unui cuptor profesional, dar pentru prajituri rapide sau paine, merge. Ce nu mi-a placut la ea e ca grill-ul, desi e util, nu inlocuieste un grill pe carbuni sau electric dedicat. Totusi, e un bonus binevenit. Ca orice aparat de genul, face un pic de zgomot. Si, sincer, curatarea partilor de grill poate fi un pic mai dificila decat la alte modele, depinde ce gatesti.</p>
+        <p>Am avut un aparat Tefal si acum 5 ani si inca functioneaza, deci brandul pare sa fie de incredere. Daca vrei o friteuză digitală aer cald cu functii de grill si o capacitate buna, Tefal EY701D e o optiune solida.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Functie de grill integrata</li><li>Capacitate mare</li><li>Panou de control digital intuitiv</li><li>Versatilitate (6 functii)</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Functia de grill nu inlocuieste un aparat dedicat</li><li>Curatarea grilajului poate fi mai dificila</li><li>Pretul este in categoria premium</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="gorenje-af1500ds">
+  <div class="product-review__header">
+    <span class="section-tag">Pentru Buget Mic</span>
+    <h3>Gorenje AF1500DS</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>1500W</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>4 litri (aprox. 2-3 porții)</div>
+      <div class="product-review__spec"><strong>Functii</strong>Control digital, 8 programe presetate (cartofi, pui, peste, prajituri, etc.), display LED, temporizator, control temperatura, functii de gatire personalizate</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>26.5 x 35 x 31 cm, 4.5 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>1500W in functionare, eficient pentru gatirea rapida a cantitatilor mici</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Gorenje AF1500DS e o optiune buna daca nu vrei sa cheltui o avere pe o friteuză digitală aer cald. Nu are cine stie ce functii smart sau capacitati uriase, dar isi face treaba. Am testat-o la niste prieteni care locuiesc intr-un apartament mic si s-au multumit cu ea. Gateste destul de rapid, cartofii ies buni, crocanti. Display-ul e simplu, cu LED-uri, usor de inteles. Programele presetate sunt utile pentru a incepe.</p>
+        <p>Capacitatea de 4 litri e potrivita pentru 2 persoane, maxim 3 daca nu sunt gurmanzi. Nu te astepta sa gatesti un pui intreg sau o cantitate mare de cartofi. Asta e principalul dezavantaj. Si, ca orice aparat mai ieftin, materialele par un pic mai putin premium decat la modelele de top. Nu e o problema majora, dar se simte. Curatarea e ok, cosul e antiaderent. Nu am avut probleme cu el. Un minus ar fi ca uneori, la programe mai lungi, se poate incalzi destul de tare carcasa exterioara.</p>
+        <p>Daca ai un buget limitat si gatesti pentru 1-2 persoane, Gorenje AF1500DS e o friteuză digitală aer cald decenta. Nu te astepta la minuni, dar isi merita banii.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Pret accesibil</li><li>Dimensiuni compacte, potrivita pentru spatii mici</li><li>Usor de utilizat</li><li>Gatire rapida pentru cantitati mici</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Capacitate mica</li><li>Materiale mai putin premium</li><li>Carcasa exterioara se poate incalzi</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="proscenic-air-fryer-t21">
+  <div class="product-review__header">
+    <span class="section-tag">Premium</span>
+    <h3>Proscenic Air Fryer T21</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>1700W</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>5.8 litri (aprox. 3-5 porții)</div>
+      <div class="product-review__spec"><strong>Functii</strong>Control digital touchscreen, 8 programe presetate, conectivitate WiFi (control prin aplicatie), compatibilitate cu Alexa, functii personalizabile, mentinere la cald</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>30.6 x 30.6 x 34.7 cm, 5.4 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>1700W in functionare, eficienta energetica buna datorita gatirii rapide</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Proscenic T21 e o friteuză digitală aer cald care se bate cap in cap cu Cosori la capitolul functii smart. Are WiFi, control prin aplicatie, merge si cu Alexa. Eu am testat-o prin aplicatie si mi s-a parut destul de intuitiva.</p>
+        <p>Poti alege programe, seta timpul si temperatura, si primesti notificari pe telefon. Asta e super comod daca esti ocupat prin casa. Gateste bine, am incercat cartofi prajiti si au iesit crocanti, puiul a fost rumenit uniform.</p>
+        <p>Capacitatea de 5.8 litri e decenta pentru o familie mica.</p>
+        <p>Ce mi-a atras atentia e ca vine cu o reteta integrata in aplicatie, si poti salva propriile tale presetari. Asta e un plus pentru cei care experimenteaza in bucatarie. Curatarea e facila, cosul si tava sunt antiaderente si merg la masina de spalat.</p>
+        <p>Un minus mic ar fi ca, uneori, conectarea la WiFi poate fi un pic capricioasa la prima utilizare, dar dupa ce se conecteaza, merge brici. Si, ca la majoritatea, zgomotul e prezent. Nu e un aparat ieftin, dar pentru functiile pe care le ofera, pretul e justificat.</p>
+        <p>Daca vrei o friteuză digitală aer cald cu tehnologie smart la un pret mai bun decat unele modele de top, Proscenic T21 e o optiune de luat in calcul.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Control prin aplicatie si comenzi vocale (Alexa)</li><li>Design modern cu ecran tactil</li><li>Capacitate buna pentru familii mici/medii</li><li>Retete integrate si posibilitate de salvare presetari</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Conectivitatea WiFi poate fi initial dificila</li><li>Pretul este in gama medie-premium</li><li>Functionarea poate fi zgomotoasa</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="moulinex-easy-soup-lm2335">
+  <div class="product-review__header">
+    <span class="section-tag">Raport Calitate-Pret</span>
+    <h3>Moulinex Easy Soup LM2335</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>1000W</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>1.2 litri</div>
+      <div class="product-review__spec"><strong>Functii</strong>4 programe automate (supa rece, supa calda, smoothie, curatare), functie de mentinere la cald, panou de control digital, lame din inox</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>34 x 23 x 27 cm, 2.5 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>1000W in timpul functionarii, eficient pentru prepararea rapida a supelor</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Ok, stiu ca asta nu e o friteuză digitală aer cald, dar am zis sa o pun aici pentru ca e un aparat mic de bucatarie care face viata mai usoara si e tot din zona 'premium' ca electrocasnice mici. Moulinex Easy Soup LM2335 face supe creme perfecte in maxim 20 de minute. Pui legumele, apa, selectezi programul si gata.</p>
+        <p>E super simplu. Am folosit-o cand aveam putin timp si voiam ceva cald si sanatos. Iese supa fina, fara bucati.</p>
+        <p>Si functia de smoothie e buna, am facut un shake de fructe si a iesit cremos.</p>
+        <p>Are si functie de curatare automata, apesi un buton si se curata singura. Nu perfect, dar ajuta mult. Totusi, nu te astepta sa fie un blender de mare putere. Pentru supe si smoothie-uri e perfecta, dar pentru a sfarama gheata sau a face paste de nuci, nu e cea mai buna optiune. Si, na, e un aparat dedicat, face doar supe si smoothie-uri. Nu e la fel de versatila ca o friteuză cu aer cald. Dar daca iti plac supele creme, e o investitie buna.</p>
+        <p>Am avut un blender vechi de la Moulinex care a tinut 10 ani, deci calitatea pare sa fie buna la ei. E un aparat mic, usor de depozitat, si face exact ce promite. E o friteuză digitală aer cald nu e ce cauti, dar pentru supe e top.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Preparare rapida a supelor creme si smoothie-urilor</li><li>Functie de curatare automata</li><li>Usor de utilizat si depozitat</li><li>Rezultate fine si cremoase</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Aparat dedicat, nu foarte versatil</li><li>Nu inlocuieste un blender puternic</li><li>Necesita curatare manuala a capacului (nu se spala automat)</li></ul></div>
+    </div>
+  </div>
+</article>`} />
+
+          <!-- Comparison Table -->
+          <Fragment set:html={`
+<section id="comparatie">
+  <h2>Comparatie rapida</h2>
+  <div class="comparison-outer" id="comparison-outer">
+    <div class="comparison-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Scroll horizontal pentru toate coloanele</div>
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead><tr><th>Model</th><th>Putere</th><th>Capacitate</th><th>Functii</th><th>Consum</th><th>Potrivit Pentru</th></tr></thead>
+        <tbody><tr><td>Philips Airfryer XXL HD9762/40</td><td>2225W</td><td>1.4 kg</td><td>Tehnologie Fat Removal, display digital, programe automate</td><td>Eficient</td><td>Familii mari, cei care gatesc des cantitati mari, cauta performanta de top</td></tr><tr><td>Cosori Smart Airfryer 5.5L (CP158-AF)</td><td>1700W</td><td>5.5 L</td><td>WiFi, aplicatie, 11 presetari, functia Shake</td><td>Eficient</td><td>Utilizatori tech-savvy, familii mici/medii, cauta functii smart</td></tr><tr><td>Ninja Foodi Dual Zone AF300EU</td><td>2400W</td><td>2 x 4.75 L</td><td>2 zone independente, SYNC, MATCH, 6 functii</td><td>Eficient</td><td>Cei care gatesc variat si rapid, familii numeroase, optimizeaza timpul</td></tr><tr><td>Tefal Easy Fry & Grill XXL EY701D</td><td>1850W</td><td>6.5 L</td><td>Grill integrat, 6 functii, display digital</td><td>Eficient</td><td>Cei care doresc versatilitate (airfry + grill), familii medii/mari</td></tr><tr><td>Gorenje AF1500DS</td><td>1500W</td><td>4 L</td><td>8 presetari, display LED</td><td>Eficient</td><td>Bugete limitate, cupluri sau persoane singure, bucatarii mici</td></tr><tr><td>Proscenic Air Fryer T21</td><td>1700W</td><td>5.8 L</td><td>WiFi, aplicatie, Alexa, 8 presetari</td><td>Eficient</td><td>Utilizatori care vor functii smart si control vocal, familii mici/medii</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>`} />
+
+          <!-- Buying Guide -->
+          <Fragment set:html={`
+<section id="cum-alegi-friteuza-digitala-aer-cald-potrivita-pentru-tine">
+  <h2>Cum alegi friteuza digitală aer cald potrivită pentru tine</h2>
+  <div class="guide"><h4>Capacitatea contează</h4>
+        <p>Primul lucru la care te gândești e cât de mare trebuie să fie. Dacă gătești pentru 1-2 persoane, un model de 3-4 litri e suficient. Pentru familii de 3-4 persoane, caută ceva în jur de 5-6 litri. Dacă ai musafiri des sau o familie numeroasă (peste 5 persoane), mergi pe modelele XXL de 7 litri sau chiar cele cu două sertare, cum e Ninja Foodi. Nu lua ceva prea mare dacă nu ai nevoie, ocupă spațiu inutil pe blat.</p>
+        <h4>Puterea dictează viteza</h4>
+        <p>O friteuză digitală aer cald cu o putere mai mare (peste 1700W) va găti mâncarea mai rapid și, de obicei, mai uniform. Modelele mai ieftine au adesea puteri mai mici (1300-1500W), ceea ce înseamnă timpi de gătire mai lungi. Nu e capăt de țară, dar dacă timpul e esențial, alege o putere mai mare.</p>
+        <h4>Funcțiile smart sunt un plus, nu o necesitate</h4>
+        <p>Multe friteuze digitale vin cu WiFi, control prin aplicație și chiar compatibilitate cu asistenți vocali gen Alexa. Asta e fain, te poți juca cu setările de pe telefon sau poți cere asistentului să pornească aparatul. Dar, sincer, nu e esențial. Dacă gătești ocazional, un panou digital simplu cu presetări e perfect. Nu plăti extra pentru funcții smart dacă nu le vei folosi.</p>
+        <h4>Grilej sau sertar?</h4>
+        <p>Majoritatea modelelor vin cu un sertar detașabil, antiaderent, în care pui mâncarea. Unele au și accesorii suplimentare gen grătar sau rotisor. Verifică ce vine la pachet. Pentru mine, sertarul e cel mai practic. Asigură-te că e ușor de curățat. Piesele care se pot spăla în mașina de spălat vase sunt un mare avantaj.</p>
+        <h4>Ce greșeli să eviți?</h4>
+        <ul><li>Să cumperi cel mai ieftin model fără să verifici specificațiile. Poate fi o dezamăgire.</li><li>Să ignori dimensiunile. O friteuză mare nu încape oriunde. Măsoară-ți blatul înainte.</li><li>Să te aștepți să fie la fel ca prăjirea în baie de ulei. Rezultatele sunt similare, dar nu identice.</li><li>Să nu cureți aparatul regulat. Se acumulează resturi și poate afecta performanța și gustul.</li></ul>
+        <p>Alegerea unei friteuze digitale aer cald depinde mult de nevoile tale. Dacă vrei cea mai bună experiență, Philips XXL sau Ninja Foodi sunt greu de bătut. Pentru un echilibru bun între preț și funcții, Cosori sau Proscenic sunt alegeri solide. Iar dacă bugetul e strâns, Gorenje e o opțiune decentă. Gândește-te ce gătești cel mai des și pentru câți oameni, și vei găsi modelul perfect. Nu uita, o friteuză digitală aer cald te ajută să mănânci mai sănătos, dar și să economisești timp în bucătărie.</p>
+  </div>
+</section>`} />
+
+          <!-- FAQ -->
+          <Fragment set:html={`
+<section id="faq" class="faq-section">
+  <h2>Intrebari Frecvente</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">cat costa o friteuza digitala aer cald buna in 2026?</div>
+      <div class="faq-answer">Pretul unei friteuze digitale aer cald bune in 2026 variaza considerabil. Modelele entry-level, cu capacitati mai mici si functii de baza, incep de la aproximativ 300-400 lei. Modelele de mijloc, cu capacitati medii si functii smart, se situeaza intre 500 si 800 lei. Pentru aparatele premium, cu capacitati mari, tehnologie avansata si functii multiple, preturile pot ajunge si depasi 1000-1200 lei.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">care e diferenta intre friteuza cu aer cald si cuptor?</div>
+      <div class="faq-answer">Principala diferenta e viteza si eficienta. O friteuză digitală aer cald gateste mult mai rapid datorita circulatiei concentrate a aerului fierbinte. De asemenea, consuma mai putina energie pentru cantitati mici de mancare. Cuptorul e mai bun pentru gatit cantitati mari sau copt produse de patiserie complexe. Friteuza e ideala pentru prajit, rumenit si gatit rapid.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">merita sa cumperi friteuza cu aer cald smart?</div>
+      <div class="faq-answer">Merita daca esti genul de persoana care apreciaza tehnologia si vrea sa controleze aparatul de la distanta prin telefon sau comenzi vocale. Functiile smart adauga confort si flexibilitate. Daca gatesti ocazional si nu te intereseaza neaparat controlul de pe mobil, o friteuză digitală aer cald fara functii smart, dar cu un panou digital bun, poate fi la fel de eficienta si mai ieftina.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">ce pot gati la o friteuza digitala aer cald?</div>
+      <div class="faq-answer">La o friteuză digitală aer cald poti gati o varietate mare de preparate: cartofi prajiti (cei mai populari), pui intreg sau bucati, peste, legume, fripturi, chiftelute, chiar si produse de patiserie precum briose sau mici prajituri. Practic, orice ai gati la cuptor sau praji in tigaie poate fi adaptat pentru friteuza cu aer cald, de obicei cu mai putin ulei si mai rapid.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">cat dureaza sa gatesti la friteuza aer cald?</div>
+      <div class="faq-answer">Timpul de gatire variaza in functie de preparat, cantitate si modelul friteuzei. De exemplu, cartofii prajiti dureaza de obicei 15-25 minute, un pui intreg cam 40-50 minute, iar legumele 10-15 minute. In general, gatirea la o friteuză digitală aer cald este cu 20-50% mai rapida decat la un cuptor conventional, datorita circulatiei intense a aerului fierbinte.</div>
+    </div>
+  </div>
+</section>`} />
+        </div>
+
+        <!-- Author Box -->
+        <div class="author-box">
+          <div class="author-box-content">
+            <div class="author-avatar">
+              AS
+            </div>
+            <div class="author-info">
+              <div class="author-name">Andrei Stanciu</div>
+              <div class="author-role">Analist IT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Prev/Next Navigation -->
+    <PrevNextNav
+      currentSlug="friteuza-digitala-aer-cald"
+      currentCategory="electrocasnice-mici-premium"
+      articles={allArticles}
+    />
+  </article>
+
+  <script>
+    // Comparison table scroll detection
+    document.addEventListener('DOMContentLoaded', () => {
+      const outer = document.getElementById('comparison-outer');
+      if (outer) {
+        const wrap = outer.querySelector('.comparison-wrap');
+        function checkScroll() {
+          if (wrap && wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          } else {
+            outer.classList.remove('can-scroll');
+          }
+        }
+        checkScroll();
+        window.addEventListener('resize', checkScroll);
+      }
+
+      // TOC active tracking
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (tocLinks.length) {
+        const ids = Array.from(tocLinks).map(a => a.getAttribute('href').replace('#', '')).filter(Boolean);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+    });
+  </script>
+</Layout>
