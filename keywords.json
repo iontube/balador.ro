@@ -31,11 +31,6 @@
       "categorySlug": "electrocasnice-mici-premium"
     },
     {
-      "keyword": "bibliotecă living premium",
-      "category": "Mobilă & Home Living",
-      "categorySlug": "mobila-home-living"
-    },
-    {
       "keyword": "masă dining extensibilă",
       "category": "Mobilă & Home Living",
       "categorySlug": "mobila-home-living"
@@ -595,6 +590,11 @@
       "keyword": "friteuză digitală aer cald",
       "category": "Electrocasnice Mici Premium",
       "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "bibliotecă living premium",
+      "category": "Mobilă & Home Living",
+      "categorySlug": "mobila-home-living"
     }
   ]
 }

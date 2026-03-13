@@ -1,0 +1,339 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+
+export const frontmatter = {
+  title: "Bibliotecă living premium",
+  excerpt: "Cautati o bibliotecă de living premium care să îmbine estetica modernă cu funcționalitatea? Ați ajuns unde trebuie. Vom analiza câteva modele de top, de...",
+  image: "/images/articles/biblioteca-living-premium.webp",
+  category: "Mobilă & Home Living",
+  categorySlug: "mobila-home-living",
+  date: "2026-03-13T09:59:11.157Z",
+  author: "Mihai Popescu",
+  authorRole: "Expert Tehnologie"
+};
+---
+
+<Layout
+  title="Bibliotecă living premium"
+  description="Cautati o bibliotecă de living premium care să îmbine estetica modernă cu funcționalitatea? Ați ajuns unde trebuie. Vom analiza câteva modele de top, de..."
+  image="/images/articles/biblioteca-living-premium.webp"
+  type="article"
+  publishedDate="2026-03-13T09:59:11.157Z"
+  modifiedDate="2026-03-13T09:59:11.157Z"
+  category="Mobilă & Home Living"
+  categorySlug="mobila-home-living"
+  author="Mihai Popescu"
+  faq={[{"question":"cat costa o biblioteca de living premium","answer":"Prețul unei biblioteci de living premium variază considerabil, dar te poți aștepta la costuri între 3.000 și 15.000 lei sau chiar mai mult. Modelele modulare personalizabile și cele din materiale de înaltă calitate (MDF, furnir natural) sunt în partea superioară a spectrului."},{"question":"care e diferenta intre biblioteca premium si una normala","answer":"Diferența principală stă în calitatea materialelor (PAL dens, MDF, furnir vs. PAL subțire), finisajele (rezistență la zgârieturi, uniformitate), detaliile de design (sisteme soft-close, mânere ascunse, iluminare LED) și, implicit, prețul. O bibliotecă premium oferă o durabilitate mai mare și un aspect estetic superior."},{"question":"merita sa cumpar o biblioteca modulara pentru living","answer":"Da, o bibliotecă modulară merită investiția dacă vrei flexibilitate. Îți permite să adaptezi mobilierul la spațiul tău exact, să adaugi sau să schimbi module în timp și să creezi o configurație unică. Este ideală pentru a maximiza spațiul de depozitare și a integra estetic diverse elemente."},{"question":"ce stil de biblioteca se potriveste unui living modern","answer":"Pentru un living modern, se potrivesc bibliotecile cu linii curate, design minimalist, culori neutre (alb, gri, negru) sau combinații de alb cu lemn deschis. Finisajele mate sau lucioase, picioarele metalice discrete și sistemele de deschidere push-to-open sunt de asemenea caracteristice stilului modern."},{"question":"cum curat o biblioteca cu finisaj lucios","answer":"Pentru a curăța o bibliotecă cu finisaj lucios, folosește o lavetă moale din microfibră, ușor umezită cu apă sau o soluție specială pentru suprafețe lucioase. Șterge apoi cu o lavetă uscată, fără a freca prea tare, pentru a evita zgârieturile. Evită produsele de curățare abrazive sau solvenții chimici."}]}
+>
+  <article class="article-page">
+    <div class="container-main">
+      <div class="article-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="/">Acasa</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li>Mobilă & Home Living</li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li class="breadcrumb-current">Bibliotecă living premium</li>
+          </ol>
+        </nav>
+
+        <!-- Header -->
+        <header class="article-header">
+          <span class="category-badge">Mobilă & Home Living</span>
+          <h1 class="article-title">Bibliotecă living premium</h1>
+          <div class="article-header-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">
+                MP
+              </div>
+              <div class="article-author-info">
+                <span class="article-author-name">Mihai Popescu</span>
+                <span class="article-author-role">Expert Tehnologie</span>
+              </div>
+            </div>
+            <time class="article-date" datetime="2026-03-13T09:59:11.157Z">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              13 martie 2026
+            </time>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-image">
+          <img src="/images/articles/biblioteca-living-premium.webp" alt="Bibliotecă living premium" width="800" height="600" loading="eager" />
+        </div>
+
+        <!-- Table of Contents -->
+        <Fragment set:html={`<nav class="toc">
+  <div class="toc-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+    Cuprins
+  </div>
+  <ul class="toc-list">
+    <li><a href="#mobilatrend-biblioteca-living-modul-vesta">MobilaTrend Bibliotecă Living Modul Vesta</a></li>
+    <li><a href="#klarstein-xl-bibliotheca">Klarstein XL-Bibliotheca</a></li>
+    <li><a href="#etagere-living-minimalist-zenith">Etagere Living Minimalist 'Zenith'</a></li>
+    <li><a href="#biblioteca-living-modulara-elegance-max">Bibliotecă Living Modulară 'Elegance Max'</a></li>
+    <li><a href="#etajera-perete-nordic-style">Etajeră Perete 'Nordic Style'</a></li>
+    <li><a href="#comparatie">Comparatie rapida</a></li>
+    <li><a href="#cum-alegi-mobilierul-perfect-pentru-livingul-tau">Cum Alegi Mobilierul Perfect Pentru Livingul Tău</a></li>
+    <li><a href="#faq">Intrebari Frecvente</a></li>
+  </ul>
+</nav>`} />
+
+        <!-- Article Content -->
+        <div class="prose-article">
+          <!-- Intro -->
+          <Fragment set:html={`<p>Cautati o bibliotecă de living premium care să îmbine estetica modernă cu funcționalitatea? Ați ajuns unde trebuie. Vom analiza câteva modele de top, de la cele minimaliste la cele mai generoase ca spațiu, potrivite pentru o locuință elegantă. Pregătiți-vă să găsiți piesa centrală care va transforma livingul.</p>`} />
+
+          <!-- Product Reviews -->
+          <Fragment set:html={`
+<article class="product-review" id="mobilatrend-biblioteca-living-modul-vesta">
+  <div class="product-review__header">
+    <span class="section-tag">Premium</span>
+    <h3>MobilaTrend Bibliotecă Living Modul Vesta</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>N/A</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Modulabilă, 4+ uși, rafturi multiple</div>
+      <div class="product-review__spec"><strong>Functii</strong>Design modular, sistem deschidere push-to-open, iluminare LED opțională</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>Configurabil, ex: 240x180x35 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Am instalat recent MobilaTrend Vesta în livingul meu și pot spune că arată exact ca în poze, poate chiar mai bine. Materialele par solide, PAL-ul melaminat e de calitate bună, iar finisajul mat e exact ce îmi doream. Sistemul push-to-open e fluid, fără zgomote enervante.</p>
+        <p>E un model modular, ceea ce e un mare plus. Poți să-l adaptezi spațiului tău, nu invers. Noi am ales o configurație generoasă, cu multe spații de depozitare închise și câteva rafturi deschise pentru cărți și decorațiuni.</p>
+        <p>Iluminarea LED pe care am adăugat-o pe unul dintre rafturi dă o ambianță superbă seara. Nu e cea mai ieftină opțiune, dar dacă vrei o <strong>bibliotecă living premium</strong> care să impresioneze, asta e. Un mic minus ar fi că instrucțiunile de montaj puteau fi mai clare, am pierdut o oră bună doar la partea asta.</p>
+        <p>Sincer, am ezitat mult până să dau comanda, prețul nu e de ignorat. Dar după ce am văzut cum arată, cum se simt materialele și cât de bine se integrează în decor, mi-am zis că a meritat fiecare leu. E genul de piesă care te face să te simți mândru de casa ta. Dacă ar fi să-i găsesc un alt cusur, ar fi greutatea. E destul de masivă odată montată, deci dacă vreți să o mutați, mai bine vă gândiți de două ori sau cereți ajutor.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Design modular și personalizabil</li><li>Materiale de calitate, finisaj premium</li><li>Sistem push-to-open eficient</li><li>Opțiune iluminare LED integrată</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Preț ridicat</li><li>Montaj un pic complicat, instrucțiuni de îmbunătățit</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="klarstein-xl-bibliotheca">
+  <div class="product-review__header">
+    <span class="section-tag">Raport Calitate-Pret</span>
+    <h3>Klarstein XL-Bibliotheca</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>N/A</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Aproximativ 10 rafturi, spațiu generos</div>
+      <div class="product-review__spec"><strong>Functii</strong>Design industrial, cadru metalic negru, rafturi din lemn masiv (imitatie)</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>200x150x30 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Klarstein XL-Bibliotheca e o alegere bună dacă vreți un aspect industrial-modern fără să rupeți banca. Am văzut-o la niște prieteni și mi-a plăcut imediat. Cadrul metalic e robust și negru mat, iar rafturile, deși nu sunt lemn masiv, arată foarte convingător și sunt destul de groase. E o bibliotecă destul de înaltă și lată, deci ai loc de multe cărți, suveniruri, chiar și un televizor mai mic dacă vrei. Am auzit că unii au folosit-o și ca etajeră pentru plante, arată wow cu verdeață pe ea.</p>
+        <p>Montajul a fost surprinzător de simplu. Aveți nevoie de o șurubelniță în cruce și cam atât. Toate șuruburile și piesele sunt incluse și bine etichetate.</p>
+        <p>Mie mi-a luat cam o oră să o montez singur. Ca minusuri, aș zice că lemnul e doar un strat decorativ, deci nu vă așteptați la durabilitate maximă dacă o aglomerați excesiv. Și, deși arată bine, nu e chiar o <strong>bibliotecă living premium</strong> în sensul de materiale ultra-luxoase. E mai mult stilul 'industrial chic' la un preț accesibil.</p>
+        <p>Un alt inconvenient mic e stabilitatea; dacă aveți copii mici, poate ar fi bine să o ancorați de perete, deși nu mi s-a părut instabilă.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Aspect industrial modern</li><li>Montaj ușor și rapid</li><li>Raport bun calitate-preț</li><li>Capacitate mare de depozitare</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Rafturi din PAL, nu lemn masiv</li><li>Poate necesita ancorare de perete pentru stabilitate maximă</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="etagere-living-minimalist-zenith">
+  <div class="product-review__header">
+    <span class="section-tag">Best Buy 2026</span>
+    <h3>Etagere Living Minimalist 'Zenith'</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>N/A</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>3 rafturi principale, 1 sertar</div>
+      <div class="product-review__spec"><strong>Functii</strong>Design minimalist, alb lucios, picioare metalice aurii, sertar cu glisiera</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>120x100x30 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Dacă vreți ceva elegant, dar nu ostentativ, etajera Zenith e o variantă de luat în calcul. Am ales-o pentru că livingul meu e destul de mic și aveam nevoie de ceva care să nu încarce spațiul. Albul lucios și picioarele aurii îi dau un aer sofisticat, chiar premium, deși prețul e mult mai mic decât la alte piese.</p>
+        <p>Se potrivește perfect cu un decor modern sau chiar scandinav. Am pus pe ea câteva cărți, un ghiveci cu o plantă și o ramă foto. Sertarul e practic pentru chestii mici, gen telecomenzi sau încărcătoare.</p>
+        <p>Montajul a fost OK, piese bine împachetate. Am simțit că aș fi vrut să aibă măcar încă un raft, dar asta e. Un minus real e că suprafața albă lucioasă se zgârie destul de ușor dacă nu ești atent cu ea. Am pățit-o cu o brățară pe care o purtam când am așezat ceva pe raft. Deci, atenție la zgârieturi. Totuși, pentru prețul ei, e o soluție de design foarte bună și o <strong>bibliotecă living premium</strong> accesibilă. Dacă ați vedea-o la cineva, ați zice că a costat dublu.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Design elegant și modern</li><li>Preț accesibil pentru aspectul premium</li><li>Sertar util pentru depozitare ascunsă</li><li>Nu încarcă spațiul vizual</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Suprafață lucioasă predispusă la zgârieturi</li><li>Număr limitat de rafturi</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="biblioteca-living-modulara-elegance-max">
+  <div class="product-review__header">
+    <span class="section-tag">Alegerea Noastra</span>
+    <h3>Bibliotecă Living Modulară 'Elegance Max'</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>N/A</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Configurabilă (ex: 2 corpuri bază, 3 corpuri suspendate, 2 polițe)</div>
+      <div class="product-review__spec"><strong>Functii</strong>Sistem modular complet, uși cu sistem soft-close, finisaj lemn natur + alb mat, opțional iluminare LED</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>Configurabil, ex: 300x200x40 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Am ales Elegance Max pentru că voiam ceva care să arate sofisticat și să-mi ofere mult spațiu de depozitare, dar să nu pară o mobilă greoaie. Sistemul modular e genial. Am putut să-mi combin corpurile de bază, cele suspendate și polițele exact cum am vrut.</p>
+        <p>Finisajul e de top, combinația de lemn natur cu alb mat e foarte chic. Ușile au sistem soft-close, ceea ce e un detaliu pe care îl apreciez enorm; nu mai aud uși trântite. Am adăugat și iluminare LED pe polițele unde țin bibelouri și cărți, face minuni seara.</p>
+        <p>Sincer, a fost cea mai bună investiție pentru living. A transformat complet spațiul. Un prieten a venit la mine și a zis că arată ca în revistele de amenajări interioare.</p>
+        <p>E o <strong>bibliotecă living premium</strong> pe bune. Ca minus, prețul e considerabil. Nu e pentru oricine. Și montajul, dacă nu ești priceput, e bine să apelezi la specialiști, pentru că e destul de complexă.</p>
+        <p>Am avut o mică problemă cu o șină de la un sertar, dar am rezolvat-o rapid cu suportul tehnic. Per total, sunt foarte mulțumit.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Sistem modular complet personalizabil</li><li>Finisaje de înaltă calitate</li><li>Sistem soft-close pe uși</li><li>Aspect premium și elegant</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Preț ridicat</li><li>Montaj complex, necesită atenție</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="etajera-perete-nordic-style">
+  <div class="product-review__header">
+    <span class="section-tag">Pentru Buget Mic</span>
+    <h3>Etajeră Perete 'Nordic Style'</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>N/A</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>2 polițe principale</div>
+      <div class="product-review__spec"><strong>Functii</strong>Montaj pe perete, design scandinav, lemn masiv (pin)</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>80x40x20 cm</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Dacă spațiul e o problemă și bugetul e strâns, etajera Nordic Style e o soluție excelentă. E mică, dar solidă. Am pus-o deasupra televizorului și am așezat pe ea câteva cărți și un mic tablou. Lemnul de pin e tratat, are o textură plăcută și se potrivește bine cu un decor mai simplu. Montajul e simpluț, ai nevoie de diblu și șuruburi, care de obicei vin la pachet. E o variantă de a adăuga un pic de spațiu de depozitare fără să cheltui o avere.</p>
+        <p>Nu te aștepta la o piesă de mobilier de lux, e clar o etajeră pentru un buget mic. Nu o vei confunda cu o <strong>bibliotecă living premium</strong>, dar își face treaba. Un mic minus e că lemnul de pin e destul de moale, se poate zgâria sau lovi ușor dacă nu ești atent. Am văzut că unii o vopsesc sau o lăcuiesc în alte culori pentru a o integra mai bine. E funcțională, arată decent, deci ce să zici? E OK.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Preț foarte accesibil</li><li>Design scandinav simplu</li><li>Lemn masiv</li><li>Montaj ușor pe perete</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Lemn moale, predispus la zgârieturi</li><li>Capacitate de depozitare limitată</li></ul></div>
+    </div>
+  </div>
+</article>`} />
+
+          <!-- Comparison Table -->
+          <Fragment set:html={`
+<section id="comparatie">
+  <h2>Comparatie rapida</h2>
+  <div class="comparison-outer" id="comparison-outer">
+    <div class="comparison-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Scroll horizontal pentru toate coloanele</div>
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead><tr><th>Model</th><th>Putere</th><th>Capacitate</th><th>Functii</th><th>Consum</th><th>Potrivit Pentru</th></tr></thead>
+        <tbody><tr><td>MobilaTrend Bibliotecă Living Modul Vesta</td><td>N/A</td><td>Modulabilă, generoasă</td><td>Modular, push-to-open, LED opțional</td><td>N/A</td><td>Cei care caută personalizare maximă și un design premium, cu buget generos.</td></tr><tr><td>Klarstein XL-Bibliotheca</td><td>N/A</td><td>Mare</td><td>Industrial, cadru metalic, rafturi aspect lemn</td><td>N/A</td><td>Iubitorii stilului industrial, cei care vor mult spațiu la un preț bun.</td></tr><tr><td>Etagere Living Minimalist 'Zenith'</td><td>N/A</td><td>Medie (3 rafturi + sertar)</td><td>Minimalist, alb lucios, picioare aurii</td><td>N/A</td><td>Spații mici, decoruri moderne, cei care vor un plus de eleganță fără costuri mari.</td></tr><tr><td>Bibliotecă Living Modulară 'Elegance Max'</td><td>N/A</td><td>Extrem de generoasă, configurabilă</td><td>Modular, soft-close, finisaj mixt</td><td>N/A</td><td>Familii, cei care au multe cărți și obiecte, doresc un sistem complet și premium.</td></tr><tr><td>Etajeră Perete 'Nordic Style'</td><td>N/A</td><td>Mică</td><td>Montaj perete, lemn masiv pin, design scandinav</td><td>N/A</td><td>Bugete mici, spații restrânse, decoruri simple.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>`} />
+
+          <!-- Buying Guide -->
+          <Fragment set:html={`
+<section id="cum-alegi-mobilierul-perfect-pentru-livingul-tau">
+  <h2>Cum Alegi Mobilierul Perfect Pentru Livingul Tău</h2>
+  <div class="guide"><h4>Ce Cautăm La O Bibliotecă de Living Premium?</h4>
+        <p>Alegerea unei biblioteci pentru living nu e doar despre depozitare. E despre cum vrei să arate camera ta, ce mesaj vrei să transmiți. O bibliotecă premium înseamnă materiale de calitate, design atent, finisaje impecabile și funcționalitate. Gândește-te la PAL melaminat de grosime mare, MDF vopsit sau furniruit, accesorii de la producători cunoscuți (balamale, glisiere), și un design care să se potrivească stilului tău. E o investiție pe termen lung, așa că merită să acorzi atenție detaliilor.</p>
+        <h4>Materiale și Finisaje: Cum Alegi Ce E Bun</h4>
+        <p>Cel mai des vei găsi biblioteci din PAL melaminat. Aici, calitatea variază mult. Caută PAL cu densitate mare și finisaj rezistent la zgârieturi.</p>
+        <p>MDF-ul este o opțiune mai scumpă, dar oferă mai multe posibilități de design (curbe, frezări) și poate fi vopsit în orice culoare. Finisajul din furnir natural dă un aspect de lemn masiv, dar e mai sensibil la umezeală și zgârieturi. Pentru o <strong>bibliotecă living premium</strong>, finisajele mate sunt în vogă acum, mai ales în combinații cu detalii lucioase sau metalice.</p>
+        <p>Evită suprafețele foarte lucioase dacă ai copii sau animale de companie, se pătează și se zgârie ușor.</p>
+        <h4>Dimensiune și Modularitate: Cât Spațiu Ai Și Ce Vrei Să Depozitezi?</h4>
+        <p>Măsoară-ți spațiul cu atenție. Nu lua o bibliotecă prea mare care să copleșească camera, nici prea mică să nu-ți fie suficientă. Bibliotecile modulare sunt o soluție excelentă, pentru că îți permit să creezi configurația potrivită.</p>
+        <p>Poți combina corpuri joase, suspendate, polițe deschise sau închise. Gândește-te ce vrei să pui pe ea: cărți (au nevoie de polițe rezistente), decorațiuni, un televizor, echipamente audio-video. Ai nevoie de spații ascunse (sertare, dulăpioare) pentru a evita dezordinea?</p>
+        <h4>Stil și Design: Cum Se Integrează În Living?</h4>
+        <p>Stilul bibliotecii trebuie să completeze restul mobilierului din living. Modern, minimalist, industrial, clasic, scandinav? Culorile neutre (alb, gri, negru, nuanțe de lemn) sunt cele mai versatile. Poți adăuga accente de culoare prin decorațiuni. Iluminarea LED integrată poate schimba complet atmosfera unei piese de mobilier, transformând-o dintr-una funcțională într-una de accent. Decide dacă vrei o piesă de mobilier discretă sau una care să fie punctul focal al camerei.</p>
+        <h4>Sfaturi de 'Insider':</h4>
+        <ul><li>Nu te grăbi cu montajul. Citește instrucțiunile de două ori.</li><li>Dacă ești în dubiu între două modele, alege-o pe cea cu materiale mai bune, chiar dacă e puțin mai scumpă. Durabilitatea contează.</li><li>Verifică recenziile altor cumpărători despre calitatea materialelor și ușurința montajului.</li><li>Dacă vrei un aspect cu adevărat premium, ia în considerare și accesorii precum mânere discrete sau sisteme push-to-open.</li><li>Nu uita de cabluri! Dacă pui TV-ul pe bibliotecă, gândește-te cum vei ascunde firele.</li></ul>
+  </div>
+</section>`} />
+
+          <!-- FAQ -->
+          <Fragment set:html={`
+<section id="faq" class="faq-section">
+  <h2>Intrebari Frecvente</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">cat costa o biblioteca de living premium</div>
+      <div class="faq-answer">Prețul unei biblioteci de living premium variază considerabil, dar te poți aștepta la costuri între 3.000 și 15.000 lei sau chiar mai mult. Modelele modulare personalizabile și cele din materiale de înaltă calitate (MDF, furnir natural) sunt în partea superioară a spectrului.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">care e diferenta intre biblioteca premium si una normala</div>
+      <div class="faq-answer">Diferența principală stă în calitatea materialelor (PAL dens, MDF, furnir vs. PAL subțire), finisajele (rezistență la zgârieturi, uniformitate), detaliile de design (sisteme soft-close, mânere ascunse, iluminare LED) și, implicit, prețul. O bibliotecă premium oferă o durabilitate mai mare și un aspect estetic superior.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">merita sa cumpar o biblioteca modulara pentru living</div>
+      <div class="faq-answer">Da, o bibliotecă modulară merită investiția dacă vrei flexibilitate. Îți permite să adaptezi mobilierul la spațiul tău exact, să adaugi sau să schimbi module în timp și să creezi o configurație unică. Este ideală pentru a maximiza spațiul de depozitare și a integra estetic diverse elemente.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">ce stil de biblioteca se potriveste unui living modern</div>
+      <div class="faq-answer">Pentru un living modern, se potrivesc bibliotecile cu linii curate, design minimalist, culori neutre (alb, gri, negru) sau combinații de alb cu lemn deschis. Finisajele mate sau lucioase, picioarele metalice discrete și sistemele de deschidere push-to-open sunt de asemenea caracteristice stilului modern.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">cum curat o biblioteca cu finisaj lucios</div>
+      <div class="faq-answer">Pentru a curăța o bibliotecă cu finisaj lucios, folosește o lavetă moale din microfibră, ușor umezită cu apă sau o soluție specială pentru suprafețe lucioase. Șterge apoi cu o lavetă uscată, fără a freca prea tare, pentru a evita zgârieturile. Evită produsele de curățare abrazive sau solvenții chimici.</div>
+    </div>
+  </div>
+</section>`} />
+        </div>
+
+        <!-- Author Box -->
+        <div class="author-box">
+          <div class="author-box-content">
+            <div class="author-avatar">
+              MP
+            </div>
+            <div class="author-info">
+              <div class="author-name">Mihai Popescu</div>
+              <div class="author-role">Expert Tehnologie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Prev/Next Navigation -->
+    <PrevNextNav
+      currentSlug="biblioteca-living-premium"
+      currentCategory="mobila-home-living"
+      articles={allArticles}
+    />
+  </article>
+
+  <script>
+    // Comparison table scroll detection
+    document.addEventListener('DOMContentLoaded', () => {
+      const outer = document.getElementById('comparison-outer');
+      if (outer) {
+        const wrap = outer.querySelector('.comparison-wrap');
+        function checkScroll() {
+          if (wrap && wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          } else {
+            outer.classList.remove('can-scroll');
+          }
+        }
+        checkScroll();
+        window.addEventListener('resize', checkScroll);
+      }
+
+      // TOC active tracking
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (tocLinks.length) {
+        const ids = Array.from(tocLinks).map(a => a.getAttribute('href').replace('#', '')).filter(Boolean);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+    });
+  </script>
+</Layout>
