@@ -66,11 +66,6 @@
       "categorySlug": "mobila-home-living"
     },
     {
-      "keyword": "sală fitness acasă completă",
-      "category": "Sport & Fitness",
-      "categorySlug": "sport-fitness"
-    },
-    {
       "keyword": "bancă de forță reglabilă",
       "category": "Sport & Fitness",
       "categorySlug": "sport-fitness"
@@ -595,6 +590,11 @@
       "keyword": "bibliotecă living premium",
       "category": "Mobilă & Home Living",
       "categorySlug": "mobila-home-living"
+    },
+    {
+      "keyword": "sală fitness acasă completă",
+      "category": "Sport & Fitness",
+      "categorySlug": "sport-fitness"
     }
   ]
 }

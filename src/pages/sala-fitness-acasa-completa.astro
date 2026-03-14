@@ -1,0 +1,383 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+    .replace(/ș/g, 's').replace(/ț/g, 't')
+    .replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString()
+}));
+
+export const frontmatter = {
+  title: "Sală fitness acasă completă",
+  excerpt: "Vrei sa tii pasul cu antrenamentele chiar la tine acasa? O sală fitness acasă completă nu mai e un vis, ci o realitate accesibila. Aici gasesti tot ce a...",
+  image: "/images/articles/sala-fitness-acasa-completa.webp",
+  category: "Sport & Fitness",
+  categorySlug: "sport-fitness",
+  date: "2026-03-14T09:43:11.983Z",
+  author: "Mihai Popescu",
+  authorRole: "Expert Tehnologie"
+};
+---
+
+<Layout
+  title="Sală fitness acasă completă"
+  description="Vrei sa tii pasul cu antrenamentele chiar la tine acasa? O sală fitness acasă completă nu mai e un vis, ci o realitate accesibila. Aici gasesti tot ce a..."
+  image="/images/articles/sala-fitness-acasa-completa.webp"
+  type="article"
+  publishedDate="2026-03-14T09:43:11.983Z"
+  modifiedDate="2026-03-14T09:43:11.983Z"
+  category="Sport & Fitness"
+  categorySlug="sport-fitness"
+  author="Mihai Popescu"
+  faq={[{"question":"Cat costa sa amenajezi o sala de fitness acasa?","answer":"Costul unei sali de fitness acasa variaza enorm, de la cateva sute de lei pentru accesorii simple (benzi elastice, saltea, gantere mici) pana la zeci de mii de lei pentru aparate profesionale (bancă multifuncțională, bandă de alergat premium, bicicletă eliptică). Un punct de pornire bun pentru o sală fitness acasă completă, cu echipament de bază, ar fi intre 1000 - 3000 lei."},{"question":"Ce aparat cardio este cel mai bun pentru acasa?","answer":"Cel mai bun aparat cardio pentru acasa depinde de prioritatile tale. Banda de alergat ofera un antrenament complet si natural. Bicicleta eliptica este blanda cu articulatiile. Aparatul de vaslit lucreaza majoritatea muschilor. Daca spatiul e o problema, ia in considerare modele pliabile sau accesorii precum coarda de sarit."},{"question":"Merita sa cumperi greutati reglabile pentru acasa?","answer":"Da, greutatile reglabile (precum Bowflex sau PowerBlock) merita investitia daca vrei o sală fitness acasă completă, dar ai spatiu limitat. Economisesc enorm de mult loc si permit progresia rapida prin schimbarea usoara a greutatii. Pretul initial e mai mare, dar se amortizeaza."},{"question":"Ce aparate sunt esentiale pentru o sala de fitness acasa?","answer":"Pentru o sală fitness acasă completă, elementele esentiale includ: greutati (reglabile sau fixe), benzi elastice pentru versatilitate, o saltea de calitate pentru confort si o optiune cardio (banda de alergat, bicicleta, eliptica, sau chiar o coarda de sarit). Apoi poti adauga aparate specifice obiectivelor tale."},{"question":"Cum pot face un antrenament eficient acasa fara aparate scumpe?","answer":"Poti construi o sală fitness acasă completă si eficienta si fara aparate scumpe. Foloseste greutatea corpului (flotari, genuflexiuni, fandari, plank), investeste in benzi elastice si o coarda de sarit, si cauta antrenamente online pe YouTube sau aplicatii mobile. Varietatea exercitiilor si constiinta musculara sunt cheia."}]}
+>
+  <article class="article-page">
+    <div class="container-main">
+      <div class="article-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="/">Acasa</a></li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li>Sport & Fitness</li>
+            <li><span class="breadcrumb-separator">/</span></li>
+            <li class="breadcrumb-current">Sală fitness acasă completă</li>
+          </ol>
+        </nav>
+
+        <!-- Header -->
+        <header class="article-header">
+          <span class="category-badge">Sport & Fitness</span>
+          <h1 class="article-title">Sală fitness acasă completă</h1>
+          <div class="article-header-meta">
+            <div class="article-author">
+              <div class="article-author-avatar">
+                MP
+              </div>
+              <div class="article-author-info">
+                <span class="article-author-name">Mihai Popescu</span>
+                <span class="article-author-role">Expert Tehnologie</span>
+              </div>
+            </div>
+            <time class="article-date" datetime="2026-03-14T09:43:11.983Z">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              14 martie 2026
+            </time>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-image">
+          <img src="/images/articles/sala-fitness-acasa-completa.webp" alt="Sală fitness acasă completă" width="800" height="600" loading="eager" />
+        </div>
+
+        <!-- Table of Contents -->
+        <Fragment set:html={`<nav class="toc">
+  <div class="toc-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"></path></svg>
+    Cuprins
+  </div>
+  <ul class="toc-list">
+    <li><a href="#set-greutati-reglabile-bowflex-selecttech-552i">Set Greutati Reglabile Bowflex SelectTech 552i</a></li>
+    <li><a href="#banda-de-alergat-pliabila-jx-2000">Banda de alergat pliabila JX-2000</a></li>
+    <li><a href="#aparat-multifunctional-nordictrack-fusion-cst">Aparat Multifunctional NordicTrack Fusion CST</a></li>
+    <li><a href="#set-benzi-elastice-de-rezistenta-fittrek">Set Benzi Elastice de Rezistenta FitTrek</a></li>
+    <li><a href="#set-greutati-reglabile-powerblock-pro-series-50">Set Greutati Reglabile PowerBlock Pro Series 50</a></li>
+    <li><a href="#aparat-abdomene-si-flotari-ab-roller-wheel">Aparat Abdomene si Flotari Ab Roller Wheel</a></li>
+    <li><a href="#comparatie">Comparatie rapida</a></li>
+    <li><a href="#cum-sa-iti-construiesti-sala-de-fitness-acasa-pas-cu-pas">Cum sa iti construiesti sala de fitness acasa, pas cu pas</a></li>
+    <li><a href="#faq">Intrebari Frecvente</a></li>
+  </ul>
+</nav>`} />
+
+        <!-- Article Content -->
+        <div class="prose-article">
+          <!-- Intro -->
+          <Fragment set:html={`<p>Vrei sa tii pasul cu antrenamentele chiar la tine acasa? O <strong>sală fitness acasă completă</strong> nu mai e un vis, ci o realitate accesibila. Aici gasesti tot ce ai nevoie, de la greutati si benzi elastice la aparate cardio, ca sa nu mai sari peste nicio sesiune de miscare.</p>`} />
+
+          <!-- Product Reviews -->
+          <Fragment set:html={`
+<article class="product-review" id="set-greutati-reglabile-bowflex-selecttech-552i">
+  <div class="product-review__header">
+    <span class="section-tag">Alegerea Noastra</span>
+    <h3>Set Greutati Reglabile Bowflex SelectTech 552i</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>N/A</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>1 greutate = 2.5 - 24 kg</div>
+      <div class="product-review__spec"><strong>Functii</strong>Reglare rapida a greutatii (15 setari), mecanism siguranta, baza de sustinere</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>40 x 20 x 23 cm (per greutate)</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Am testat greutatile astea Bowflex si sincer, mi-au salvat mult spatiu. Inainte aveam un rând intreg de gantere, acum am un singur set care face cat vreo 10 perechi. Mecanismul de schimbare a greutatii e intuitiv, rotesti un selector si gata.</p>
+        <p>Sunt solide, le-am folosit la genuflexiuni, fandari, flotari cu greutate pe spate, si nu s-a miscat nimic. Singurul minus e ca la greutati foarte mari, devin cam lungi si pot fi incomode pentru anumite exercitii, gen fluturari laterale. Dar pentru majoritatea miscarilor, sunt perfecte.</p>
+        <p>Daca vrei sa faci o treaba serioasa acasa si sa ai flexibilitate maxima, astea sunt o investitie buna. Te ajuta sa progresezi fara sa ai nevoie de o camera dedicata doar pentru echipament.</p>
+        <p>Sunt ideale pentru cineva care vrea sa construiasca o <strong>sală fitness acasă completă</strong>, dar are spatiu limitat. Nu te mai complici cu zeci de discuri si bare.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Economie masiva de spatiu</li><li>Reglare rapida si usoara a greutatii</li><li>Design robust si sigur</li><li>Varietate mare de greutati intr-un singur set</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Pot fi lungi la greutati maxime, incomode pentru anumite exercitii</li><li>Pretul initial poate parea ridicat, dar se amortizeaza rapid</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="banda-de-alergat-pliabila-jx-2000">
+  <div class="product-review__header">
+    <span class="section-tag">Raport Calitate-Pret</span>
+    <h3>Banda de alergat pliabila JX-2000</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Motor 2.5 CP</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Viteza maxima 14 km/h, greutate maxima utilizator 120 kg</div>
+      <div class="product-review__spec"><strong>Functii</strong>Inclinare manuala 3 trepte, 12 programe predefinite, ecran LCD (timp, distanta, calorii, puls), Bluetooth, suport tableta</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>160 x 70 x 130 cm (desfasurata), 80 x 70 x 140 cm (pliata), 55 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Aprox. 700W in sarcina maxima</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Am avut banda asta JX-2000 in teste vreo luna si jumatate. E o optiune buna pentru cei care nu vor sa cheltuie o avere pe un aparat cardio, dar vor totusi sa alerge sau sa mearga alert in casa. Motorul de 2.5 CP e suficient pentru un ritm moderat, am atins 12 km/h fara probleme.</p>
+        <p>Ce mi-a placut e ca se pliaza destul de usor, o poti baga dupa un dulap sau o pui in coltz. Ecranul e simplu, dar afiseaza informatiile esentiale. Inclinarea manuala e cam basic, n-ai reglaje fine, dar pentru inceput e ok.</p>
+        <p>Nu te astepta la o banda de profesionisti, e clar. Dupa vreo 20 de minute de alergare mai sustinuta, se cam incinge putin carcasa motorului, si vibratiile se simt. De asemenea, sistemul de amortizare nu e cel mai performant, o sa simti impactul mai mult decat pe o banda de sala.</p>
+        <p>Dar per total, pentru o <strong>sală fitness acasă completă</strong>, mai ales daca nu ai mult spatiu, e un compromis rezonabil.</p>
+        <p>E o solutie decenta daca bugetul e o problema si vrei sa ai posibilitatea de a alerga acasa.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Design pliabil, economie de spatiu</li><li>Motor suficient pentru utilizare ocazionala</li><li>Pret accesibil</li><li>Programe predefinite pentru varietate</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Sistem de amortizare si inclinare basic</li><li>Se poate incinge la utilizare prelungita</li><li>Nu este foarte stabila la viteze mari</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="aparat-multifunctional-nordictrack-fusion-cst">
+  <div class="product-review__header">
+    <span class="section-tag">Premium</span>
+    <h3>Aparat Multifunctional NordicTrack Fusion CST</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>26 setari de rezistenta digitala (pana la 113 kg greutate simulata)</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Antrenament corp intreg</div>
+      <div class="product-review__spec"><strong>Functii</strong>Ecran tactil HD 10 inch, integrare iFit (antrenamente virtuale, ghidaj personalizat), sistem de cabluri si greutati, conectivitate WiFi/Bluetooth</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>200 x 100 x 210 cm, 130 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>Depende de ecran, ~50W</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Aparatul asta NordicTrack Fusion CST e o bestie. Serios, daca vrei o <strong>sală fitness acasă completă</strong>, concentrata intr-un singur aparat, asta e. Simuleaza greutatea cu ajutorul unor magneți controlati electronic, deci nu ai discuri de incarcat sau de deranjat.</p>
+        <p>Rezistenta e foarte fina, poti trece de la 5 kg la 100 kg in secunde, apasand un buton. Ecranul tactil si iFit-ul sunt punctul forte. Antrenamentele virtuale sunt super realiste, te antrenezi cu instructori din locatii exotice, ti se ajusteaza automat rezistenta.</p>
+        <p>Am simtit ca am facut un antrenament complet, de la forta la cardio, intr-o singura sesiune. E un aparat masiv, iti trebuie spatiu, si greu, deci nu-l muti usor. Pretul e pe masura, nu e pentru oricine.</p>
+        <p>Totusi, daca te gandesti ca poti renunta la abonamentul de sala si la alte echipamente, pe termen lung, poate fi o investitie buna. E ca si cum ai avea un antrenor personal si o sala intreaga in sufragerie. Singurul lucru pe care l-as zice e ca uneori aplicatia iFit se misca un pic sacadat pe ecran, dar asta tine mai mult de software, nu de hardware.</p>
+        <p>Pentru cei care cauta cea mai completa experienta de antrenament acasa, cu tehnologie de ultima ora, merita sa te uiti la el.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Antrenament complet corp intreg</li><li>Rezistenta digitala, reglabila instant</li><li>iFit si ecran tactil pentru experienta premium</li><li>Design compact pentru functionalitatea oferita</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Pret foarte ridicat</li><li>Necesita spatiu considerabil si nu e usor de mutat</li><li>Necesita conexiune internet pentru functiile avansate iFit</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="set-benzi-elastice-de-rezistenta-fittrek">
+  <div class="product-review__header">
+    <span class="section-tag">Pentru Buget Mic</span>
+    <h3>Set Benzi Elastice de Rezistenta FitTrek</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>Rezistente variate: 5-15 kg, 10-25 kg, 20-35 kg (in functie de banda)</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Antrenament corp intreg, pot fi combinate</div>
+      <div class="product-review__spec"><strong>Functii</strong>Set 5 benzi (galben, rosu, verde, albastru, negru), 2 manere, 2 curele glezna, 1 ancore usa</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>Benzi ~120 cm lungime, 3-6 cm latime, <1 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Na, astea sunt pentru tine daca vrei sa te misti acasa, dar nu vrei sa spargi banca. Setul asta de benzi FitTrek e incredibil de versatil pentru cat costa. Le poti folosi la aproape orice exercitiu: genuflexiuni, fandari, ramat, flotari, abdomene.</p>
+        <p>Fiecare banda are o rezistenta diferita, iar daca le combini, poti ajunge la o intensitate destul de mare. Am facut si eu cateva antrenamente cu ele, si sincer, sunt surprins de cat de eficient pot fi. Sunt usoare, le iei si in geanta, le poti folosi in parc, la hotel, oriunde.</p>
+        <p>Singurul dezavantaj e ca la anumite exercitii, cum ar fi ramatul, pot aluneca din mana daca nu le strangi bine, sau pot fi un pic incomode la glezne daca nu folosesti accesoriile. De asemenea, daca esti genul care trage foarte tare, exista riscul sa se rupa in timp, mai ales daca nu le depozitezi corect (la soare sau in locuri umede). Dar daca le folosesti cu grija, te tin destul de mult.</p>
+        <p>Pentru o <strong>sală fitness acasă completă</strong>, sunt un accesoriu esential, mai ales la inceput.</p>
+        <p>Sunt perfecte pentru a incepe calatoria ta spre un stil de viata mai activ, fara un angajament financiar mare.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Extrem de accesibile ca pret</li><li>Foarte portabile si usor de depozitat</li><li>Versatile, permit o gama larga de exercitii</li><li>Pot fi combinate pentru a creste rezistenta</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Pot fi incomode la glezne sau maini fara accesorii</li><li>Durabilitate limitata la utilizare intensa sau depozitare necorespunzatoare</li><li>Nu ofera aceeasi senzatie ca greutatile libere</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="set-greutati-reglabile-powerblock-pro-series-50">
+  <div class="product-review__header">
+    <span class="section-tag">Best Buy 2026</span>
+    <h3>Set Greutati Reglabile PowerBlock Pro Series 50</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>2.5 - 22.5 kg per gantera</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Echivalent a 8 perechi de gantere</div>
+      <div class="product-review__spec"><strong>Functii</strong>Sistem de pini pentru reglaj rapid, design compact, manere ergonomice</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>35 x 15 x 15 cm (per gantera), 25 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Am avut PowerBlock-urile astea Pro Series 50 pentru o perioada si pot sa zic ca sunt o alternativa serioasa la Bowflex. Sunt si mai compacte, si parca mai solide. Sistemul de reglaj cu pin e super rapid, mult mai rapid decat la alte modele pe care le-am vazut.</p>
+        <p>Pot schimba greutatea intre seturi in cateva secunde. Sunt perfect echilibrate, se simt bine in mana. Le-am folosit la tot felul de exercitii, de la cele de baza la cele mai complexe, si au facut fata cu brio.</p>
+        <p>Un prieten si-a luat modelul asta acum vreo 2 ani, si inca le foloseste zilnic fara nicio problema. Ce nu mi-a placut neaparat e ca la greutati mai mari, gantera devine un pic mai lunga, dar nu la fel de mult ca la Bowflex. Si, sincer, pretul e tot un factor, nu sunt ieftine.</p>
+        <p>Dar daca te gandesti la ce economie de spatiu si timp faci, si la calitatea constructiei, merita investitia pentru o <strong>sală fitness acasă completă</strong>. Sunt construite sa tina.</p>
+        <p>Daca vrei o solutie premium pentru greutati acasa, care sa fie si rapida la schimbare, PowerBlock e greu de batut.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Reglaj foarte rapid al greutatii</li><li>Design compact si robust</li><li>Manere ergonomice si echilibru bun</li><li>Calitate a constructiei superioara</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Pret premium</li><li>Pot deveni lungi la greutati maxime</li><li>Necesita o oarecare precautie la manipulare</li></ul></div>
+    </div>
+  </div>
+</article>
+<article class="product-review" id="aparat-abdomene-si-flotari-ab-roller-wheel">
+  <div class="product-review__header">
+    <span class="section-tag">Raport Calitate-Pret</span>
+    <h3>Aparat Abdomene si Flotari Ab Roller Wheel</h3>
+    <div class="product-review__specs-grid">
+      <div class="product-review__spec"><strong>Putere</strong>N/A</div>
+      <div class="product-review__spec"><strong>Capacitate</strong>Antrenament core, piept, umeri, spate</div>
+      <div class="product-review__spec"><strong>Functii</strong>Roata dubla pentru stabilitate, manere ergonomice, covoras pentru genunchi inclus</div>
+      <div class="product-review__spec"><strong>Dimensiuni</strong>30 x 15 x 15 cm, 1.5 kg</div>
+      <div class="product-review__spec"><strong>Consum Energie</strong>N/A</div>
+    </div>
+  </div>
+  <div class="product-review__content"><p>Uite, asta e un accesoriu mic, dar eficient. O roata pentru abdomene. Am testat-o si eu, si e mai greu decat pare la inceput.</p>
+        <p>Iti lucreaza toti muschii stabilizatori din zona core, abdomen, spate, umeri. Roata e destul de lata, asa ca stabilitatea e buna, nu te trezesti ca o iei razna. Manerele sunt comode, nu aluneci.</p>
+        <p>Vine si cu un covoras pentru genunchi, ceea ce e un plus, ca altfel te poti zgâria pe podea sau te poti lovi. Ce e un minus, e ca daca nu ai forta in brate si umeri, e greu sa faci miscarile corect, poti sa te accidentezi. Deci nu e chiar pentru incepatori absoluti, trebuie sa ai un pic de baza.</p>
+        <p>Si, evident, e un singur aparat, nu poti face totul cu el. Dar pentru ce face, si cat costa, e o adaugare buna la o <strong>sală fitness acasă completă</strong>. E ieftin, mic, il poti baga oriunde.</p>
+        <p>E un accesoriu excelent pentru a adauga varietate si intensitate antrenamentelor tale de core.</p>
+    <div class="product-review__lists">
+      <div><h4>Avantaje</h4><ul class="product-review__pros"><li>Excelent pentru antrenamentul abdomenului si core</li><li>Pret foarte accesibil</li><li>Compact si portabil</li><li>Include covoras pentru genunchi</li></ul></div>
+      <div><h4>Dezavantaje</h4><ul class="product-review__cons"><li>Necesita un nivel de forta initial in brate si umeri</li><li>Riscul de accidentare daca tehnica nu e corecta</li><li>Limitat la anumite grupe musculare</li></ul></div>
+    </div>
+  </div>
+</article>`} />
+
+          <!-- Comparison Table -->
+          <Fragment set:html={`
+<section id="comparatie">
+  <h2>Comparatie rapida</h2>
+  <div class="comparison-outer" id="comparison-outer">
+    <div class="comparison-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Scroll horizontal pentru toate coloanele</div>
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead><tr><th>Model</th><th>Putere</th><th>Capacitate</th><th>Functii</th><th>Consum</th><th>Potrivit Pentru</th></tr></thead>
+        <tbody><tr><td>Bowflex SelectTech 552i</td><td>2.5 - 24 kg</td><td>15 setari</td><td>Selector rapid, baza inclusa</td><td>N/A</td><td>Economie spatiu, antrenamente variate, progresie usoara</td></tr><tr><td>JX-2000 Banda Alergare</td><td>2.5 CP motor</td><td>14 km/h</td><td>Pliabila, 12 programe, Bluetooth</td><td>~700W</td><td>Cardio, spatii mici, buget limitat</td></tr><tr><td>NordicTrack Fusion CST</td><td>pana la 113 kg rezistenta digitala</td><td>Corp intreg</td><td>Ecran HD, iFit, rezistenta electronica</td><td>~50W</td><td>Antrenament complet, tehnologie avansata, investitie pe termen lung</td></tr><tr><td>FitTrek Benzi Elastice</td><td>5-35 kg (combinate)</td><td>Corp intreg</td><td>Set 5 benzi, accesorii incluse</td><td>N/A</td><td>Buget minim, portabilitate, varietate exercitii</td></tr><tr><td>PowerBlock Pro Series 50</td><td>2.5 - 22.5 kg</td><td>Echivalent 8 perechi gantere</td><td>Pin de reglaj, compact</td><td>N/A</td><td>Viteza reglaj, durabilitate, spatiu optimizat</td></tr><tr><td>Ab Roller Wheel</td><td>N/A</td><td>Core, piept, umeri</td><td>Roata dubla, stabil, covoras inclus</td><td>N/A</td><td>Antrenament core, buget mic, spatiu minim</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>`} />
+
+          <!-- Buying Guide -->
+          <Fragment set:html={`
+<section id="cum-sa-iti-construiesti-sala-de-fitness-acasa-pas-cu-pas">
+  <h2>Cum sa iti construiesti sala de fitness acasa, pas cu pas</h2>
+  <div class="guide"><div>
+        <h4>Ce iti trebuie pentru o sala de fitness acasa?</h4>
+        <p>Vrei sa ai o <strong>sală fitness acasă completă</strong>, dar nu stii de unde sa incepi? Nu te ingrijora, nu ai nevoie de o cladire intreaga. Totul depinde de obiectivele tale si de spatiul pe care il ai la dispozitie. Hai sa vedem ce e cu adevarat util.</p>
+        <h4>Alege echipamentul in functie de scop</h4>
+        <p><strong>Pentru forta:</strong> Daca vrei sa pui masa musculara sau sa te tonifiezi, ai nevoie de greutati. Aici ai cateva optiuni: <br></p>
+        <ul><li><strong>Greutati reglabile:</strong> Genul asta de gantere (Bowflex, PowerBlock) sunt o investitie initiala mai mare, dar economisesc enorm de mult spatiu si timp. Poti schimba greutatea rapid, fara sa ai nevoie de zeci de perechi de gantere. Sunt perfecte pentru progresie.</li><li><strong>Gantere fixe sau discuri cu bara:</strong> Daca ai spatiu si bugetul e mai mic, poti incepe cu cateva perechi de gantere fixe sau un set de discuri cu bara. E mai ieftin pe termen scurt, dar ocupa mai mult loc.</li><li><strong>Benzi elastice:</strong> Sunt ieftine, portabile si surprinzator de eficiente. Le poti folosi pentru o multitudine de exercitii, de la incalzire la antrenamente de forta moderate. Sunt ideale daca calatoresti mult sau ai spatiu zero.</li></ul>
+        <p><strong>Pentru cardio:</strong> Daca vrei sa arzi calorii, sa iti imbunatatesti rezistenta sau sa te recuperezi dupa antrenamentele de forta, ai nevoie de un aparat cardio.<br></p>
+        <ul><li><strong>Banda de alergat:</strong> E regina aparatelor cardio. Poti alerga, merge, ajusta viteza si inclinarea. Modelele pliabile sunt bune pentru spatii mici.</li><li><strong>Bicicleta eliptica sau statica:</strong> Sunt mai blande cu articulatiile decat banda de alergat si ocupa de obicei mai putin spatiu.</li><li><strong>Aparat de vaslit (rower):</strong> Lucreaza aproape tot corpul si e excelent pentru cardio intens.</li><li><strong>Coarda de sarit:</strong> Un clasic, ieftin si eficient. Poti face un antrenament cardio intens oriunde.</li></ul>
+        <p><strong>Antrenament functional/Corp intreg:</strong><br></p>
+        <ul><li><strong>Aparate multifunctionale:</strong> Genul NordicTrack Fusion CST, care combina rezistenta, cabluri si un ecran interactiv. Sunt cele mai complete, dar si cele mai scumpe si voluminoase.</li><li><strong>Mingii de fitness (kettlebells, slam balls), TRX, saltea de yoga:</strong> Acestea sunt accesorii versatile care pot adauga intensitate si varietate antrenamentelor tale.</li></ul>
+        <h4>Ce greseli sa eviti cand iti mobilezi sala acasa?</h4>
+        <p>1.  <strong>Sa cumperi prea mult, prea repede:</strong> Nu te arunca sa cumperi tot ce vezi. Incepe cu elementele de baza (greutati, benzi, poate o saltea) si vezi ce iti lipseste pe parcurs. E mai bine sa ai cateva echipamente de calitate pe care le folosesti constant, decat o gramada de aparate prafuite.
+2.  <strong>Sa ignori spatiul:</strong> Masoara-ti camera inainte sa cumperi ceva.</p>
+        <p>O banda de alergat mare poate fi un vis, dar daca nu ai loc sa o deschizi, nu te ajuta cu nimic. Alege echipamente pliabile sau compacte daca ai spatiu limitat.
+3.  <strong>Sa te uiti doar la pret:</strong> Cel mai ieftin nu e intotdeauna cel mai bun. Echipamentele ieftine se pot strica repede, te pot pune in pericol sau pur si simplu nu sunt eficiente.</p>
+        <p>Cauta un echilibru bun intre calitate si pret. Citeste review-uri, compara.
+4.  <strong>Sa uiti de accesorii:</strong> O saltea buna, manusi, o sticla de apa, poate un prosop – toate astea fac antrenamentul mai confortabil si mai sigur. Nu le neglija.</p>
+        <h4>Sfaturi de la cineva care a trecut prin asta</h4>
+        <p>•  <strong>Incepe mic</strong> si extinde-ti colectia pe masura ce progresezi si iti dai seama ce ai nevoie. Poate incepi cu niste greutati reglabile si niste benzi elastice. Asta iti permite sa faci o gramada de exercitii.</p>
+        <p>Daca citesti despre <a href='/smartphone-performanta-mare/'>smartphone-uri</a> performante, vei vedea ca si aici, tehnologia avanseaza, dar baza ramane aceeasi. La fel e si la fitness.
+•  <strong>Prioritizeaza siguranta:</strong> Asigura-te ca ai suficient spatiu in jur pentru miscare. Verifica stabilitatea echipamentelor.</p>
+        <p>Nu forta daca simti durere. E mai bine sa iei o pauza decat sa te accidentezi si sa stai luni de zile.
+•  <strong>Integrarea e cheia:</strong> O <strong>sală fitness acasă completă</strong> nu inseamna doar aparate. Poate insemna si o aplicatie de antrenament pe <a href='/telefon-premium-android/'>telefonul tău premium</a>, un playlist motivant, sau pur si simplu disciplina ta.</p>
+        <p>Fa din asta o rutina.
+•  <strong>Mentenanta:</strong> Curata echipamentele regulat, verifica suruburile, lubrifiaza partile mobile (la banda de alergat, de exemplu). Asta le prelungeste viata si le mentine sigure. Construirea unei sali de fitness acasa e un proces.</p>
+        <p>Bucura-te de el si adapteaza-l nevoilor tale. Succes!
+</div></p>
+  </div>
+</section>`} />
+
+          <!-- FAQ -->
+          <Fragment set:html={`
+<section id="faq" class="faq-section">
+  <h2>Intrebari Frecvente</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">Cat costa sa amenajezi o sala de fitness acasa?</div>
+      <div class="faq-answer">Costul unei sali de fitness acasa variaza enorm, de la cateva sute de lei pentru accesorii simple (benzi elastice, saltea, gantere mici) pana la zeci de mii de lei pentru aparate profesionale (bancă multifuncțională, bandă de alergat premium, bicicletă eliptică). Un punct de pornire bun pentru o sală fitness acasă completă, cu echipament de bază, ar fi intre 1000 - 3000 lei.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Ce aparat cardio este cel mai bun pentru acasa?</div>
+      <div class="faq-answer">Cel mai bun aparat cardio pentru acasa depinde de prioritatile tale. Banda de alergat ofera un antrenament complet si natural. Bicicleta eliptica este blanda cu articulatiile. Aparatul de vaslit lucreaza majoritatea muschilor. Daca spatiul e o problema, ia in considerare modele pliabile sau accesorii precum coarda de sarit.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Merita sa cumperi greutati reglabile pentru acasa?</div>
+      <div class="faq-answer">Da, greutatile reglabile (precum Bowflex sau PowerBlock) merita investitia daca vrei o sală fitness acasă completă, dar ai spatiu limitat. Economisesc enorm de mult loc si permit progresia rapida prin schimbarea usoara a greutatii. Pretul initial e mai mare, dar se amortizeaza.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Ce aparate sunt esentiale pentru o sala de fitness acasa?</div>
+      <div class="faq-answer">Pentru o sală fitness acasă completă, elementele esentiale includ: greutati (reglabile sau fixe), benzi elastice pentru versatilitate, o saltea de calitate pentru confort si o optiune cardio (banda de alergat, bicicleta, eliptica, sau chiar o coarda de sarit). Apoi poti adauga aparate specifice obiectivelor tale.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Cum pot face un antrenament eficient acasa fara aparate scumpe?</div>
+      <div class="faq-answer">Poti construi o sală fitness acasă completă si eficienta si fara aparate scumpe. Foloseste greutatea corpului (flotari, genuflexiuni, fandari, plank), investeste in benzi elastice si o coarda de sarit, si cauta antrenamente online pe YouTube sau aplicatii mobile. Varietatea exercitiilor si constiinta musculara sunt cheia.</div>
+    </div>
+  </div>
+</section>`} />
+        </div>
+
+        <!-- Author Box -->
+        <div class="author-box">
+          <div class="author-box-content">
+            <div class="author-avatar">
+              MP
+            </div>
+            <div class="author-info">
+              <div class="author-name">Mihai Popescu</div>
+              <div class="author-role">Expert Tehnologie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Prev/Next Navigation -->
+    <PrevNextNav
+      currentSlug="sala-fitness-acasa-completa"
+      currentCategory="sport-fitness"
+      articles={allArticles}
+    />
+  </article>
+
+  <script>
+    // Comparison table scroll detection
+    document.addEventListener('DOMContentLoaded', () => {
+      const outer = document.getElementById('comparison-outer');
+      if (outer) {
+        const wrap = outer.querySelector('.comparison-wrap');
+        function checkScroll() {
+          if (wrap && wrap.scrollWidth > wrap.clientWidth) {
+            outer.classList.add('can-scroll');
+          } else {
+            outer.classList.remove('can-scroll');
+          }
+        }
+        checkScroll();
+        window.addEventListener('resize', checkScroll);
+      }
+
+      // TOC active tracking
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      if (tocLinks.length) {
+        const ids = Array.from(tocLinks).map(a => a.getAttribute('href').replace('#', '')).filter(Boolean);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(a => a.classList.remove('active'));
+              const active = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
+              if (active) active.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }
+    });
+  </script>
+</Layout>
