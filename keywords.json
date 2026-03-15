@@ -1,11 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "aparat sous vide profesional",
-      "category": "Electrocasnice Mici Premium",
-      "categorySlug": "electrocasnice-mici-premium"
-    },
-    {
       "keyword": "aparat de vidat alimente",
       "category": "Electrocasnice Mici Premium",
       "categorySlug": "electrocasnice-mici-premium"
@@ -132,6 +127,11 @@
     },
     {
       "keyword": "blender de mare putere",
+      "category": "Electrocasnice Mici Premium",
+      "categorySlug": "electrocasnice-mici-premium"
+    },
+    {
+      "keyword": "aparat sous vide profesional",
       "category": "Electrocasnice Mici Premium",
       "categorySlug": "electrocasnice-mici-premium"
     }
